@@ -1,0 +1,25 @@
+audiveris:
+  properties_path: audiveris.properties
+  timeout_seconds: 300
+  options:
+    use_tablature: true
+    min_grade: 0.35
+
+preprocessing:
+  target_dpi: 300
+  min_dpi: 200
+  deskew_max_angle: 10.0
+  clahe_clip_limit: 2.0
+
+quality:
+  pass_threshold: 0.80
+  warn_threshold: 0.60
+  weights:
+    omr_confidence: 0.40
+    measure_completeness: 0.30
+    pitch_range_validity: 0.15
+    part_detection_rate: 0.15
+
+midi:
+  default_tempo: 120
+  pitch_bend_range: 2

@@ -1,0 +1,19 @@
+2026-03-14 00:13:48,212 INFO [CRASH COMPLEXION_p011]                 Book.java:1929 | Book reaching CHORDS on sheets:[#1]
+2026-03-14 00:13:48,214 INFO [CRASH COMPLEXION_p011]       StepMonitoring.java:98   | STEMS
+2026-03-14 00:13:51,343 INFO [CRASH COMPLEXION_p011]            SheetStub.java:1000 | Loaded /sheet#1/sheet#1.xml
+2026-03-14 00:13:53,482 WARN [CRASH COMPLEXION_p011]                 Book.java:2044 | Error processing stub
+2026-03-14 00:13:53,483 INFO [CRASH COMPLEXION_p011]                 Book.java:2584 | Book{CRASH COMPLEXION_p011} storing
+2026-03-14 00:13:53,570 INFO [CRASH COMPLEXION_p011]                 Book.java:2565 | Stored /book.xml
+2026-03-14 00:13:55,275 INFO [CRASH COMPLEXION_p011]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-14 00:13:55,275 INFO [CRASH COMPLEXION_p011]                 Book.java:2525 | Book stored as C:\Users\ken\RockSmithTabConvertToMidi\.cache\page_011\omr_chords\CRASH COMPLEXION_p011.omr
+2026-03-14 00:13:55,282 INFO [CRASH COMPLEXION_p011]            SheetStub.java:1654 | Sheet disposed
+2026-03-14 00:13:55,309 INFO [CRASH COMPLEXION_p011]                 Book.java:2050 | End of Stub#1
+2026-03-14 00:13:55,310 INFO [CRASH COMPLEXION_p011]                 Book.java:2057 | End of Book{CRASH COMPLEXION_p011}
+2026-03-14 00:13:55,311 WARN [CRASH COMPLEXION_p011]                  CLI.java:956  | Exception occurred java.lang.Exception: Error in reaching step CHORDS
+java.lang.Exception: Error in reaching step CHORDS
+	at org.audiveris.omr.CLI$ProcessingTask.processBook(CLI.java:893)
+	at org.audiveris.omr.CLI$CliTask.call(CLI.java:513)
+	at org.audiveris.omr.Main.runBatchTasks(Main.java:361)
+	at org.audiveris.omr.Main.main(Main.java:263)
+	at Audiveris.main(Audiveris.java:50)
+2026-03-14 00:13:55,337 INFO [CRASH COMPLEXION_p011]                Score.java:181  | Closing {Score 1}

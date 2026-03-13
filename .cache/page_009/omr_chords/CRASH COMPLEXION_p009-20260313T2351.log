@@ -1,0 +1,24 @@
+2026-03-13 23:51:29,072 INFO [CRASH COMPLEXION_p009]            SheetStub.java:1000 | Loaded /sheet#1/sheet#1.xml
+2026-03-13 23:51:31,539 INFO [CRASH COMPLEXION_p009]      PartwiseBuilder.java:2706 | Exporting sheet(s): [#1]
+2026-03-13 23:51:31,639 WARN [CRASH COMPLEXION_p009]      PartwiseBuilder.java:1718 | Error visiting FermataInter#7763{(0.689/0.915) staff:3 FERMATA} in {Page#1.1}
+java.lang.NullPointerException: Cannot invoke "org.audiveris.omr.sig.inter.AbstractNoteInter.getStaff()" because "this.current.note" is null
+	at org.audiveris.omr.score.PartwiseBuilder.processFermata(PartwiseBuilder.java:1704)
+	at org.audiveris.omr.score.PartwiseBuilder.processBarline(PartwiseBuilder.java:1293)
+	at org.audiveris.omr.score.PartwiseBuilder.processMeasure(PartwiseBuilder.java:2163)
+	at org.audiveris.omr.score.PartwiseBuilder.processPart(PartwiseBuilder.java:2677)
+	at org.audiveris.omr.score.PartwiseBuilder.processSystem(PartwiseBuilder.java:3222)
+	at org.audiveris.omr.score.PartwiseBuilder.processLogicalPart(PartwiseBuilder.java:1874)
+	at org.audiveris.omr.score.PartwiseBuilder.processStub(PartwiseBuilder.java:3173)
+	at org.audiveris.omr.score.PartwiseBuilder.processPartList(PartwiseBuilder.java:2709)
+	at org.audiveris.omr.score.PartwiseBuilder.processScore(PartwiseBuilder.java:2984)
+	at org.audiveris.omr.score.PartwiseBuilder.build(PartwiseBuilder.java:3542)
+	at org.audiveris.omr.score.ScoreExporter.export(ScoreExporter.java:122)
+	at org.audiveris.omr.score.ScoreExporter.export(ScoreExporter.java:163)
+	at org.audiveris.omr.sheet.Book.export(Book.java:630)
+	at org.audiveris.omr.CLI$ProcessingTask.processBook(CLI.java:927)
+	at org.audiveris.omr.CLI$CliTask.call(CLI.java:513)
+	at org.audiveris.omr.Main.runBatchTasks(Main.java:361)
+	at org.audiveris.omr.Main.main(Main.java:263)
+	at Audiveris.main(Audiveris.java:50)
+2026-03-13 23:51:31,938 INFO [CRASH COMPLEXION_p009]        ScoreExporter.java:164  | Score CRASH COMPLEXION_p009 exported to C:\Users\ken\RockSmithTabConvertToMidi\.cache\page_009\omr_chords\CRASH COMPLEXION_p009.mxl
+2026-03-13 23:51:32,012 INFO [CRASH COMPLEXION_p009]                Score.java:181  | Closing {Score 1}

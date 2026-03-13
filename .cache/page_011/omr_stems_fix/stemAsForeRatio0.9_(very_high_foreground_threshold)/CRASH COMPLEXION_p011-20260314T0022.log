@@ -1,0 +1,71 @@
+2026-03-14 00:22:09,830 INFO [CRASH COMPLEXION_p011]                 Book.java:560  | 1 sheet in C:\Users\ken\RockSmithTabConvertToMidi\.cache\page_011\preprocess\CRASH COMPLEXION_p011.png
+2026-03-14 00:22:10,039 INFO []                 Book.java:2565 | Stored /book.xml
+2026-03-14 00:22:10,040 INFO []                 Book.java:2525 | Book stored as C:\Users\ken\RockSmithTabConvertToMidi\.cache\page_011\omr_stems_fix\stemAsForeRatio0.9_(very_high_foreground_threshold)\CRASH COMPLEXION_p011.omr
+2026-03-14 00:22:10,047 INFO []                 Book.java:1929 | Book reaching CHORDS on sheets:[#1]
+2026-03-14 00:22:10,051 INFO [CRASH COMPLEXION_p011]       StepMonitoring.java:98   | LOAD
+2026-03-14 00:22:10,213 INFO [CRASH COMPLEXION_p011]            SheetStub.java:1278 | Loaded image #1 2324x3038 from C:\Users\ken\RockSmithTabConvertToMidi\.cache\page_011\preprocess\CRASH COMPLEXION_p011.png
+2026-03-14 00:22:10,226 INFO [CRASH COMPLEXION_p011]                 Book.java:2565 | Stored /book.xml
+2026-03-14 00:22:10,392 INFO [CRASH COMPLEXION_p011]           DataHolder.java:348  | Stored /sheet#1/GRAY.png
+2026-03-14 00:22:10,731 INFO [CRASH COMPLEXION_p011]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-14 00:22:10,738 INFO [CRASH COMPLEXION_p011]       StepMonitoring.java:98   | BINARY
+2026-03-14 00:22:11,551 INFO [CRASH COMPLEXION_p011]                 Book.java:2565 | Stored /book.xml
+2026-03-14 00:22:11,552 INFO [CRASH COMPLEXION_p011]           DataHolder.java:256  | Removed /sheet#1/GRAY.png
+2026-03-14 00:22:11,692 INFO [CRASH COMPLEXION_p011]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2026-03-14 00:22:11,695 INFO [CRASH COMPLEXION_p011]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-14 00:22:11,700 INFO [CRASH COMPLEXION_p011]       StepMonitoring.java:98   | SCALE
+2026-03-14 00:22:11,755 INFO [CRASH COMPLEXION_p011]         ScaleBuilder.java:241  | Beam  guessed height:  8 -- 0.50 of 16 interline
+2026-03-14 00:22:11,757 INFO [CRASH COMPLEXION_p011]         ScaleBuilder.java:264  | Beam measured height:  8 -- 0.27 of [5..16] range at 392% of needed quorum
+2026-03-14 00:22:11,757 INFO [CRASH COMPLEXION_p011]         ScaleBuilder.java:392  | Normalized black jitter: 11.76 %
+2026-03-14 00:22:11,758 INFO [CRASH COMPLEXION_p011]            ScaleStep.java:65   | Scale{ small_interline(13,14,14) interline(16,17,19) line(2,3,4) beam(8)}
+2026-03-14 00:22:11,764 INFO [CRASH COMPLEXION_p011]                 Book.java:2565 | Stored /book.xml
+2026-03-14 00:22:11,769 INFO [CRASH COMPLEXION_p011]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-14 00:22:11,776 INFO [CRASH COMPLEXION_p011]       StepMonitoring.java:98   | GRID
+2026-03-14 00:22:14,761 INFO [CRASH COMPLEXION_p011]       LinesRetriever.java:1500 | Global slope: -0.00116
+2026-03-14 00:22:14,878 INFO [CRASH COMPLEXION_p011]    ClustersRetriever.java:326  | Retrieved raw line clusters: 4 of sizes [6] with interline(16,17,19)
+2026-03-14 00:22:14,881 INFO [CRASH COMPLEXION_p011]       LinesRetriever.java:1516 | Searching clusters with smallInterline: 14
+2026-03-14 00:22:14,945 INFO [CRASH COMPLEXION_p011]    ClustersRetriever.java:326  | Retrieved raw line clusters: 12 of sizes [5] with interline(13,14,14)
+2026-03-14 00:22:16,043 INFO [CRASH COMPLEXION_p011]            PeakGraph.java:310  | Systems: #1[1, 2, 3, 4, 5, 6, 7, 8] #2[9, 10, 11, 12, 13, 14, 15, 16]
+2026-03-14 00:22:16,230 INFO [CRASH COMPLEXION_p011]        BarsRetriever.java:1305 | System#1
+2026-03-14 00:22:16,231 INFO [CRASH COMPLEXION_p011]        BarsRetriever.java:1308 |    PartGroup{bracket number:1 barline:false staves:1-8}
+2026-03-14 00:22:16,232 INFO [CRASH COMPLEXION_p011]        BarsRetriever.java:1305 | System#2
+2026-03-14 00:22:16,232 INFO [CRASH COMPLEXION_p011]        BarsRetriever.java:1308 |    PartGroup{bracket number:1 barline:false staves:9-16}
+2026-03-14 00:22:17,793 INFO [CRASH COMPLEXION_p011]        SystemManager.java:779  | 8 parts along 2 systems, 2 tablatures
+2026-03-14 00:22:17,794 INFO [CRASH COMPLEXION_p011]                 Book.java:543  | Created scores: [{Score 1}]
+2026-03-14 00:22:17,815 INFO [CRASH COMPLEXION_p011]                 Book.java:2565 | Stored /book.xml
+2026-03-14 00:22:18,586 INFO [CRASH COMPLEXION_p011]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-14 00:22:18,600 INFO [CRASH COMPLEXION_p011]       StepMonitoring.java:98   | HEADERS
+2026-03-14 00:22:20,617 INFO [CRASH COMPLEXION_p011]                 Book.java:2565 | Stored /book.xml
+2026-03-14 00:22:20,952 INFO [CRASH COMPLEXION_p011]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-14 00:22:20,963 INFO [CRASH COMPLEXION_p011]       StepMonitoring.java:98   | STEM_SEEDS
+2026-03-14 00:22:21,136 INFO [CRASH COMPLEXION_p011]        StemSeedsStep.java:86   | stem(3 max:4)
+2026-03-14 00:22:21,359 INFO [CRASH COMPLEXION_p011]                 Book.java:2565 | Stored /book.xml
+2026-03-14 00:22:21,776 INFO [CRASH COMPLEXION_p011]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-14 00:22:21,790 INFO [CRASH COMPLEXION_p011]       StepMonitoring.java:98   | BEAMS
+2026-03-14 00:22:25,503 INFO [CRASH COMPLEXION_p011]                 Book.java:2565 | Stored /book.xml
+2026-03-14 00:22:25,634 INFO [CRASH COMPLEXION_p011]           DataHolder.java:348  | Stored /sheet#1/HEAD_SPOTS.png
+2026-03-14 00:22:26,466 INFO [CRASH COMPLEXION_p011]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-14 00:22:26,473 INFO [CRASH COMPLEXION_p011]       StepMonitoring.java:98   | LEDGERS
+2026-03-14 00:22:27,494 INFO [CRASH COMPLEXION_p011]                 Book.java:2565 | Stored /book.xml
+2026-03-14 00:22:28,384 INFO [CRASH COMPLEXION_p011]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-14 00:22:28,390 INFO [CRASH COMPLEXION_p011]       StepMonitoring.java:98   | HEADS
+2026-03-14 00:22:35,584 INFO [CRASH COMPLEXION_p011]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_VOID[L:0.1,R:-0.8] NOTEHEAD_BLACK[L:-0.3,R:-0.4]}
+2026-03-14 00:22:35,596 INFO [CRASH COMPLEXION_p011]                 Book.java:2565 | Stored /book.xml
+2026-03-14 00:22:35,596 INFO [CRASH COMPLEXION_p011]           DataHolder.java:256  | Removed /sheet#1/HEAD_SPOTS.png
+2026-03-14 00:22:36,894 INFO [CRASH COMPLEXION_p011]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-14 00:22:36,901 INFO [CRASH COMPLEXION_p011]       StepMonitoring.java:98   | STEMS
+2026-03-14 00:22:42,518 WARN [CRASH COMPLEXION_p011]                 Book.java:2044 | Error processing stub
+2026-03-14 00:22:42,519 INFO [CRASH COMPLEXION_p011]                 Book.java:2584 | Book{CRASH COMPLEXION_p011} storing
+2026-03-14 00:22:42,667 INFO [CRASH COMPLEXION_p011]                 Book.java:2565 | Stored /book.xml
+2026-03-14 00:22:43,793 INFO [CRASH COMPLEXION_p011]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-14 00:22:43,794 INFO [CRASH COMPLEXION_p011]                 Book.java:2525 | Book stored as C:\Users\ken\RockSmithTabConvertToMidi\.cache\page_011\omr_stems_fix\stemAsForeRatio0.9_(very_high_foreground_threshold)\CRASH COMPLEXION_p011.omr
+2026-03-14 00:22:43,801 INFO [CRASH COMPLEXION_p011]            SheetStub.java:1654 | Sheet disposed
+2026-03-14 00:22:43,846 INFO [CRASH COMPLEXION_p011]                 Book.java:2050 | End of Stub#1
+2026-03-14 00:22:43,847 INFO [CRASH COMPLEXION_p011]                 Book.java:2057 | End of Book{CRASH COMPLEXION_p011}
+2026-03-14 00:22:43,848 WARN [CRASH COMPLEXION_p011]                  CLI.java:956  | Exception occurred java.lang.Exception: Error in reaching step CHORDS
+java.lang.Exception: Error in reaching step CHORDS
+	at org.audiveris.omr.CLI$ProcessingTask.processBook(CLI.java:893)
+	at org.audiveris.omr.CLI$CliTask.call(CLI.java:513)
+	at org.audiveris.omr.Main.runBatchTasks(Main.java:361)
+	at org.audiveris.omr.Main.main(Main.java:263)
+	at Audiveris.main(Audiveris.java:50)
+2026-03-14 00:22:43,885 INFO [CRASH COMPLEXION_p011]                Score.java:181  | Closing {Score 1}

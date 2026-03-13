@@ -1,0 +1,21 @@
+2026-03-13 23:52:30,763 INFO [CRASH COMPLEXION_p010]                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2026-03-13 23:52:30,765 INFO [CRASH COMPLEXION_p010]       StepMonitoring.java:98   | CURVES
+2026-03-13 23:52:34,911 INFO [CRASH COMPLEXION_p010]            SheetStub.java:1000 | Loaded /sheet#1/sheet#1.xml
+2026-03-13 23:52:41,750 INFO [CRASH COMPLEXION_p010]         SlursBuilder.java:240  | Slurs: 9
+2026-03-13 23:52:44,217 INFO [CRASH COMPLEXION_p010]      SegmentsBuilder.java:155  | Segments: 19
+2026-03-13 23:52:44,747 WARN [CRASH COMPLEXION_p010]                 Book.java:2044 | Error processing stub
+2026-03-13 23:52:44,748 INFO [CRASH COMPLEXION_p010]                 Book.java:2584 | Book{CRASH COMPLEXION_p010} storing
+2026-03-13 23:52:44,864 INFO [CRASH COMPLEXION_p010]                 Book.java:2565 | Stored /book.xml
+2026-03-13 23:52:46,136 INFO [CRASH COMPLEXION_p010]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-13 23:52:46,137 INFO [CRASH COMPLEXION_p010]                 Book.java:2525 | Book stored as C:\Users\ken\RockSmithTabConvertToMidi\.cache\page_010\omr_chords\CRASH COMPLEXION_p010.omr
+2026-03-13 23:52:46,151 INFO [CRASH COMPLEXION_p010]            SheetStub.java:1654 | Sheet disposed
+2026-03-13 23:52:46,188 INFO [CRASH COMPLEXION_p010]                 Book.java:2050 | End of Stub#1
+2026-03-13 23:52:46,189 INFO [CRASH COMPLEXION_p010]                 Book.java:2057 | End of Book{CRASH COMPLEXION_p010}
+2026-03-13 23:52:46,190 WARN [CRASH COMPLEXION_p010]                  CLI.java:956  | Exception occurred java.lang.Exception: Error in reaching step PAGE
+java.lang.Exception: Error in reaching step PAGE
+	at org.audiveris.omr.CLI$ProcessingTask.processBook(CLI.java:893)
+	at org.audiveris.omr.CLI$CliTask.call(CLI.java:513)
+	at org.audiveris.omr.Main.runBatchTasks(Main.java:361)
+	at org.audiveris.omr.Main.main(Main.java:263)
+	at Audiveris.main(Audiveris.java:50)
+2026-03-13 23:52:46,233 INFO [CRASH COMPLEXION_p010]                Score.java:181  | Closing {Score 1}

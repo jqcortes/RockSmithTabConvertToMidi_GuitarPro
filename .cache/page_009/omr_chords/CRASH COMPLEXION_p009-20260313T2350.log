@@ -1,0 +1,86 @@
+2026-03-13 23:50:27,844 INFO [CRASH COMPLEXION_p009]                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2026-03-13 23:50:27,847 INFO [CRASH COMPLEXION_p009]       StepMonitoring.java:98   | GRID
+2026-03-13 23:50:28,453 INFO [CRASH COMPLEXION_p009]            SheetStub.java:1000 | Loaded /sheet#1/sheet#1.xml
+2026-03-13 23:50:35,399 INFO [CRASH COMPLEXION_p009]       LinesRetriever.java:1500 | Global slope: -0.01205
+2026-03-13 23:50:35,730 INFO [CRASH COMPLEXION_p009]    ClustersRetriever.java:326  | Retrieved raw line clusters: 4 of sizes [6] with interline(16,17,19)
+2026-03-13 23:50:35,736 INFO [CRASH COMPLEXION_p009]       LinesRetriever.java:1516 | Searching clusters with smallInterline: 14
+2026-03-13 23:50:35,960 INFO [CRASH COMPLEXION_p009]    ClustersRetriever.java:326  | Retrieved raw line clusters: 12 of sizes [5] with interline(13,14,14)
+2026-03-13 23:50:38,095 INFO [CRASH COMPLEXION_p009]            PeakGraph.java:310  | Systems: #1[1, 2, 3, 4, 5, 6, 7, 8] #2[9, 10, 11, 12, 13, 14, 15, 16]
+2026-03-13 23:50:38,256 INFO [CRASH COMPLEXION_p009]        BarsRetriever.java:1305 | System#1
+2026-03-13 23:50:38,257 INFO [CRASH COMPLEXION_p009]        BarsRetriever.java:1308 |    PartGroup{bracket number:1 barline:false staves:1-8}
+2026-03-13 23:50:38,258 INFO [CRASH COMPLEXION_p009]        BarsRetriever.java:1305 | System#2
+2026-03-13 23:50:38,258 INFO [CRASH COMPLEXION_p009]        BarsRetriever.java:1308 |    PartGroup{bracket number:1 barline:false staves:9-16}
+2026-03-13 23:50:39,954 INFO [CRASH COMPLEXION_p009]        SystemManager.java:779  | 8 parts along 2 systems, 2 tablatures
+2026-03-13 23:50:39,979 INFO [CRASH COMPLEXION_p009]                 Book.java:543  | Created scores: [{Score 1}]
+2026-03-13 23:50:39,989 INFO [CRASH COMPLEXION_p009]       StepMonitoring.java:98   | HEADERS
+2026-03-13 23:50:42,649 INFO [CRASH COMPLEXION_p009]       StepMonitoring.java:98   | STEM_SEEDS
+2026-03-13 23:50:42,858 INFO [CRASH COMPLEXION_p009]        StemSeedsStep.java:86   | stem(3 max:4)
+2026-03-13 23:50:43,212 INFO [CRASH COMPLEXION_p009]       StepMonitoring.java:98   | BEAMS
+2026-03-13 23:50:52,482 INFO [CRASH COMPLEXION_p009]       StepMonitoring.java:98   | LEDGERS
+2026-03-13 23:50:55,489 INFO [CRASH COMPLEXION_p009]       StepMonitoring.java:98   | HEADS
+2026-03-13 23:51:07,066 INFO [CRASH COMPLEXION_p009]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_BLACK[L:0.1,R:-0.0]}
+2026-03-13 23:51:07,067 INFO [CRASH COMPLEXION_p009]       StepMonitoring.java:98   | STEMS
+2026-03-13 23:51:14,102 INFO [CRASH COMPLEXION_p009]       StepMonitoring.java:98   | REDUCTION
+2026-03-13 23:51:14,439 INFO [CRASH COMPLEXION_p009]        ReductionStep.java:105  | Stems free length median value: 52 pixels, 3.1 interlines
+2026-03-13 23:51:14,450 INFO [CRASH COMPLEXION_p009]       StepMonitoring.java:98   | CUE_BEAMS
+2026-03-13 23:51:14,452 INFO [CRASH COMPLEXION_p009]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2026-03-13 23:51:14,454 INFO [CRASH COMPLEXION_p009]       StepMonitoring.java:98   | TEXTS
+2026-03-13 23:51:14,860 WARN [CRASH COMPLEXION_p009]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-03-13 23:51:14,861 INFO [CRASH COMPLEXION_p009]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-03-13 23:51:14,878 INFO [CRASH COMPLEXION_p009]       StepMonitoring.java:98   | MEASURES
+2026-03-13 23:51:14,891 INFO [CRASH COMPLEXION_p009]                 Page.java:307  | 8 raw measures: [5 in system#1, 3 in system#2]
+2026-03-13 23:51:14,892 INFO [CRASH COMPLEXION_p009]       StepMonitoring.java:98   | CHORDS
+2026-03-13 23:51:14,920 INFO [CRASH COMPLEXION_p009]       StepMonitoring.java:98   | SYMBOLS
+2026-03-13 23:51:18,618 INFO [CRASH COMPLEXION_p009]       StepMonitoring.java:98   | LINKS
+2026-03-13 23:51:18,634 INFO [CRASH COMPLEXION_p009]             KeyInter.java:1322 | Key built KeyInter#8228{(0.675) staff:2 KEY_FLAT_1 pitch:0.5 fifths:-1}
+2026-03-13 23:51:18,742 INFO [CRASH COMPLEXION_p009]             KeyInter.java:1189 | No effective key before AlterInter#7989{(0.342) staff:16 NATURAL pitch:5.0}
+2026-03-13 23:51:18,761 INFO [CRASH COMPLEXION_p009]       StepMonitoring.java:98   | RHYTHMS
+2026-03-13 23:51:19,217 INFO [CRASH COMPLEXION_p009]       StepMonitoring.java:98   | PAGE
+2026-03-13 23:51:19,231 WARN [CRASH COMPLEXION_p009]         MeasureFixer.java:343  | System#1 No target duration for measures local IDs [1, 2, 3, 4, 5], please check time signatures
+2026-03-13 23:51:19,233 WARN [CRASH COMPLEXION_p009]         MeasureFixer.java:343  | System#2 No target duration for measures local IDs [6, 7, 8], please check time signatures
+2026-03-13 23:51:19,238 INFO [CRASH COMPLEXION_p009]                 Book.java:2584 | Book{CRASH COMPLEXION_p009} storing
+2026-03-13 23:51:19,423 INFO [CRASH COMPLEXION_p009]                 Book.java:2565 | Stored /book.xml
+2026-03-13 23:51:21,952 INFO [CRASH COMPLEXION_p009]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-13 23:51:21,952 INFO [CRASH COMPLEXION_p009]                 Book.java:2525 | Book stored as C:\Users\ken\RockSmithTabConvertToMidi\.cache\page_009\omr_chords\CRASH COMPLEXION_p009.omr
+2026-03-13 23:51:21,964 INFO [CRASH COMPLEXION_p009]            SheetStub.java:1654 | Sheet disposed
+2026-03-13 23:51:22,031 INFO [CRASH COMPLEXION_p009]                 Book.java:2050 | End of Stub#1
+2026-03-13 23:51:22,032 INFO [CRASH COMPLEXION_p009]                 Book.java:2057 | End of Book{CRASH COMPLEXION_p009}
+2026-03-13 23:51:24,006 INFO [CRASH COMPLEXION_p009]            SheetStub.java:1000 | Loaded /sheet#1/sheet#1.xml
+2026-03-13 23:51:26,537 INFO [CRASH COMPLEXION_p009]      PartwiseBuilder.java:2706 | Exporting sheet(s): [#1]
+2026-03-13 23:51:26,569 WARN [CRASH COMPLEXION_p009]      PartwiseBuilder.java:1718 | Error visiting FermataInter#7763{(0.689/0.915) staff:3 FERMATA} in {Page#1.1}
+java.lang.NullPointerException: Cannot invoke "org.audiveris.omr.sig.inter.AbstractNoteInter.getStaff()" because "this.current.note" is null
+	at org.audiveris.omr.score.PartwiseBuilder.processFermata(PartwiseBuilder.java:1704)
+	at org.audiveris.omr.score.PartwiseBuilder.processBarline(PartwiseBuilder.java:1293)
+	at org.audiveris.omr.score.PartwiseBuilder.processMeasure(PartwiseBuilder.java:2163)
+	at org.audiveris.omr.score.PartwiseBuilder.processPart(PartwiseBuilder.java:2677)
+	at org.audiveris.omr.score.PartwiseBuilder.processSystem(PartwiseBuilder.java:3222)
+	at org.audiveris.omr.score.PartwiseBuilder.processLogicalPart(PartwiseBuilder.java:1874)
+	at org.audiveris.omr.score.PartwiseBuilder.processStub(PartwiseBuilder.java:3173)
+	at org.audiveris.omr.score.PartwiseBuilder.processPartList(PartwiseBuilder.java:2709)
+	at org.audiveris.omr.score.PartwiseBuilder.processScore(PartwiseBuilder.java:2984)
+	at org.audiveris.omr.score.PartwiseBuilder.build(PartwiseBuilder.java:3542)
+	at org.audiveris.omr.score.ScoreExporter.export(ScoreExporter.java:122)
+	at org.audiveris.omr.score.ScoreExporter.export(ScoreExporter.java:163)
+	at org.audiveris.omr.sheet.Book.export(Book.java:630)
+	at org.audiveris.omr.CLI$ProcessingTask.processBook(CLI.java:927)
+	at org.audiveris.omr.CLI$CliTask.call(CLI.java:513)
+	at org.audiveris.omr.Main.runBatchTasks(Main.java:361)
+	at org.audiveris.omr.Main.main(Main.java:263)
+	at Audiveris.main(Audiveris.java:50)
+2026-03-13 23:51:26,974 INFO [CRASH COMPLEXION_p009]        ScoreExporter.java:164  | Score CRASH COMPLEXION_p009 exported to C:\Users\ken\RockSmithTabConvertToMidi\.cache\page_009\omr_chords\CRASH COMPLEXION_p009.mxl
+2026-03-13 23:51:27,092 INFO [CRASH COMPLEXION_p009]                Score.java:181  | Closing {Score 1}
+upported languages is empty
+2026-03-13 23:51:16,645 INFO [CRASH COMPLEXION_p009]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-03-13 23:51:16,665 INFO [CRASH COMPLEXION_p009]                 Book.java:2565 | Stored /book.xml
+2026-03-13 23:51:17,134 INFO [CRASH COMPLEXION_p009]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-13 23:51:17,142 INFO [CRASH COMPLEXION_p009]       StepMonitoring.java:98   | MEASURES
+2026-03-13 23:51:17,155 INFO [CRASH COMPLEXION_p009]                 Page.java:307  | 8 raw measures: [5 in system#1, 3 in system#2]
+2026-03-13 23:51:17,163 INFO [CRASH COMPLEXION_p009]                 Book.java:2565 | Stored /book.xml
+2026-03-13 23:51:17,755 INFO [CRASH COMPLEXION_p009]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-13 23:51:17,762 INFO [CRASH COMPLEXION_p009]       StepMonitoring.java:98   | CHORDS
+2026-03-13 23:51:17,798 INFO [CRASH COMPLEXION_p009]                 Book.java:2565 | Stored /book.xml
+2026-03-13 23:51:18,325 INFO [CRASH COMPLEXION_p009]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-13 23:51:18,331 INFO [CRASH COMPLEXION_p009]            SheetStub.java:1654 | Sheet disposed
+2026-03-13 23:51:18,399 INFO [CRASH COMPLEXION_p009]                 Book.java:2050 | End of Stub#1
+2026-03-13 23:51:18,400 INFO [CRASH COMPLEXION_p009]                 Book.java:2057 | End of Book{CRASH COMPLEXION_p009}
+2026-03-13 23:51:18,447 INFO [CRASH COMPLEXION_p009]                Score.java:181  | Closing {Score 1}

@@ -1,0 +1,1267 @@
+﻿Classfile /C:/Users/ken/RockSmithTabConvertToMidi/tmp_extract/org/audiveris/omr/sheet/curve/SegmentsBuilder.class
+  Last modified 1980/02/01; size 13244 bytes
+  SHA-256 checksum aabd09355beee49a5188273d58a9749fd4917364a4709563869e1129cf557c83
+  Compiled from "SegmentsBuilder.java"
+public class org.audiveris.omr.sheet.curve.SegmentsBuilder extends org.audiveris.omr.sheet.curve.CurvesBuilder
+  minor version: 0
+  major version: 69
+  flags: (0x0021) ACC_PUBLIC, ACC_SUPER
+  this_class: #10                         // org/audiveris/omr/sheet/curve/SegmentsBuilder
+  super_class: #2                         // org/audiveris/omr/sheet/curve/CurvesBuilder
+  interfaces: 0, fields: 5, methods: 16, attributes: 4
+Constant pool:
+    #1 = Methodref          #2.#3         // org/audiveris/omr/sheet/curve/CurvesBuilder."<init>":(Lorg/audiveris/omr/sheet/curve/Curves;)V
+    #2 = Class              #4            // org/audiveris/omr/sheet/curve/CurvesBuilder
+    #3 = NameAndType        #5:#6         // "<init>":(Lorg/audiveris/omr/sheet/curve/Curves;)V
+    #4 = Utf8               org/audiveris/omr/sheet/curve/CurvesBuilder
+    #5 = Utf8               <init>
+    #6 = Utf8               (Lorg/audiveris/omr/sheet/curve/Curves;)V
+    #7 = Class              #8            // org/audiveris/omr/sheet/curve/SegmentsBuilder$Parameters
+    #8 = Utf8               org/audiveris/omr/sheet/curve/SegmentsBuilder$Parameters
+    #9 = Fieldref           #10.#11       // org/audiveris/omr/sheet/curve/SegmentsBuilder.sheet:Lorg/audiveris/omr/sheet/Sheet;
+   #10 = Class              #12           // org/audiveris/omr/sheet/curve/SegmentsBuilder
+   #11 = NameAndType        #13:#14       // sheet:Lorg/audiveris/omr/sheet/Sheet;
+   #12 = Utf8               org/audiveris/omr/sheet/curve/SegmentsBuilder
+   #13 = Utf8               sheet
+   #14 = Utf8               Lorg/audiveris/omr/sheet/Sheet;
+   #15 = Methodref          #16.#17       // org/audiveris/omr/sheet/Sheet.getScale:()Lorg/audiveris/omr/sheet/Scale;
+   #16 = Class              #18           // org/audiveris/omr/sheet/Sheet
+   #17 = NameAndType        #19:#20       // getScale:()Lorg/audiveris/omr/sheet/Scale;
+   #18 = Utf8               org/audiveris/omr/sheet/Sheet
+   #19 = Utf8               getScale
+   #20 = Utf8               ()Lorg/audiveris/omr/sheet/Scale;
+   #21 = Methodref          #7.#22        // org/audiveris/omr/sheet/curve/SegmentsBuilder$Parameters."<init>":(Lorg/audiveris/omr/sheet/Scale;)V
+   #22 = NameAndType        #5:#23        // "<init>":(Lorg/audiveris/omr/sheet/Scale;)V
+   #23 = Utf8               (Lorg/audiveris/omr/sheet/Scale;)V
+   #24 = Fieldref           #10.#25       // org/audiveris/omr/sheet/curve/SegmentsBuilder.params:Lorg/audiveris/omr/sheet/curve/SegmentsBuilder$Parameters;
+   #25 = NameAndType        #26:#27       // params:Lorg/audiveris/omr/sheet/curve/SegmentsBuilder$Parameters;
+   #26 = Utf8               params
+   #27 = Utf8               Lorg/audiveris/omr/sheet/curve/SegmentsBuilder$Parameters;
+   #28 = Methodref          #29.#30       // org/audiveris/omr/sheet/curve/Curves.getSegments:()Ljava/util/List;
+   #29 = Class              #31           // org/audiveris/omr/sheet/curve/Curves
+   #30 = NameAndType        #32:#33       // getSegments:()Ljava/util/List;
+   #31 = Utf8               org/audiveris/omr/sheet/curve/Curves
+   #32 = Utf8               getSegments
+   #33 = Utf8               ()Ljava/util/List;
+   #34 = Fieldref           #10.#35       // org/audiveris/omr/sheet/curve/SegmentsBuilder.segments:Ljava/util/List;
+   #35 = NameAndType        #36:#37       // segments:Ljava/util/List;
+   #36 = Utf8               segments
+   #37 = Utf8               Ljava/util/List;
+   #38 = Methodref          #39.#40       // org/audiveris/omr/sheet/curve/ArcView.getArc:()Lorg/audiveris/omr/sheet/curve/Arc;
+   #39 = Class              #41           // org/audiveris/omr/sheet/curve/ArcView
+   #40 = NameAndType        #42:#43       // getArc:()Lorg/audiveris/omr/sheet/curve/Arc;
+   #41 = Utf8               org/audiveris/omr/sheet/curve/ArcView
+   #42 = Utf8               getArc
+   #43 = Utf8               ()Lorg/audiveris/omr/sheet/curve/Arc;
+   #44 = Class              #45           // org/audiveris/omr/sheet/curve/SegmentInfo
+   #45 = Utf8               org/audiveris/omr/sheet/curve/SegmentInfo
+   #46 = Methodref          #10.#47       // org/audiveris/omr/sheet/curve/SegmentsBuilder.needGlobalModel:(Lorg/audiveris/omr/sheet/curve/Curve;)Lorg/audiveris/omr/sheet/curve/Model;
+   #47 = NameAndType        #48:#49       // needGlobalModel:(Lorg/audiveris/omr/sheet/curve/Curve;)Lorg/audiveris/omr/sheet/curve/Model;
+   #48 = Utf8               needGlobalModel
+   #49 = Utf8               (Lorg/audiveris/omr/sheet/curve/Curve;)Lorg/audiveris/omr/sheet/curve/Model;
+   #50 = Methodref          #10.#51       // org/audiveris/omr/sheet/curve/SegmentsBuilder.projection:(Lorg/audiveris/omr/sheet/curve/ArcView;Lorg/audiveris/omr/sheet/curve/Model;)D
+   #51 = NameAndType        #52:#53       // projection:(Lorg/audiveris/omr/sheet/curve/ArcView;Lorg/audiveris/omr/sheet/curve/Model;)D
+   #52 = Utf8               projection
+   #53 = Utf8               (Lorg/audiveris/omr/sheet/curve/ArcView;Lorg/audiveris/omr/sheet/curve/Model;)D
+   #54 = Fieldref           #7.#55        // org/audiveris/omr/sheet/curve/SegmentsBuilder$Parameters.minProjection:D
+   #55 = NameAndType        #56:#57       // minProjection:D
+   #56 = Utf8               minProjection
+   #57 = Utf8               D
+   #58 = Fieldref           #10.#59       // org/audiveris/omr/sheet/curve/SegmentsBuilder.logger:Lorg/slf4j/Logger;
+   #59 = NameAndType        #60:#61       // logger:Lorg/slf4j/Logger;
+   #60 = Utf8               logger
+   #61 = Utf8               Lorg/slf4j/Logger;
+   #62 = String             #63           // {} not extended by {} projection:{}
+   #63 = Utf8               {} not extended by {} projection:{}
+   #64 = Class              #65           // java/lang/Object
+   #65 = Utf8               java/lang/Object
+   #66 = Methodref          #67.#68       // java/lang/Double.valueOf:(D)Ljava/lang/Double;
+   #67 = Class              #69           // java/lang/Double
+   #68 = NameAndType        #70:#71       // valueOf:(D)Ljava/lang/Double;
+   #69 = Utf8               java/lang/Double
+   #70 = Utf8               valueOf
+   #71 = Utf8               (D)Ljava/lang/Double;
+   #72 = InterfaceMethodref #73.#74       // org/slf4j/Logger.debug:(Ljava/lang/String;[Ljava/lang/Object;)V
+   #73 = Class              #75           // org/slf4j/Logger
+   #74 = NameAndType        #76:#77       // debug:(Ljava/lang/String;[Ljava/lang/Object;)V
+   #75 = Utf8               org/slf4j/Logger
+   #76 = Utf8               debug
+   #77 = Utf8               (Ljava/lang/String;[Ljava/lang/Object;)V
+   #78 = Methodref          #10.#79       // org/audiveris/omr/sheet/curve/SegmentsBuilder.arcDistance:(Lorg/audiveris/omr/sheet/curve/Model;Lorg/audiveris/omr/sheet/curve/ArcView;)D
+   #79 = NameAndType        #80:#81       // arcDistance:(Lorg/audiveris/omr/sheet/curve/Model;Lorg/audiveris/omr/sheet/curve/ArcView;)D
+   #80 = Utf8               arcDistance
+   #81 = Utf8               (Lorg/audiveris/omr/sheet/curve/Model;Lorg/audiveris/omr/sheet/curve/ArcView;)D
+   #82 = Fieldref           #7.#83        // org/audiveris/omr/sheet/curve/SegmentsBuilder$Parameters.maxExtDistance:D
+   #83 = NameAndType        #84:#57       // maxExtDistance:D
+   #84 = Utf8               maxExtDistance
+   #85 = Fieldref           #10.#86       // org/audiveris/omr/sheet/curve/SegmentsBuilder.reverse:Z
+   #86 = NameAndType        #87:#88       // reverse:Z
+   #87 = Utf8               reverse
+   #88 = Utf8               Z
+   #89 = Methodref          #90.#91       // org/audiveris/omr/sheet/curve/Curve.getAllPoints:(Lorg/audiveris/omr/sheet/curve/ArcView;Z)Ljava/util/List;
+   #90 = Class              #92           // org/audiveris/omr/sheet/curve/Curve
+   #91 = NameAndType        #93:#94       // getAllPoints:(Lorg/audiveris/omr/sheet/curve/ArcView;Z)Ljava/util/List;
+   #92 = Utf8               org/audiveris/omr/sheet/curve/Curve
+   #93 = Utf8               getAllPoints
+   #94 = Utf8               (Lorg/audiveris/omr/sheet/curve/ArcView;Z)Ljava/util/List;
+   #95 = Methodref          #10.#96       // org/audiveris/omr/sheet/curve/SegmentsBuilder.createCurve:(Lorg/audiveris/omr/sheet/curve/Curve;Lorg/audiveris/omr/sheet/curve/ArcView;Ljava/util/List;Lorg/audiveris/omr/sheet/curve/Model;)Lorg/audiveris/omr/sheet/curve/Curve;
+   #96 = NameAndType        #97:#98       // createCurve:(Lorg/audiveris/omr/sheet/curve/Curve;Lorg/audiveris/omr/sheet/curve/ArcView;Ljava/util/List;Lorg/audiveris/omr/sheet/curve/Model;)Lorg/audiveris/omr/sheet/curve/Curve;
+   #97 = Utf8               createCurve
+   #98 = Utf8               (Lorg/audiveris/omr/sheet/curve/Curve;Lorg/audiveris/omr/sheet/curve/ArcView;Ljava/util/List;Lorg/audiveris/omr/sheet/curve/Model;)Lorg/audiveris/omr/sheet/curve/Curve;
+   #99 = Methodref          #10.#100      // org/audiveris/omr/sheet/curve/SegmentsBuilder.computeModel:(Ljava/util/List;Z)Lorg/audiveris/omr/sheet/curve/Model;
+  #100 = NameAndType        #101:#102     // computeModel:(Ljava/util/List;Z)Lorg/audiveris/omr/sheet/curve/Model;
+  #101 = Utf8               computeModel
+  #102 = Utf8               (Ljava/util/List;Z)Lorg/audiveris/omr/sheet/curve/Model;
+  #103 = Methodref          #44.#104      // org/audiveris/omr/sheet/curve/SegmentInfo.setModel:(Lorg/audiveris/omr/sheet/curve/Model;)V
+  #104 = NameAndType        #105:#106     // setModel:(Lorg/audiveris/omr/sheet/curve/Model;)V
+  #105 = Utf8               setModel
+  #106 = Utf8               (Lorg/audiveris/omr/sheet/curve/Model;)V
+  #107 = String             #108          // {} extended as {} dist:{}
+  #108 = Utf8               {} extended as {} dist:{}
+  #109 = String             #110          // {} could not add {} dist:{}
+  #110 = Utf8               {} could not add {} dist:{}
+  #111 = Methodref          #10.#112      // org/audiveris/omr/sheet/curve/SegmentsBuilder.getSeedArcs:()Ljava/util/List;
+  #112 = NameAndType        #113:#33      // getSeedArcs:()Ljava/util/List;
+  #113 = Utf8               getSeedArcs
+  #114 = InterfaceMethodref #115.#116     // java/util/List.iterator:()Ljava/util/Iterator;
+  #115 = Class              #117          // java/util/List
+  #116 = NameAndType        #118:#119     // iterator:()Ljava/util/Iterator;
+  #117 = Utf8               java/util/List
+  #118 = Utf8               iterator
+  #119 = Utf8               ()Ljava/util/Iterator;
+  #120 = InterfaceMethodref #121.#122     // java/util/Iterator.hasNext:()Z
+  #121 = Class              #123          // java/util/Iterator
+  #122 = NameAndType        #124:#125     // hasNext:()Z
+  #123 = Utf8               java/util/Iterator
+  #124 = Utf8               hasNext
+  #125 = Utf8               ()Z
+  #126 = InterfaceMethodref #121.#127     // java/util/Iterator.next:()Ljava/lang/Object;
+  #127 = NameAndType        #128:#129     // next:()Ljava/lang/Object;
+  #128 = Utf8               next
+  #129 = Utf8               ()Ljava/lang/Object;
+  #130 = Class              #131          // org/audiveris/omr/sheet/curve/Arc
+  #131 = Utf8               org/audiveris/omr/sheet/curve/Arc
+  #132 = Methodref          #10.#133      // org/audiveris/omr/sheet/curve/SegmentsBuilder.buildCurve:(Lorg/audiveris/omr/sheet/curve/Arc;)V
+  #133 = NameAndType        #134:#135     // buildCurve:(Lorg/audiveris/omr/sheet/curve/Arc;)V
+  #134 = Utf8               buildCurve
+  #135 = Utf8               (Lorg/audiveris/omr/sheet/curve/Arc;)V
+  #136 = Methodref          #10.#137      // org/audiveris/omr/sheet/curve/SegmentsBuilder.purgeDuplicates:()V
+  #137 = NameAndType        #138:#139     // purgeDuplicates:()V
+  #138 = Utf8               purgeDuplicates
+  #139 = Utf8               ()V
+  #140 = String             #141          // Segments: {}
+  #141 = Utf8               Segments: {}
+  #142 = InterfaceMethodref #115.#143     // java/util/List.size:()I
+  #143 = NameAndType        #144:#145     // size:()I
+  #144 = Utf8               size
+  #145 = Utf8               ()I
+  #146 = Methodref          #147.#148     // java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+  #147 = Class              #149          // java/lang/Integer
+  #148 = NameAndType        #70:#150      // valueOf:(I)Ljava/lang/Integer;
+  #149 = Utf8               java/lang/Integer
+  #150 = Utf8               (I)Ljava/lang/Integer;
+  #151 = InterfaceMethodref #73.#152      // org/slf4j/Logger.info:(Ljava/lang/String;Ljava/lang/Object;)V
+  #152 = NameAndType        #153:#154     // info:(Ljava/lang/String;Ljava/lang/Object;)V
+  #153 = Utf8               info
+  #154 = Utf8               (Ljava/lang/String;Ljava/lang/Object;)V
+  #155 = String             #156          // Segment maxClumpSize: {}
+  #156 = Utf8               Segment maxClumpSize: {}
+  #157 = Fieldref           #10.#158      // org/audiveris/omr/sheet/curve/SegmentsBuilder.maxClumpSize:I
+  #158 = NameAndType        #159:#160     // maxClumpSize:I
+  #159 = Utf8               maxClumpSize
+  #160 = Utf8               I
+  #161 = InterfaceMethodref #73.#162      // org/slf4j/Logger.debug:(Ljava/lang/String;Ljava/lang/Object;)V
+  #162 = NameAndType        #76:#154      // debug:(Ljava/lang/String;Ljava/lang/Object;)V
+  #163 = Class              #164          // java/lang/Throwable
+  #164 = Utf8               java/lang/Throwable
+  #165 = Methodref          #166.#167     // java/lang/String.valueOf:(Ljava/lang/Object;)Ljava/lang/String;
+  #166 = Class              #168          // java/lang/String
+  #167 = NameAndType        #70:#169      // valueOf:(Ljava/lang/Object;)Ljava/lang/String;
+  #168 = Utf8               java/lang/String
+  #169 = Utf8               (Ljava/lang/Object;)Ljava/lang/String;
+  #170 = InvokeDynamic      #0:#171       // #0:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+  #171 = NameAndType        #172:#173     // makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+  #172 = Utf8               makeConcatWithConstants
+  #173 = Utf8               (Ljava/lang/String;)Ljava/lang/String;
+  #174 = InterfaceMethodref #73.#175      // org/slf4j/Logger.warn:(Ljava/lang/String;Ljava/lang/Throwable;)V
+  #175 = NameAndType        #176:#177     // warn:(Ljava/lang/String;Ljava/lang/Throwable;)V
+  #176 = Utf8               warn
+  #177 = Utf8               (Ljava/lang/String;Ljava/lang/Throwable;)V
+  #178 = Methodref          #44.#179      // org/audiveris/omr/sheet/curve/SegmentInfo.getModel:()Lorg/audiveris/omr/sheet/curve/Model;
+  #179 = NameAndType        #180:#181     // getModel:()Lorg/audiveris/omr/sheet/curve/Model;
+  #180 = Utf8               getModel
+  #181 = Utf8               ()Lorg/audiveris/omr/sheet/curve/Model;
+  #182 = InterfaceMethodref #183.#184     // org/audiveris/omr/sheet/curve/Model.getDistance:()D
+  #183 = Class              #185          // org/audiveris/omr/sheet/curve/Model
+  #184 = NameAndType        #186:#187     // getDistance:()D
+  #185 = Utf8               org/audiveris/omr/sheet/curve/Model
+  #186 = Utf8               getDistance
+  #187 = Utf8               ()D
+  #188 = Fieldref           #7.#189       // org/audiveris/omr/sheet/curve/SegmentsBuilder$Parameters.maxSegmentDistance:D
+  #189 = NameAndType        #190:#57      // maxSegmentDistance:D
+  #190 = Utf8               maxSegmentDistance
+  #191 = Class              #192          // org/audiveris/omr/sig/inter/SegmentInter$Impacts
+  #192 = Utf8               org/audiveris/omr/sig/inter/SegmentInter$Impacts
+  #193 = Methodref          #191.#194     // org/audiveris/omr/sig/inter/SegmentInter$Impacts."<init>":(D)V
+  #194 = NameAndType        #5:#195       // "<init>":(D)V
+  #195 = Utf8               (D)V
+  #196 = Class              #197          // org/audiveris/omr/sheet/curve/LineModel
+  #197 = Utf8               org/audiveris/omr/sheet/curve/LineModel
+  #198 = Methodref          #196.#199     // org/audiveris/omr/sheet/curve/LineModel."<init>":(Ljava/util/List;)V
+  #199 = NameAndType        #5:#200       // "<init>":(Ljava/util/List;)V
+  #200 = Utf8               (Ljava/util/List;)V
+  #201 = Fieldref           #10.#202      // org/audiveris/omr/sheet/curve/SegmentsBuilder.globalId:I
+  #202 = NameAndType        #203:#160     // globalId:I
+  #203 = Utf8               globalId
+  #204 = Methodref          #44.#205      // org/audiveris/omr/sheet/curve/SegmentInfo."<init>":(ILjava/awt/Point;Ljava/awt/Point;Ljava/util/List;Lorg/audiveris/omr/sheet/curve/Model;Ljava/util/Collection;)V
+  #205 = NameAndType        #5:#206       // "<init>":(ILjava/awt/Point;Ljava/awt/Point;Ljava/util/List;Lorg/audiveris/omr/sheet/curve/Model;Ljava/util/Collection;)V
+  #206 = Utf8               (ILjava/awt/Point;Ljava/awt/Point;Ljava/util/List;Lorg/audiveris/omr/sheet/curve/Model;Ljava/util/Collection;)V
+  #207 = Methodref          #10.#208      // org/audiveris/omr/sheet/curve/SegmentsBuilder.computeImpacts:(Lorg/audiveris/omr/sheet/curve/Curve;Z)Lorg/audiveris/omr/sig/inter/SegmentInter$Impacts;
+  #208 = NameAndType        #209:#210     // computeImpacts:(Lorg/audiveris/omr/sheet/curve/Curve;Z)Lorg/audiveris/omr/sig/inter/SegmentInter$Impacts;
+  #209 = Utf8               computeImpacts
+  #210 = Utf8               (Lorg/audiveris/omr/sheet/curve/Curve;Z)Lorg/audiveris/omr/sig/inter/SegmentInter$Impacts;
+  #211 = Class              #212          // org/audiveris/omr/sig/inter/SegmentInter
+  #212 = Utf8               org/audiveris/omr/sig/inter/SegmentInter
+  #213 = Methodref          #211.#214     // org/audiveris/omr/sig/inter/SegmentInter."<init>":(Lorg/audiveris/omr/sheet/curve/SegmentInfo;Lorg/audiveris/omr/sig/GradeImpacts;)V
+  #214 = NameAndType        #5:#215       // "<init>":(Lorg/audiveris/omr/sheet/curve/SegmentInfo;Lorg/audiveris/omr/sig/GradeImpacts;)V
+  #215 = Utf8               (Lorg/audiveris/omr/sheet/curve/SegmentInfo;Lorg/audiveris/omr/sig/GradeImpacts;)V
+  #216 = Fieldref           #7.#217       // org/audiveris/omr/sheet/curve/SegmentsBuilder$Parameters.maxRunDistance:D
+  #217 = NameAndType        #218:#57      // maxRunDistance:D
+  #218 = Utf8               maxRunDistance
+  #219 = Fieldref           #7.#220       // org/audiveris/omr/sheet/curve/SegmentsBuilder$Parameters.minRunRatio:D
+  #220 = NameAndType        #221:#57      // minRunRatio:D
+  #221 = Utf8               minRunRatio
+  #222 = Methodref          #44.#223      // org/audiveris/omr/sheet/curve/SegmentInfo.retrieveGlyph:(Lorg/audiveris/omr/sheet/Sheet;DD)Lorg/audiveris/omr/glyph/Glyph;
+  #223 = NameAndType        #224:#225     // retrieveGlyph:(Lorg/audiveris/omr/sheet/Sheet;DD)Lorg/audiveris/omr/glyph/Glyph;
+  #224 = Utf8               retrieveGlyph
+  #225 = Utf8               (Lorg/audiveris/omr/sheet/Sheet;DD)Lorg/audiveris/omr/glyph/Glyph;
+  #226 = Methodref          #211.#227     // org/audiveris/omr/sig/inter/SegmentInter.setGlyph:(Lorg/audiveris/omr/glyph/Glyph;)V
+  #227 = NameAndType        #228:#229     // setGlyph:(Lorg/audiveris/omr/glyph/Glyph;)V
+  #228 = Utf8               setGlyph
+  #229 = Utf8               (Lorg/audiveris/omr/glyph/Glyph;)V
+  #230 = InterfaceMethodref #231.#232     // java/util/Set.add:(Ljava/lang/Object;)Z
+  #231 = Class              #233          // java/util/Set
+  #232 = NameAndType        #234:#235     // add:(Ljava/lang/Object;)Z
+  #233 = Utf8               java/util/Set
+  #234 = Utf8               add
+  #235 = Utf8               (Ljava/lang/Object;)Z
+  #236 = InterfaceMethodref #115.#232     // java/util/List.add:(Ljava/lang/Object;)Z
+  #237 = Methodref          #90.#179      // org/audiveris/omr/sheet/curve/Curve.getModel:()Lorg/audiveris/omr/sheet/curve/Model;
+  #238 = InterfaceMethodref #183.#239     // org/audiveris/omr/sheet/curve/Model.getEndVector:(Z)Ljava/awt/geom/Point2D;
+  #239 = NameAndType        #240:#241     // getEndVector:(Z)Ljava/awt/geom/Point2D;
+  #240 = Utf8               getEndVector
+  #241 = Utf8               (Z)Ljava/awt/geom/Point2D;
+  #242 = Methodref          #16.#243      // org/audiveris/omr/sheet/Sheet.getStaffManager:()Lorg/audiveris/omr/sheet/StaffManager;
+  #243 = NameAndType        #244:#245     // getStaffManager:()Lorg/audiveris/omr/sheet/StaffManager;
+  #244 = Utf8               getStaffManager
+  #245 = Utf8               ()Lorg/audiveris/omr/sheet/StaffManager;
+  #246 = Class              #247          // java/util/LinkedHashSet
+  #247 = Utf8               java/util/LinkedHashSet
+  #248 = Methodref          #246.#249     // java/util/LinkedHashSet."<init>":()V
+  #249 = NameAndType        #5:#139       // "<init>":()V
+  #250 = Fieldref           #10.#251      // org/audiveris/omr/sheet/curve/SegmentsBuilder.skeleton:Lorg/audiveris/omr/sheet/curve/Skeleton;
+  #251 = NameAndType        #252:#253     // skeleton:Lorg/audiveris/omr/sheet/curve/Skeleton;
+  #252 = Utf8               skeleton
+  #253 = Utf8               Lorg/audiveris/omr/sheet/curve/Skeleton;
+  #254 = Fieldref           #255.#256     // org/audiveris/omr/sheet/curve/Skeleton.arcsMap:Ljava/util/Map;
+  #255 = Class              #257          // org/audiveris/omr/sheet/curve/Skeleton
+  #256 = NameAndType        #258:#259     // arcsMap:Ljava/util/Map;
+  #257 = Utf8               org/audiveris/omr/sheet/curve/Skeleton
+  #258 = Utf8               arcsMap
+  #259 = Utf8               Ljava/util/Map;
+  #260 = InterfaceMethodref #261.#262     // java/util/Map.values:()Ljava/util/Collection;
+  #261 = Class              #263          // java/util/Map
+  #262 = NameAndType        #264:#265     // values:()Ljava/util/Collection;
+  #263 = Utf8               java/util/Map
+  #264 = Utf8               values
+  #265 = Utf8               ()Ljava/util/Collection;
+  #266 = InterfaceMethodref #267.#116     // java/util/Collection.iterator:()Ljava/util/Iterator;
+  #267 = Class              #268          // java/util/Collection
+  #268 = Utf8               java/util/Collection
+  #269 = Methodref          #130.#270     // org/audiveris/omr/sheet/curve/Arc.setAssigned:(Z)V
+  #270 = NameAndType        #271:#272     // setAssigned:(Z)V
+  #271 = Utf8               setAssigned
+  #272 = Utf8               (Z)V
+  #273 = Methodref          #130.#274     // org/audiveris/omr/sheet/curve/Arc.getLength:()I
+  #274 = NameAndType        #275:#145     // getLength:()I
+  #275 = Utf8               getLength
+  #276 = Fieldref           #7.#277       // org/audiveris/omr/sheet/curve/SegmentsBuilder$Parameters.arcMinSeedLength:I
+  #277 = NameAndType        #278:#160     // arcMinSeedLength:I
+  #278 = Utf8               arcMinSeedLength
+  #279 = Methodref          #130.#280     // org/audiveris/omr/sheet/curve/Arc.getShape:()Lorg/audiveris/omr/sheet/curve/ArcShape;
+  #280 = NameAndType        #281:#282     // getShape:()Lorg/audiveris/omr/sheet/curve/ArcShape;
+  #281 = Utf8               getShape
+  #282 = Utf8               ()Lorg/audiveris/omr/sheet/curve/ArcShape;
+  #283 = Methodref          #284.#285     // org/audiveris/omr/sheet/curve/ArcShape.isWedgeRelevant:()Z
+  #284 = Class              #286          // org/audiveris/omr/sheet/curve/ArcShape
+  #285 = NameAndType        #287:#125     // isWedgeRelevant:()Z
+  #286 = Utf8               org/audiveris/omr/sheet/curve/ArcShape
+  #287 = Utf8               isWedgeRelevant
+  #288 = Methodref          #130.#289     // org/audiveris/omr/sheet/curve/Arc.getEnd:(Z)Ljava/awt/Point;
+  #289 = NameAndType        #290:#291     // getEnd:(Z)Ljava/awt/Point;
+  #290 = Utf8               getEnd
+  #291 = Utf8               (Z)Ljava/awt/Point;
+  #292 = Methodref          #293.#294     // org/audiveris/omr/math/LineUtil.getSlope:(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)D
+  #293 = Class              #295          // org/audiveris/omr/math/LineUtil
+  #294 = NameAndType        #296:#297     // getSlope:(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)D
+  #295 = Utf8               org/audiveris/omr/math/LineUtil
+  #296 = Utf8               getSlope
+  #297 = Utf8               (Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)D
+  #298 = Fieldref           #7.#299       // org/audiveris/omr/sheet/curve/SegmentsBuilder$Parameters.maxWedgeSlope:D
+  #299 = NameAndType        #300:#57      // maxWedgeSlope:D
+  #300 = Utf8               maxWedgeSlope
+  #301 = Methodref          #302.#303     // org/audiveris/omr/sheet/StaffManager.getClosestStaff:(Ljava/awt/geom/Point2D;)Lorg/audiveris/omr/sheet/Staff;
+  #302 = Class              #304          // org/audiveris/omr/sheet/StaffManager
+  #303 = NameAndType        #305:#306     // getClosestStaff:(Ljava/awt/geom/Point2D;)Lorg/audiveris/omr/sheet/Staff;
+  #304 = Utf8               org/audiveris/omr/sheet/StaffManager
+  #305 = Utf8               getClosestStaff
+  #306 = Utf8               (Ljava/awt/geom/Point2D;)Lorg/audiveris/omr/sheet/Staff;
+  #307 = Methodref          #308.#309     // org/audiveris/omr/sheet/Staff.isOneLineStaff:()Z
+  #308 = Class              #310          // org/audiveris/omr/sheet/Staff
+  #309 = NameAndType        #311:#125     // isOneLineStaff:()Z
+  #310 = Utf8               org/audiveris/omr/sheet/Staff
+  #311 = Utf8               isOneLineStaff
+  #312 = Methodref          #308.#313     // org/audiveris/omr/sheet/Staff.distanceTo:(Ljava/awt/geom/Point2D;)I
+  #313 = NameAndType        #314:#315     // distanceTo:(Ljava/awt/geom/Point2D;)I
+  #314 = Utf8               distanceTo
+  #315 = Utf8               (Ljava/awt/geom/Point2D;)I
+  #316 = Class              #317          // java/util/ArrayList
+  #317 = Utf8               java/util/ArrayList
+  #318 = Methodref          #316.#319     // java/util/ArrayList."<init>":(Ljava/util/Collection;)V
+  #319 = NameAndType        #5:#320       // "<init>":(Ljava/util/Collection;)V
+  #320 = Utf8               (Ljava/util/Collection;)V
+  #321 = Fieldref           #130.#322     // org/audiveris/omr/sheet/curve/Arc.byReverseLength:Ljava/util/Comparator;
+  #322 = NameAndType        #323:#324     // byReverseLength:Ljava/util/Comparator;
+  #323 = Utf8               byReverseLength
+  #324 = Utf8               Ljava/util/Comparator;
+  #325 = Methodref          #326.#327     // java/util/Collections.sort:(Ljava/util/List;Ljava/util/Comparator;)V
+  #326 = Class              #328          // java/util/Collections
+  #327 = NameAndType        #329:#330     // sort:(Ljava/util/List;Ljava/util/Comparator;)V
+  #328 = Utf8               java/util/Collections
+  #329 = Utf8               sort
+  #330 = Utf8               (Ljava/util/List;Ljava/util/Comparator;)V
+  #331 = Fieldref           #332.#333     // org/audiveris/omr/sig/inter/Inters.byAbscissa:Ljava/util/Comparator;
+  #332 = Class              #334          // org/audiveris/omr/sig/inter/Inters
+  #333 = NameAndType        #335:#324     // byAbscissa:Ljava/util/Comparator;
+  #334 = Utf8               org/audiveris/omr/sig/inter/Inters
+  #335 = Utf8               byAbscissa
+  #336 = InterfaceMethodref #115.#337     // java/util/List.get:(I)Ljava/lang/Object;
+  #337 = NameAndType        #338:#339     // get:(I)Ljava/lang/Object;
+  #338 = Utf8               get
+  #339 = Utf8               (I)Ljava/lang/Object;
+  #340 = Methodref          #211.#341     // org/audiveris/omr/sig/inter/SegmentInter.getInfo:()Lorg/audiveris/omr/sheet/curve/SegmentInfo;
+  #341 = NameAndType        #342:#343     // getInfo:()Lorg/audiveris/omr/sheet/curve/SegmentInfo;
+  #342 = Utf8               getInfo
+  #343 = Utf8               ()Lorg/audiveris/omr/sheet/curve/SegmentInfo;
+  #344 = Methodref          #44.#289      // org/audiveris/omr/sheet/curve/SegmentInfo.getEnd:(Z)Ljava/awt/Point;
+  #345 = InterfaceMethodref #115.#346     // java/util/List.listIterator:(I)Ljava/util/ListIterator;
+  #346 = NameAndType        #347:#348     // listIterator:(I)Ljava/util/ListIterator;
+  #347 = Utf8               listIterator
+  #348 = Utf8               (I)Ljava/util/ListIterator;
+  #349 = InterfaceMethodref #350.#122     // java/util/ListIterator.hasNext:()Z
+  #350 = Class              #351          // java/util/ListIterator
+  #351 = Utf8               java/util/ListIterator
+  #352 = InterfaceMethodref #350.#127     // java/util/ListIterator.next:()Ljava/lang/Object;
+  #353 = Fieldref           #354.#355     // java/awt/Point.x:I
+  #354 = Class              #356          // java/awt/Point
+  #355 = NameAndType        #357:#160     // x:I
+  #356 = Utf8               java/awt/Point
+  #357 = Utf8               x
+  #358 = Methodref          #354.#359     // java/awt/Point.equals:(Ljava/lang/Object;)Z
+  #359 = NameAndType        #360:#235     // equals:(Ljava/lang/Object;)Z
+  #360 = Utf8               equals
+  #361 = InterfaceMethodref #350.#362     // java/util/ListIterator.remove:()V
+  #362 = NameAndType        #363:#139     // remove:()V
+  #363 = Utf8               remove
+  #364 = Methodref          #365.#366     // java/awt/Graphics2D.getClipBounds:()Ljava/awt/Rectangle;
+  #365 = Class              #367          // java/awt/Graphics2D
+  #366 = NameAndType        #368:#369     // getClipBounds:()Ljava/awt/Rectangle;
+  #367 = Utf8               java/awt/Graphics2D
+  #368 = Utf8               getClipBounds
+  #369 = Utf8               ()Ljava/awt/Rectangle;
+  #370 = Methodref          #371.#372     // org/audiveris/omr/ui/util/UIUtil.setAbsoluteStroke:(Ljava/awt/Graphics;F)Ljava/awt/Stroke;
+  #371 = Class              #373          // org/audiveris/omr/ui/util/UIUtil
+  #372 = NameAndType        #374:#375     // setAbsoluteStroke:(Ljava/awt/Graphics;F)Ljava/awt/Stroke;
+  #373 = Utf8               org/audiveris/omr/ui/util/UIUtil
+  #374 = Utf8               setAbsoluteStroke
+  #375 = Utf8               (Ljava/awt/Graphics;F)Ljava/awt/Stroke;
+  #376 = Methodref          #44.#377      // org/audiveris/omr/sheet/curve/SegmentInfo.renderAttachments:(Ljava/awt/Graphics2D;)V
+  #377 = NameAndType        #378:#379     // renderAttachments:(Ljava/awt/Graphics2D;)V
+  #378 = Utf8               renderAttachments
+  #379 = Utf8               (Ljava/awt/Graphics2D;)V
+  #380 = Fieldref           #10.#381      // org/audiveris/omr/sheet/curve/SegmentsBuilder.SEGMENT:Ljava/awt/Color;
+  #381 = NameAndType        #382:#383     // SEGMENT:Ljava/awt/Color;
+  #382 = Utf8               SEGMENT
+  #383 = Utf8               Ljava/awt/Color;
+  #384 = Methodref          #365.#385     // java/awt/Graphics2D.setColor:(Ljava/awt/Color;)V
+  #385 = NameAndType        #386:#387     // setColor:(Ljava/awt/Color;)V
+  #386 = Utf8               setColor
+  #387 = Utf8               (Ljava/awt/Color;)V
+  #388 = InterfaceMethodref #183.#389     // org/audiveris/omr/sheet/curve/Model.getCurve:()Ljava/awt/Shape;
+  #389 = NameAndType        #390:#391     // getCurve:()Ljava/awt/Shape;
+  #390 = Utf8               getCurve
+  #391 = Utf8               ()Ljava/awt/Shape;
+  #392 = InterfaceMethodref #393.#394     // java/awt/Shape.getBounds:()Ljava/awt/Rectangle;
+  #393 = Class              #395          // java/awt/Shape
+  #394 = NameAndType        #396:#369     // getBounds:()Ljava/awt/Rectangle;
+  #395 = Utf8               java/awt/Shape
+  #396 = Utf8               getBounds
+  #397 = Methodref          #398.#399     // java/awt/Rectangle.intersects:(Ljava/awt/Rectangle;)Z
+  #398 = Class              #400          // java/awt/Rectangle
+  #399 = NameAndType        #401:#402     // intersects:(Ljava/awt/Rectangle;)Z
+  #400 = Utf8               java/awt/Rectangle
+  #401 = Utf8               intersects
+  #402 = Utf8               (Ljava/awt/Rectangle;)Z
+  #403 = Methodref          #365.#404     // java/awt/Graphics2D.draw:(Ljava/awt/Shape;)V
+  #404 = NameAndType        #405:#406     // draw:(Ljava/awt/Shape;)V
+  #405 = Utf8               draw
+  #406 = Utf8               (Ljava/awt/Shape;)V
+  #407 = Methodref          #365.#408     // java/awt/Graphics2D.setStroke:(Ljava/awt/Stroke;)V
+  #408 = NameAndType        #409:#410     // setStroke:(Ljava/awt/Stroke;)V
+  #409 = Utf8               setStroke
+  #410 = Utf8               (Ljava/awt/Stroke;)V
+  #411 = Fieldref           #90.#412      // org/audiveris/omr/sheet/curve/Curve.byReverseXLength:Ljava/util/Comparator;
+  #412 = NameAndType        #413:#324     // byReverseXLength:Ljava/util/Comparator;
+  #413 = Utf8               byReverseXLength
+  #414 = InterfaceMethodref #231.#415     // java/util/Set.clear:()V
+  #415 = NameAndType        #416:#139     // clear:()V
+  #416 = Utf8               clear
+  #417 = Class              #418          // org/audiveris/omr/sheet/curve/SegmentsBuilder$Constants
+  #418 = Utf8               org/audiveris/omr/sheet/curve/SegmentsBuilder$Constants
+  #419 = Methodref          #417.#249     // org/audiveris/omr/sheet/curve/SegmentsBuilder$Constants."<init>":()V
+  #420 = Fieldref           #10.#421      // org/audiveris/omr/sheet/curve/SegmentsBuilder.constants:Lorg/audiveris/omr/sheet/curve/SegmentsBuilder$Constants;
+  #421 = NameAndType        #422:#423     // constants:Lorg/audiveris/omr/sheet/curve/SegmentsBuilder$Constants;
+  #422 = Utf8               constants
+  #423 = Utf8               Lorg/audiveris/omr/sheet/curve/SegmentsBuilder$Constants;
+  #424 = Methodref          #425.#426     // org/slf4j/LoggerFactory.getLogger:(Ljava/lang/Class;)Lorg/slf4j/Logger;
+  #425 = Class              #427          // org/slf4j/LoggerFactory
+  #426 = NameAndType        #428:#429     // getLogger:(Ljava/lang/Class;)Lorg/slf4j/Logger;
+  #427 = Utf8               org/slf4j/LoggerFactory
+  #428 = Utf8               getLogger
+  #429 = Utf8               (Ljava/lang/Class;)Lorg/slf4j/Logger;
+  #430 = Fieldref           #431.#432     // java/awt/Color.CYAN:Ljava/awt/Color;
+  #431 = Class              #433          // java/awt/Color
+  #432 = NameAndType        #434:#383     // CYAN:Ljava/awt/Color;
+  #433 = Utf8               java/awt/Color
+  #434 = Utf8               CYAN
+  #435 = Utf8               Signature
+  #436 = Utf8               Ljava/util/List<Lorg/audiveris/omr/sig/inter/SegmentInter;>;
+  #437 = Utf8               Code
+  #438 = Utf8               LineNumberTable
+  #439 = Utf8               LocalVariableTable
+  #440 = Utf8               this
+  #441 = Utf8               Lorg/audiveris/omr/sheet/curve/SegmentsBuilder;
+  #442 = Utf8               curves
+  #443 = Utf8               Lorg/audiveris/omr/sheet/curve/Curves;
+  #444 = Utf8               addArc
+  #445 = Utf8               (Lorg/audiveris/omr/sheet/curve/ArcView;Lorg/audiveris/omr/sheet/curve/Curve;)Lorg/audiveris/omr/sheet/curve/Curve;
+  #446 = Utf8               pts
+  #447 = Utf8               s
+  #448 = Utf8               Lorg/audiveris/omr/sheet/curve/SegmentInfo;
+  #449 = Utf8               arcView
+  #450 = Utf8               Lorg/audiveris/omr/sheet/curve/ArcView;
+  #451 = Utf8               curve
+  #452 = Utf8               Lorg/audiveris/omr/sheet/curve/Curve;
+  #453 = Utf8               arc
+  #454 = Utf8               Lorg/audiveris/omr/sheet/curve/Arc;
+  #455 = Utf8               segment
+  #456 = Utf8               model
+  #457 = Utf8               Lorg/audiveris/omr/sheet/curve/Model;
+  #458 = Utf8               dist
+  #459 = Utf8               LocalVariableTypeTable
+  #460 = Utf8               Ljava/util/List<Ljava/awt/Point;>;
+  #461 = Utf8               StackMapTable
+  #462 = Utf8               buildSegments
+  #463 = Utf8               relevants
+  #464 = Utf8               ex
+  #465 = Utf8               Ljava/lang/Throwable;
+  #466 = Utf8               Ljava/util/List<Lorg/audiveris/omr/sheet/curve/Arc;>;
+  #467 = Utf8               ignored
+  #468 = Utf8               distImpact
+  #469 = Utf8               points
+  #470 = Utf8               isSeed
+  #471 = Utf8               (Ljava/util/List<Ljava/awt/Point;>;Z)Lorg/audiveris/omr/sheet/curve/Model;
+  #472 = Utf8               createInstance
+  #473 = Utf8               (Ljava/awt/Point;Ljava/awt/Point;Ljava/util/List;Lorg/audiveris/omr/sheet/curve/Model;Ljava/util/Collection;)Lorg/audiveris/omr/sheet/curve/Curve;
+  #474 = Utf8               firstJunction
+  #475 = Utf8               Ljava/awt/Point;
+  #476 = Utf8               lastJunction
+  #477 = Utf8               parts
+  #478 = Utf8               Ljava/util/Collection;
+  #479 = Utf8               Ljava/util/Collection<Lorg/audiveris/omr/sheet/curve/Arc;>;
+  #480 = Utf8               (Ljava/awt/Point;Ljava/awt/Point;Ljava/util/List<Ljava/awt/Point;>;Lorg/audiveris/omr/sheet/curve/Model;Ljava/util/Collection<Lorg/audiveris/omr/sheet/curve/Arc;>;)Lorg/audiveris/omr/sheet/curve/Curve;
+  #481 = Utf8               createInter
+  #482 = Utf8               (Lorg/audiveris/omr/sheet/curve/Curve;Ljava/util/Set;)V
+  #483 = Utf8               inters
+  #484 = Utf8               Ljava/util/Set;
+  #485 = Utf8               impacts
+  #486 = Utf8               Lorg/audiveris/omr/sig/GradeImpacts;
+  #487 = Utf8               inter
+  #488 = Utf8               Lorg/audiveris/omr/sig/inter/SegmentInter;
+  #489 = Utf8               glyph
+  #490 = Utf8               Lorg/audiveris/omr/glyph/Glyph;
+  #491 = Utf8               Ljava/util/Set<Lorg/audiveris/omr/sig/inter/Inter;>;
+  #492 = Class              #493          // org/audiveris/omr/sig/GradeImpacts
+  #493 = Utf8               org/audiveris/omr/sig/GradeImpacts
+  #494 = Class              #495          // org/audiveris/omr/glyph/Glyph
+  #495 = Utf8               org/audiveris/omr/glyph/Glyph
+  #496 = Utf8               (Lorg/audiveris/omr/sheet/curve/Curve;Ljava/util/Set<Lorg/audiveris/omr/sig/inter/Inter;>;)V
+  #497 = Utf8               getArcCheckLength
+  #498 = Utf8               ()Ljava/lang/Integer;
+  #499 = Utf8               (Lorg/audiveris/omr/sheet/curve/Curve;)Ljava/awt/geom/Point2D;
+  #500 = Utf8               end
+  #501 = Utf8               staff
+  #502 = Utf8               Lorg/audiveris/omr/sheet/Staff;
+  #503 = Utf8               rev
+  #504 = Utf8               slope
+  #505 = Utf8               staffManager
+  #506 = Utf8               Lorg/audiveris/omr/sheet/StaffManager;
+  #507 = Utf8               set
+  #508 = Utf8               list
+  #509 = Utf8               Ljava/util/Set<Lorg/audiveris/omr/sheet/curve/Arc;>;
+  #510 = Class              #511          // "[Z"
+  #511 = Utf8               [Z
+  #512 = Utf8               ()Ljava/util/List<Lorg/audiveris/omr/sheet/curve/Arc;>;
+  #513 = Utf8               pruneClump
+  #514 = Utf8               (Ljava/util/Set;)V
+  #515 = Utf8               clump
+  #516 = Utf8               (Ljava/util/Set<Lorg/audiveris/omr/sig/inter/Inter;>;)V
+  #517 = Utf8               start2
+  #518 = Utf8               it
+  #519 = Utf8               Ljava/util/ListIterator;
+  #520 = Utf8               seg
+  #521 = Utf8               start
+  #522 = Utf8               stop
+  #523 = Utf8               i
+  #524 = Utf8               Ljava/util/ListIterator<Lorg/audiveris/omr/sig/inter/SegmentInter;>;
+  #525 = Utf8               renderItems
+  #526 = Utf8               Ljava/awt/Shape;
+  #527 = Utf8               g
+  #528 = Utf8               Ljava/awt/Graphics2D;
+  #529 = Utf8               clip
+  #530 = Utf8               Ljava/awt/Rectangle;
+  #531 = Utf8               oldStroke
+  #532 = Utf8               Ljava/awt/Stroke;
+  #533 = Class              #534          // java/awt/Stroke
+  #534 = Utf8               java/awt/Stroke
+  #535 = Utf8               weed
+  #536 = Utf8               Ljava/util/Set<Lorg/audiveris/omr/sheet/curve/Curve;>;
+  #537 = Utf8               Ljava/util/List<Lorg/audiveris/omr/sheet/curve/Curve;>;
+  #538 = Utf8               (Ljava/util/Set<Lorg/audiveris/omr/sheet/curve/Curve;>;)V
+  #539 = Utf8               (Lorg/audiveris/omr/sheet/curve/Curve;Z)Lorg/audiveris/omr/sig/GradeImpacts;
+  #540 = Utf8               MethodParameters
+  #541 = Utf8               <clinit>
+  #542 = Utf8               SourceFile
+  #543 = Utf8               SegmentsBuilder.java
+  #544 = Utf8               NestMembers
+  #545 = Utf8               BootstrapMethods
+  #546 = String             #547          // Error in SegmentsBuilder: \u0001
+  #547 = Utf8               Error in SegmentsBuilder: \u0001
+  #548 = MethodHandle       6:#549        // REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #549 = Methodref          #550.#551     // java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #550 = Class              #552          // java/lang/invoke/StringConcatFactory
+  #551 = NameAndType        #172:#553     // makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #552 = Utf8               java/lang/invoke/StringConcatFactory
+  #553 = Utf8               (Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+  #554 = Utf8               InnerClasses
+  #555 = Utf8               Parameters
+  #556 = Utf8               Impacts
+  #557 = Utf8               Constants
+  #558 = Class              #559          // java/lang/invoke/MethodHandles$Lookup
+  #559 = Utf8               java/lang/invoke/MethodHandles$Lookup
+  #560 = Class              #561          // java/lang/invoke/MethodHandles
+  #561 = Utf8               java/lang/invoke/MethodHandles
+  #562 = Utf8               Lookup
+{
+  public org.audiveris.omr.sheet.curve.SegmentsBuilder(org.audiveris.omr.sheet.curve.Curves);
+    descriptor: (Lorg/audiveris/omr/sheet/curve/Curves;)V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=4, locals=2, args_size=2
+         0: aload_0
+         1: aload_1
+         2: invokespecial #1                  // Method org/audiveris/omr/sheet/curve/CurvesBuilder."<init>":(Lorg/audiveris/omr/sheet/curve/Curves;)V
+         5: aload_0
+         6: new           #7                  // class org/audiveris/omr/sheet/curve/SegmentsBuilder$Parameters
+         9: dup
+        10: aload_0
+        11: getfield      #9                  // Field sheet:Lorg/audiveris/omr/sheet/Sheet;
+        14: invokevirtual #15                 // Method org/audiveris/omr/sheet/Sheet.getScale:()Lorg/audiveris/omr/sheet/Scale;
+        17: invokespecial #21                 // Method org/audiveris/omr/sheet/curve/SegmentsBuilder$Parameters."<init>":(Lorg/audiveris/omr/sheet/Scale;)V
+        20: putfield      #24                 // Field params:Lorg/audiveris/omr/sheet/curve/SegmentsBuilder$Parameters;
+        23: aload_0
+        24: aload_1
+        25: invokevirtual #28                 // Method org/audiveris/omr/sheet/curve/Curves.getSegments:()Ljava/util/List;
+        28: putfield      #34                 // Field segments:Ljava/util/List;
+        31: return
+      LineNumberTable:
+        line 90: 0
+        line 91: 5
+        line 92: 23
+        line 93: 31
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      32     0  this   Lorg/audiveris/omr/sheet/curve/SegmentsBuilder;
+            0      32     1 curves   Lorg/audiveris/omr/sheet/curve/Curves;
+
+  protected org.audiveris.omr.sheet.curve.Curve addArc(org.audiveris.omr.sheet.curve.ArcView, org.audiveris.omr.sheet.curve.Curve);
+    descriptor: (Lorg/audiveris/omr/sheet/curve/ArcView;Lorg/audiveris/omr/sheet/curve/Curve;)Lorg/audiveris/omr/sheet/curve/Curve;
+    flags: (0x0004) ACC_PROTECTED
+    Code:
+      stack=7, locals=12, args_size=3
+         0: aload_1
+         1: invokevirtual #38                 // Method org/audiveris/omr/sheet/curve/ArcView.getArc:()Lorg/audiveris/omr/sheet/curve/Arc;
+         4: astore_3
+         5: aload_2
+         6: checkcast     #44                 // class org/audiveris/omr/sheet/curve/SegmentInfo
+         9: astore        4
+        11: aload_0
+        12: aload         4
+        14: invokevirtual #46                 // Method needGlobalModel:(Lorg/audiveris/omr/sheet/curve/Curve;)Lorg/audiveris/omr/sheet/curve/Model;
+        17: astore        5
+        19: aload_0
+        20: aload_1
+        21: aload         5
+        23: invokevirtual #50                 // Method projection:(Lorg/audiveris/omr/sheet/curve/ArcView;Lorg/audiveris/omr/sheet/curve/Model;)D
+        26: dstore        6
+        28: dload         6
+        30: aload_0
+        31: getfield      #24                 // Field params:Lorg/audiveris/omr/sheet/curve/SegmentsBuilder$Parameters;
+        34: getfield      #54                 // Field org/audiveris/omr/sheet/curve/SegmentsBuilder$Parameters.minProjection:D
+        37: dcmpg
+        38: ifge          74
+        41: getstatic     #58                 // Field logger:Lorg/slf4j/Logger;
+        44: ldc           #62                 // String {} not extended by {} projection:{}
+        46: iconst_3
+        47: anewarray     #64                 // class java/lang/Object
+        50: dup
+        51: iconst_0
+        52: aload         4
+        54: aastore
+        55: dup
+        56: iconst_1
+        57: aload_3
+        58: aastore
+        59: dup
+        60: iconst_2
+        61: dload         6
+        63: invokestatic  #66                 // Method java/lang/Double.valueOf:(D)Ljava/lang/Double;
+        66: aastore
+        67: invokeinterface #72,  3           // InterfaceMethod org/slf4j/Logger.debug:(Ljava/lang/String;[Ljava/lang/Object;)V
+        72: aconst_null
+        73: areturn
+        74: aload_0
+        75: aload         5
+        77: aload_1
+        78: invokevirtual #78                 // Method arcDistance:(Lorg/audiveris/omr/sheet/curve/Model;Lorg/audiveris/omr/sheet/curve/ArcView;)D
+        81: dstore        8
+        83: dload         8
+        85: aload_0
+        86: getfield      #24                 // Field params:Lorg/audiveris/omr/sheet/curve/SegmentsBuilder$Parameters;
+        89: getfield      #82                 // Field org/audiveris/omr/sheet/curve/SegmentsBuilder$Parameters.maxExtDistance:D
+        92: dcmpg
+        93: ifgt          168
+        96: aload_2
+        97: aload_1
+        98: aload_0
+        99: getfield      #85                 // Field reverse:Z
+       102: invokevirtual #89                 // Method org/audiveris/omr/sheet/curve/Curve.getAllPoints:(Lorg/audiveris/omr/sheet/curve/ArcView;Z)Ljava/util/List;
+       105: astore        10
+       107: aload_0
+       108: aload_2
+       109: aload_1
+       110: aload         10
+       112: aconst_null
+       113: invokevirtual #95                 // Method createCurve:(Lorg/audiveris/omr/sheet/curve/Curve;Lorg/audiveris/omr/sheet/curve/ArcView;Ljava/util/List;Lorg/audiveris/omr/sheet/curve/Model;)Lorg/audiveris/omr/sheet/curve/Curve;
+       116: checkcast     #44                 // class org/audiveris/omr/sheet/curve/SegmentInfo
+       119: astore        11
+       121: aload         11
+       123: aload_0
+       124: aload         10
+       126: iconst_0
+       127: invokevirtual #99                 // Method computeModel:(Ljava/util/List;Z)Lorg/audiveris/omr/sheet/curve/Model;
+       130: invokevirtual #103                // Method org/audiveris/omr/sheet/curve/SegmentInfo.setModel:(Lorg/audiveris/omr/sheet/curve/Model;)V
+       133: getstatic     #58                 // Field logger:Lorg/slf4j/Logger;
+       136: ldc           #107                // String {} extended as {} dist:{}
+       138: iconst_3
+       139: anewarray     #64                 // class java/lang/Object
+       142: dup
+       143: iconst_0
+       144: aload         4
+       146: aastore
+       147: dup
+       148: iconst_1
+       149: aload         11
+       151: aastore
+       152: dup
+       153: iconst_2
+       154: dload         8
+       156: invokestatic  #66                 // Method java/lang/Double.valueOf:(D)Ljava/lang/Double;
+       159: aastore
+       160: invokeinterface #72,  3           // InterfaceMethod org/slf4j/Logger.debug:(Ljava/lang/String;[Ljava/lang/Object;)V
+       165: aload         11
+       167: areturn
+       168: getstatic     #58                 // Field logger:Lorg/slf4j/Logger;
+       171: ldc           #109                // String {} could not add {} dist:{}
+       173: iconst_3
+       174: anewarray     #64                 // class java/lang/Object
+       177: dup
+       178: iconst_0
+       179: aload         4
+       181: aastore
+       182: dup
+       183: iconst_1
+       184: aload_3
+       185: aastore
+       186: dup
+       187: iconst_2
+       188: dload         8
+       190: invokestatic  #66                 // Method java/lang/Double.valueOf:(D)Ljava/lang/Double;
+       193: aastore
+       194: invokeinterface #72,  3           // InterfaceMethod org/slf4j/Logger.debug:(Ljava/lang/String;[Ljava/lang/Object;)V
+       199: aconst_null
+       200: areturn
+      LineNumberTable:
+        line 104: 0
+        line 106: 5
+        line 107: 11
+        line 110: 19
+        line 112: 28
+        line 113: 41
+        line 115: 72
+        line 119: 74
+        line 121: 83
+        line 122: 96
+        line 123: 107
+        line 124: 121
+        line 125: 133
+        line 127: 165
+        line 129: 168
+        line 131: 199
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+          107      61    10   pts   Ljava/util/List;
+          121      47    11     s   Lorg/audiveris/omr/sheet/curve/SegmentInfo;
+            0     201     0  this   Lorg/audiveris/omr/sheet/curve/SegmentsBuilder;
+            0     201     1 arcView   Lorg/audiveris/omr/sheet/curve/ArcView;
+            0     201     2 curve   Lorg/audiveris/omr/sheet/curve/Curve;
+            5     196     3   arc   Lorg/audiveris/omr/sheet/curve/Arc;
+           11     190     4 segment   Lorg/audiveris/omr/sheet/curve/SegmentInfo;
+           19     182     5 model   Lorg/audiveris/omr/sheet/curve/Model;
+           28     173     6 projection   D
+           83     118     8  dist   D
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+          107      61    10   pts   Ljava/util/List<Ljava/awt/Point;>;
+      StackMapTable: number_of_entries = 2
+        frame_type = 255 /* full_frame */
+          offset_delta = 74
+          locals = [ class org/audiveris/omr/sheet/curve/SegmentsBuilder, class org/audiveris/omr/sheet/curve/ArcView, class org/audiveris/omr/sheet/curve/Curve, class org/audiveris/omr/sheet/curve/Arc, class org/audiveris/omr/sheet/curve/SegmentInfo, class org/audiveris/omr/sheet/curve/Model, double ]
+          stack = []
+        frame_type = 252 /* append */
+          offset_delta = 93
+          locals = [ double ]
+
+  public void buildSegments();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=3, locals=4, args_size=1
+         0: aload_0
+         1: invokevirtual #111                // Method getSeedArcs:()Ljava/util/List;
+         4: astore_1
+         5: aload_1
+         6: invokeinterface #114,  1          // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+        11: astore_2
+        12: aload_2
+        13: invokeinterface #120,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+        18: ifeq          39
+        21: aload_2
+        22: invokeinterface #126,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+        27: checkcast     #130                // class org/audiveris/omr/sheet/curve/Arc
+        30: astore_3
+        31: aload_0
+        32: aload_3
+        33: invokevirtual #132                // Method buildCurve:(Lorg/audiveris/omr/sheet/curve/Arc;)V
+        36: goto          12
+        39: aload_0
+        40: invokevirtual #136                // Method purgeDuplicates:()V
+        43: getstatic     #58                 // Field logger:Lorg/slf4j/Logger;
+        46: ldc           #140                // String Segments: {}
+        48: aload_0
+        49: getfield      #34                 // Field segments:Ljava/util/List;
+        52: invokeinterface #142,  1          // InterfaceMethod java/util/List.size:()I
+        57: invokestatic  #146                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+        60: invokeinterface #151,  3          // InterfaceMethod org/slf4j/Logger.info:(Ljava/lang/String;Ljava/lang/Object;)V
+        65: getstatic     #58                 // Field logger:Lorg/slf4j/Logger;
+        68: ldc           #155                // String Segment maxClumpSize: {}
+        70: aload_0
+        71: getfield      #157                // Field maxClumpSize:I
+        74: invokestatic  #146                // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+        77: invokeinterface #161,  3          // InterfaceMethod org/slf4j/Logger.debug:(Ljava/lang/String;Ljava/lang/Object;)V
+        82: goto          104
+        85: astore_1
+        86: getstatic     #58                 // Field logger:Lorg/slf4j/Logger;
+        89: aload_1
+        90: invokestatic  #165                // Method java/lang/String.valueOf:(Ljava/lang/Object;)Ljava/lang/String;
+        93: invokedynamic #170,  0            // InvokeDynamic #0:makeConcatWithConstants:(Ljava/lang/String;)Ljava/lang/String;
+        98: aload_1
+        99: invokeinterface #174,  3          // InterfaceMethod org/slf4j/Logger.warn:(Ljava/lang/String;Ljava/lang/Throwable;)V
+       104: return
+      Exception table:
+         from    to  target type
+             0    82    85   Class java/lang/Throwable
+      LineNumberTable:
+        line 144: 0
+        line 146: 5
+        line 148: 31
+        line 149: 36
+        line 153: 39
+        line 155: 43
+        line 156: 65
+        line 159: 82
+        line 157: 85
+        line 158: 86
+        line 160: 104
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           31       5     3   arc   Lorg/audiveris/omr/sheet/curve/Arc;
+            5      77     1 relevants   Ljava/util/List;
+           86      18     1    ex   Ljava/lang/Throwable;
+            0     105     0  this   Lorg/audiveris/omr/sheet/curve/SegmentsBuilder;
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+            5      77     1 relevants   Ljava/util/List<Lorg/audiveris/omr/sheet/curve/Arc;>;
+      StackMapTable: number_of_entries = 4
+        frame_type = 253 /* append */
+          offset_delta = 12
+          locals = [ class java/util/List, class java/util/Iterator ]
+        frame_type = 250 /* chop */
+          offset_delta = 26
+        frame_type = 255 /* full_frame */
+          offset_delta = 45
+          locals = [ class org/audiveris/omr/sheet/curve/SegmentsBuilder ]
+          stack = [ class java/lang/Throwable ]
+        frame_type = 18 /* same */
+
+  protected org.audiveris.omr.sig.inter.SegmentInter$Impacts computeImpacts(org.audiveris.omr.sheet.curve.Curve, boolean);
+    descriptor: (Lorg/audiveris/omr/sheet/curve/Curve;Z)Lorg/audiveris/omr/sig/inter/SegmentInter$Impacts;
+    flags: (0x0004) ACC_PROTECTED
+    Code:
+      stack=6, locals=8, args_size=3
+         0: aload_1
+         1: checkcast     #44                 // class org/audiveris/omr/sheet/curve/SegmentInfo
+         4: astore_3
+         5: aload_3
+         6: invokevirtual #178                // Method org/audiveris/omr/sheet/curve/SegmentInfo.getModel:()Lorg/audiveris/omr/sheet/curve/Model;
+         9: invokeinterface #182,  1          // InterfaceMethod org/audiveris/omr/sheet/curve/Model.getDistance:()D
+        14: dstore        4
+        16: dconst_1
+        17: dload         4
+        19: aload_0
+        20: getfield      #24                 // Field params:Lorg/audiveris/omr/sheet/curve/SegmentsBuilder$Parameters;
+        23: getfield      #188                // Field org/audiveris/omr/sheet/curve/SegmentsBuilder$Parameters.maxSegmentDistance:D
+        26: ddiv
+        27: dsub
+        28: dstore        6
+        30: new           #191                // class org/audiveris/omr/sig/inter/SegmentInter$Impacts
+        33: dup
+        34: dload         6
+        36: invokespecial #193                // Method org/audiveris/omr/sig/inter/SegmentInter$Impacts."<init>":(D)V
+        39: areturn
+      LineNumberTable:
+        line 169: 0
+        line 170: 5
+        line 171: 16
+        line 173: 30
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      40     0  this   Lorg/audiveris/omr/sheet/curve/SegmentsBuilder;
+            0      40     1 curve   Lorg/audiveris/omr/sheet/curve/Curve;
+            0      40     2 ignored   Z
+            5      35     3 segment   Lorg/audiveris/omr/sheet/curve/SegmentInfo;
+           16      24     4  dist   D
+           30      10     6 distImpact   D
+
+  protected org.audiveris.omr.sheet.curve.Model computeModel(java.util.List<java.awt.Point>, boolean);
+    descriptor: (Ljava/util/List;Z)Lorg/audiveris/omr/sheet/curve/Model;
+    flags: (0x0004) ACC_PROTECTED
+    Code:
+      stack=3, locals=3, args_size=3
+         0: new           #196                // class org/audiveris/omr/sheet/curve/LineModel
+         3: dup
+         4: aload_1
+         5: invokespecial #198                // Method org/audiveris/omr/sheet/curve/LineModel."<init>":(Ljava/util/List;)V
+         8: areturn
+      LineNumberTable:
+        line 183: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       9     0  this   Lorg/audiveris/omr/sheet/curve/SegmentsBuilder;
+            0       9     1 points   Ljava/util/List;
+            0       9     2 isSeed   Z
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+            0       9     1 points   Ljava/util/List<Ljava/awt/Point;>;
+    Signature: #471                         // (Ljava/util/List<Ljava/awt/Point;>;Z)Lorg/audiveris/omr/sheet/curve/Model;
+
+  protected org.audiveris.omr.sheet.curve.Curve createInstance(java.awt.Point, java.awt.Point, java.util.List<java.awt.Point>, org.audiveris.omr.sheet.curve.Model, java.util.Collection<org.audiveris.omr.sheet.curve.Arc>);
+    descriptor: (Ljava/awt/Point;Ljava/awt/Point;Ljava/util/List;Lorg/audiveris/omr/sheet/curve/Model;Ljava/util/Collection;)Lorg/audiveris/omr/sheet/curve/Curve;
+    flags: (0x0004) ACC_PROTECTED
+    Code:
+      stack=8, locals=6, args_size=6
+         0: new           #44                 // class org/audiveris/omr/sheet/curve/SegmentInfo
+         3: dup
+         4: aload_0
+         5: dup
+         6: getfield      #201                // Field globalId:I
+         9: iconst_1
+        10: iadd
+        11: dup_x1
+        12: putfield      #201                // Field globalId:I
+        15: aload_1
+        16: aload_2
+        17: aload_3
+        18: aload         4
+        20: aload         5
+        22: invokespecial #204                // Method org/audiveris/omr/sheet/curve/SegmentInfo."<init>":(ILjava/awt/Point;Ljava/awt/Point;Ljava/util/List;Lorg/audiveris/omr/sheet/curve/Model;Ljava/util/Collection;)V
+        25: areturn
+      LineNumberTable:
+        line 193: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      26     0  this   Lorg/audiveris/omr/sheet/curve/SegmentsBuilder;
+            0      26     1 firstJunction   Ljava/awt/Point;
+            0      26     2 lastJunction   Ljava/awt/Point;
+            0      26     3 points   Ljava/util/List;
+            0      26     4 model   Lorg/audiveris/omr/sheet/curve/Model;
+            0      26     5 parts   Ljava/util/Collection;
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+            0      26     3 points   Ljava/util/List<Ljava/awt/Point;>;
+            0      26     5 parts   Ljava/util/Collection<Lorg/audiveris/omr/sheet/curve/Arc;>;
+    Signature: #480                         // (Ljava/awt/Point;Ljava/awt/Point;Ljava/util/List<Ljava/awt/Point;>;Lorg/audiveris/omr/sheet/curve/Model;Ljava/util/Collection<Lorg/audiveris/omr/sheet/curve/Arc;>;)Lorg/audiveris/omr/sheet/curve/Curve;
+
+  protected void createInter(org.audiveris.omr.sheet.curve.Curve, java.util.Set<org.audiveris.omr.sig.inter.Inter>);
+    descriptor: (Lorg/audiveris/omr/sheet/curve/Curve;Ljava/util/Set;)V
+    flags: (0x0004) ACC_PROTECTED
+    Code:
+      stack=6, locals=7, args_size=3
+         0: aload_1
+         1: checkcast     #44                 // class org/audiveris/omr/sheet/curve/SegmentInfo
+         4: astore_3
+         5: aload_0
+         6: aload_3
+         7: invokevirtual #46                 // Method needGlobalModel:(Lorg/audiveris/omr/sheet/curve/Curve;)Lorg/audiveris/omr/sheet/curve/Model;
+        10: pop
+        11: aload_0
+        12: aload_3
+        13: iconst_1
+        14: invokevirtual #207                // Method computeImpacts:(Lorg/audiveris/omr/sheet/curve/Curve;Z)Lorg/audiveris/omr/sig/inter/SegmentInter$Impacts;
+        17: astore        4
+        19: new           #211                // class org/audiveris/omr/sig/inter/SegmentInter
+        22: dup
+        23: aload_3
+        24: aload         4
+        26: invokespecial #213                // Method org/audiveris/omr/sig/inter/SegmentInter."<init>":(Lorg/audiveris/omr/sheet/curve/SegmentInfo;Lorg/audiveris/omr/sig/GradeImpacts;)V
+        29: astore        5
+        31: aload_3
+        32: aload_0
+        33: getfield      #9                  // Field sheet:Lorg/audiveris/omr/sheet/Sheet;
+        36: aload_0
+        37: getfield      #24                 // Field params:Lorg/audiveris/omr/sheet/curve/SegmentsBuilder$Parameters;
+        40: getfield      #216                // Field org/audiveris/omr/sheet/curve/SegmentsBuilder$Parameters.maxRunDistance:D
+        43: aload_0
+        44: getfield      #24                 // Field params:Lorg/audiveris/omr/sheet/curve/SegmentsBuilder$Parameters;
+        47: getfield      #219                // Field org/audiveris/omr/sheet/curve/SegmentsBuilder$Parameters.minRunRatio:D
+        50: invokevirtual #222                // Method org/audiveris/omr/sheet/curve/SegmentInfo.retrieveGlyph:(Lorg/audiveris/omr/sheet/Sheet;DD)Lorg/audiveris/omr/glyph/Glyph;
+        53: astore        6
+        55: aload         6
+        57: ifnull        88
+        60: aload         5
+        62: aload         6
+        64: invokevirtual #226                // Method org/audiveris/omr/sig/inter/SegmentInter.setGlyph:(Lorg/audiveris/omr/glyph/Glyph;)V
+        67: aload_2
+        68: aload         5
+        70: invokeinterface #230,  2          // InterfaceMethod java/util/Set.add:(Ljava/lang/Object;)Z
+        75: pop
+        76: aload_0
+        77: getfield      #34                 // Field segments:Ljava/util/List;
+        80: aload         5
+        82: invokeinterface #236,  2          // InterfaceMethod java/util/List.add:(Ljava/lang/Object;)Z
+        87: pop
+        88: return
+      LineNumberTable:
+        line 200: 0
+        line 201: 5
+        line 203: 11
+        line 204: 19
+        line 205: 31
+        line 207: 55
+        line 208: 60
+        line 209: 67
+        line 210: 76
+        line 212: 88
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      89     0  this   Lorg/audiveris/omr/sheet/curve/SegmentsBuilder;
+            0      89     1 curve   Lorg/audiveris/omr/sheet/curve/Curve;
+            0      89     2 inters   Ljava/util/Set;
+            5      84     3 segment   Lorg/audiveris/omr/sheet/curve/SegmentInfo;
+           19      70     4 impacts   Lorg/audiveris/omr/sig/GradeImpacts;
+           31      58     5 inter   Lorg/audiveris/omr/sig/inter/SegmentInter;
+           55      34     6 glyph   Lorg/audiveris/omr/glyph/Glyph;
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+            0      89     2 inters   Ljava/util/Set<Lorg/audiveris/omr/sig/inter/Inter;>;
+      StackMapTable: number_of_entries = 1
+        frame_type = 255 /* full_frame */
+          offset_delta = 88
+          locals = [ class org/audiveris/omr/sheet/curve/SegmentsBuilder, class org/audiveris/omr/sheet/curve/Curve, class java/util/Set, class org/audiveris/omr/sheet/curve/SegmentInfo, class org/audiveris/omr/sig/GradeImpacts, class org/audiveris/omr/sig/inter/SegmentInter, class org/audiveris/omr/glyph/Glyph ]
+          stack = []
+    Signature: #496                         // (Lorg/audiveris/omr/sheet/curve/Curve;Ljava/util/Set<Lorg/audiveris/omr/sig/inter/Inter;>;)V
+
+  protected java.lang.Integer getArcCheckLength();
+    descriptor: ()Ljava/lang/Integer;
+    flags: (0x0004) ACC_PROTECTED
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aconst_null
+         1: areturn
+      LineNumberTable:
+        line 217: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       2     0  this   Lorg/audiveris/omr/sheet/curve/SegmentsBuilder;
+
+  protected java.awt.geom.Point2D getEndVector(org.audiveris.omr.sheet.curve.Curve);
+    descriptor: (Lorg/audiveris/omr/sheet/curve/Curve;)Ljava/awt/geom/Point2D;
+    flags: (0x0004) ACC_PROTECTED
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_1
+         1: invokevirtual #237                // Method org/audiveris/omr/sheet/curve/Curve.getModel:()Lorg/audiveris/omr/sheet/curve/Model;
+         4: aload_0
+         5: getfield      #85                 // Field reverse:Z
+         8: invokeinterface #238,  2          // InterfaceMethod org/audiveris/omr/sheet/curve/Model.getEndVector:(Z)Ljava/awt/geom/Point2D;
+        13: areturn
+      LineNumberTable:
+        line 223: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      14     0  this   Lorg/audiveris/omr/sheet/curve/SegmentsBuilder;
+            0      14     1 curve   Lorg/audiveris/omr/sheet/curve/Curve;
+
+  protected void pruneClump(java.util.Set<org.audiveris.omr.sig.inter.Inter>);
+    descriptor: (Ljava/util/Set;)V
+    flags: (0x0004) ACC_PROTECTED
+    Code:
+      stack=0, locals=2, args_size=2
+         0: return
+      LineNumberTable:
+        line 289: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       1     0  this   Lorg/audiveris/omr/sheet/curve/SegmentsBuilder;
+            0       1     1 clump   Ljava/util/Set;
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+            0       1     1 clump   Ljava/util/Set<Lorg/audiveris/omr/sig/inter/Inter;>;
+    Signature: #516                         // (Ljava/util/Set<Lorg/audiveris/omr/sig/inter/Inter;>;)V
+
+  public void renderItems(java.awt.Graphics2D);
+    descriptor: (Ljava/awt/Graphics2D;)V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=2, locals=7, args_size=2
+         0: aload_1
+         1: invokevirtual #364                // Method java/awt/Graphics2D.getClipBounds:()Ljava/awt/Rectangle;
+         4: astore_2
+         5: aload_1
+         6: fconst_1
+         7: invokestatic  #370                // Method org/audiveris/omr/ui/util/UIUtil.setAbsoluteStroke:(Ljava/awt/Graphics;F)Ljava/awt/Stroke;
+        10: astore_3
+        11: aload_0
+        12: getfield      #34                 // Field segments:Ljava/util/List;
+        15: invokeinterface #114,  1          // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+        20: astore        4
+        22: aload         4
+        24: invokeinterface #120,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+        29: ifeq          56
+        32: aload         4
+        34: invokeinterface #126,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+        39: checkcast     #211                // class org/audiveris/omr/sig/inter/SegmentInter
+        42: astore        5
+        44: aload         5
+        46: invokevirtual #340                // Method org/audiveris/omr/sig/inter/SegmentInter.getInfo:()Lorg/audiveris/omr/sheet/curve/SegmentInfo;
+        49: aload_1
+        50: invokevirtual #376                // Method org/audiveris/omr/sheet/curve/SegmentInfo.renderAttachments:(Ljava/awt/Graphics2D;)V
+        53: goto          22
+        56: aload_1
+        57: getstatic     #380                // Field SEGMENT:Ljava/awt/Color;
+        60: invokevirtual #384                // Method java/awt/Graphics2D.setColor:(Ljava/awt/Color;)V
+        63: aload_0
+        64: getfield      #34                 // Field segments:Ljava/util/List;
+        67: invokeinterface #114,  1          // InterfaceMethod java/util/List.iterator:()Ljava/util/Iterator;
+        72: astore        4
+        74: aload         4
+        76: invokeinterface #120,  1          // InterfaceMethod java/util/Iterator.hasNext:()Z
+        81: ifeq          143
+        84: aload         4
+        86: invokeinterface #126,  1          // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+        91: checkcast     #211                // class org/audiveris/omr/sig/inter/SegmentInter
+        94: astore        5
+        96: aload         5
+        98: invokevirtual #340                // Method org/audiveris/omr/sig/inter/SegmentInter.getInfo:()Lorg/audiveris/omr/sheet/curve/SegmentInfo;
+       101: invokevirtual #178                // Method org/audiveris/omr/sheet/curve/SegmentInfo.getModel:()Lorg/audiveris/omr/sheet/curve/Model;
+       104: invokeinterface #388,  1          // InterfaceMethod org/audiveris/omr/sheet/curve/Model.getCurve:()Ljava/awt/Shape;
+       109: astore        6
+       111: aload         6
+       113: ifnull        140
+       116: aload_2
+       117: ifnull        134
+       120: aload_2
+       121: aload         6
+       123: invokeinterface #392,  1          // InterfaceMethod java/awt/Shape.getBounds:()Ljava/awt/Rectangle;
+       128: invokevirtual #397                // Method java/awt/Rectangle.intersects:(Ljava/awt/Rectangle;)Z
+       131: ifeq          140
+       134: aload_1
+       135: aload         6
+       137: invokevirtual #403                // Method java/awt/Graphics2D.draw:(Ljava/awt/Shape;)V
+       140: goto          74
+       143: aload_1
+       144: aload_3
+       145: invokevirtual #407                // Method java/awt/Graphics2D.setStroke:(Ljava/awt/Stroke;)V
+       148: return
+      LineNumberTable:
+        line 321: 0
+        line 324: 5
+        line 326: 11
+        line 327: 44
+        line 328: 53
+        line 331: 56
+        line 333: 63
+        line 334: 96
+        line 336: 111
+        line 337: 116
+        line 338: 134
+        line 341: 140
+        line 343: 143
+        line 344: 148
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           44       9     5 segment   Lorg/audiveris/omr/sig/inter/SegmentInter;
+          111      29     6 curve   Ljava/awt/Shape;
+           96      44     5 segment   Lorg/audiveris/omr/sig/inter/SegmentInter;
+            0     149     0  this   Lorg/audiveris/omr/sheet/curve/SegmentsBuilder;
+            0     149     1     g   Ljava/awt/Graphics2D;
+            5     144     2  clip   Ljava/awt/Rectangle;
+           11     138     3 oldStroke   Ljava/awt/Stroke;
+      StackMapTable: number_of_entries = 6
+        frame_type = 254 /* append */
+          offset_delta = 22
+          locals = [ class java/awt/Rectangle, class java/awt/Stroke, class java/util/Iterator ]
+        frame_type = 250 /* chop */
+          offset_delta = 33
+        frame_type = 252 /* append */
+          offset_delta = 17
+          locals = [ class java/util/Iterator ]
+        frame_type = 253 /* append */
+          offset_delta = 59
+          locals = [ class org/audiveris/omr/sig/inter/SegmentInter, class java/awt/Shape ]
+        frame_type = 249 /* chop */
+          offset_delta = 5
+        frame_type = 250 /* chop */
+          offset_delta = 2
+
+  protected void weed(java.util.Set<org.audiveris.omr.sheet.curve.Curve>);
+    descriptor: (Ljava/util/Set;)V
+    flags: (0x0004) ACC_PROTECTED
+    Code:
+      stack=3, locals=3, args_size=2
+         0: new           #316                // class java/util/ArrayList
+         3: dup
+         4: aload_1
+         5: invokespecial #318                // Method java/util/ArrayList."<init>":(Ljava/util/Collection;)V
+         8: astore_2
+         9: aload_2
+        10: getstatic     #411                // Field org/audiveris/omr/sheet/curve/Curve.byReverseXLength:Ljava/util/Comparator;
+        13: invokestatic  #325                // Method java/util/Collections.sort:(Ljava/util/List;Ljava/util/Comparator;)V
+        16: aload_1
+        17: invokeinterface #414,  1          // InterfaceMethod java/util/Set.clear:()V
+        22: aload_1
+        23: aload_2
+        24: iconst_0
+        25: invokeinterface #336,  2          // InterfaceMethod java/util/List.get:(I)Ljava/lang/Object;
+        30: checkcast     #90                 // class org/audiveris/omr/sheet/curve/Curve
+        33: invokeinterface #230,  2          // InterfaceMethod java/util/Set.add:(Ljava/lang/Object;)Z
+        38: pop
+        39: return
+      LineNumberTable:
+        line 350: 0
+        line 351: 9
+        line 352: 16
+        line 353: 22
+        line 354: 39
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      40     0  this   Lorg/audiveris/omr/sheet/curve/SegmentsBuilder;
+            0      40     1 clump   Ljava/util/Set;
+            9      31     2  list   Ljava/util/List;
+      LocalVariableTypeTable:
+        Start  Length  Slot  Name   Signature
+            0      40     1 clump   Ljava/util/Set<Lorg/audiveris/omr/sheet/curve/Curve;>;
+            9      31     2  list   Ljava/util/List<Lorg/audiveris/omr/sheet/curve/Curve;>;
+    Signature: #538                         // (Ljava/util/Set<Lorg/audiveris/omr/sheet/curve/Curve;>;)V
+
+  protected org.audiveris.omr.sig.GradeImpacts computeImpacts(org.audiveris.omr.sheet.curve.Curve, boolean);
+    descriptor: (Lorg/audiveris/omr/sheet/curve/Curve;Z)Lorg/audiveris/omr/sig/GradeImpacts;
+    flags: (0x1044) ACC_PROTECTED, ACC_BRIDGE, ACC_SYNTHETIC
+    Code:
+      stack=3, locals=3, args_size=3
+         0: aload_0
+         1: aload_1
+         2: iload_2
+         3: invokevirtual #207                // Method computeImpacts:(Lorg/audiveris/omr/sheet/curve/Curve;Z)Lorg/audiveris/omr/sig/inter/SegmentInter$Impacts;
+         6: areturn
+      LineNumberTable:
+        line 62: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       7     0  this   Lorg/audiveris/omr/sheet/curve/SegmentsBuilder;
+    MethodParameters:
+      Name                           Flags
+      <no name>                      synthetic
+      <no name>                      synthetic
+
+  static {};
+    descriptor: ()V
+    flags: (0x0008) ACC_STATIC
+    Code:
+      stack=2, locals=0, args_size=0
+         0: new           #417                // class org/audiveris/omr/sheet/curve/SegmentsBuilder$Constants
+         3: dup
+         4: invokespecial #419                // Method org/audiveris/omr/sheet/curve/SegmentsBuilder$Constants."<init>":()V
+         7: putstatic     #420                // Field constants:Lorg/audiveris/omr/sheet/curve/SegmentsBuilder$Constants;
+        10: ldc           #10                 // class org/audiveris/omr/sheet/curve/SegmentsBuilder
+        12: invokestatic  #424                // Method org/slf4j/LoggerFactory.getLogger:(Ljava/lang/Class;)Lorg/slf4j/Logger;
+        15: putstatic     #58                 // Field logger:Lorg/slf4j/Logger;
+        18: getstatic     #430                // Field java/awt/Color.CYAN:Ljava/awt/Color;
+        21: putstatic     #380                // Field SEGMENT:Ljava/awt/Color;
+        24: return
+      LineNumberTable:
+        line 67: 0
+        line 69: 10
+        line 71: 18
+}
+SourceFile: "SegmentsBuilder.java"
+NestMembers:
+  org/audiveris/omr/sheet/curve/SegmentsBuilder$Parameters
+  org/audiveris/omr/sheet/curve/SegmentsBuilder$Constants
+BootstrapMethods:
+  0: #548 REF_invokeStatic java/lang/invoke/StringConcatFactory.makeConcatWithConstants:(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/invoke/CallSite;
+    Method arguments:
+      #546 Error in SegmentsBuilder: \u0001
+InnerClasses:
+  public static #556= #191 of #211;       // Impacts=class org/audiveris/omr/sig/inter/SegmentInter$Impacts of class org/audiveris/omr/sig/inter/SegmentInter
+  public static final #562= #558 of #560; // Lookup=class java/lang/invoke/MethodHandles$Lookup of class java/lang/invoke/MethodHandles

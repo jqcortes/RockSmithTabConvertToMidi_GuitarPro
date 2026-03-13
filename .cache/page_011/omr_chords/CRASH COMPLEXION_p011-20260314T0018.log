@@ -1,0 +1,22 @@
+2026-03-14 00:18:56,112 INFO [CRASH COMPLEXION_p011]                 Book.java:1929 | Book reaching STEMS on sheets:[#1]
+2026-03-14 00:18:56,114 INFO [CRASH COMPLEXION_p011]       StepMonitoring.java:98   | STEMS
+2026-03-14 00:18:59,407 INFO [CRASH COMPLEXION_p011]            SheetStub.java:1000 | Loaded /sheet#1/sheet#1.xml
+2026-03-14 00:19:01,913 ERROR [CRASH COMPLEXION_p011]                Check.java:317  | Illegal low 1.25 high 0.5 range for {Check Length Covariant:true Low:1.25 High:0.5}
+2026-03-14 00:19:01,944 ERROR [CRASH COMPLEXION_p011]                Check.java:317  | Illegal low 1.25 high 0.5 range for {Check Length Covariant:true Low:1.25 High:0.5}
+2026-03-14 00:19:01,956 ERROR [CRASH COMPLEXION_p011]                Check.java:317  | Illegal low 1.25 high 0.5 range for {Check Length Covariant:true Low:1.25 High:0.5}
+2026-03-14 00:19:01,959 WARN [CRASH COMPLEXION_p011]                 Book.java:2044 | Error processing stub
+2026-03-14 00:19:01,960 INFO [CRASH COMPLEXION_p011]                 Book.java:2584 | Book{CRASH COMPLEXION_p011} storing
+2026-03-14 00:19:02,061 INFO [CRASH COMPLEXION_p011]                 Book.java:2565 | Stored /book.xml
+2026-03-14 00:19:04,153 INFO [CRASH COMPLEXION_p011]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-14 00:19:04,154 INFO [CRASH COMPLEXION_p011]                 Book.java:2525 | Book stored as C:\Users\ken\RockSmithTabConvertToMidi\.cache\page_011\omr_chords\CRASH COMPLEXION_p011.omr
+2026-03-14 00:19:04,161 INFO [CRASH COMPLEXION_p011]            SheetStub.java:1654 | Sheet disposed
+2026-03-14 00:19:04,190 INFO [CRASH COMPLEXION_p011]                 Book.java:2050 | End of Stub#1
+2026-03-14 00:19:04,190 INFO [CRASH COMPLEXION_p011]                 Book.java:2057 | End of Book{CRASH COMPLEXION_p011}
+2026-03-14 00:19:04,191 WARN [CRASH COMPLEXION_p011]                  CLI.java:956  | Exception occurred java.lang.Exception: Error in reaching step STEMS
+java.lang.Exception: Error in reaching step STEMS
+	at org.audiveris.omr.CLI$ProcessingTask.processBook(CLI.java:893)
+	at org.audiveris.omr.CLI$CliTask.call(CLI.java:513)
+	at org.audiveris.omr.Main.runBatchTasks(Main.java:361)
+	at org.audiveris.omr.Main.main(Main.java:263)
+	at Audiveris.main(Audiveris.java:50)
+2026-03-14 00:19:04,225 INFO [CRASH COMPLEXION_p011]                Score.java:181  | Closing {Score 1}

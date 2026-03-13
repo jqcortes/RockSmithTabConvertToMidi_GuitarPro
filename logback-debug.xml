@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%-5level [%thread] %logger{36}:%line | %msg%n%ex{full}</pattern>
+    </encoder>
+  </appender>
+
+  <!-- Audiveris CURVES 関連を DEBUG に -->
+  <logger name="org.audiveris.omr.sheet.curve" level="DEBUG"/>
+  <logger name="org.audiveris.omr.sheet" level="DEBUG"/>
+  <logger name="org.audiveris.omr" level="INFO"/>
+
+  <root level="WARN">
+    <appender-ref ref="STDOUT"/>
+  </root>
+</configuration>

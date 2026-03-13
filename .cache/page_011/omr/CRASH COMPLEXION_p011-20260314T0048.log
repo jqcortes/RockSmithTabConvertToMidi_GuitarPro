@@ -1,0 +1,914 @@
+2026-03-14 00:48:05,670 DEBUG [CRASH COMPLEXION_p011]                 Book.java:1917 | reachStep STEMS force:false stubs:[Stub#1] swap:true
+2026-03-14 00:48:05,671 INFO [CRASH COMPLEXION_p011]                 Book.java:1929 | Book reaching STEMS on sheets:[#1]
+2026-03-14 00:48:05,674 DEBUG [CRASH COMPLEXION_p011]            SheetStub.java:1370 | reachStep obtained lock on Stub#1
+2026-03-14 00:48:05,675 DEBUG [CRASH COMPLEXION_p011]            SheetStub.java:1389 | Sheet#1 scheduling [STEMS]
+2026-03-14 00:48:05,681 INFO [CRASH COMPLEXION_p011]       StepMonitoring.java:98   | STEMS
+2026-03-14 00:48:05,687 DEBUG [CRASH COMPLEXION_p011]            SheetStub.java:1403 | reachStep STEMS towards STEMS
+2026-03-14 00:48:06,098 DEBUG [CRASH COMPLEXION_p011]              Picture.java:162  | Picture unmarshalled by JAXB
+2026-03-14 00:48:08,261 DEBUG [CRASH COMPLEXION_p011]                Sheet.java:1657 | Sheet unmarshalled
+2026-03-14 00:48:08,263 DEBUG [CRASH COMPLEXION_p011]                Sheet.java:1220 | Sheet#1 initTransients
+2026-03-14 00:48:08,284 DEBUG [CRASH COMPLEXION_p011]           DataHolder.java:144  | path: /sheet#1/BINARY.png
+2026-03-14 00:48:08,397 DEBUG [CRASH COMPLEXION_p011]           DataHolder.java:151  | Loaded /sheet#1/BINARY.png
+2026-03-14 00:48:08,399 DEBUG [CRASH COMPLEXION_p011]           DataHolder.java:294  | ImageHolder{BINARY.png discarded:false hasNoData:false modified:false data:BufferedImage@7be94cd6: type = 10 ColorModel: #pixelBits = 8 numComponents = 1 color space = java.awt.color.ICC_ColorSpace@20cff21e transparency = 1 has alpha = false isAlphaPre = false ByteInterleavedRaster: width = 2324 height = 3038 #numDataElements 1 dataOff[0] = 0} setModified:false
+2026-03-14 00:48:08,434 DEBUG [CRASH COMPLEXION_p011]              Picture.java:692  | BINARY source built as ip[width=2324, height=3038, bits=8, min=0.0, max=255.0]
+2026-03-14 00:48:08,476 DEBUG [CRASH COMPLEXION_p011]              Picture.java:692  | NO_STAFF source built as ip[width=2324, height=3038, bits=8, min=0.0, max=255.0]
+2026-03-14 00:48:09,556 DEBUG [CRASH COMPLEXION_p011]                Staff.java:1975 | Staff#1 sideBars:{LEFT=BarlineInter#4{ FROZEN(0.779/0.934) staff:1 THIN_BARLINE}}
+2026-03-14 00:48:09,558 DEBUG [CRASH COMPLEXION_p011]                Staff.java:1975 | Staff#2 sideBars:{LEFT=BarlineInter#16{ FROZEN(0.770/0.960) staff:2 THIN_BARLINE}}
+2026-03-14 00:48:09,559 DEBUG [CRASH COMPLEXION_p011]                Staff.java:1975 | Staff#3 sideBars:{LEFT=BarlineInter#28{ FROZEN(0.783/0.962) staff:3 THIN_BARLINE}}
+2026-03-14 00:48:09,560 DEBUG [CRASH COMPLEXION_p011]                Staff.java:1975 | Staff#4 sideBars:{LEFT=BarlineInter#40{ FROZEN(0.767/0.960) staff:4 THIN_BARLINE}}
+2026-03-14 00:48:09,563 DEBUG [CRASH COMPLEXION_p011]                Staff.java:1975 | Staff#5 sideBars:{LEFT=BarlineInter#52{ FROZEN(0.792/0.964) staff:5 THIN_BARLINE}}
+2026-03-14 00:48:09,564 DEBUG [CRASH COMPLEXION_p011]                Staff.java:1975 | Staff#6 sideBars:{LEFT=BarlineInter#64{ FROZEN(0.775/0.961) staff:6 THIN_BARLINE}}
+2026-03-14 00:48:09,565 DEBUG [CRASH COMPLEXION_p011]                Staff.java:1975 | Staff#7 sideBars:{LEFT=BarlineInter#76{ FROZEN(0.780/0.962) staff:7 THIN_BARLINE}}
+2026-03-14 00:48:09,566 DEBUG [CRASH COMPLEXION_p011]                Staff.java:1975 | Staff#8 sideBars:{LEFT=BarlineInter#88{ FROZEN(0.784/0.936) staff:8 THIN_BARLINE}}
+2026-03-14 00:48:09,701 DEBUG [CRASH COMPLEXION_p011]                Staff.java:1975 | Staff#9 sideBars:{LEFT=BarlineInter#100{ FROZEN(0.774/0.932) staff:9 THIN_BARLINE}, RIGHT=BarlineInter#112{ FROZEN(0.784/0.784) staff:9 THICK_BARLINE}}
+2026-03-14 00:48:09,702 DEBUG [CRASH COMPLEXION_p011]                Staff.java:1975 | Staff#10 sideBars:{LEFT=BarlineInter#116{ FROZEN(0.770/0.960) staff:10 THIN_BARLINE}, RIGHT=BarlineInter#128{ FROZEN(0.771/0.933) staff:10 THICK_BARLINE}}
+2026-03-14 00:48:09,703 DEBUG [CRASH COMPLEXION_p011]                Staff.java:1975 | Staff#11 sideBars:{LEFT=BarlineInter#131{ FROZEN(0.788/0.963) staff:11 THIN_BARLINE}, RIGHT=BarlineInter#143{ FROZEN(0.792/0.939) staff:11 THICK_BARLINE}}
+2026-03-14 00:48:09,703 DEBUG [CRASH COMPLEXION_p011]                Staff.java:1975 | Staff#12 sideBars:{LEFT=BarlineInter#147{ FROZEN(0.774/0.961) staff:12 THIN_BARLINE}, RIGHT=BarlineInter#159{ FROZEN(0.784/0.938) staff:12 THICK_BARLINE}}
+2026-03-14 00:48:09,704 DEBUG [CRASH COMPLEXION_p011]                Staff.java:1975 | Staff#13 sideBars:{LEFT=BarlineInter#162{ FROZEN(0.792/0.964) staff:13 THIN_BARLINE}, RIGHT=BarlineInter#173{ FROZEN(0.800/0.942) staff:13 THICK_BARLINE}}
+2026-03-14 00:48:09,705 DEBUG [CRASH COMPLEXION_p011]                Staff.java:1975 | Staff#14 sideBars:{LEFT=BarlineInter#175{ FROZEN(0.774/0.961) staff:14 THIN_BARLINE}, RIGHT=BarlineInter#187{ FROZEN(0.776/0.776) staff:14 THICK_BARLINE}}
+2026-03-14 00:48:09,705 DEBUG [CRASH COMPLEXION_p011]                Staff.java:1975 | Staff#15 sideBars:{LEFT=BarlineInter#191{ FROZEN(0.784/0.963) staff:15 THIN_BARLINE}, RIGHT=BarlineInter#203{ FROZEN(0.784/0.784) staff:15 THICK_BARLINE}}
+2026-03-14 00:48:09,706 DEBUG [CRASH COMPLEXION_p011]                Staff.java:1975 | Staff#16 sideBars:{LEFT=BarlineInter#207{ FROZEN(0.774/0.933) staff:16 THIN_BARLINE}, RIGHT=BarlineInter#219{ FROZEN(0.784/0.784) staff:16 THICK_BARLINE}}
+2026-03-14 00:48:09,716 INFO [CRASH COMPLEXION_p011]            SheetStub.java:1000 | Loaded /sheet#1/sheet#1.xml
+2026-03-14 00:48:09,742 DEBUG [CRASH COMPLEXION_p011]       StemsRetriever.java:262  | gapMap:{0=0, 1=5, 2=10, 3=34, 4=0}
+2026-03-14 00:48:09,754 DEBUG [CRASH COMPLEXION_p011]       StemsRetriever.java:588  | 
+System#1 inspectStems
+2026-03-14 00:48:09,762 DEBUG [CRASH COMPLEXION_p011]              Picture.java:692  | BINARY source built as ip[width=2324, height=3038, bits=8, min=0.0, max=255.0]
+2026-03-14 00:48:09,804 DEBUG [CRASH COMPLEXION_p011]              Picture.java:692  | NO_STAFF source built as ip[width=2324, height=3038, bits=8, min=0.0, max=255.0]
+2026-03-14 00:48:09,917 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1922} Glyph{#15273 [STUMP]}
+2026-03-14 00:48:09,919 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1922} Glyph{#15274 [STUMP]}
+2026-03-14 00:48:09,924 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1938} Glyph{#15273 [STUMP]}
+2026-03-14 00:48:09,929 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1938} Glyph{#15274 [STUMP]}
+2026-03-14 00:48:09,943 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1920} Glyph{#15275 [STUMP]}
+2026-03-14 00:48:09,945 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1920} Glyph{#15276 [STUMP]}
+2026-03-14 00:48:09,948 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1936} Glyph{#15275 [STUMP]}
+2026-03-14 00:48:09,950 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1936} Glyph{#15277 [STUMP]}
+2026-03-14 00:48:09,971 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1906} Glyph{#15278 [STUMP]}
+2026-03-14 00:48:09,973 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1906} Glyph{#15279 [STUMP]}
+2026-03-14 00:48:09,975 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1904} Glyph{#15280 [STUMP]}
+2026-03-14 00:48:09,976 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1904} Glyph{#15281 [STUMP]}
+2026-03-14 00:48:10,001 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1908} Glyph{#15282 [STUMP]}
+2026-03-14 00:48:10,002 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1908} Glyph{#15283 [STUMP]}
+2026-03-14 00:48:10,005 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1910} Glyph{#15282 [STUMP]}
+2026-03-14 00:48:10,006 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1910} Glyph{#15283 [STUMP]}
+2026-03-14 00:48:10,008 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1924} Glyph{#15282 [STUMP]}
+2026-03-14 00:48:10,010 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1924} Glyph{#15283 [STUMP]}
+2026-03-14 00:48:10,012 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1926} Glyph{#15282 [STUMP]}
+2026-03-14 00:48:10,014 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1926} Glyph{#15283 [STUMP]}
+2026-03-14 00:48:10,022 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1911} Glyph{#15284 [STUMP]}
+2026-03-14 00:48:10,025 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1911} Glyph{#15285 [STUMP]}
+2026-03-14 00:48:10,027 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1927} Glyph{#15284 [STUMP]}
+2026-03-14 00:48:10,030 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1927} Glyph{#15285 [STUMP]}
+2026-03-14 00:48:10,036 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1913} Glyph{#15286 [STUMP]}
+2026-03-14 00:48:10,038 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1913} Glyph{#15287 [STUMP]}
+2026-03-14 00:48:10,040 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1929} Glyph{#15288 [STUMP]}
+2026-03-14 00:48:10,042 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1929} Glyph{#15289 [STUMP]}
+2026-03-14 00:48:10,067 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1915} Glyph{#15290 [STUMP]}
+2026-03-14 00:48:10,069 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1915} Glyph{#15291 [STUMP]}
+2026-03-14 00:48:10,070 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1931} Glyph{#15290 [STUMP]}
+2026-03-14 00:48:10,072 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1931} Glyph{#15291 [STUMP]}
+2026-03-14 00:48:10,094 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1917} Glyph{#15292 [STUMP]}
+2026-03-14 00:48:10,100 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1919} Glyph{#15292 [STUMP]}
+2026-03-14 00:48:10,104 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1933} Glyph{#15293 [STUMP]}
+2026-03-14 00:48:10,105 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1933} Glyph{#15294 [STUMP]}
+2026-03-14 00:48:10,107 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1935} Glyph{#15293 [STUMP]}
+2026-03-14 00:48:10,109 DEBUG [CRASH COMPLEXION_p011]           BeamLinker.java:250  | BeamLinker{beam#1935} Glyph{#15294 [STUMP]}
+2026-03-14 00:48:10,262 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3755-Clnk-TR refPt:[367.7,841.0]} Glyph{#15295 [STUMP]}
+2026-03-14 00:48:10,265 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3423-Clnk-TL refPt:[372.9,630.0]} Glyph{#15296 [STUMP]}
+2026-03-14 00:48:10,268 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3423-Clnk-BL refPt:[372.9,634.0]} Glyph{#15296 [STUMP]}
+2026-03-14 00:48:10,271 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3423-Clnk-BR refPt:[385.7,630.0]} Glyph{#15297 [STUMP]}
+2026-03-14 00:48:10,277 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3417-Clnk-TL refPt:[373.9,624.0]} nothing kept from sections[V1561]
+2026-03-14 00:48:10,278 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3417-Clnk-TL refPt:[373.9,624.0]} Glyph{#15298 [STUMP]}
+2026-03-14 00:48:10,280 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3417-Clnk-BL refPt:[373.9,628.0]} Glyph{#15296 [STUMP]}
+2026-03-14 00:48:10,285 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4009-Clnk-TL refPt:[373.9,1025.0]} Glyph{#15299 [STUMP]}
+2026-03-14 00:48:10,287 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4009-Clnk-BL refPt:[373.9,1029.0]} Glyph{#15299 [STUMP]}
+2026-03-14 00:48:10,289 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4009-Clnk-BR refPt:[387.7,1025.0]} nothing kept from sections[V1689, V1576]
+2026-03-14 00:48:10,289 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4009-Clnk-BR refPt:[387.7,1025.0]} Glyph{#15300 [STUMP]}
+2026-03-14 00:48:10,291 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4013-Clnk-TL refPt:[373.9,1025.0]} Glyph{#15299 [STUMP]}
+2026-03-14 00:48:10,292 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4013-Clnk-BL refPt:[373.9,1029.0]} Glyph{#15299 [STUMP]}
+2026-03-14 00:48:10,294 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4013-Clnk-BR refPt:[387.7,1025.0]} nothing kept from sections[V1689, V1576]
+2026-03-14 00:48:10,294 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4013-Clnk-BR refPt:[387.7,1025.0]} Glyph{#15300 [STUMP]}
+2026-03-14 00:48:10,296 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3819-Clnk-TL refPt:[375.9,861.0]} Glyph{#15301 [STUMP]}
+2026-03-14 00:48:10,297 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3819-Clnk-BL refPt:[375.9,865.0]} Glyph{#15301 [STUMP]}
+2026-03-14 00:48:10,299 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3819-Clnk-BR refPt:[389.7,861.0]} Glyph{#15302 [STUMP]}
+2026-03-14 00:48:10,302 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3959-Clnk-BL refPt:[375.9,1022.0]} nothing kept from sections[V1563, V1576]
+2026-03-14 00:48:10,304 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3959-Clnk-BL refPt:[375.9,1022.0]} Glyph{#15303 [STUMP]}
+2026-03-14 00:48:10,308 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3026-Clnk-TR refPt:[390.7,73.0]} nothing kept from sections[V1703, V1627]
+2026-03-14 00:48:10,309 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3026-Clnk-BR refPt:[390.7,78.0]} nothing kept from sections[V1627]
+2026-03-14 00:48:10,310 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3026-Clnk-BR refPt:[390.7,78.0]} Glyph{#15304 [STUMP]}
+2026-03-14 00:48:10,312 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3961-Clnk-BL refPt:[376.9,1022.0]} nothing kept from sections[V1576]
+2026-03-14 00:48:10,313 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3961-Clnk-BL refPt:[376.9,1022.0]} Glyph{#15305 [STUMP]}
+2026-03-14 00:48:10,314 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4547-Clnk-TR refPt:[390.7,1284.0]} nothing kept from sections[V1705, V1620]
+2026-03-14 00:48:10,315 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4547-Clnk-BR refPt:[390.7,1289.0]} nothing kept from sections[V1620]
+2026-03-14 00:48:10,315 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4547-Clnk-BR refPt:[390.7,1289.0]} Glyph{#15306 [STUMP]}
+2026-03-14 00:48:10,317 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3861-Clnk-TL refPt:[377.9,924.0]} Glyph{#15307 [STUMP]}
+2026-03-14 00:48:10,318 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3861-Clnk-BL refPt:[377.9,928.0]} Glyph{#15307 [STUMP]}
+2026-03-14 00:48:10,319 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3861-Clnk-TR refPt:[391.7,919.0]} Glyph{#15308 [STUMP]}
+2026-03-14 00:48:10,320 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3861-Clnk-BR refPt:[391.7,924.0]} Glyph{#15308 [STUMP]}
+2026-03-14 00:48:10,322 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3010-Clnk-TL refPt:[378.9,73.0]} Glyph{#15309 [STUMP]}
+2026-03-14 00:48:10,325 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3010-Clnk-TR refPt:[392.7,68.0]} Glyph{#15310 [STUMP]}
+2026-03-14 00:48:10,326 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3010-Clnk-BR refPt:[392.7,73.0]} Glyph{#15311 [STUMP]}
+2026-03-14 00:48:10,329 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4413-Clnk-TL refPt:[379.9,1283.0]} Glyph{#15312 [STUMP]}
+2026-03-14 00:48:10,330 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4413-Clnk-TR refPt:[393.7,1278.0]} Glyph{#15313 [STUMP]}
+2026-03-14 00:48:10,333 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4413-Clnk-BR refPt:[393.7,1283.0]} Glyph{#15313 [STUMP]}
+2026-03-14 00:48:10,338 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4417-Clnk-TL refPt:[379.9,1283.0]} Glyph{#15312 [STUMP]}
+2026-03-14 00:48:10,340 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4417-Clnk-TR refPt:[393.7,1278.0]} Glyph{#15313 [STUMP]}
+2026-03-14 00:48:10,341 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4417-Clnk-BR refPt:[393.7,1283.0]} Glyph{#15313 [STUMP]}
+2026-03-14 00:48:10,343 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4711-Clnk-TL refPt:[386.9,1231.0]} Glyph{#15314 [STUMP]}
+2026-03-14 00:48:10,344 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4711-Clnk-BL refPt:[386.9,1235.0]} Glyph{#15315 [STUMP]}
+2026-03-14 00:48:10,347 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3485-Clnk-TL refPt:[394.9,643.0]} Glyph{#15316 [STUMP]}
+2026-03-14 00:48:10,349 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3485-Clnk-BL refPt:[394.9,647.0]} Glyph{#15316 [STUMP]}
+2026-03-14 00:48:10,350 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3485-Clnk-BR refPt:[408.7,643.0]} Glyph{#15317 [STUMP]}
+2026-03-14 00:48:10,352 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3487-Clnk-TL refPt:[394.9,643.0]} Glyph{#15316 [STUMP]}
+2026-03-14 00:48:10,354 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3487-Clnk-BL refPt:[394.9,647.0]} Glyph{#15316 [STUMP]}
+2026-03-14 00:48:10,356 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3487-Clnk-BR refPt:[408.7,643.0]} Glyph{#15317 [STUMP]}
+2026-03-14 00:48:10,359 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4107-Clnk-TL refPt:[419.9,1038.0]} Glyph{#15318 [STUMP]}
+2026-03-14 00:48:10,360 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4107-Clnk-BL refPt:[419.9,1042.0]} Glyph{#15318 [STUMP]}
+2026-03-14 00:48:10,362 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4107-Clnk-BR refPt:[433.7,1038.0]} Glyph{#15319 [STUMP]}
+2026-03-14 00:48:10,370 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4111-Clnk-TL refPt:[419.9,1038.0]} Glyph{#15318 [STUMP]}
+2026-03-14 00:48:10,372 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4111-Clnk-BL refPt:[419.9,1042.0]} Glyph{#15318 [STUMP]}
+2026-03-14 00:48:10,374 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4111-Clnk-BR refPt:[433.7,1038.0]} Glyph{#15319 [STUMP]}
+2026-03-14 00:48:10,375 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4067-Clnk-TL refPt:[421.9,1034.0]} nothing kept from sections[V1770]
+2026-03-14 00:48:10,377 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4067-Clnk-BL refPt:[421.9,1038.0]} Glyph{#15318 [STUMP]}
+2026-03-14 00:48:10,379 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4067-Clnk-BR refPt:[434.7,1034.0]} Glyph{#15319 [STUMP]}
+2026-03-14 00:48:10,381 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3491-Clnk-TL refPt:[438.9,644.0]} Glyph{#15320 [STUMP]}
+2026-03-14 00:48:10,382 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3491-Clnk-BL refPt:[438.9,648.0]} Glyph{#15320 [STUMP]}
+2026-03-14 00:48:10,384 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3491-Clnk-BR refPt:[451.7,644.0]} Glyph{#15321 [STUMP]}
+2026-03-14 00:48:10,386 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3495-Clnk-TL refPt:[438.9,644.0]} Glyph{#15320 [STUMP]}
+2026-03-14 00:48:10,387 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3495-Clnk-BL refPt:[438.9,648.0]} Glyph{#15320 [STUMP]}
+2026-03-14 00:48:10,389 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3495-Clnk-BR refPt:[451.7,644.0]} Glyph{#15321 [STUMP]}
+2026-03-14 00:48:10,391 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4017-Clnk-TL refPt:[463.9,1024.0]} Glyph{#15322 [STUMP]}
+2026-03-14 00:48:10,396 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4017-Clnk-BR refPt:[477.7,1024.0]} nothing kept from sections[V1941, V1870]
+2026-03-14 00:48:10,398 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3427-Clnk-TL refPt:[464.9,623.0]} Glyph{#15323 [STUMP]}
+2026-03-14 00:48:10,401 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3427-Clnk-BL refPt:[464.9,627.0]} Glyph{#15323 [STUMP]}
+2026-03-14 00:48:10,403 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3427-Clnk-BR refPt:[478.7,623.0]} Glyph{#15324 [STUMP]}
+2026-03-14 00:48:10,404 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3431-Clnk-TL refPt:[464.9,623.0]} Glyph{#15323 [STUMP]}
+2026-03-14 00:48:10,406 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3431-Clnk-BL refPt:[464.9,627.0]} Glyph{#15323 [STUMP]}
+2026-03-14 00:48:10,407 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3431-Clnk-BR refPt:[478.7,623.0]} Glyph{#15324 [STUMP]}
+2026-03-14 00:48:10,410 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3381-Clnk-BL refPt:[465.9,620.0]} Glyph{#15323 [STUMP]}
+2026-03-14 00:48:10,411 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3965-Clnk-TL refPt:[465.9,1018.0]} Glyph{#15325 [STUMP]}
+2026-03-14 00:48:10,412 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3965-Clnk-BL refPt:[465.9,1022.0]} Glyph{#15326 [STUMP]}
+2026-03-14 00:48:10,413 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3965-Clnk-BR refPt:[479.7,1018.0]} Glyph{#15327 [STUMP]}
+2026-03-14 00:48:10,414 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3969-Clnk-TL refPt:[465.9,1018.0]} Glyph{#15325 [STUMP]}
+2026-03-14 00:48:10,415 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3969-Clnk-BL refPt:[465.9,1022.0]} Glyph{#15326 [STUMP]}
+2026-03-14 00:48:10,416 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3969-Clnk-BR refPt:[479.7,1018.0]} Glyph{#15327 [STUMP]}
+2026-03-14 00:48:10,418 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3062-Clnk-TL refPt:[467.9,93.0]} nothing kept from sections[V1867]
+2026-03-14 00:48:10,418 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3062-Clnk-TL refPt:[467.9,93.0]} Glyph{#15328 [STUMP]}
+2026-03-14 00:48:10,419 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3062-Clnk-BL refPt:[467.9,97.0]} nothing kept from sections[V1867]
+2026-03-14 00:48:10,420 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3062-Clnk-BL refPt:[467.9,97.0]} Glyph{#15328 [STUMP]}
+2026-03-14 00:48:10,421 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3066-Clnk-TL refPt:[467.9,92.0]} nothing kept from sections[V1867]
+2026-03-14 00:48:10,422 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3066-Clnk-TL refPt:[467.9,92.0]} Glyph{#15328 [STUMP]}
+2026-03-14 00:48:10,423 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3066-Clnk-BL refPt:[467.9,96.0]} nothing kept from sections[V1867]
+2026-03-14 00:48:10,423 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3066-Clnk-BL refPt:[467.9,96.0]} Glyph{#15328 [STUMP]}
+2026-03-14 00:48:10,425 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3094-Clnk-TL refPt:[468.9,100.0]} nothing kept from sections[V1867]
+2026-03-14 00:48:10,426 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3094-Clnk-TL refPt:[468.9,100.0]} Glyph{#15329 [STUMP]}
+2026-03-14 00:48:10,428 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3094-Clnk-BR refPt:[481.7,100.0]} nothing kept from sections[V1953, V1900]
+2026-03-14 00:48:10,428 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3094-Clnk-BR refPt:[481.7,100.0]} Glyph{#15330 [STUMP]}
+2026-03-14 00:48:10,430 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4315-Clnk-TL refPt:[468.9,1256.0]} Glyph{#15331 [STUMP]}
+2026-03-14 00:48:10,431 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4315-Clnk-BL refPt:[468.9,1260.0]} Glyph{#15331 [STUMP]}
+2026-03-14 00:48:10,432 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4315-Clnk-BR refPt:[481.7,1256.0]} Glyph{#15332 [STUMP]}
+2026-03-14 00:48:10,434 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3040-Clnk-BL refPt:[470.9,90.0]} nothing kept from sections[V1867]
+2026-03-14 00:48:10,434 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3040-Clnk-BL refPt:[470.9,90.0]} Glyph{#15333 [STUMP]}
+2026-03-14 00:48:10,435 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4115-Clnk-TL refPt:[506.9,1039.0]} Glyph{#15334 [STUMP]}
+2026-03-14 00:48:10,436 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4115-Clnk-BL refPt:[506.9,1043.0]} Glyph{#15334 [STUMP]}
+2026-03-14 00:48:10,437 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4115-Clnk-BR refPt:[520.7,1039.0]} Glyph{#15335 [STUMP]}
+2026-03-14 00:48:10,438 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4119-Clnk-TL refPt:[506.9,1039.0]} Glyph{#15334 [STUMP]}
+2026-03-14 00:48:10,439 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4119-Clnk-BL refPt:[506.9,1043.0]} Glyph{#15334 [STUMP]}
+2026-03-14 00:48:10,440 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4119-Clnk-BR refPt:[520.7,1039.0]} Glyph{#15335 [STUMP]}
+2026-03-14 00:48:10,441 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4071-Clnk-TL refPt:[508.9,1034.0]} nothing kept from sections[V2000]
+2026-03-14 00:48:10,441 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4071-Clnk-TL refPt:[508.9,1034.0]} Glyph{#15336 [STUMP]}
+2026-03-14 00:48:10,442 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4071-Clnk-BL refPt:[508.9,1038.0]} Glyph{#15337 [STUMP]}
+2026-03-14 00:48:10,444 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3621-Clnk-BL refPt:[535.9,634.0]} nothing kept from sections[V2069]
+2026-03-14 00:48:10,444 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3621-Clnk-BL refPt:[535.9,634.0]} Glyph{#15338 [STUMP]}
+2026-03-14 00:48:10,446 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3108-Clnk-TR refPt:[566.7,95.0]} Glyph{#15339 [STUMP]}
+2026-03-14 00:48:10,447 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4021-Clnk-TL refPt:[553.9,1024.0]} Glyph{#15340 [STUMP]}
+2026-03-14 00:48:10,448 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4021-Clnk-BL refPt:[553.9,1028.0]} Glyph{#15340 [STUMP]}
+2026-03-14 00:48:10,449 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4021-Clnk-BR refPt:[567.7,1024.0]} Glyph{#15341 [STUMP]}
+2026-03-14 00:48:10,450 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4025-Clnk-TL refPt:[553.9,1024.0]} Glyph{#15340 [STUMP]}
+2026-03-14 00:48:10,451 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4025-Clnk-BL refPt:[553.9,1028.0]} Glyph{#15340 [STUMP]}
+2026-03-14 00:48:10,452 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4025-Clnk-BR refPt:[567.7,1024.0]} Glyph{#15341 [STUMP]}
+2026-03-14 00:48:10,453 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3973-Clnk-TL refPt:[555.9,1018.0]} nothing kept from sections[V2121]
+2026-03-14 00:48:10,454 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3973-Clnk-BL refPt:[555.9,1022.0]} Glyph{#15340 [STUMP]}
+2026-03-14 00:48:10,455 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3973-Clnk-BR refPt:[568.7,1018.0]} Glyph{#15341 [STUMP]}
+2026-03-14 00:48:10,456 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3854-Clnk-TL refPt:[556.9,852.0]} Glyph{#15342 [STUMP]}
+2026-03-14 00:48:10,457 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3854-Clnk-TR refPt:[570.7,847.0]} Glyph{#15343 [STUMP]}
+2026-03-14 00:48:10,459 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3854-Clnk-BR refPt:[570.7,852.0]} Glyph{#15343 [STUMP]}
+2026-03-14 00:48:10,460 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3441-Clnk-TL refPt:[557.9,629.0]} Glyph{#15344 [STUMP]}
+2026-03-14 00:48:10,462 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3441-Clnk-BL refPt:[557.9,633.0]} Glyph{#15344 [STUMP]}
+2026-03-14 00:48:10,464 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3441-Clnk-BR refPt:[571.7,629.0]} Glyph{#15345 [STUMP]}
+2026-03-14 00:48:10,466 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4559-Clnk-TR refPt:[571.7,1284.0]} nothing kept from sections[V2223, V2230, V2153]
+2026-03-14 00:48:10,466 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4559-Clnk-TR refPt:[571.7,1284.0]} Glyph{#15346 [STUMP]}
+2026-03-14 00:48:10,467 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4559-Clnk-BR refPt:[571.7,1289.0]} nothing kept from sections[V2153]
+2026-03-14 00:48:10,467 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4559-Clnk-BR refPt:[571.7,1289.0]} Glyph{#15347 [STUMP]}
+2026-03-14 00:48:10,469 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3163-Clnk-BR refPt:[572.7,106.0]} Glyph{#15348 [STUMP]}
+2026-03-14 00:48:10,470 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3166-Clnk-BR refPt:[572.7,105.0]} Glyph{#15348 [STUMP]}
+2026-03-14 00:48:10,470 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4423-Clnk-TL refPt:[559.9,1283.0]} Glyph{#15349 [STUMP]}
+2026-03-14 00:48:10,472 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4423-Clnk-TR refPt:[573.7,1278.0]} Glyph{#15350 [STUMP]}
+2026-03-14 00:48:10,473 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4423-Clnk-BR refPt:[573.7,1283.0]} Glyph{#15350 [STUMP]}
+2026-03-14 00:48:10,474 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3157-Clnk-BR refPt:[575.7,105.0]} Glyph{#15351 [STUMP]}
+2026-03-14 00:48:10,475 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3112-Clnk-TR refPt:[583.7,95.0]} Glyph{#15352 [STUMP]}
+2026-03-14 00:48:10,476 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3256-Clnk-TR refPt:[586.7,81.0]} Glyph{#15353 [STUMP]}
+2026-03-14 00:48:10,477 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3256-Clnk-BR refPt:[586.7,86.0]} Glyph{#15354 [STUMP]}
+2026-03-14 00:48:10,479 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3618-Clnk-TL refPt:[575.9,588.0]} Glyph{#15355 [STUMP]}
+2026-03-14 00:48:10,480 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4125-Clnk-TL refPt:[578.9,1038.0]} Glyph{#15356 [STUMP]}
+2026-03-14 00:48:10,481 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4125-Clnk-BL refPt:[578.9,1042.0]} Glyph{#15356 [STUMP]}
+2026-03-14 00:48:10,482 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4125-Clnk-BR refPt:[592.7,1038.0]} Glyph{#15357 [STUMP]}
+2026-03-14 00:48:10,483 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4129-Clnk-TL refPt:[578.9,1038.0]} Glyph{#15356 [STUMP]}
+2026-03-14 00:48:10,484 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4129-Clnk-BL refPt:[578.9,1042.0]} Glyph{#15356 [STUMP]}
+2026-03-14 00:48:10,485 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4129-Clnk-BR refPt:[592.7,1038.0]} Glyph{#15357 [STUMP]}
+2026-03-14 00:48:10,486 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3501-Clnk-TL refPt:[579.9,641.0]} Glyph{#15358 [STUMP]}
+2026-03-14 00:48:10,487 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3501-Clnk-BL refPt:[579.9,645.0]} Glyph{#15358 [STUMP]}
+2026-03-14 00:48:10,489 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3501-Clnk-BR refPt:[592.7,641.0]} Glyph{#15359 [STUMP]}
+2026-03-14 00:48:10,491 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4075-Clnk-TL refPt:[580.9,1034.0]} nothing kept from sections[V2254]
+2026-03-14 00:48:10,491 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4075-Clnk-TL refPt:[580.9,1034.0]} Glyph{#15360 [STUMP]}
+2026-03-14 00:48:10,494 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4075-Clnk-BL refPt:[580.9,1038.0]} nothing kept from sections[V2248, V2254]
+2026-03-14 00:48:10,494 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4075-Clnk-BL refPt:[580.9,1038.0]} Glyph{#15356 [STUMP]}
+2026-03-14 00:48:10,495 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4075-Clnk-BR refPt:[592.7,1034.0]} Glyph{#15357 [STUMP]}
+2026-03-14 00:48:10,497 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3169-Clnk-TL refPt:[605.9,106.0]} nothing kept from sections[V2359]
+2026-03-14 00:48:10,497 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3169-Clnk-TL refPt:[605.9,106.0]} Glyph{#15361 [STUMP]}
+2026-03-14 00:48:10,498 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3169-Clnk-BL refPt:[605.9,110.0]} nothing kept from sections[V2359]
+2026-03-14 00:48:10,499 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3169-Clnk-BL refPt:[605.9,110.0]} Glyph{#15361 [STUMP]}
+2026-03-14 00:48:10,499 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3173-Clnk-TL refPt:[606.9,105.0]} nothing kept from sections[V2359]
+2026-03-14 00:48:10,500 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3173-Clnk-TL refPt:[606.9,105.0]} Glyph{#15362 [STUMP]}
+2026-03-14 00:48:10,501 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3173-Clnk-BL refPt:[606.9,109.0]} nothing kept from sections[V2359]
+2026-03-14 00:48:10,502 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3173-Clnk-BL refPt:[606.9,109.0]} Glyph{#15362 [STUMP]}
+2026-03-14 00:48:10,503 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3118-Clnk-BL refPt:[608.9,104.0]} nothing kept from sections[V2359]
+2026-03-14 00:48:10,503 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3118-Clnk-BL refPt:[608.9,104.0]} Glyph{#15363 [STUMP]}
+2026-03-14 00:48:10,504 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3220-Clnk-TL refPt:[608.9,113.0]} nothing kept from sections[V2359]
+2026-03-14 00:48:10,505 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3220-Clnk-TL refPt:[608.9,113.0]} Glyph{#15363 [STUMP]}
+2026-03-14 00:48:10,506 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3220-Clnk-BR refPt:[621.7,113.0]} Glyph{#587 [VERTICAL_SEED]}
+2026-03-14 00:48:10,509 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3365-Clnk-BR refPt:[627.7,588.0]} nothing kept from sections[V2421]
+2026-03-14 00:48:10,509 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3365-Clnk-BR refPt:[627.7,588.0]} Glyph{#15364 [STUMP]}
+2026-03-14 00:48:10,512 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3288-Clnk-BR refPt:[628.7,562.0]} nothing kept from sections[V2432]
+2026-03-14 00:48:10,512 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3288-Clnk-BR refPt:[628.7,562.0]} Glyph{#15365 [STUMP]}
+2026-03-14 00:48:10,515 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4381-Clnk-BR refPt:[631.7,1263.0]} nothing kept from sections[V2415]
+2026-03-14 00:48:10,516 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4381-Clnk-BR refPt:[631.7,1263.0]} Glyph{#15366 [STUMP]}
+2026-03-14 00:48:10,518 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4321-Clnk-TL refPt:[619.9,1256.0]} Glyph{#15367 [STUMP]}
+2026-03-14 00:48:10,521 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4321-Clnk-BL refPt:[619.9,1260.0]} Glyph{#15367 [STUMP]}
+2026-03-14 00:48:10,523 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4321-Clnk-BR refPt:[633.7,1256.0]} Glyph{#15368 [STUMP]}
+2026-03-14 00:48:10,524 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3371-Clnk-TL refPt:[620.9,595.0]} Glyph{#15369 [STUMP]}
+2026-03-14 00:48:10,526 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3371-Clnk-BL refPt:[620.9,599.0]} Glyph{#15369 [STUMP]}
+2026-03-14 00:48:10,527 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3371-Clnk-BR refPt:[634.7,595.0]} Glyph{#15370 [STUMP]}
+2026-03-14 00:48:10,528 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3375-Clnk-TL refPt:[620.9,595.0]} Glyph{#15369 [STUMP]}
+2026-03-14 00:48:10,528 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3375-Clnk-BL refPt:[620.9,599.0]} Glyph{#15369 [STUMP]}
+2026-03-14 00:48:10,529 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3375-Clnk-BR refPt:[634.7,595.0]} Glyph{#15370 [STUMP]}
+2026-03-14 00:48:10,530 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3903-Clnk-TL refPt:[620.9,996.0]} Glyph{#15371 [STUMP]}
+2026-03-14 00:48:10,531 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3903-Clnk-BR refPt:[634.7,996.0]} nothing kept from sections[V2429]
+2026-03-14 00:48:10,532 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3903-Clnk-BR refPt:[634.7,996.0]} Glyph{#15372 [STUMP]}
+2026-03-14 00:48:10,533 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3298-Clnk-TL refPt:[621.9,568.0]} Glyph{#15373 [STUMP]}
+2026-03-14 00:48:10,534 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3298-Clnk-BL refPt:[621.9,572.0]} Glyph{#15373 [STUMP]}
+2026-03-14 00:48:10,535 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3302-Clnk-TL refPt:[621.9,568.0]} Glyph{#15373 [STUMP]}
+2026-03-14 00:48:10,536 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3302-Clnk-BL refPt:[621.9,572.0]} Glyph{#15373 [STUMP]}
+2026-03-14 00:48:10,537 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3367-Clnk-BL refPt:[622.9,593.0]} Glyph{#15369 [STUMP]}
+2026-03-14 00:48:10,538 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3367-Clnk-BR refPt:[635.7,589.0]} Glyph{#540 [VERTICAL_SEED]}
+2026-03-14 00:48:10,539 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3877-Clnk-TL refPt:[622.9,990.0]} Glyph{#15371 [STUMP]}
+2026-03-14 00:48:10,540 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3877-Clnk-BL refPt:[622.9,994.0]} Glyph{#15371 [STUMP]}
+2026-03-14 00:48:10,541 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3877-Clnk-BR refPt:[636.7,990.0]} Glyph{#15374 [STUMP]}
+2026-03-14 00:48:10,542 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3326-Clnk-TL refPt:[624.9,576.0]} Glyph{#15373 [STUMP]}
+2026-03-14 00:48:10,546 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4765-Clnk-BR refPt:[651.7,1283.0]} Glyph{#15375 [STUMP]}
+2026-03-14 00:48:10,547 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4217-Clnk-TR refPt:[653.7,999.0]} Glyph{#15376 [STUMP]}
+2026-03-14 00:48:10,548 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4217-Clnk-BR refPt:[653.7,1004.0]} Glyph{#15377 [STUMP]}
+2026-03-14 00:48:10,550 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3579-Clnk-BR refPt:[654.7,561.0]} Glyph{#15378 [STUMP]}
+2026-03-14 00:48:10,551 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3607-Clnk-TL refPt:[651.9,576.0]} Glyph{#15379 [STUMP]}
+2026-03-14 00:48:10,553 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3607-Clnk-BL refPt:[651.9,580.0]} Glyph{#15380 [STUMP]}
+2026-03-14 00:48:10,557 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4079-Clnk-BL refPt:[681.9,1035.0]} Glyph{#15381 [STUMP]}
+2026-03-14 00:48:10,559 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4135-Clnk-TL refPt:[681.9,1038.0]} Glyph{#15381 [STUMP]}
+2026-03-14 00:48:10,560 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4135-Clnk-BL refPt:[681.9,1042.0]} Glyph{#15381 [STUMP]}
+2026-03-14 00:48:10,561 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4135-Clnk-BR refPt:[695.7,1038.0]} Glyph{#15382 [STUMP]}
+2026-03-14 00:48:10,563 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4139-Clnk-TL refPt:[681.9,1038.0]} Glyph{#15381 [STUMP]}
+2026-03-14 00:48:10,565 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4139-Clnk-BL refPt:[681.9,1042.0]} Glyph{#15381 [STUMP]}
+2026-03-14 00:48:10,566 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4139-Clnk-BR refPt:[695.7,1038.0]} Glyph{#15382 [STUMP]}
+2026-03-14 00:48:10,568 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3505-Clnk-TL refPt:[682.9,642.0]} Glyph{#15383 [STUMP]}
+2026-03-14 00:48:10,569 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3505-Clnk-BL refPt:[682.9,646.0]} Glyph{#15383 [STUMP]}
+2026-03-14 00:48:10,569 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3505-Clnk-BR refPt:[695.7,642.0]} Glyph{#15384 [STUMP]}
+2026-03-14 00:48:10,571 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3507-Clnk-TL refPt:[682.9,642.0]} Glyph{#15383 [STUMP]}
+2026-03-14 00:48:10,572 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3507-Clnk-BL refPt:[682.9,646.0]} Glyph{#15383 [STUMP]}
+2026-03-14 00:48:10,572 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3507-Clnk-BR refPt:[695.7,642.0]} Glyph{#15384 [STUMP]}
+2026-03-14 00:48:10,574 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4081-Clnk-BL refPt:[682.9,1037.0]} Glyph{#15381 [STUMP]}
+2026-03-14 00:48:10,575 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4563-Clnk-TR refPt:[704.7,1285.0]} nothing kept from sections[V2718, V2665]
+2026-03-14 00:48:10,576 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4563-Clnk-BR refPt:[704.7,1290.0]} nothing kept from sections[V2665]
+2026-03-14 00:48:10,577 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4563-Clnk-BR refPt:[704.7,1290.0]} Glyph{#15385 [STUMP]}
+2026-03-14 00:48:10,578 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4427-Clnk-TL refPt:[693.9,1283.0]} Glyph{#15386 [STUMP]}
+2026-03-14 00:48:10,579 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4427-Clnk-TR refPt:[707.7,1278.0]} Glyph{#15387 [STUMP]}
+2026-03-14 00:48:10,581 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4427-Clnk-BR refPt:[707.7,1283.0]} Glyph{#15387 [STUMP]}
+2026-03-14 00:48:10,586 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4431-Clnk-TR refPt:[707.7,1279.0]} Glyph{#15387 [STUMP]}
+2026-03-14 00:48:10,589 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4431-Clnk-BR refPt:[707.7,1284.0]} Glyph{#15387 [STUMP]}
+2026-03-14 00:48:10,590 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3511-Clnk-TL refPt:[705.9,642.0]} Glyph{#15388 [STUMP]}
+2026-03-14 00:48:10,591 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3511-Clnk-BL refPt:[705.9,646.0]} Glyph{#15388 [STUMP]}
+2026-03-14 00:48:10,593 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3511-Clnk-BR refPt:[718.7,642.0]} Glyph{#15389 [STUMP]}
+2026-03-14 00:48:10,593 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4143-Clnk-TL refPt:[705.9,1038.0]} Glyph{#15390 [STUMP]}
+2026-03-14 00:48:10,594 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4143-Clnk-BL refPt:[705.9,1042.0]} Glyph{#15390 [STUMP]}
+2026-03-14 00:48:10,595 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4143-Clnk-BR refPt:[719.7,1038.0]} Glyph{#15391 [STUMP]}
+2026-03-14 00:48:10,597 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4147-Clnk-TL refPt:[705.9,1038.0]} Glyph{#15390 [STUMP]}
+2026-03-14 00:48:10,598 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4147-Clnk-BL refPt:[705.9,1042.0]} Glyph{#15390 [STUMP]}
+2026-03-14 00:48:10,599 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4147-Clnk-BR refPt:[719.7,1038.0]} Glyph{#15391 [STUMP]}
+2026-03-14 00:48:10,601 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4085-Clnk-BL refPt:[706.9,1035.0]} Glyph{#15390 [STUMP]}
+2026-03-14 00:48:10,604 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4089-Clnk-BL refPt:[706.9,1037.0]} Glyph{#15390 [STUMP]}
+2026-03-14 00:48:10,606 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4089-Clnk-BR refPt:[719.7,1033.0]} Glyph{#15391 [STUMP]}
+2026-03-14 00:48:10,608 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3387-Clnk-TR refPt:[730.7,611.0]} Glyph{#15392 [STUMP]}
+2026-03-14 00:48:10,609 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3387-Clnk-BR refPt:[730.7,616.0]} Glyph{#15393 [STUMP]}
+2026-03-14 00:48:10,610 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4029-Clnk-TL refPt:[767.9,1024.0]} Glyph{#15394 [STUMP]}
+2026-03-14 00:48:10,611 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4029-Clnk-BL refPt:[767.9,1028.0]} nothing kept from sections[V2942]
+2026-03-14 00:48:10,612 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4029-Clnk-BR refPt:[781.7,1024.0]} nothing kept from sections[V3037, V3047, V2942]
+2026-03-14 00:48:10,612 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4029-Clnk-BR refPt:[781.7,1024.0]} Glyph{#15395 [STUMP]}
+2026-03-14 00:48:10,615 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4033-Clnk-TL refPt:[768.9,1023.0]} Glyph{#15394 [STUMP]}
+2026-03-14 00:48:10,616 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4033-Clnk-BL refPt:[768.9,1027.0]} Glyph{#15394 [STUMP]}
+2026-03-14 00:48:10,618 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4033-Clnk-BR refPt:[782.7,1023.0]} Glyph{#15396 [STUMP]}
+2026-03-14 00:48:10,620 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3977-Clnk-BL refPt:[770.9,1021.0]} nothing kept from sections[V2942]
+2026-03-14 00:48:10,621 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3977-Clnk-BL refPt:[770.9,1021.0]} Glyph{#15397 [STUMP]}
+2026-03-14 00:48:10,622 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4567-Clnk-TR refPt:[784.7,1285.0]} nothing kept from sections[V3060, V2990]
+2026-03-14 00:48:10,622 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4567-Clnk-TR refPt:[784.7,1285.0]} Glyph{#15398 [STUMP]}
+2026-03-14 00:48:10,623 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4567-Clnk-BR refPt:[784.7,1290.0]} nothing kept from sections[V2990]
+2026-03-14 00:48:10,624 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4567-Clnk-BR refPt:[784.7,1290.0]} Glyph{#15399 [STUMP]}
+2026-03-14 00:48:10,625 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3851-Clnk-TR refPt:[785.7,841.0]} Glyph{#15400 [STUMP]}
+2026-03-14 00:48:10,626 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3851-Clnk-BR refPt:[785.7,846.0]} Glyph{#15400 [STUMP]}
+2026-03-14 00:48:10,627 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4437-Clnk-TR refPt:[786.7,1279.0]} Glyph{#15401 [STUMP]}
+2026-03-14 00:48:10,628 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4437-Clnk-BR refPt:[786.7,1284.0]} Glyph{#15401 [STUMP]}
+2026-03-14 00:48:10,629 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4151-Clnk-TL refPt:[808.9,1037.0]} Glyph{#15402 [STUMP]}
+2026-03-14 00:48:10,630 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4151-Clnk-BL refPt:[808.9,1041.0]} Glyph{#15402 [STUMP]}
+2026-03-14 00:48:10,631 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4151-Clnk-BR refPt:[822.7,1037.0]} nothing kept from sections[V3223, V3228, V3152]
+2026-03-14 00:48:10,631 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4151-Clnk-BR refPt:[822.7,1037.0]} Glyph{#15403 [STUMP]}
+2026-03-14 00:48:10,632 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4155-Clnk-TL refPt:[808.9,1037.0]} Glyph{#15402 [STUMP]}
+2026-03-14 00:48:10,633 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4155-Clnk-BL refPt:[808.9,1041.0]} Glyph{#15402 [STUMP]}
+2026-03-14 00:48:10,634 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4155-Clnk-BR refPt:[822.7,1037.0]} nothing kept from sections[V3223, V3228, V3152]
+2026-03-14 00:48:10,634 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4155-Clnk-BR refPt:[822.7,1037.0]} Glyph{#15403 [STUMP]}
+2026-03-14 00:48:10,635 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3517-Clnk-TL refPt:[809.9,641.0]} Glyph{#15404 [STUMP]}
+2026-03-14 00:48:10,636 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3517-Clnk-BL refPt:[809.9,645.0]} Glyph{#15404 [STUMP]}
+2026-03-14 00:48:10,637 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3517-Clnk-BR refPt:[823.7,641.0]} nothing kept from sections[V3227, V3158]
+2026-03-14 00:48:10,637 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3517-Clnk-BR refPt:[823.7,641.0]} Glyph{#15405 [STUMP]}
+2026-03-14 00:48:10,638 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3521-Clnk-TL refPt:[809.9,641.0]} Glyph{#15404 [STUMP]}
+2026-03-14 00:48:10,639 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3521-Clnk-BL refPt:[809.9,645.0]} Glyph{#15404 [STUMP]}
+2026-03-14 00:48:10,640 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3521-Clnk-BR refPt:[823.7,641.0]} nothing kept from sections[V3227, V3158]
+2026-03-14 00:48:10,641 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3521-Clnk-BR refPt:[823.7,641.0]} Glyph{#15405 [STUMP]}
+2026-03-14 00:48:10,641 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4093-Clnk-TL refPt:[810.9,1033.0]} nothing kept from sections[V3152]
+2026-03-14 00:48:10,641 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4093-Clnk-TL refPt:[810.9,1033.0]} Glyph{#15406 [STUMP]}
+2026-03-14 00:48:10,642 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4093-Clnk-BL refPt:[810.9,1037.0]} nothing kept from sections[V3147, V3152]
+2026-03-14 00:48:10,642 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4093-Clnk-BL refPt:[810.9,1037.0]} Glyph{#15402 [STUMP]}
+2026-03-14 00:48:10,643 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4093-Clnk-BR refPt:[824.7,1033.0]} Glyph{#15407 [STUMP]}
+2026-03-14 00:48:10,644 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3515-Clnk-BL refPt:[822.9,643.0]} nothing kept from sections[V3158]
+2026-03-14 00:48:10,644 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3515-Clnk-BL refPt:[822.9,643.0]} Glyph{#15408 [STUMP]}
+2026-03-14 00:48:10,644 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3515-Clnk-TR refPt:[836.7,634.0]} nothing kept from sections[V3260]
+2026-03-14 00:48:10,644 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3515-Clnk-TR refPt:[836.7,634.0]} Glyph{#15409 [STUMP]}
+2026-03-14 00:48:10,646 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3515-Clnk-BR refPt:[836.7,639.0]} nothing kept from sections[V3257, V3260]
+2026-03-14 00:48:10,646 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3525-Clnk-TL refPt:[833.9,642.0]} Glyph{#15410 [STUMP]}
+2026-03-14 00:48:10,647 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3525-Clnk-BL refPt:[833.9,646.0]} Glyph{#15410 [STUMP]}
+2026-03-14 00:48:10,648 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3525-Clnk-BR refPt:[846.7,642.0]} Glyph{#15411 [STUMP]}
+2026-03-14 00:48:10,649 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3529-Clnk-TL refPt:[833.9,641.0]} Glyph{#15410 [STUMP]}
+2026-03-14 00:48:10,650 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3529-Clnk-BL refPt:[833.9,645.0]} Glyph{#15410 [STUMP]}
+2026-03-14 00:48:10,651 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3529-Clnk-BR refPt:[847.7,641.0]} Glyph{#15411 [STUMP]}
+2026-03-14 00:48:10,652 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3389-Clnk-BR refPt:[862.7,615.0]} nothing kept from sections[V3311]
+2026-03-14 00:48:10,653 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3389-Clnk-BR refPt:[862.7,615.0]} Glyph{#15412 [STUMP]}
+2026-03-14 00:48:10,653 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3449-Clnk-TL refPt:[855.9,621.0]} nothing kept from sections[V3311]
+2026-03-14 00:48:10,654 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3449-Clnk-BL refPt:[855.9,625.0]} nothing kept from sections[V3311]
+2026-03-14 00:48:10,654 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3449-Clnk-BR refPt:[869.7,621.0]} Glyph{#15413 [STUMP]}
+2026-03-14 00:48:10,655 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4037-Clnk-TL refPt:[855.9,1023.0]} Glyph{#15414 [STUMP]}
+2026-03-14 00:48:10,656 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4037-Clnk-BR refPt:[869.7,1023.0]} nothing kept from sections[V3318]
+2026-03-14 00:48:10,656 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3445-Clnk-TL refPt:[856.9,621.0]} nothing kept from sections[V3311]
+2026-03-14 00:48:10,657 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3445-Clnk-TL refPt:[856.9,621.0]} Glyph{#15415 [STUMP]}
+2026-03-14 00:48:10,657 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3445-Clnk-BL refPt:[856.9,625.0]} nothing kept from sections[V3311]
+2026-03-14 00:48:10,657 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3445-Clnk-BL refPt:[856.9,625.0]} Glyph{#15415 [STUMP]}
+2026-03-14 00:48:10,659 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3445-Clnk-BR refPt:[870.7,621.0]} Glyph{#15413 [STUMP]}
+2026-03-14 00:48:10,659 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3981-Clnk-TL refPt:[856.9,1016.0]} Glyph{#15414 [STUMP]}
+2026-03-14 00:48:10,660 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3981-Clnk-BL refPt:[856.9,1020.0]} Glyph{#15414 [STUMP]}
+2026-03-14 00:48:10,660 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3981-Clnk-BR refPt:[870.7,1016.0]} Glyph{#15416 [STUMP]}
+2026-03-14 00:48:10,661 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3985-Clnk-TL refPt:[856.9,1016.0]} Glyph{#15414 [STUMP]}
+2026-03-14 00:48:10,662 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3985-Clnk-BL refPt:[856.9,1020.0]} Glyph{#15414 [STUMP]}
+2026-03-14 00:48:10,662 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3985-Clnk-BR refPt:[870.7,1016.0]} Glyph{#15416 [STUMP]}
+2026-03-14 00:48:10,663 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3391-Clnk-TL refPt:[857.9,617.0]} nothing kept from sections[V3311]
+2026-03-14 00:48:10,663 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3391-Clnk-TL refPt:[857.9,617.0]} Glyph{#15417 [STUMP]}
+2026-03-14 00:48:10,664 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3391-Clnk-BL refPt:[857.9,621.0]} nothing kept from sections[V3311]
+2026-03-14 00:48:10,664 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3391-Clnk-BL refPt:[857.9,621.0]} Glyph{#15417 [STUMP]}
+2026-03-14 00:48:10,665 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3391-Clnk-BR refPt:[869.7,617.0]} Glyph{#15413 [STUMP]}
+2026-03-14 00:48:10,665 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4387-Clnk-TL refPt:[857.9,1262.0]} Glyph{#15418 [STUMP]}
+2026-03-14 00:48:10,666 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4387-Clnk-BR refPt:[871.7,1262.0]} nothing kept from sections[V3347]
+2026-03-14 00:48:10,667 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4387-Clnk-BR refPt:[871.7,1262.0]} Glyph{#15419 [STUMP]}
+2026-03-14 00:48:10,667 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4327-Clnk-TL refPt:[858.9,1257.0]} Glyph{#15420 [STUMP]}
+2026-03-14 00:48:10,668 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4327-Clnk-BL refPt:[858.9,1261.0]} Glyph{#15421 [STUMP]}
+2026-03-14 00:48:10,668 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4327-Clnk-BR refPt:[872.7,1257.0]} Glyph{#15422 [STUMP]}
+2026-03-14 00:48:10,669 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3535-Clnk-TL refPt:[878.9,641.0]} Glyph{#15423 [STUMP]}
+2026-03-14 00:48:10,670 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3535-Clnk-BL refPt:[878.9,645.0]} Glyph{#15423 [STUMP]}
+2026-03-14 00:48:10,670 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3535-Clnk-BR refPt:[891.7,641.0]} Glyph{#15424 [STUMP]}
+2026-03-14 00:48:10,671 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3537-Clnk-TL refPt:[878.9,641.0]} Glyph{#15423 [STUMP]}
+2026-03-14 00:48:10,672 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3537-Clnk-BL refPt:[878.9,645.0]} Glyph{#15423 [STUMP]}
+2026-03-14 00:48:10,673 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3537-Clnk-BR refPt:[891.7,641.0]} Glyph{#15424 [STUMP]}
+2026-03-14 00:48:10,673 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3533-Clnk-BL refPt:[888.9,643.0]} nothing kept from sections[V3492, V3463]
+2026-03-14 00:48:10,674 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3533-Clnk-TR refPt:[902.7,634.0]} nothing kept from sections[V3527]
+2026-03-14 00:48:10,674 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3533-Clnk-TR refPt:[902.7,634.0]} Glyph{#15425 [STUMP]}
+2026-03-14 00:48:10,675 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3533-Clnk-BR refPt:[902.7,639.0]} nothing kept from sections[V3521, V3527]
+2026-03-14 00:48:10,678 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4159-Clnk-TL refPt:[892.9,1038.0]} Glyph{#15426 [STUMP]}
+2026-03-14 00:48:10,679 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4159-Clnk-BL refPt:[892.9,1042.0]} Glyph{#15426 [STUMP]}
+2026-03-14 00:48:10,682 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4159-Clnk-BR refPt:[906.7,1038.0]} Glyph{#15427 [STUMP]}
+2026-03-14 00:48:10,683 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4163-Clnk-TL refPt:[892.9,1038.0]} Glyph{#15426 [STUMP]}
+2026-03-14 00:48:10,684 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4163-Clnk-BL refPt:[892.9,1042.0]} Glyph{#15426 [STUMP]}
+2026-03-14 00:48:10,684 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4163-Clnk-BR refPt:[906.7,1038.0]} Glyph{#15427 [STUMP]}
+2026-03-14 00:48:10,685 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4097-Clnk-TL refPt:[894.9,1033.0]} nothing kept from sections[V3512]
+2026-03-14 00:48:10,685 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4097-Clnk-TL refPt:[894.9,1033.0]} Glyph{#15428 [STUMP]}
+2026-03-14 00:48:10,686 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4097-Clnk-BL refPt:[894.9,1037.0]} Glyph{#15426 [STUMP]}
+2026-03-14 00:48:10,686 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4097-Clnk-BR refPt:[906.7,1033.0]} Glyph{#15427 [STUMP]}
+2026-03-14 00:48:10,687 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3541-Clnk-TL refPt:[899.9,641.0]} Glyph{#15429 [STUMP]}
+2026-03-14 00:48:10,688 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3541-Clnk-BL refPt:[899.9,645.0]} Glyph{#15429 [STUMP]}
+2026-03-14 00:48:10,688 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3541-Clnk-BR refPt:[913.7,641.0]} Glyph{#15430 [STUMP]}
+2026-03-14 00:48:10,689 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3545-Clnk-TL refPt:[899.9,641.0]} Glyph{#15429 [STUMP]}
+2026-03-14 00:48:10,689 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3545-Clnk-BL refPt:[899.9,645.0]} Glyph{#15429 [STUMP]}
+2026-03-14 00:48:10,690 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3545-Clnk-BR refPt:[913.7,641.0]} Glyph{#15430 [STUMP]}
+2026-03-14 00:48:10,690 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3551-Clnk-TL refPt:[921.9,641.0]} Glyph{#15431 [STUMP]}
+2026-03-14 00:48:10,691 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3551-Clnk-BL refPt:[921.9,645.0]} Glyph{#15431 [STUMP]}
+2026-03-14 00:48:10,692 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3551-Clnk-BR refPt:[934.7,641.0]} Glyph{#15432 [STUMP]}
+2026-03-14 00:48:10,693 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3825-Clnk-BL refPt:[924.9,862.0]} Glyph{#15433 [STUMP]}
+2026-03-14 00:48:10,695 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3657-Clnk-TR refPt:[936.7,826.0]} Glyph{#635 [VERTICAL_SEED]}
+2026-03-14 00:48:10,696 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3764-Clnk-TR refPt:[949.7,840.0]} Glyph{#15434 [STUMP]}
+2026-03-14 00:48:10,698 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4045-Clnk-TL refPt:[941.9,1023.0]} nothing kept from sections[V3679]
+2026-03-14 00:48:10,698 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4045-Clnk-TL refPt:[941.9,1023.0]} Glyph{#15435 [STUMP]}
+2026-03-14 00:48:10,699 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4045-Clnk-BL refPt:[941.9,1027.0]} nothing kept from sections[V3679]
+2026-03-14 00:48:10,699 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4045-Clnk-BL refPt:[941.9,1027.0]} Glyph{#15435 [STUMP]}
+2026-03-14 00:48:10,700 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4045-Clnk-BR refPt:[955.7,1023.0]} Glyph{#15436 [STUMP]}
+2026-03-14 00:48:10,701 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4049-Clnk-TL refPt:[941.9,1023.0]} nothing kept from sections[V3679]
+2026-03-14 00:48:10,701 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4049-Clnk-TL refPt:[941.9,1023.0]} Glyph{#15435 [STUMP]}
+2026-03-14 00:48:10,701 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4049-Clnk-BL refPt:[941.9,1027.0]} nothing kept from sections[V3679]
+2026-03-14 00:48:10,702 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4049-Clnk-BL refPt:[941.9,1027.0]} Glyph{#15435 [STUMP]}
+2026-03-14 00:48:10,703 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4049-Clnk-BR refPt:[955.7,1023.0]} Glyph{#15436 [STUMP]}
+2026-03-14 00:48:10,704 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4577-Clnk-TL refPt:[942.9,1288.0]} Glyph{#15437 [STUMP]}
+2026-03-14 00:48:10,708 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4577-Clnk-TR refPt:[956.7,1283.0]} nothing kept from sections[V3812, V3722]
+2026-03-14 00:48:10,709 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4577-Clnk-BR refPt:[956.7,1288.0]} nothing kept from sections[V3722]
+2026-03-14 00:48:10,710 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4577-Clnk-BR refPt:[956.7,1288.0]} Glyph{#15438 [STUMP]}
+2026-03-14 00:48:10,714 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3453-Clnk-TL refPt:[943.9,630.0]} Glyph{#15439 [STUMP]}
+2026-03-14 00:48:10,715 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3453-Clnk-BL refPt:[943.9,634.0]} Glyph{#15439 [STUMP]}
+2026-03-14 00:48:10,716 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3453-Clnk-BR refPt:[956.7,630.0]} Glyph{#15440 [STUMP]}
+2026-03-14 00:48:10,717 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3457-Clnk-TL refPt:[943.9,630.0]} Glyph{#15439 [STUMP]}
+2026-03-14 00:48:10,718 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3457-Clnk-BL refPt:[943.9,634.0]} Glyph{#15439 [STUMP]}
+2026-03-14 00:48:10,719 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3457-Clnk-BR refPt:[957.7,630.0]} Glyph{#15440 [STUMP]}
+2026-03-14 00:48:10,721 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3991-Clnk-BL refPt:[943.9,1021.0]} nothing kept from sections[V3679]
+2026-03-14 00:48:10,721 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3991-Clnk-BL refPt:[943.9,1021.0]} Glyph{#15441 [STUMP]}
+2026-03-14 00:48:10,723 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4443-Clnk-TL refPt:[944.9,1283.0]} Glyph{#15442 [STUMP]}
+2026-03-14 00:48:10,724 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4443-Clnk-TR refPt:[958.7,1278.0]} Glyph{#15443 [STUMP]}
+2026-03-14 00:48:10,724 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4443-Clnk-BR refPt:[958.7,1283.0]} Glyph{#15443 [STUMP]}
+2026-03-14 00:48:10,725 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3763-Clnk-TL refPt:[947.9,845.0]} Glyph{#15444 [STUMP]}
+2026-03-14 00:48:10,726 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3763-Clnk-TR refPt:[961.7,840.0]} Glyph{#15445 [STUMP]}
+2026-03-14 00:48:10,727 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3763-Clnk-BR refPt:[961.7,845.0]} Glyph{#15445 [STUMP]}
+2026-03-14 00:48:10,728 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3989-Clnk-BL refPt:[953.9,1020.0]} nothing kept from sections[V3775, V3789, V3679]
+2026-03-14 00:48:10,729 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3989-Clnk-BL refPt:[953.9,1020.0]} Glyph{#15446 [STUMP]}
+2026-03-14 00:48:10,730 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3989-Clnk-BR refPt:[967.7,1016.0]} nothing kept from sections[V3837]
+2026-03-14 00:48:10,731 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3989-Clnk-BR refPt:[967.7,1016.0]} Glyph{#15447 [STUMP]}
+2026-03-14 00:48:10,732 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4453-Clnk-TL refPt:[955.9,1283.0]} nothing kept from sections[V3722]
+2026-03-14 00:48:10,732 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4453-Clnk-TL refPt:[955.9,1283.0]} Glyph{#15448 [STUMP]}
+2026-03-14 00:48:10,733 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4453-Clnk-BL refPt:[955.9,1287.0]} nothing kept from sections[V3722]
+2026-03-14 00:48:10,733 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4453-Clnk-BL refPt:[955.9,1287.0]} Glyph{#15448 [STUMP]}
+2026-03-14 00:48:10,734 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4453-Clnk-TR refPt:[969.7,1278.0]} nothing kept from sections[V3881]
+2026-03-14 00:48:10,734 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4453-Clnk-TR refPt:[969.7,1278.0]} Glyph{#15449 [STUMP]}
+2026-03-14 00:48:10,736 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4041-Clnk-BR refPt:[971.7,1023.0]} nothing kept from sections[V3837]
+2026-03-14 00:48:10,737 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4041-Clnk-BR refPt:[971.7,1023.0]} Glyph{#15450 [STUMP]}
+2026-03-14 00:48:10,737 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4053-Clnk-TL refPt:[960.9,1023.0]} Glyph{#15451 [STUMP]}
+2026-03-14 00:48:10,741 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4053-Clnk-BL refPt:[960.9,1027.0]} Glyph{#15451 [STUMP]}
+2026-03-14 00:48:10,745 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4053-Clnk-BR refPt:[974.7,1023.0]} Glyph{#15452 [STUMP]}
+2026-03-14 00:48:10,747 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4057-Clnk-TL refPt:[960.9,1023.0]} Glyph{#15451 [STUMP]}
+2026-03-14 00:48:10,748 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4057-Clnk-BL refPt:[960.9,1027.0]} Glyph{#15451 [STUMP]}
+2026-03-14 00:48:10,749 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4057-Clnk-BR refPt:[974.7,1023.0]} Glyph{#15452 [STUMP]}
+2026-03-14 00:48:10,750 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3999-Clnk-TL refPt:[963.9,1017.0]} nothing kept from sections[V3837]
+2026-03-14 00:48:10,751 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3999-Clnk-TL refPt:[963.9,1017.0]} Glyph{#15453 [STUMP]}
+2026-03-14 00:48:10,752 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3999-Clnk-BL refPt:[963.9,1021.0]} nothing kept from sections[V3827, V3837]
+2026-03-14 00:48:10,752 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3999-Clnk-BL refPt:[963.9,1021.0]} Glyph{#15454 [STUMP]}
+2026-03-14 00:48:10,754 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4581-Clnk-TR refPt:[978.7,1283.0]} nothing kept from sections[V3941, V3881]
+2026-03-14 00:48:10,755 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4581-Clnk-BR refPt:[978.7,1288.0]} nothing kept from sections[V3881]
+2026-03-14 00:48:10,755 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4581-Clnk-BR refPt:[978.7,1288.0]} Glyph{#15455 [STUMP]}
+2026-03-14 00:48:10,756 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3463-Clnk-TL refPt:[966.9,630.0]} Glyph{#15456 [STUMP]}
+2026-03-14 00:48:10,758 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3463-Clnk-BL refPt:[966.9,634.0]} Glyph{#15456 [STUMP]}
+2026-03-14 00:48:10,759 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3463-Clnk-BR refPt:[979.7,630.0]} Glyph{#15457 [STUMP]}
+2026-03-14 00:48:10,760 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3467-Clnk-TL refPt:[966.9,630.0]} Glyph{#15456 [STUMP]}
+2026-03-14 00:48:10,761 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3467-Clnk-BL refPt:[966.9,634.0]} Glyph{#15456 [STUMP]}
+2026-03-14 00:48:10,762 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3467-Clnk-BR refPt:[979.7,630.0]} Glyph{#15457 [STUMP]}
+2026-03-14 00:48:10,763 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4449-Clnk-TL refPt:[966.9,1283.0]} Glyph{#15458 [STUMP]}
+2026-03-14 00:48:10,764 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4449-Clnk-TR refPt:[980.7,1278.0]} Glyph{#15459 [STUMP]}
+2026-03-14 00:48:10,766 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4449-Clnk-BR refPt:[980.7,1283.0]} Glyph{#15459 [STUMP]}
+2026-03-14 00:48:10,767 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3995-Clnk-BL refPt:[972.9,1020.0]} nothing kept from sections[V3899, V3837]
+2026-03-14 00:48:10,768 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3995-Clnk-TR refPt:[986.7,1011.0]} nothing kept from sections[V3947]
+2026-03-14 00:48:10,771 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3995-Clnk-TR refPt:[986.7,1011.0]} Glyph{#15460 [STUMP]}
+2026-03-14 00:48:10,772 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3995-Clnk-BR refPt:[986.7,1016.0]} nothing kept from sections[V3947]
+2026-03-14 00:48:10,773 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3995-Clnk-BR refPt:[986.7,1016.0]} Glyph{#15460 [STUMP]}
+2026-03-14 00:48:10,777 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4463-Clnk-TL refPt:[972.9,1282.0]} nothing kept from sections[V3881]
+2026-03-14 00:48:10,778 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4463-Clnk-TL refPt:[972.9,1282.0]} Glyph{#15461 [STUMP]}
+2026-03-14 00:48:10,779 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4463-Clnk-BL refPt:[972.9,1286.0]} nothing kept from sections[V3881]
+2026-03-14 00:48:10,779 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4463-Clnk-BL refPt:[972.9,1286.0]} Glyph{#15461 [STUMP]}
+2026-03-14 00:48:10,781 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3997-Clnk-BL refPt:[976.9,1021.0]} Glyph{#15452 [STUMP]}
+2026-03-14 00:48:10,782 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3997-Clnk-TR refPt:[990.7,1012.0]} nothing kept from sections[V3947]
+2026-03-14 00:48:10,783 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3997-Clnk-TR refPt:[990.7,1012.0]} Glyph{#15462 [STUMP]}
+2026-03-14 00:48:10,784 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3997-Clnk-BR refPt:[990.7,1017.0]} nothing kept from sections[V3947]
+2026-03-14 00:48:10,786 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3997-Clnk-BR refPt:[990.7,1017.0]} Glyph{#15462 [STUMP]}
+2026-03-14 00:48:10,787 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4461-Clnk-TL refPt:[976.9,1283.0]} nothing kept from sections[V3881]
+2026-03-14 00:48:10,787 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4461-Clnk-TL refPt:[976.9,1283.0]} Glyph{#15463 [STUMP]}
+2026-03-14 00:48:10,788 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4461-Clnk-BL refPt:[976.9,1287.0]} nothing kept from sections[V3881]
+2026-03-14 00:48:10,789 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4461-Clnk-BL refPt:[976.9,1287.0]} Glyph{#15463 [STUMP]}
+2026-03-14 00:48:10,790 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4461-Clnk-TR refPt:[990.7,1278.0]} nothing kept from sections[V3975]
+2026-03-14 00:48:10,790 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4461-Clnk-TR refPt:[990.7,1278.0]} Glyph{#15464 [STUMP]}
+2026-03-14 00:48:10,792 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4061-Clnk-BR refPt:[993.7,1023.0]} nothing kept from sections[V3947]
+2026-03-14 00:48:10,793 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4061-Clnk-BR refPt:[993.7,1023.0]} Glyph{#15465 [STUMP]}
+2026-03-14 00:48:10,794 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4003-Clnk-TL refPt:[982.9,1016.0]} Glyph{#15466 [STUMP]}
+2026-03-14 00:48:10,795 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4003-Clnk-BL refPt:[982.9,1020.0]} Glyph{#15467 [STUMP]}
+2026-03-14 00:48:10,796 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4003-Clnk-BR refPt:[996.7,1016.0]} Glyph{#15468 [STUMP]}
+2026-03-14 00:48:10,797 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4585-Clnk-TL refPt:[986.9,1288.0]} Glyph{#15469 [STUMP]}
+2026-03-14 00:48:10,798 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4585-Clnk-TR refPt:[1000.7,1283.0]} nothing kept from sections[V4036, V3975]
+2026-03-14 00:48:10,799 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4585-Clnk-TR refPt:[1000.7,1283.0]} Glyph{#15470 [STUMP]}
+2026-03-14 00:48:10,804 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4585-Clnk-BR refPt:[1000.7,1288.0]} nothing kept from sections[V3975]
+2026-03-14 00:48:10,805 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4585-Clnk-BR refPt:[1000.7,1288.0]} Glyph{#15471 [STUMP]}
+2026-03-14 00:48:10,809 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3397-Clnk-BL refPt:[989.9,619.0]} nothing kept from sections[V3974]
+2026-03-14 00:48:10,809 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3397-Clnk-BL refPt:[989.9,619.0]} Glyph{#15472 [STUMP]}
+2026-03-14 00:48:10,811 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3475-Clnk-TL refPt:[989.9,621.0]} nothing kept from sections[V3974]
+2026-03-14 00:48:10,812 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3475-Clnk-TL refPt:[989.9,621.0]} Glyph{#15472 [STUMP]}
+2026-03-14 00:48:10,813 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3475-Clnk-BL refPt:[989.9,625.0]} nothing kept from sections[V3974]
+2026-03-14 00:48:10,813 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3475-Clnk-BL refPt:[989.9,625.0]} Glyph{#15472 [STUMP]}
+2026-03-14 00:48:10,814 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3475-Clnk-BR refPt:[1003.7,621.0]} Glyph{#15473 [STUMP]}
+2026-03-14 00:48:10,815 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4457-Clnk-TL refPt:[989.9,1282.0]} Glyph{#15474 [STUMP]}
+2026-03-14 00:48:10,817 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4457-Clnk-TR refPt:[1003.7,1277.0]} Glyph{#15475 [STUMP]}
+2026-03-14 00:48:10,818 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4457-Clnk-BR refPt:[1003.7,1282.0]} Glyph{#15475 [STUMP]}
+2026-03-14 00:48:10,819 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3471-Clnk-TL refPt:[990.9,621.0]} nothing kept from sections[V3974]
+2026-03-14 00:48:10,819 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3471-Clnk-TL refPt:[990.9,621.0]} Glyph{#15476 [STUMP]}
+2026-03-14 00:48:10,821 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3471-Clnk-BL refPt:[990.9,625.0]} nothing kept from sections[V3974]
+2026-03-14 00:48:10,821 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3471-Clnk-BL refPt:[990.9,625.0]} Glyph{#15476 [STUMP]}
+2026-03-14 00:48:10,822 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3471-Clnk-BR refPt:[1004.7,621.0]} Glyph{#15477 [STUMP]}
+2026-03-14 00:48:10,823 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4007-Clnk-BL refPt:[990.9,1021.0]} nothing kept from sections[V3947]
+2026-03-14 00:48:10,824 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4007-Clnk-BL refPt:[990.9,1021.0]} Glyph{#15462 [STUMP]}
+2026-03-14 00:48:10,825 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3481-Clnk-TL refPt:[993.9,621.0]} nothing kept from sections[V3974]
+2026-03-14 00:48:10,825 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3481-Clnk-TL refPt:[993.9,621.0]} Glyph{#15478 [STUMP]}
+2026-03-14 00:48:10,826 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3481-Clnk-BL refPt:[993.9,625.0]} nothing kept from sections[V3974]
+2026-03-14 00:48:10,827 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3481-Clnk-BL refPt:[993.9,625.0]} Glyph{#15478 [STUMP]}
+2026-03-14 00:48:10,827 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3481-Clnk-BR refPt:[1007.7,621.0]} Glyph{#15479 [STUMP]}
+2026-03-14 00:48:10,829 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3395-Clnk-BL refPt:[1001.9,621.0]} Glyph{#15473 [STUMP]}
+2026-03-14 00:48:10,830 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3395-Clnk-BR refPt:[1015.7,617.0]} nothing kept from sections[V4106]
+2026-03-14 00:48:10,830 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3395-Clnk-BR refPt:[1015.7,617.0]} Glyph{#15480 [STUMP]}
+2026-03-14 00:48:10,831 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3947-Clnk-TR refPt:[1019.7,1005.0]} nothing kept from sections[V4125]
+2026-03-14 00:48:10,831 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3947-Clnk-TR refPt:[1019.7,1005.0]} Glyph{#15481 [STUMP]}
+2026-03-14 00:48:10,835 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3947-Clnk-BR refPt:[1019.7,1010.0]} nothing kept from sections[V4125]
+2026-03-14 00:48:10,835 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3947-Clnk-BR refPt:[1019.7,1010.0]} Glyph{#15481 [STUMP]}
+2026-03-14 00:48:10,839 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4391-Clnk-TL refPt:[1009.9,1262.0]} Glyph{#15482 [STUMP]}
+2026-03-14 00:48:10,840 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4391-Clnk-BR refPt:[1023.7,1262.0]} nothing kept from sections[V4098]
+2026-03-14 00:48:10,840 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4391-Clnk-BR refPt:[1023.7,1262.0]} Glyph{#15483 [STUMP]}
+2026-03-14 00:48:10,841 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3405-Clnk-BL refPt:[1011.9,620.0]} Glyph{#15479 [STUMP]}
+2026-03-14 00:48:10,842 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3405-Clnk-TR refPt:[1025.7,611.0]} nothing kept from sections[V4163]
+2026-03-14 00:48:10,842 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3405-Clnk-TR refPt:[1025.7,611.0]} Glyph{#15484 [STUMP]}
+2026-03-14 00:48:10,843 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3405-Clnk-BR refPt:[1025.7,616.0]} nothing kept from sections[V4163]
+2026-03-14 00:48:10,843 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3405-Clnk-BR refPt:[1025.7,616.0]} Glyph{#15484 [STUMP]}
+2026-03-14 00:48:10,844 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4331-Clnk-TL refPt:[1011.9,1255.0]} Glyph{#15485 [STUMP]}
+2026-03-14 00:48:10,845 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4331-Clnk-BL refPt:[1011.9,1259.0]} Glyph{#15486 [STUMP]}
+2026-03-14 00:48:10,846 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4331-Clnk-BR refPt:[1025.7,1255.0]} Glyph{#15487 [STUMP]}
+2026-03-14 00:48:10,847 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4333-Clnk-TL refPt:[1011.9,1256.0]} Glyph{#15486 [STUMP]}
+2026-03-14 00:48:10,847 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4333-Clnk-BL refPt:[1011.9,1260.0]} Glyph{#15486 [STUMP]}
+2026-03-14 00:48:10,848 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4333-Clnk-BR refPt:[1025.7,1256.0]} Glyph{#15487 [STUMP]}
+2026-03-14 00:48:10,849 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3949-Clnk-TL refPt:[1014.9,1009.0]} Glyph{#15488 [STUMP]}
+2026-03-14 00:48:10,849 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3949-Clnk-BL refPt:[1014.9,1013.0]} Glyph{#15489 [STUMP]}
+2026-03-14 00:48:10,850 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3949-Clnk-BR refPt:[1028.7,1009.0]} nothing kept from sections[V4186, V4125]
+2026-03-14 00:48:10,851 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3953-Clnk-TL refPt:[1014.9,1009.0]} Glyph{#15488 [STUMP]}
+2026-03-14 00:48:10,852 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3953-Clnk-BL refPt:[1014.9,1013.0]} Glyph{#15489 [STUMP]}
+2026-03-14 00:48:10,852 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3953-Clnk-BR refPt:[1028.7,1009.0]} nothing kept from sections[V4186, V4125]
+2026-03-14 00:48:10,853 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3933-Clnk-TL refPt:[1017.9,1003.0]} nothing kept from sections[V4125]
+2026-03-14 00:48:10,853 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3933-Clnk-TL refPt:[1017.9,1003.0]} Glyph{#15490 [STUMP]}
+2026-03-14 00:48:10,854 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3933-Clnk-BL refPt:[1017.9,1007.0]} nothing kept from sections[V4115, V4125]
+2026-03-14 00:48:10,854 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3933-Clnk-BL refPt:[1017.9,1007.0]} Glyph{#15491 [STUMP]}
+2026-03-14 00:48:10,855 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3933-Clnk-BR refPt:[1030.7,1003.0]} Glyph{#15492 [STUMP]}
+2026-03-14 00:48:10,856 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3409-Clnk-TL refPt:[1020.9,617.0]} Glyph{#15493 [STUMP]}
+2026-03-14 00:48:10,857 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3409-Clnk-BL refPt:[1020.9,621.0]} Glyph{#15493 [STUMP]}
+2026-03-14 00:48:10,858 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3409-Clnk-BR refPt:[1034.7,617.0]} Glyph{#15494 [STUMP]}
+2026-03-14 00:48:10,858 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3411-Clnk-TL refPt:[1020.9,616.0]} Glyph{#15495 [STUMP]}
+2026-03-14 00:48:10,859 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3411-Clnk-BL refPt:[1020.9,620.0]} Glyph{#15493 [STUMP]}
+2026-03-14 00:48:10,860 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3411-Clnk-BR refPt:[1034.7,616.0]} Glyph{#15494 [STUMP]}
+2026-03-14 00:48:10,861 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4186-Clnk-BR refPt:[1043.7,989.0]} nothing kept from sections[V4235]
+2026-03-14 00:48:10,862 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4186-Clnk-BR refPt:[1043.7,989.0]} Glyph{#15496 [STUMP]}
+2026-03-14 00:48:10,870 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4761-Clnk-BR refPt:[1045.7,1282.0]} nothing kept from sections[V4277, V4244]
+2026-03-14 00:48:10,871 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4215-Clnk-TL refPt:[1044.9,1003.0]} Glyph{#15497 [STUMP]}
+2026-03-14 00:48:10,872 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4215-Clnk-BL refPt:[1044.9,1007.0]} Glyph{#15498 [STUMP]}
+2026-03-14 00:48:10,875 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3577-Clnk-BL refPt:[1049.9,565.0]} Glyph{#15499 [STUMP]}
+2026-03-14 00:48:10,877 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4693-Clnk-BL refPt:[1070.9,1234.0]} Glyph{#15500 [STUMP]}
+2026-03-14 00:48:10,879 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4693-Clnk-BR refPt:[1084.7,1230.0]} Glyph{#15501 [STUMP]}
+2026-03-14 00:48:10,880 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3555-Clnk-TL refPt:[1073.9,641.0]} Glyph{#15502 [STUMP]}
+2026-03-14 00:48:10,881 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3555-Clnk-BL refPt:[1073.9,645.0]} Glyph{#15503 [STUMP]}
+2026-03-14 00:48:10,881 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3555-Clnk-BR refPt:[1087.7,641.0]} Glyph{#15504 [STUMP]}
+2026-03-14 00:48:10,883 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3557-Clnk-TL refPt:[1073.9,640.0]} Glyph{#15502 [STUMP]}
+2026-03-14 00:48:10,884 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3557-Clnk-BL refPt:[1073.9,644.0]} Glyph{#15503 [STUMP]}
+2026-03-14 00:48:10,885 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3557-Clnk-BR refPt:[1087.7,640.0]} Glyph{#15505 [STUMP]}
+2026-03-14 00:48:10,886 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4169-Clnk-TL refPt:[1074.9,1037.0]} nothing kept from sections[V4362]
+2026-03-14 00:48:10,886 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4169-Clnk-TL refPt:[1074.9,1037.0]} Glyph{#15506 [STUMP]}
+2026-03-14 00:48:10,887 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4169-Clnk-BL refPt:[1074.9,1041.0]} nothing kept from sections[V4362]
+2026-03-14 00:48:10,887 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4169-Clnk-BL refPt:[1074.9,1041.0]} Glyph{#15506 [STUMP]}
+2026-03-14 00:48:10,888 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4169-Clnk-BR refPt:[1088.7,1037.0]} nothing kept from sections[V4450, V4362]
+2026-03-14 00:48:10,889 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4169-Clnk-BR refPt:[1088.7,1037.0]} Glyph{#15507 [STUMP]}
+2026-03-14 00:48:10,890 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4173-Clnk-TL refPt:[1074.9,1037.0]} nothing kept from sections[V4362]
+2026-03-14 00:48:10,890 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4173-Clnk-TL refPt:[1074.9,1037.0]} Glyph{#15506 [STUMP]}
+2026-03-14 00:48:10,891 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4173-Clnk-BL refPt:[1074.9,1041.0]} nothing kept from sections[V4362]
+2026-03-14 00:48:10,891 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4173-Clnk-BL refPt:[1074.9,1041.0]} Glyph{#15506 [STUMP]}
+2026-03-14 00:48:10,892 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4173-Clnk-BR refPt:[1088.7,1037.0]} nothing kept from sections[V4450, V4362]
+2026-03-14 00:48:10,892 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4173-Clnk-BR refPt:[1088.7,1037.0]} Glyph{#15507 [STUMP]}
+2026-03-14 00:48:10,896 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4103-Clnk-TL refPt:[1078.9,1033.0]} nothing kept from sections[V4362]
+2026-03-14 00:48:10,897 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4103-Clnk-TL refPt:[1078.9,1033.0]} Glyph{#15508 [STUMP]}
+2026-03-14 00:48:10,898 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4103-Clnk-BL refPt:[1078.9,1037.0]} nothing kept from sections[V4362]
+2026-03-14 00:48:10,901 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4103-Clnk-BL refPt:[1078.9,1037.0]} Glyph{#15508 [STUMP]}
+2026-03-14 00:48:10,902 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4103-Clnk-BR refPt:[1092.7,1033.0]} Glyph{#15509 [STUMP]}
+2026-03-14 00:48:10,903 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4589-Clnk-TR refPt:[1092.7,1283.0]} Glyph{#15510 [STUMP]}
+2026-03-14 00:48:10,904 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4589-Clnk-BR refPt:[1092.7,1288.0]} nothing kept from sections[V4412]
+2026-03-14 00:48:10,905 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4589-Clnk-BR refPt:[1092.7,1288.0]} Glyph{#15511 [STUMP]}
+2026-03-14 00:48:10,906 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4465-Clnk-TL refPt:[1079.9,1282.0]} Glyph{#15512 [STUMP]}
+2026-03-14 00:48:10,907 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4465-Clnk-TR refPt:[1093.7,1277.0]} Glyph{#15510 [STUMP]}
+2026-03-14 00:48:10,908 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4465-Clnk-BR refPt:[1093.7,1282.0]} Glyph{#15510 [STUMP]}
+2026-03-14 00:48:10,911 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3030-Clnk-TR refPt:[1178.7,72.0]} nothing kept from sections[V4800, V4766]
+2026-03-14 00:48:10,912 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3030-Clnk-TR refPt:[1178.7,72.0]} Glyph{#15513 [STUMP]}
+2026-03-14 00:48:10,913 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3030-Clnk-BR refPt:[1178.7,77.0]} nothing kept from sections[V4766]
+2026-03-14 00:48:10,913 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3030-Clnk-BR refPt:[1178.7,77.0]} Glyph{#15514 [STUMP]}
+2026-03-14 00:48:10,914 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3712-Clnk-TL refPt:[1164.9,838.0]} Glyph{#15515 [STUMP]}
+2026-03-14 00:48:10,915 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3712-Clnk-TR refPt:[1178.7,833.0]} Glyph{#15516 [STUMP]}
+2026-03-14 00:48:10,915 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3712-Clnk-BR refPt:[1178.7,838.0]} Glyph{#15517 [STUMP]}
+2026-03-14 00:48:10,916 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4593-Clnk-TR refPt:[1178.7,1283.0]} nothing kept from sections[V4801, V4764]
+2026-03-14 00:48:10,917 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4593-Clnk-TR refPt:[1178.7,1283.0]} Glyph{#15518 [STUMP]}
+2026-03-14 00:48:10,918 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4593-Clnk-BR refPt:[1178.7,1288.0]} nothing kept from sections[V4764]
+2026-03-14 00:48:10,918 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4593-Clnk-BR refPt:[1178.7,1288.0]} Glyph{#15519 [STUMP]}
+2026-03-14 00:48:10,919 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3014-Clnk-TR refPt:[1180.7,66.0]} Glyph{#15520 [STUMP]}
+2026-03-14 00:48:10,919 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3014-Clnk-BR refPt:[1180.7,71.0]} Glyph{#15520 [STUMP]}
+2026-03-14 00:48:10,920 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4471-Clnk-TL refPt:[1166.9,1283.0]} Glyph{#15521 [STUMP]}
+2026-03-14 00:48:10,921 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4471-Clnk-TR refPt:[1180.7,1278.0]} Glyph{#15522 [STUMP]}
+2026-03-14 00:48:10,922 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4471-Clnk-BR refPt:[1180.7,1283.0]} Glyph{#15522 [STUMP]}
+2026-03-14 00:48:10,922 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3074-Clnk-TL refPt:[1250.9,91.0]} nothing kept from sections[V4963]
+2026-03-14 00:48:10,923 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3074-Clnk-TL refPt:[1250.9,91.0]} Glyph{#15523 [STUMP]}
+2026-03-14 00:48:10,923 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3074-Clnk-BL refPt:[1250.9,95.0]} nothing kept from sections[V4963]
+2026-03-14 00:48:10,924 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3074-Clnk-BL refPt:[1250.9,95.0]} Glyph{#15523 [STUMP]}
+2026-03-14 00:48:10,925 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3078-Clnk-TL refPt:[1250.9,91.0]} nothing kept from sections[V4963]
+2026-03-14 00:48:10,925 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3078-Clnk-TL refPt:[1250.9,91.0]} Glyph{#15523 [STUMP]}
+2026-03-14 00:48:10,927 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3078-Clnk-BL refPt:[1250.9,95.0]} nothing kept from sections[V4963]
+2026-03-14 00:48:10,928 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3078-Clnk-BL refPt:[1250.9,95.0]} Glyph{#15523 [STUMP]}
+2026-03-14 00:48:10,929 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3122-Clnk-TL refPt:[1252.9,98.0]} nothing kept from sections[V4963]
+2026-03-14 00:48:10,930 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3122-Clnk-TL refPt:[1252.9,98.0]} Glyph{#15524 [STUMP]}
+2026-03-14 00:48:10,934 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3046-Clnk-BL refPt:[1253.9,89.0]} nothing kept from sections[V4963]
+2026-03-14 00:48:10,934 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3046-Clnk-BL refPt:[1253.9,89.0]} Glyph{#15525 [STUMP]}
+2026-03-14 00:48:10,935 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4339-Clnk-TL refPt:[1253.9,1255.0]} Glyph{#15526 [STUMP]}
+2026-03-14 00:48:10,936 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4339-Clnk-BL refPt:[1253.9,1259.0]} Glyph{#15527 [STUMP]}
+2026-03-14 00:48:10,937 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4339-Clnk-BR refPt:[1267.7,1255.0]} Glyph{#15528 [STUMP]}
+2026-03-14 00:48:10,941 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3808-Clnk-BR refPt:[1336.7,851.0]} Glyph{#15529 [STUMP]}
+2026-03-14 00:48:10,942 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3798-Clnk-BL refPt:[1325.9,855.0]} Glyph{#15530 [STUMP]}
+2026-03-14 00:48:10,946 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4481-Clnk-TR refPt:[1347.7,1278.0]} nothing kept from sections[V5287]
+2026-03-14 00:48:10,946 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4481-Clnk-TR refPt:[1347.7,1278.0]} Glyph{#15531 [STUMP]}
+2026-03-14 00:48:10,947 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3719-Clnk-TL refPt:[1341.9,838.0]} Glyph{#15532 [STUMP]}
+2026-03-14 00:48:10,947 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3719-Clnk-TR refPt:[1355.7,833.0]} Glyph{#15533 [STUMP]}
+2026-03-14 00:48:10,948 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3719-Clnk-BR refPt:[1355.7,838.0]} Glyph{#15533 [STUMP]}
+2026-03-14 00:48:10,949 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3723-Clnk-TL refPt:[1343.9,838.0]} Glyph{#15534 [STUMP]}
+2026-03-14 00:48:10,950 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3723-Clnk-TR refPt:[1357.7,833.0]} Glyph{#15533 [STUMP]}
+2026-03-14 00:48:10,951 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3723-Clnk-BR refPt:[1357.7,838.0]} Glyph{#15533 [STUMP]}
+2026-03-14 00:48:10,952 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4597-Clnk-TR refPt:[1357.7,1283.0]} nothing kept from sections[V5346, V5287]
+2026-03-14 00:48:10,953 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4597-Clnk-BR refPt:[1357.7,1288.0]} nothing kept from sections[V5287]
+2026-03-14 00:48:10,953 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4597-Clnk-BR refPt:[1357.7,1288.0]} Glyph{#15535 [STUMP]}
+2026-03-14 00:48:10,954 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3129-Clnk-TL refPt:[1344.9,98.0]} Glyph{#15536 [STUMP]}
+2026-03-14 00:48:10,955 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3129-Clnk-BL refPt:[1344.9,102.0]} Glyph{#15536 [STUMP]}
+2026-03-14 00:48:10,956 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3181-Clnk-TL refPt:[1344.9,105.0]} Glyph{#15536 [STUMP]}
+2026-03-14 00:48:10,961 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3181-Clnk-BR refPt:[1358.7,105.0]} Glyph{#15537 [STUMP]}
+2026-03-14 00:48:10,963 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3185-Clnk-TL refPt:[1344.9,104.0]} Glyph{#15536 [STUMP]}
+2026-03-14 00:48:10,965 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3185-Clnk-BR refPt:[1358.7,104.0]} Glyph{#15537 [STUMP]}
+2026-03-14 00:48:10,965 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4477-Clnk-TL refPt:[1345.9,1283.0]} Glyph{#15538 [STUMP]}
+2026-03-14 00:48:10,966 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4477-Clnk-TR refPt:[1359.7,1278.0]} Glyph{#15539 [STUMP]}
+2026-03-14 00:48:10,967 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4477-Clnk-BR refPt:[1359.7,1283.0]} Glyph{#15540 [STUMP]}
+2026-03-14 00:48:10,968 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3255-Clnk-TR refPt:[1372.7,79.0]} Glyph{#15541 [STUMP]}
+2026-03-14 00:48:10,969 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3255-Clnk-BR refPt:[1372.7,84.0]} Glyph{#15542 [STUMP]}
+2026-03-14 00:48:10,969 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3189-Clnk-TL refPt:[1387.9,104.0]} nothing kept from sections[V5443]
+2026-03-14 00:48:10,970 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3189-Clnk-TL refPt:[1387.9,104.0]} Glyph{#15543 [STUMP]}
+2026-03-14 00:48:10,970 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3189-Clnk-BL refPt:[1387.9,108.0]} nothing kept from sections[V5443]
+2026-03-14 00:48:10,972 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3189-Clnk-BL refPt:[1387.9,108.0]} Glyph{#15543 [STUMP]}
+2026-03-14 00:48:10,972 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3193-Clnk-TL refPt:[1387.9,104.0]} nothing kept from sections[V5443]
+2026-03-14 00:48:10,973 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3193-Clnk-TL refPt:[1387.9,104.0]} Glyph{#15543 [STUMP]}
+2026-03-14 00:48:10,973 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3193-Clnk-BL refPt:[1387.9,108.0]} nothing kept from sections[V5443]
+2026-03-14 00:48:10,974 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3193-Clnk-BL refPt:[1387.9,108.0]} Glyph{#15543 [STUMP]}
+2026-03-14 00:48:10,975 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3133-Clnk-BL refPt:[1390.9,102.0]} nothing kept from sections[V5443]
+2026-03-14 00:48:10,975 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3133-Clnk-BL refPt:[1390.9,102.0]} Glyph{#15544 [STUMP]}
+2026-03-14 00:48:10,976 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3226-Clnk-TL refPt:[1390.9,112.0]} nothing kept from sections[V5443]
+2026-03-14 00:48:10,976 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3226-Clnk-TL refPt:[1390.9,112.0]} Glyph{#15544 [STUMP]}
+2026-03-14 00:48:10,977 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3226-Clnk-BR refPt:[1403.7,112.0]} Glyph{#15545 [STUMP]}
+2026-03-14 00:48:10,978 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4345-Clnk-TL refPt:[1408.9,1255.0]} Glyph{#15546 [STUMP]}
+2026-03-14 00:48:10,979 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4345-Clnk-BL refPt:[1408.9,1259.0]} Glyph{#15546 [STUMP]}
+2026-03-14 00:48:10,981 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4345-Clnk-BR refPt:[1422.7,1255.0]} Glyph{#15547 [STUMP]}
+2026-03-14 00:48:10,983 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4763-Clnk-BR refPt:[1438.7,1281.0]} nothing kept from sections[V5618]
+2026-03-14 00:48:10,984 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4763-Clnk-BR refPt:[1438.7,1281.0]} Glyph{#15548 [STUMP]}
+2026-03-14 00:48:10,984 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4601-Clnk-TL refPt:[1476.9,1288.0]} Glyph{#15549 [STUMP]}
+2026-03-14 00:48:10,985 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4601-Clnk-TR refPt:[1490.7,1283.0]} nothing kept from sections[V5813, V5778]
+2026-03-14 00:48:10,986 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4601-Clnk-BR refPt:[1490.7,1288.0]} nothing kept from sections[V5778]
+2026-03-14 00:48:10,987 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4601-Clnk-BR refPt:[1490.7,1288.0]} Glyph{#15550 [STUMP]}
+2026-03-14 00:48:10,990 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4483-Clnk-TL refPt:[1479.9,1281.0]} Glyph{#15551 [STUMP]}
+2026-03-14 00:48:10,991 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4483-Clnk-TR refPt:[1493.7,1276.0]} Glyph{#15552 [STUMP]}
+2026-03-14 00:48:10,994 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4483-Clnk-BR refPt:[1493.7,1281.0]} Glyph{#15552 [STUMP]}
+2026-03-14 00:48:10,996 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4487-Clnk-TL refPt:[1479.9,1281.0]} Glyph{#15551 [STUMP]}
+2026-03-14 00:48:10,997 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4487-Clnk-TR refPt:[1493.7,1276.0]} Glyph{#15552 [STUMP]}
+2026-03-14 00:48:10,998 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4487-Clnk-BR refPt:[1493.7,1281.0]} Glyph{#15552 [STUMP]}
+2026-03-14 00:48:11,001 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4210-Clnk-TR refPt:[1502.7,997.0]} Glyph{#15553 [STUMP]}
+2026-03-14 00:48:11,002 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4210-Clnk-BR refPt:[1502.7,1002.0]} Glyph{#15553 [STUMP]}
+2026-03-14 00:48:11,004 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3605-Clnk-TR refPt:[1505.7,570.0]} Glyph{#15554 [STUMP]}
+2026-03-14 00:48:11,005 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3605-Clnk-BR refPt:[1505.7,575.0]} nothing kept from sections[V5900, V5847, V5906]
+2026-03-14 00:48:11,005 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3605-Clnk-BR refPt:[1505.7,575.0]} Glyph{#15555 [STUMP]}
+2026-03-14 00:48:11,006 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4179-Clnk-TL refPt:[1503.9,988.0]} nothing kept from sections[V5852]
+2026-03-14 00:48:11,006 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4179-Clnk-TL refPt:[1503.9,988.0]} Glyph{#15556 [STUMP]}
+2026-03-14 00:48:11,007 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4179-Clnk-BL refPt:[1503.9,992.0]} Glyph{#15553 [STUMP]}
+2026-03-14 00:48:11,008 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3573-Clnk-TL refPt:[1504.9,562.0]} nothing kept from sections[V5857]
+2026-03-14 00:48:11,008 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3573-Clnk-TL refPt:[1504.9,562.0]} Glyph{#15557 [STUMP]}
+2026-03-14 00:48:11,009 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3573-Clnk-BL refPt:[1504.9,566.0]} Glyph{#15554 [STUMP]}
+2026-03-14 00:48:11,010 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3573-Clnk-TR refPt:[1517.7,557.0]} Glyph{#45}
+2026-03-14 00:48:11,011 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3573-Clnk-BR refPt:[1517.7,562.0]} nothing kept from sections[V5932, V5906]
+2026-03-14 00:48:11,012 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4190-Clnk-TL refPt:[1534.9,989.0]} Glyph{#15558 [STUMP]}
+2026-03-14 00:48:11,013 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4190-Clnk-BL refPt:[1534.9,993.0]} Glyph{#15558 [STUMP]}
+2026-03-14 00:48:11,015 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4605-Clnk-TR refPt:[1573.7,1282.0]} nothing kept from sections[V6090, V6056]
+2026-03-14 00:48:11,015 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4605-Clnk-BR refPt:[1573.7,1287.0]} nothing kept from sections[V6056]
+2026-03-14 00:48:11,016 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4605-Clnk-BR refPt:[1573.7,1287.0]} Glyph{#15559 [STUMP]}
+2026-03-14 00:48:11,016 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4493-Clnk-TL refPt:[1561.9,1282.0]} Glyph{#15560 [STUMP]}
+2026-03-14 00:48:11,017 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4493-Clnk-TR refPt:[1575.7,1277.0]} Glyph{#15561 [STUMP]}
+2026-03-14 00:48:11,018 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4493-Clnk-BR refPt:[1575.7,1282.0]} Glyph{#15561 [STUMP]}
+2026-03-14 00:48:11,019 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3671-Clnk-TR refPt:[1576.7,826.0]} Glyph{#15562 [STUMP]}
+2026-03-14 00:48:11,019 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3671-Clnk-BR refPt:[1576.7,831.0]} Glyph{#15562 [STUMP]}
+2026-03-14 00:48:11,022 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4397-Clnk-TL refPt:[1649.9,1261.0]} Glyph{#15563 [STUMP]}
+2026-03-14 00:48:11,026 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4397-Clnk-BR refPt:[1663.7,1261.0]} nothing kept from sections[V6217]
+2026-03-14 00:48:11,027 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4397-Clnk-BR refPt:[1663.7,1261.0]} Glyph{#15564 [STUMP]}
+2026-03-14 00:48:11,028 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4349-Clnk-TL refPt:[1650.9,1254.0]} Glyph{#15563 [STUMP]}
+2026-03-14 00:48:11,028 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4349-Clnk-BL refPt:[1650.9,1258.0]} Glyph{#15563 [STUMP]}
+2026-03-14 00:48:11,029 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4349-Clnk-BR refPt:[1664.7,1254.0]} Glyph{#15565 [STUMP]}
+2026-03-14 00:48:11,030 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4353-Clnk-TL refPt:[1650.9,1255.0]} Glyph{#15563 [STUMP]}
+2026-03-14 00:48:11,031 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4353-Clnk-BL refPt:[1650.9,1259.0]} Glyph{#15563 [STUMP]}
+2026-03-14 00:48:11,032 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4353-Clnk-BR refPt:[1664.7,1255.0]} Glyph{#15565 [STUMP]}
+2026-03-14 00:48:11,033 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3678-Clnk-TR refPt:[1739.7,827.0]} Glyph{#15566 [STUMP]}
+2026-03-14 00:48:11,033 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3675-Clnk-TR refPt:[1740.7,826.0]} Glyph{#15566 [STUMP]}
+2026-03-14 00:48:11,034 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4609-Clnk-TR refPt:[1751.7,1283.0]} nothing kept from sections[V6501, V6460]
+2026-03-14 00:48:11,036 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4609-Clnk-BR refPt:[1751.7,1288.0]} nothing kept from sections[V6460]
+2026-03-14 00:48:11,037 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4609-Clnk-BR refPt:[1751.7,1288.0]} Glyph{#15567 [STUMP]}
+2026-03-14 00:48:11,038 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4499-Clnk-TL refPt:[1738.9,1282.0]} Glyph{#15568 [STUMP]}
+2026-03-14 00:48:11,038 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4499-Clnk-TR refPt:[1752.7,1277.0]} nothing kept from sections[V6501, V6503, V6460]
+2026-03-14 00:48:11,039 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4499-Clnk-TR refPt:[1752.7,1277.0]} Glyph{#15569 [STUMP]}
+2026-03-14 00:48:11,040 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4499-Clnk-BR refPt:[1752.7,1282.0]} nothing kept from sections[V6501, V6460]
+2026-03-14 00:48:11,040 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4499-Clnk-BR refPt:[1752.7,1282.0]} Glyph{#15569 [STUMP]}
+2026-03-14 00:48:11,042 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3847-Clnk-TR refPt:[1756.7,827.0]} Glyph{#15570 [STUMP]}
+2026-03-14 00:48:11,043 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4509-Clnk-TL refPt:[1751.9,1282.0]} nothing kept from sections[V6501, V6460]
+2026-03-14 00:48:11,044 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4509-Clnk-BL refPt:[1751.9,1286.0]} nothing kept from sections[V6460]
+2026-03-14 00:48:11,045 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4509-Clnk-BL refPt:[1751.9,1286.0]} Glyph{#15567 [STUMP]}
+2026-03-14 00:48:11,045 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4509-Clnk-TR refPt:[1765.7,1277.0]} Glyph{#15571 [STUMP]}
+2026-03-14 00:48:11,047 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4613-Clnk-TR refPt:[1775.7,1283.0]} nothing kept from sections[V6549, V6551, V6525]
+2026-03-14 00:48:11,047 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4613-Clnk-TR refPt:[1775.7,1283.0]} Glyph{#15572 [STUMP]}
+2026-03-14 00:48:11,048 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4613-Clnk-BR refPt:[1775.7,1288.0]} nothing kept from sections[V6525]
+2026-03-14 00:48:11,048 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4613-Clnk-BR refPt:[1775.7,1288.0]} Glyph{#15573 [STUMP]}
+2026-03-14 00:48:11,049 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4505-Clnk-TR refPt:[1777.7,1277.0]} Glyph{#15574 [STUMP]}
+2026-03-14 00:48:11,050 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4505-Clnk-BR refPt:[1777.7,1282.0]} Glyph{#15574 [STUMP]}
+2026-03-14 00:48:11,053 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4517-Clnk-TL refPt:[1775.9,1282.0]} nothing kept from sections[V6549, V6551, V6525]
+2026-03-14 00:48:11,054 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4517-Clnk-TL refPt:[1775.9,1282.0]} Glyph{#15572 [STUMP]}
+2026-03-14 00:48:11,055 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4517-Clnk-BL refPt:[1775.9,1286.0]} nothing kept from sections[V6525]
+2026-03-14 00:48:11,055 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4517-Clnk-BL refPt:[1775.9,1286.0]} Glyph{#15573 [STUMP]}
+2026-03-14 00:48:11,057 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4517-Clnk-TR refPt:[1789.7,1277.0]} nothing kept from sections[V6564, V6568]
+2026-03-14 00:48:11,058 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4517-Clnk-TR refPt:[1789.7,1277.0]} Glyph{#15575 [STUMP]}
+2026-03-14 00:48:11,058 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4617-Clnk-TR refPt:[1798.7,1283.0]} nothing kept from sections[V6586, V6588, V6568]
+2026-03-14 00:48:11,059 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4617-Clnk-TR refPt:[1798.7,1283.0]} Glyph{#15576 [STUMP]}
+2026-03-14 00:48:11,059 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4617-Clnk-BR refPt:[1798.7,1288.0]} nothing kept from sections[V6568]
+2026-03-14 00:48:11,059 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4617-Clnk-BR refPt:[1798.7,1288.0]} Glyph{#15577 [STUMP]}
+2026-03-14 00:48:11,060 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4513-Clnk-TR refPt:[1800.7,1277.0]} Glyph{#15578 [STUMP]}
+2026-03-14 00:48:11,061 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4513-Clnk-BR refPt:[1800.7,1282.0]} Glyph{#15579 [STUMP]}
+2026-03-14 00:48:11,061 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4401-Clnk-TL refPt:[1805.9,1262.0]} Glyph{#15580 [STUMP]}
+2026-03-14 00:48:11,062 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4401-Clnk-BR refPt:[1819.7,1262.0]} nothing kept from sections[V6614]
+2026-03-14 00:48:11,062 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4401-Clnk-BR refPt:[1819.7,1262.0]} Glyph{#15581 [STUMP]}
+2026-03-14 00:48:11,063 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4359-Clnk-TL refPt:[1806.9,1255.0]} Glyph{#15580 [STUMP]}
+2026-03-14 00:48:11,064 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4359-Clnk-BL refPt:[1806.9,1259.0]} Glyph{#15580 [STUMP]}
+2026-03-14 00:48:11,064 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4359-Clnk-BR refPt:[1820.7,1255.0]} Glyph{#15582 [STUMP]}
+2026-03-14 00:48:11,065 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4621-Clnk-TR refPt:[1884.7,1283.0]} nothing kept from sections[V6783, V6767]
+2026-03-14 00:48:11,065 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4621-Clnk-TR refPt:[1884.7,1283.0]} Glyph{#15583 [STUMP]}
+2026-03-14 00:48:11,066 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4621-Clnk-BR refPt:[1884.7,1288.0]} nothing kept from sections[V6767]
+2026-03-14 00:48:11,066 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4621-Clnk-BR refPt:[1884.7,1288.0]} Glyph{#15584 [STUMP]}
+2026-03-14 00:48:11,066 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4521-Clnk-TL refPt:[1872.9,1282.0]} Glyph{#15585 [STUMP]}
+2026-03-14 00:48:11,068 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4521-Clnk-TR refPt:[1886.7,1277.0]} Glyph{#15586 [STUMP]}
+2026-03-14 00:48:11,069 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4521-Clnk-BR refPt:[1886.7,1282.0]} Glyph{#15586 [STUMP]}
+2026-03-14 00:48:11,069 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4405-Clnk-TL refPt:[1892.9,1262.0]} Glyph{#15587 [STUMP]}
+2026-03-14 00:48:11,071 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4405-Clnk-BR refPt:[1906.7,1262.0]} nothing kept from sections[V6830]
+2026-03-14 00:48:11,071 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4405-Clnk-BR refPt:[1906.7,1262.0]} Glyph{#15588 [STUMP]}
+2026-03-14 00:48:11,072 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4365-Clnk-TL refPt:[1894.9,1255.0]} Glyph{#15587 [STUMP]}
+2026-03-14 00:48:11,073 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4365-Clnk-BL refPt:[1894.9,1259.0]} Glyph{#15587 [STUMP]}
+2026-03-14 00:48:11,073 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4365-Clnk-BR refPt:[1908.7,1255.0]} Glyph{#15589 [STUMP]}
+2026-03-14 00:48:11,074 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3637-Clnk-TR refPt:[1951.7,814.0]} Glyph{#15590 [STUMP]}
+2026-03-14 00:48:11,075 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3639-Clnk-TL refPt:[1940.9,816.0]} Glyph{#15591 [STUMP]}
+2026-03-14 00:48:11,075 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3639-Clnk-TR refPt:[1953.7,811.0]} Glyph{#15590 [STUMP]}
+2026-03-14 00:48:11,076 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3751-Clnk-BL refPt:[1940.9,841.0]} Glyph{#690 [VERTICAL_SEED]}
+2026-03-14 00:48:11,077 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3686-Clnk-TR refPt:[1960.7,826.0]} Glyph{#15592 [STUMP]}
+2026-03-14 00:48:11,078 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3741-Clnk-BL refPt:[1948.9,841.0]} Glyph{#15593 [STUMP]}
+2026-03-14 00:48:11,079 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3034-Clnk-TR refPt:[1968.7,71.0]} nothing kept from sections[V7019, V7024, V6982]
+2026-03-14 00:48:11,080 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3034-Clnk-TR refPt:[1968.7,71.0]} Glyph{#15594 [STUMP]}
+2026-03-14 00:48:11,080 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3034-Clnk-BR refPt:[1968.7,76.0]} nothing kept from sections[V6982]
+2026-03-14 00:48:11,082 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3034-Clnk-BR refPt:[1968.7,76.0]} Glyph{#15595 [STUMP]}
+2026-03-14 00:48:11,083 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3052-Clnk-TR refPt:[1967.7,78.0]} nothing kept from sections[V6982]
+2026-03-14 00:48:11,084 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3052-Clnk-TR refPt:[1967.7,78.0]} Glyph{#15596 [STUMP]}
+2026-03-14 00:48:11,086 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3845-Clnk-TL refPt:[1955.9,824.0]} Glyph{#15597 [STUMP]}
+2026-03-14 00:48:11,087 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3845-Clnk-TR refPt:[1969.7,819.0]} Glyph{#15598 [STUMP]}
+2026-03-14 00:48:11,088 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3845-Clnk-BR refPt:[1969.7,824.0]} Glyph{#15599 [STUMP]}
+2026-03-14 00:48:11,089 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3018-Clnk-TL refPt:[1956.9,69.0]} Glyph{#15600 [STUMP]}
+2026-03-14 00:48:11,090 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3018-Clnk-TR refPt:[1970.7,64.0]} Glyph{#15601 [STUMP]}
+2026-03-14 00:48:11,091 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3018-Clnk-BR refPt:[1970.7,69.0]} Glyph{#15601 [STUMP]}
+2026-03-14 00:48:11,092 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3022-Clnk-TL refPt:[1956.9,70.0]} Glyph{#15600 [STUMP]}
+2026-03-14 00:48:11,093 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3022-Clnk-TR refPt:[1970.7,65.0]} Glyph{#15601 [STUMP]}
+2026-03-14 00:48:11,094 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3022-Clnk-BR refPt:[1970.7,70.0]} Glyph{#15601 [STUMP]}
+2026-03-14 00:48:11,095 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4625-Clnk-TR refPt:[1970.7,1283.0]} nothing kept from sections[V7035, V6988]
+2026-03-14 00:48:11,097 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4625-Clnk-BR refPt:[1970.7,1288.0]} nothing kept from sections[V6988]
+2026-03-14 00:48:11,097 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4625-Clnk-BR refPt:[1970.7,1288.0]} Glyph{#15602 [STUMP]}
+2026-03-14 00:48:11,098 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4527-Clnk-TL refPt:[1958.9,1282.0]} Glyph{#15603 [STUMP]}
+2026-03-14 00:48:11,099 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4527-Clnk-TR refPt:[1972.7,1277.0]} Glyph{#15604 [STUMP]}
+2026-03-14 00:48:11,100 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4527-Clnk-BR refPt:[1972.7,1282.0]} Glyph{#15604 [STUMP]}
+2026-03-14 00:48:11,102 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3849-Clnk-TR refPt:[1974.7,827.0]} Glyph{#15605 [STUMP]}
+2026-03-14 00:48:11,104 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3086-Clnk-TL refPt:[2041.9,90.0]} Glyph{#15606 [STUMP]}
+2026-03-14 00:48:11,105 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3086-Clnk-BL refPt:[2041.9,94.0]} Glyph{#15606 [STUMP]}
+2026-03-14 00:48:11,106 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3090-Clnk-TL refPt:[2042.9,89.0]} nothing kept from sections[V7183]
+2026-03-14 00:48:11,106 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3090-Clnk-TL refPt:[2042.9,89.0]} Glyph{#15607 [STUMP]}
+2026-03-14 00:48:11,107 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3090-Clnk-BL refPt:[2042.9,93.0]} Glyph{#15606 [STUMP]}
+2026-03-14 00:48:11,109 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3054-Clnk-BL refPt:[2044.9,88.0]} nothing kept from sections[V7183]
+2026-03-14 00:48:11,110 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3054-Clnk-BL refPt:[2044.9,88.0]} Glyph{#15608 [STUMP]}
+2026-03-14 00:48:11,111 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4409-Clnk-TL refPt:[2044.9,1262.0]} Glyph{#15609 [STUMP]}
+2026-03-14 00:48:11,115 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4409-Clnk-BR refPt:[2058.7,1262.0]} nothing kept from sections[V7203]
+2026-03-14 00:48:11,121 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4409-Clnk-BR refPt:[2058.7,1262.0]} Glyph{#15610 [STUMP]}
+2026-03-14 00:48:11,123 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3137-Clnk-TL refPt:[2045.9,97.0]} nothing kept from sections[V7183]
+2026-03-14 00:48:11,123 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3137-Clnk-TL refPt:[2045.9,97.0]} Glyph{#15611 [STUMP]}
+2026-03-14 00:48:11,125 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3137-Clnk-BR refPt:[2057.7,97.0]} Glyph{#15612 [STUMP]}
+2026-03-14 00:48:11,127 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4369-Clnk-TL refPt:[2046.9,1255.0]} Glyph{#15613 [STUMP]}
+2026-03-14 00:48:11,127 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4369-Clnk-BL refPt:[2046.9,1259.0]} Glyph{#15614 [STUMP]}
+2026-03-14 00:48:11,129 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4369-Clnk-BR refPt:[2060.7,1255.0]} Glyph{#15615 [STUMP]}
+2026-03-14 00:48:11,131 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4371-Clnk-TL refPt:[2046.9,1256.0]} Glyph{#15614 [STUMP]}
+2026-03-14 00:48:11,132 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4371-Clnk-BL refPt:[2046.9,1260.0]} Glyph{#15614 [STUMP]}
+2026-03-14 00:48:11,133 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4371-Clnk-BR refPt:[2060.7,1256.0]} Glyph{#15615 [STUMP]}
+2026-03-14 00:48:11,134 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3643-Clnk-TL refPt:[2132.9,819.0]} Glyph{#15616 [STUMP]}
+2026-03-14 00:48:11,135 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3643-Clnk-TR refPt:[2146.7,814.0]} Glyph{#15617 [STUMP]}
+2026-03-14 00:48:11,135 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3643-Clnk-BR refPt:[2146.7,819.0]} Glyph{#15618 [STUMP]}
+2026-03-14 00:48:11,136 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4637-Clnk-TR refPt:[2146.7,1284.0]} nothing kept from sections[V7487, V7446]
+2026-03-14 00:48:11,137 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4637-Clnk-BR refPt:[2146.7,1289.0]} nothing kept from sections[V7446]
+2026-03-14 00:48:11,137 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4637-Clnk-BR refPt:[2146.7,1289.0]} Glyph{#15619 [STUMP]}
+2026-03-14 00:48:11,138 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3143-Clnk-TL refPt:[2133.9,97.0]} Glyph{#15620 [STUMP]}
+2026-03-14 00:48:11,138 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3143-Clnk-BL refPt:[2133.9,101.0]} Glyph{#15621 [STUMP]}
+2026-03-14 00:48:11,139 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3205-Clnk-TL refPt:[2135.9,103.0]} Glyph{#15620 [STUMP]}
+2026-03-14 00:48:11,141 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4531-Clnk-TL refPt:[2135.9,1282.0]} Glyph{#15622 [STUMP]}
+2026-03-14 00:48:11,142 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4531-Clnk-TR refPt:[2149.7,1277.0]} Glyph{#15623 [STUMP]}
+2026-03-14 00:48:11,143 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4531-Clnk-BR refPt:[2149.7,1282.0]} Glyph{#15623 [STUMP]}
+2026-03-14 00:48:11,145 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4535-Clnk-TL refPt:[2135.9,1282.0]} Glyph{#15622 [STUMP]}
+2026-03-14 00:48:11,147 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4535-Clnk-TR refPt:[2149.7,1277.0]} Glyph{#15623 [STUMP]}
+2026-03-14 00:48:11,147 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4535-Clnk-BR refPt:[2149.7,1282.0]} Glyph{#15623 [STUMP]}
+2026-03-14 00:48:11,150 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3201-Clnk-TL refPt:[2136.9,104.0]} nothing kept from sections[V7430, V7441]
+2026-03-14 00:48:11,151 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3201-Clnk-TL refPt:[2136.9,104.0]} Glyph{#15624 [STUMP]}
+2026-03-14 00:48:11,152 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3201-Clnk-BR refPt:[2150.7,104.0]} Glyph{#15625 [STUMP]}
+2026-03-14 00:48:11,152 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3209-Clnk-TL refPt:[2177.9,103.0]} Glyph{#15626 [STUMP]}
+2026-03-14 00:48:11,153 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3209-Clnk-BL refPt:[2177.9,107.0]} Glyph{#15626 [STUMP]}
+2026-03-14 00:48:11,154 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3213-Clnk-TL refPt:[2177.9,103.0]} Glyph{#15626 [STUMP]}
+2026-03-14 00:48:11,154 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3213-Clnk-BL refPt:[2177.9,107.0]} Glyph{#15626 [STUMP]}
+2026-03-14 00:48:11,155 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3234-Clnk-TL refPt:[2178.9,111.0]} Glyph{#15626 [STUMP]}
+2026-03-14 00:48:11,157 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3234-Clnk-BR refPt:[2191.7,111.0]} Glyph{#15627 [STUMP]}
+2026-03-14 00:48:11,159 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3147-Clnk-BL refPt:[2179.9,101.0]} nothing kept from sections[V7593, V7600]
+2026-03-14 00:48:11,160 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3147-Clnk-BL refPt:[2179.9,101.0]} Glyph{#15628 [STUMP]}
+2026-03-14 00:48:11,161 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4692-Clnk-BL refPt:[2197.9,1234.0]} Glyph{#15629 [STUMP]}
+2026-03-14 00:48:11,162 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4375-Clnk-TL refPt:[2198.9,1256.0]} Glyph{#15630 [STUMP]}
+2026-03-14 00:48:11,163 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4375-Clnk-BL refPt:[2198.9,1260.0]} Glyph{#15630 [STUMP]}
+2026-03-14 00:48:11,163 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4375-Clnk-BR refPt:[2212.7,1256.0]} Glyph{#15631 [STUMP]}
+2026-03-14 00:48:11,164 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4695-Clnk-BR refPt:[2228.7,1230.0]} Glyph{#15632 [STUMP]}
+2026-03-14 00:48:11,166 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4767-Clnk-BR refPt:[2228.7,1283.0]} Glyph{#15633 [STUMP]}
+2026-03-14 00:48:11,167 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4705-Clnk-BL refPt:[2232.9,1234.0]} Glyph{#15634 [STUMP]}
+2026-03-14 00:48:11,167 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4705-Clnk-BR refPt:[2246.7,1230.0]} Glyph{#15635 [STUMP]}
+2026-03-14 00:48:11,168 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4641-Clnk-TR refPt:[2272.7,1284.0]} nothing kept from sections[V7850, V7837]
+2026-03-14 00:48:11,169 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4641-Clnk-BR refPt:[2272.7,1289.0]} nothing kept from sections[V7837]
+2026-03-14 00:48:11,169 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4641-Clnk-BR refPt:[2272.7,1289.0]} Glyph{#15636 [STUMP]}
+2026-03-14 00:48:11,170 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4541-Clnk-TL refPt:[2260.9,1284.0]} Glyph{#15637 [STUMP]}
+2026-03-14 00:48:11,171 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4541-Clnk-TR refPt:[2274.7,1279.0]} Glyph{#15638 [STUMP]}
+2026-03-14 00:48:11,171 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4541-Clnk-BR refPt:[2274.7,1284.0]} Glyph{#15639 [STUMP]}
+2026-03-14 00:48:11,173 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4208-Clnk-TR refPt:[2282.7,997.0]} Glyph{#15640 [STUMP]}
+2026-03-14 00:48:11,173 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#4208-Clnk-BR refPt:[2282.7,1002.0]} nothing kept from sections[V7904, V7854]
+2026-03-14 00:48:11,174 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#4208-Clnk-BR refPt:[2282.7,1002.0]} Glyph{#15641 [STUMP]}
+2026-03-14 00:48:11,176 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3603-Clnk-TR refPt:[2285.7,570.0]} Glyph{#15642 [STUMP]}
+2026-03-14 00:48:11,177 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3603-Clnk-BR refPt:[2285.7,575.0]} Glyph{#15643 [STUMP]}
+2026-03-14 00:48:11,178 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3569-Clnk-TL refPt:[2282.9,562.0]} nothing kept from sections[V7897]
+2026-03-14 00:48:11,178 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3569-Clnk-TL refPt:[2282.9,562.0]} Glyph{#15644 [STUMP]}
+2026-03-14 00:48:11,180 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3569-Clnk-TR refPt:[2296.7,557.0]} Glyph{#15645 [STUMP]}
+2026-03-14 00:48:11,182 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3569-Clnk-BR refPt:[2296.7,562.0]} nothing kept from sections[V7961, V7937]
+2026-03-14 00:48:11,183 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3893-Clnk-TL refPt:[2283.9,989.0]} nothing kept from sections[V7879]
+2026-03-14 00:48:11,183 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3893-Clnk-TL refPt:[2283.9,989.0]} Glyph{#15646 [STUMP]}
+2026-03-14 00:48:11,184 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3893-Clnk-BL refPt:[2283.9,993.0]} Glyph{#15640 [STUMP]}
+2026-03-14 00:48:11,185 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3921-Clnk-TL refPt:[2284.9,996.0]} Glyph{#15640 [STUMP]}
+2026-03-14 00:48:11,186 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3921-Clnk-BL refPt:[2284.9,1000.0]} Glyph{#15640 [STUMP]}
+2026-03-14 00:48:11,187 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3939-Clnk-TL refPt:[2284.9,1003.0]} Glyph{#15640 [STUMP]}
+2026-03-14 00:48:11,188 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3939-Clnk-BL refPt:[2284.9,1007.0]} Glyph{#15640 [STUMP]}
+2026-03-14 00:48:11,188 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3601-Clnk-TL refPt:[2287.9,576.0]} Glyph{#15642 [STUMP]}
+2026-03-14 00:48:11,189 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3601-Clnk-BL refPt:[2287.9,580.0]} Glyph{#15642 [STUMP]}
+2026-03-14 00:48:11,190 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3601-Clnk-TR refPt:[2301.7,571.0]} Glyph{#15647 [STUMP]}
+2026-03-14 00:48:11,191 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3601-Clnk-BR refPt:[2301.7,576.0]} Glyph{#15647 [STUMP]}
+2026-03-14 00:48:11,192 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3897-Clnk-BL refPt:[2288.9,994.0]} nothing kept from sections[V7925]
+2026-03-14 00:48:11,192 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3897-Clnk-BL refPt:[2288.9,994.0]} Glyph{#15648 [STUMP]}
+2026-03-14 00:48:11,193 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3887-Clnk-TR refPt:[2310.7,985.0]} nothing kept from sections[V8006]
+2026-03-14 00:48:11,193 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3887-Clnk-TR refPt:[2310.7,985.0]} Glyph{#15649 [STUMP]}
+2026-03-14 00:48:11,195 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3887-Clnk-BR refPt:[2310.7,990.0]} nothing kept from sections[V8006]
+2026-03-14 00:48:11,195 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3887-Clnk-BR refPt:[2310.7,990.0]} Glyph{#15649 [STUMP]}
+2026-03-14 00:48:11,196 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3589-Clnk-TL refPt:[2298.9,569.0]} Glyph{#15650 [STUMP]}
+2026-03-14 00:48:11,196 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3589-Clnk-BL refPt:[2298.9,573.0]} Glyph{#15651 [STUMP]}
+2026-03-14 00:48:11,197 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3589-Clnk-TR refPt:[2312.7,564.0]} nothing kept from sections[V8009, V8011, V8003]
+2026-03-14 00:48:11,197 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3589-Clnk-TR refPt:[2312.7,564.0]} Glyph{#15652 [STUMP]}
+2026-03-14 00:48:11,199 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3589-Clnk-BR refPt:[2312.7,569.0]} nothing kept from sections[V8009, V8011, V8003]
+2026-03-14 00:48:11,199 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3589-Clnk-BR refPt:[2312.7,569.0]} Glyph{#15652 [STUMP]}
+2026-03-14 00:48:11,201 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3567-Clnk-TL refPt:[2299.9,563.0]} Glyph{#15647 [STUMP]}
+2026-03-14 00:48:11,202 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3567-Clnk-BL refPt:[2299.9,567.0]} Glyph{#15647 [STUMP]}
+2026-03-14 00:48:11,203 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3567-Clnk-TR refPt:[2313.7,558.0]} nothing kept from sections[V8011]
+2026-03-14 00:48:11,203 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3567-Clnk-TR refPt:[2313.7,558.0]} Glyph{#15653 [STUMP]}
+2026-03-14 00:48:11,204 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3567-Clnk-BR refPt:[2313.7,563.0]} Glyph{#15652 [STUMP]}
+2026-03-14 00:48:11,205 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3915-Clnk-TR refPt:[2313.7,991.0]} nothing kept from sections[V8006]
+2026-03-14 00:48:11,206 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3915-Clnk-TR refPt:[2313.7,991.0]} Glyph{#15654 [STUMP]}
+2026-03-14 00:48:11,209 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3891-Clnk-TR refPt:[2314.7,986.0]} nothing kept from sections[V8006]
+2026-03-14 00:48:11,210 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3891-Clnk-TR refPt:[2314.7,986.0]} Glyph{#15655 [STUMP]}
+2026-03-14 00:48:11,211 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:859  | CLinker{head#3891-Clnk-BR refPt:[2314.7,991.0]} nothing kept from sections[V8006]
+2026-03-14 00:48:11,213 DEBUG [CRASH COMPLEXION_p011]           HeadLinker.java:871  | CLinker{head#3891-Clnk-BR refPt:[2314.7,991.0]} Glyph{#15655 [STUMP]}
+2026-03-14 00:48:11,229 DEBUG [CRASH COMPLEXION_p011]          StemBuilder.java:1080 | [FAILED toString()]
+2026-03-14 00:48:11,232 DEBUG [CRASH COMPLEXION_p011]          StemBuilder.java:167  | VLinker{beam#1829-Vlnk-BL-1} lengths:{0=25, 1=25, 2=25, 3=25, 4=25}
+2026-03-14 00:48:11,236 DEBUG [CRASH COMPLEXION_p011]          StemBuilder.java:1080 | [FAILED toString()]
+2026-03-14 00:48:11,238 DEBUG [CRASH COMPLEXION_p011]          StemBuilder.java:167  | VLinker{beam#1829-Vlnk-TR-2} lengths:{0=0, 1=0, 2=0, 3=0, 4=0}
+2026-03-14 00:48:11,244 DEBUG [CRASH COMPLEXION_p011]          StemBuilder.java:1080 | [FAILED toString()]
+2026-03-14 00:48:11,247 DEBUG [CRASH COMPLEXION_p011]          StemBuilder.java:167  | VLinker{beam#1829-Vlnk-BR-2} lengths:{0=1, 1=1, 2=1, 3=1, 4=1}
+2026-03-14 00:48:11,251 DEBUG [CRASH COMPLEXION_p011]          StemBuilder.java:1080 | [FAILED toString()]
+2026-03-14 00:48:11,254 DEBUG [CRASH COMPLEXION_p011]          StemBuilder.java:167  | VLinker{beam#1831-Vlnk-BL-1} lengths:{0=25, 1=25, 2=25, 3=25, 4=25}
+2026-03-14 00:48:11,262 DEBUG [CRASH COMPLEXION_p011]          StemBuilder.java:1080 | [FAILED toString()]
+2026-03-14 00:48:11,270 DEBUG [CRASH COMPLEXION_p011]          StemBuilder.java:167  | VLinker{beam#1831-Vlnk-TR-2} lengths:{0=0, 1=0, 2=0, 3=0, 4=0}

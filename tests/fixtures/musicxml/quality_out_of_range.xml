@@ -1,0 +1,38 @@
+<score-partwise version="4.0" xmlns:transform="https://band-score-to-midi/transform">
+  <part-list>
+    <score-part id="P1">
+      <part-name>Lead Guitar</part-name>
+      <score-instrument id="P1-I1"><instrument-name>Lead Guitar</instrument-name></score-instrument>
+    </score-part>
+    <score-part id="P2">
+      <part-name>Drums</part-name>
+      <score-instrument id="P2-I1"><instrument-name>Drum Kit</instrument-name></score-instrument>
+    </score-part>
+  </part-list>
+  <part id="P1" transform:role="guitar">
+    <measure number="1">
+      <attributes>
+        <divisions>2</divisions>
+        <time><beats>4</beats><beat-type>4</beat-type></time>
+      </attributes>
+      <note>
+        <pitch><step>C</step><octave>1</octave></pitch>
+        <duration>8</duration>
+        <type>whole</type>
+      </note>
+    </measure>
+  </part>
+  <part id="P2" transform:role="drums">
+    <measure number="1">
+      <attributes>
+        <divisions>2</divisions>
+        <time><beats>4</beats><beat-type>4</beat-type></time>
+      </attributes>
+      <note>
+        <pitch><step>C</step><octave>2</octave></pitch>
+        <duration>8</duration>
+        <type>whole</type>
+      </note>
+    </measure>
+  </part>
+</score-partwise>

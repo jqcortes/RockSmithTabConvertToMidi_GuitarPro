@@ -1,0 +1,28 @@
+<score-partwise version="4.0">
+  <part-list>
+    <score-part id="P1"><part-name>Lead Guitar</part-name></score-part>
+  </part-list>
+  <part id="P1">
+    <measure number="1">
+      <attributes>
+        <staves>2</staves>
+        <staff-details number="2"><staff-lines>6</staff-lines></staff-details>
+        <clef number="2"><sign>TAB</sign><line>5</line></clef>
+      </attributes>
+      <note>
+        <pitch><step>G</step><octave>4</octave></pitch>
+        <duration>2</duration>
+        <voice>1</voice>
+        <staff>1</staff>
+      </note>
+      <note>
+        <duration>2</duration>
+        <voice>1</voice>
+        <staff>2</staff>
+        <notations>
+          <technical><string>1</string><fret>3</fret></technical>
+        </notations>
+      </note>
+    </measure>
+  </part>
+</score-partwise>

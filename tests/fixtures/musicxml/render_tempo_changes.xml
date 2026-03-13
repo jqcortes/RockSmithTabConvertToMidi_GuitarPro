@@ -1,0 +1,32 @@
+<score-partwise version="4.0" xmlns:transform="https://example.com/transform">
+  <part-list>
+    <score-part id="P1">
+      <part-name>Lead Guitar</part-name>
+    </score-part>
+  </part-list>
+  <part id="P1" transform:role="guitar">
+    <measure number="1">
+      <attributes>
+        <divisions>2</divisions>
+        <key><fifths>2</fifths></key>
+        <time><beats>3</beats><beat-type>4</beat-type></time>
+      </attributes>
+      <direction placement="above">
+        <sound tempo="90" />
+      </direction>
+      <note confidence="0.9">
+        <pitch><step>D</step><octave>4</octave></pitch>
+        <duration>2</duration>
+      </note>
+    </measure>
+    <measure number="2">
+      <direction placement="above">
+        <sound tempo="120" />
+      </direction>
+      <note confidence="0.8">
+        <pitch><step>F</step><octave>4</octave></pitch>
+        <duration>2</duration>
+      </note>
+    </measure>
+  </part>
+</score-partwise>

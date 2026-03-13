@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<book software-version="5.10.0" software-build="b02fd4f8e31bf3dee1124bf4956e60fcca7f00a0" path="C:\Users\ken\RockSmithTabConvertToMidi\.cache\page_004\preprocess\CRASH COMPLEXION_p004.png" dirty="true">
+  <sheet number="1">
+    <input>
+      <path>C:\Users\ken\RockSmithTabConvertToMidi\.cache\page_004\preprocess\CRASH COMPLEXION_p004.png</path>
+      <number>1</number>
+    </input>
+    <steps>LOAD BINARY SCALE GRID HEADERS STEM_SEEDS BEAMS LEDGERS HEADS STEMS REDUCTION CUE_BEAMS TEXTS MEASURES CHORDS</steps>
+    <page id="1" delta-measure-id="7">
+      <system>
+        <part>
+          <staff-configuration line-count="5" small="true"/>
+        </part>
+        <part>
+          <staff-configuration line-count="5" small="true"/>
+        </part>
+        <part>
+          <staff-configuration line-count="6"/>
+        </part>
+        <part>
+          <staff-configuration line-count="5" small="true"/>
+        </part>
+        <part>
+          <staff-configuration line-count="6"/>
+        </part>
+        <part>
+          <staff-configuration line-count="5" small="true"/>
+        </part>
+        <part>
+          <staff-configuration line-count="5" small="true"/>
+        </part>
+        <part>
+          <staff-configuration line-count="5" small="true"/>
+        </part>
+      </system>
+      <system>
+        <part>
+          <staff-configuration line-count="5" small="true"/>
+        </part>
+        <part>
+          <staff-configuration line-count="5" small="true"/>
+        </part>
+        <part>
+          <staff-configuration line-count="6"/>
+        </part>
+        <part>
+          <staff-configuration line-count="5" small="true"/>
+        </part>
+        <part>
+          <staff-configuration line-count="6"/>
+        </part>
+        <part>
+          <staff-configuration line-count="5" small="true"/>
+        </part>
+        <part>
+          <staff-configuration line-count="5" small="true"/>
+        </part>
+        <part>
+          <staff-configuration line-count="5" small="true"/>
+        </part>
+      </system>
+    </page>
+  </sheet>
+  <score>
+    <page sheet-number="1" sheet-page-id="1"/>
+  </score>
+</book>

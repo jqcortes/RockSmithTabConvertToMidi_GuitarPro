@@ -1,0 +1,30 @@
+2026-03-14 00:08:25,854 INFO [CRASH COMPLEXION_p011]                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2026-03-14 00:08:25,856 INFO [CRASH COMPLEXION_p011]       StepMonitoring.java:98   | SYMBOLS
+2026-03-14 00:08:28,556 INFO [CRASH COMPLEXION_p011]            SheetStub.java:1000 | Loaded /sheet#1/sheet#1.xml
+2026-03-14 00:08:34,212 INFO [CRASH COMPLEXION_p011]       StepMonitoring.java:98   | LINKS
+2026-03-14 00:08:34,227 WARN [CRASH COMPLEXION_p011]             KeyInter.java:1174 | No effective clef before AlterInter#9650{(0.158) staff:6 NATURAL pitch:0.0}
+2026-03-14 00:08:34,229 WARN [CRASH COMPLEXION_p011]             KeyInter.java:1174 | No effective clef before AlterInter#9927{(0.174) staff:8 FLAT pitch:-4.0}
+2026-03-14 00:08:34,230 WARN [CRASH COMPLEXION_p011]             KeyInter.java:1174 | No effective clef before AlterInter#9988{(0.120) staff:8 FLAT pitch:-4.0}
+2026-03-14 00:08:34,230 WARN [CRASH COMPLEXION_p011]             KeyInter.java:1174 | No effective clef before AlterInter#10124{(0.135) staff:8 FLAT pitch:-4.0}
+2026-03-14 00:08:34,231 WARN [CRASH COMPLEXION_p011]             KeyInter.java:1174 | No effective clef before AlterInter#10261{(0.442) staff:8 FLAT pitch:-4.0}
+2026-03-14 00:08:34,548 WARN [CRASH COMPLEXION_p011]             KeyInter.java:1174 | No effective clef before AlterInter#10633{(0.643) staff:12 FLAT pitch:6.0}
+2026-03-14 00:08:34,549 WARN [CRASH COMPLEXION_p011]             KeyInter.java:1174 | No effective clef before AlterInter#11069{(0.456) staff:12 FLAT pitch:3.0}
+2026-03-14 00:08:34,550 WARN [CRASH COMPLEXION_p011]             KeyInter.java:1174 | No effective clef before AlterInter#11265{(0.550) staff:15 FLAT pitch:4.0}
+2026-03-14 00:08:34,550 WARN [CRASH COMPLEXION_p011]             KeyInter.java:1174 | No effective clef before AlterInter#11447{(0.475) staff:16 FLAT pitch:-4.0}
+2026-03-14 00:08:34,669 INFO [CRASH COMPLEXION_p011]       StepMonitoring.java:98   | RHYTHMS
+2026-03-14 00:08:34,671 WARN [CRASH COMPLEXION_p011]                 Book.java:2044 | Error processing stub
+2026-03-14 00:08:34,672 INFO [CRASH COMPLEXION_p011]                 Book.java:2584 | Book{CRASH COMPLEXION_p011} storing
+2026-03-14 00:08:34,774 INFO [CRASH COMPLEXION_p011]                 Book.java:2565 | Stored /book.xml
+2026-03-14 00:08:35,964 INFO [CRASH COMPLEXION_p011]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-14 00:08:35,965 INFO [CRASH COMPLEXION_p011]                 Book.java:2525 | Book stored as C:\Users\ken\RockSmithTabConvertToMidi\.cache\page_011\omr_chords\CRASH COMPLEXION_p011.omr
+2026-03-14 00:08:35,974 INFO [CRASH COMPLEXION_p011]            SheetStub.java:1654 | Sheet disposed
+2026-03-14 00:08:36,006 INFO [CRASH COMPLEXION_p011]                 Book.java:2050 | End of Stub#1
+2026-03-14 00:08:36,006 INFO [CRASH COMPLEXION_p011]                 Book.java:2057 | End of Book{CRASH COMPLEXION_p011}
+2026-03-14 00:08:36,007 WARN [CRASH COMPLEXION_p011]                  CLI.java:956  | Exception occurred java.lang.Exception: Error in reaching step PAGE
+java.lang.Exception: Error in reaching step PAGE
+	at org.audiveris.omr.CLI$ProcessingTask.processBook(CLI.java:893)
+	at org.audiveris.omr.CLI$CliTask.call(CLI.java:513)
+	at org.audiveris.omr.Main.runBatchTasks(Main.java:361)
+	at org.audiveris.omr.Main.main(Main.java:263)
+	at Audiveris.main(Audiveris.java:50)
+2026-03-14 00:08:36,039 INFO [CRASH COMPLEXION_p011]                Score.java:181  | Closing {Score 1}

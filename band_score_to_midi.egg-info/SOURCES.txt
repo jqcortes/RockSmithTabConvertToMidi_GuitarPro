@@ -1,0 +1,7 @@
+pyproject.toml
+band_score_to_midi.egg-info/PKG-INFO
+band_score_to_midi.egg-info/SOURCES.txt
+band_score_to_midi.egg-info/dependency_links.txt
+band_score_to_midi.egg-info/entry_points.txt
+band_score_to_midi.egg-info/requires.txt
+band_score_to_midi.egg-info/top_level.txt

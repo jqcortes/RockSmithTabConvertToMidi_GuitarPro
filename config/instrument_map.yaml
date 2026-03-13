@@ -1,0 +1,31 @@
+tunings:
+  standard: [40, 45, 50, 55, 59, 64]
+  drop_d: [38, 45, 50, 55, 59, 64]
+  open_g: [38, 43, 50, 55, 59, 62]
+  half_step_down: [39, 44, 49, 54, 58, 63]
+  whole_step_down: [38, 43, 48, 53, 57, 62]
+
+parts:
+  - role: guitar
+    name_pattern: ["Guitar", "Gt.", "Gtr", "E.Gt"]
+    midi_channel: 1
+    midi_program: 29
+    transpose: -12
+
+  - role: bass
+    name_pattern: ["Bass", "Ba.", "E.Ba"]
+    midi_channel: 2
+    midi_program: 33
+    transpose: -12
+
+  - role: drums
+    name_pattern: ["Drums", "Dr.", "D.S"]
+    midi_channel: 10
+    midi_program: 0
+    transpose: 0
+
+  - role: other
+    name_pattern: ["Keyboard", "Keys", "Piano", "Synth"]
+    midi_channel: 3
+    midi_program: 0
+    transpose: 0
