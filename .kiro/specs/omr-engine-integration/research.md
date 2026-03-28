@@ -24,11 +24,11 @@
 - **Sources Consulted**: `docs/audiveris-cli-reference.md`、`docs/omr-pipeline.md`
 - **Findings**:
   - 基本構文: `java -jar audiveris.jar -batch -transcribe -export -output <dir> -- <input>`
-  - タブ譜認識には `-option org.audiveris.omr.sheet.grid.LineClusterAdapter.useTablature=true` が必須
+  - Audiveris は `-option key=value` で追加 CLI オプションを受け取れるが、内部プロパティ変更は環境差分の影響が大きいため既定値に含めない方が安全
   - 出力は `.mxl`（圧縮 ZIP）または `.xml` が `output_dir/` 以下に生成される
   - 終了コード非0なら必ずエラー
   - `--` セパレータ後に入力ファイルを指定する形式
-- **Implications**: subprocess で `java -jar <jar>` を呼ぶ際はシェル展開不要・リスト形式で渡すのが安全
+- **Implications**: subprocess で `java -jar <jar>` を呼ぶ際はシェル展開不要・リスト形式で渡すのが安全。追加 `-option` は `config/audiveris.properties` による明示設定時のみ注入する
 
 ### 既存パイプラインパターン分析
 

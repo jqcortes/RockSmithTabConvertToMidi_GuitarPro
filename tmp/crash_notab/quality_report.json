@@ -1,0 +1,220 @@
+{
+  "input_file": "CRASH_COMPLEXION_p002_transformed.xml",
+  "output_midi": "p002.mid",
+  "timestamp": "2026-03-27T15:55:20.975794Z",
+  "overall_score": 0.65,
+  "judgment": "REVIEW",
+  "metrics": {
+    "omr_confidence": 0.75,
+    "measure_completeness": 0.167,
+    "pitch_range_validity": 1.0,
+    "part_detection_rate": 1.0
+  },
+  "warnings": [
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 1",
+      "detail": "Expected 4.0 beats, found 6.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 3",
+      "detail": "Expected 4.0 beats, found 9.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 4",
+      "detail": "Expected 4.0 beats, found 20.3"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 6",
+      "detail": "Expected 4.0 beats, found 3.5"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 1",
+      "detail": "Expected 4.0 beats, found 6.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 3",
+      "detail": "Expected 4.0 beats, found 9.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 4",
+      "detail": "Expected 4.0 beats, found 20.3"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 6",
+      "detail": "Expected 4.0 beats, found 4.5"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 1",
+      "detail": "Expected 4.0 beats, found 6.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 3",
+      "detail": "Expected 4.0 beats, found 4.5"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 4",
+      "detail": "Expected 4.0 beats, found 10.2"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 5",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 6",
+      "detail": "Expected 4.0 beats, found 4.5"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 1",
+      "detail": "Expected 4.0 beats, found 6.2"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 2",
+      "detail": "Expected 4.0 beats, found 3.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 3",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 4",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 5",
+      "detail": "Expected 4.0 beats, found 7.5"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 6",
+      "detail": "Expected 4.0 beats, found 6.5"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 1",
+      "detail": "Expected 4.0 beats, found 0.5"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 2",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 3",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 4",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 5",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 6",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 1",
+      "detail": "Expected 4.0 beats, found 6.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 2",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 3",
+      "detail": "Expected 4.0 beats, found 4.5"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 4",
+      "detail": "Expected 4.0 beats, found 10.2"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 6",
+      "detail": "Expected 4.0 beats, found 4.5"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 1",
+      "detail": "Expected 4.0 beats, found 3.5"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 3",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 4",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 5",
+      "detail": "Expected 4.0 beats, found 3.5"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 6",
+      "detail": "Expected 4.0 beats, found 3.5"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 2",
+      "detail": "Expected 4.0 beats, found 3.8"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 3",
+      "detail": "Expected 4.0 beats, found 5.5"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 4",
+      "detail": "Expected 4.0 beats, found 13.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 5",
+      "detail": "Expected 4.0 beats, found 4.5"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 6",
+      "detail": "Expected 4.0 beats, found 4.8"
+    }
+  ],
+  "stats": {
+    "total_measures": 48,
+    "total_notes": 140,
+    "processing_time_seconds": 0.22
+  }
+}

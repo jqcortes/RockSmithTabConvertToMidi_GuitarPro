@@ -203,6 +203,50 @@ class TestGuitarFixerApply:
         assert tab_string == "1"
         assert tab_fret == "3"
 
+    def test_apply_uses_ocr_tokens_for_technical_placeholder_without_tab_staff(self) -> None:
+        from pipeline.transform.guitar_fixer import GuitarFixer
+        from pipeline.transform.tab_ocr import TabOcrToken
+
+        tree = _parse_xml(
+            """
+<score-partwise version="4.0">
+  <part-list>
+    <score-part id="P1"><part-name>Voice</part-name></score-part>
+  </part-list>
+  <part id="P1">
+    <measure number="1">
+      <note default-x="48">
+        <pitch><step>C</step><octave>4</octave></pitch>
+        <duration>2</duration>
+        <voice>1</voice>
+        <notations><technical /></notations>
+      </note>
+    </measure>
+  </part>
+</score-partwise>
+""".strip()
+        )
+
+        result = GuitarFixer.apply(
+            tree,
+            ocr_tokens=[
+                TabOcrToken(staff_group=0, string=1, fret=3, x=120, y=40, confidence=95.0)
+            ],
+        )
+
+        step = result.tree.xpath("string(//*[local-name()='note']/*[local-name()='pitch']/*[local-name()='step'])")
+        octave = result.tree.xpath("string(//*[local-name()='note']/*[local-name()='pitch']/*[local-name()='octave'])")
+        tab_string = result.tree.xpath("string(//*[local-name()='note']//*[local-name()='string'])")
+        tab_fret = result.tree.xpath("string(//*[local-name()='note']//*[local-name()='fret'])")
+
+        assert result.applied == 1
+        assert result.ocr_applied == 1
+        assert result.skipped == 0
+        assert step == "G"
+        assert octave == "4"
+        assert tab_string == "1"
+        assert tab_fret == "3"
+
 
 class TestGuitarFixerHelpers:
     def test_fret_to_pitch_uses_standard_and_custom_tuning(self) -> None:

@@ -1,0 +1,155 @@
+2026-03-28 00:53:22,490 INFO [CRASH_COMPLEXION_p002]                 Book.java:560  | 1 sheet in C:\Users\ken\RockSmithTabConvertToMidi\tmp\crash_notab\page_002\preprocess\CRASH_COMPLEXION_p002.png
+2026-03-28 00:53:22,835 INFO []                 Book.java:2565 | Stored /book.xml
+2026-03-28 00:53:22,836 INFO []                 Book.java:2525 | Book stored as tmp\crash_notab\page_002\omr\CRASH_COMPLEXION_p002.omr
+2026-03-28 00:53:22,861 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2026-03-28 00:53:22,863 INFO [CRASH_COMPLEXION_p002]       StepMonitoring.java:98   | LOAD
+2026-03-28 00:53:23,213 INFO [CRASH_COMPLEXION_p002]            SheetStub.java:1278 | Loaded image #1 2311x3159 from C:\Users\ken\RockSmithTabConvertToMidi\tmp\crash_notab\page_002\preprocess\CRASH_COMPLEXION_p002.png
+2026-03-28 00:53:23,221 INFO [CRASH_COMPLEXION_p002]       StepMonitoring.java:98   | BINARY
+2026-03-28 00:53:25,775 INFO [CRASH_COMPLEXION_p002]       StepMonitoring.java:98   | SCALE
+2026-03-28 00:53:25,900 INFO [CRASH_COMPLEXION_p002]         ScaleBuilder.java:241  | Beam  guessed height:  8 -- 0.50 of 16 interline
+2026-03-28 00:53:25,904 INFO [CRASH_COMPLEXION_p002]         ScaleBuilder.java:264  | Beam measured height:  8 -- 0.27 of [5..16] range at 327% of needed quorum
+2026-03-28 00:53:25,905 INFO [CRASH_COMPLEXION_p002]         ScaleBuilder.java:392  | Normalized black jitter: 11.76 %
+2026-03-28 00:53:25,907 INFO [CRASH_COMPLEXION_p002]            ScaleStep.java:65   | Scale{ small_interline(13,14,14) interline(16,17,19) line(2,3,4) beam(8)}
+2026-03-28 00:53:25,912 INFO [CRASH_COMPLEXION_p002]       StepMonitoring.java:98   | GRID
+2026-03-28 00:53:36,283 INFO [CRASH_COMPLEXION_p002]       LinesRetriever.java:1500 | Global slope: 0.00217
+2026-03-28 00:53:36,769 INFO [CRASH_COMPLEXION_p002]    ClustersRetriever.java:326  | Retrieved raw line clusters: 4 of sizes [5] with interline(16,17,19)
+2026-03-28 00:53:36,790 INFO [CRASH_COMPLEXION_p002]       LinesRetriever.java:1516 | Searching clusters with smallInterline: 14
+2026-03-28 00:53:36,941 INFO [CRASH_COMPLEXION_p002]    ClustersRetriever.java:326  | Retrieved raw line clusters: 12 of sizes [5] with interline(13,14,14)
+2026-03-28 00:53:38,750 INFO [CRASH_COMPLEXION_p002]            PeakGraph.java:310  | Systems: #1[1, 2, 3, 4, 5, 6, 7, 8] #2[9, 10, 11, 12, 13, 14, 15, 16]
+2026-03-28 00:53:39,225 INFO [CRASH_COMPLEXION_p002]        BarsRetriever.java:1305 | System#1
+2026-03-28 00:53:39,226 INFO [CRASH_COMPLEXION_p002]        BarsRetriever.java:1308 |    PartGroup{bracket number:1 barline:false staves:1-8}
+2026-03-28 00:53:39,226 INFO [CRASH_COMPLEXION_p002]        BarsRetriever.java:1305 | System#2
+2026-03-28 00:53:39,227 INFO [CRASH_COMPLEXION_p002]        BarsRetriever.java:1308 |    PartGroup{bracket number:1 barline:false staves:9-16}
+2026-03-28 00:53:44,375 INFO [CRASH_COMPLEXION_p002]        SystemManager.java:779  | 8 parts along 2 systems
+2026-03-28 00:53:44,376 INFO [CRASH_COMPLEXION_p002]                 Book.java:543  | Created scores: [{Score 1}]
+2026-03-28 00:53:44,378 INFO [CRASH_COMPLEXION_p002]       StepMonitoring.java:98   | HEADERS
+2026-03-28 00:53:47,495 WARN [CRASH_COMPLEXION_p002]          ClefBuilder.java:658  | Staff#3 no recognized header clef.
+2026-03-28 00:53:47,633 WARN [CRASH_COMPLEXION_p002]          ClefBuilder.java:658  | Staff#5 no recognized header clef.
+2026-03-28 00:53:48,206 WARN [CRASH_COMPLEXION_p002]          ClefBuilder.java:658  | Staff#11 no recognized header clef.
+2026-03-28 00:53:48,319 WARN [CRASH_COMPLEXION_p002]          ClefBuilder.java:658  | Staff#13 no recognized header clef.
+2026-03-28 00:53:48,937 INFO [CRASH_COMPLEXION_p002]       StepMonitoring.java:98   | STEM_SEEDS
+2026-03-28 00:53:49,102 INFO [CRASH_COMPLEXION_p002]        StemSeedsStep.java:86   | stem(3 max:4)
+2026-03-28 00:53:49,852 INFO [CRASH_COMPLEXION_p002]       StepMonitoring.java:98   | BEAMS
+2026-03-28 00:53:57,755 INFO [CRASH_COMPLEXION_p002]       StepMonitoring.java:98   | LEDGERS
+2026-03-28 00:53:59,844 INFO [CRASH_COMPLEXION_p002]       StepMonitoring.java:98   | HEADS
+2026-03-28 00:54:03,525 INFO [CRASH_COMPLEXION_p002]      TemplateFactory.java:940  | Rebuilding BREVE_SMALL template at resolution 112
+2026-03-28 00:54:03,537 INFO [CRASH_COMPLEXION_p002]      TemplateFactory.java:940  | Rebuilding WHOLE_NOTE_SMALL template at resolution 112
+2026-03-28 00:54:05,588 INFO [CRASH_COMPLEXION_p002]      TemplateFactory.java:940  | Rebuilding BREVE_SMALL template at resolution 136
+2026-03-28 00:54:05,603 INFO [CRASH_COMPLEXION_p002]      TemplateFactory.java:940  | Rebuilding WHOLE_NOTE_SMALL template at resolution 136
+2026-03-28 00:54:27,630 INFO [CRASH_COMPLEXION_p002]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_BLACK[L:0.7,R:0.4] NOTEHEAD_BLACK_SMALL[L:-0.5,R:0.6]}
+2026-03-28 00:54:27,631 INFO [CRASH_COMPLEXION_p002]       StepMonitoring.java:98   | STEMS
+2026-03-28 00:54:44,145 INFO [CRASH_COMPLEXION_p002]       StepMonitoring.java:98   | REDUCTION
+2026-03-28 00:54:45,517 INFO [CRASH_COMPLEXION_p002]        ReductionStep.java:105  | Stems free length median value: 44 pixels, 2.6 interlines
+2026-03-28 00:54:45,537 INFO [CRASH_COMPLEXION_p002]       StepMonitoring.java:98   | CUE_BEAMS
+2026-03-28 00:54:45,553 INFO [CRASH_COMPLEXION_p002]       StepMonitoring.java:98   | TEXTS
+2026-03-28 00:54:46,154 WARN [CRASH_COMPLEXION_p002]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-03-28 00:54:46,155 INFO [CRASH_COMPLEXION_p002]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-03-28 00:54:46,179 INFO [CRASH_COMPLEXION_p002]       StepMonitoring.java:98   | MEASURES
+2026-03-28 00:54:46,252 INFO [CRASH_COMPLEXION_p002]                 Page.java:307  | 6 raw measures: [3 in system#1, 3 in system#2]
+2026-03-28 00:54:46,253 INFO [CRASH_COMPLEXION_p002]       StepMonitoring.java:98   | CHORDS
+2026-03-28 00:54:46,358 INFO [CRASH_COMPLEXION_p002]       StepMonitoring.java:98   | CURVES
+2026-03-28 00:54:52,569 INFO [CRASH_COMPLEXION_p002]         SlursBuilder.java:240  | Slurs: 25
+2026-03-28 00:54:52,582 WARN [CRASH_COMPLEXION_p002]         SlursBuilder.java:534  | Slur crosses parts SlurInter#10512{(0.615) SLUR_BELOW}
+2026-03-28 00:55:02,562 INFO [CRASH_COMPLEXION_p002]      SegmentsBuilder.java:155  | Segments: 34
+2026-03-28 00:55:03,317 INFO [CRASH_COMPLEXION_p002]       StepMonitoring.java:98   | SYMBOLS
+2026-03-28 00:55:16,485 INFO [CRASH_COMPLEXION_p002]       StepMonitoring.java:98   | LINKS
+2026-03-28 00:55:17,086 INFO [CRASH_COMPLEXION_p002]       StepMonitoring.java:98   | RHYTHMS
+2026-03-28 00:55:17,567 INFO [CRASH_COMPLEXION_p002]       StepMonitoring.java:98   | PAGE
+2026-03-28 00:55:17,583 WARN [CRASH_COMPLEXION_p002]         MeasureFixer.java:343  | System#1 No target duration for measures local IDs [1, 2, 3], please check time signatures
+2026-03-28 00:55:17,585 WARN [CRASH_COMPLEXION_p002]         MeasureFixer.java:343  | System#2 No target duration for measures local IDs [4, 5, 6], please check time signatures
+2026-03-28 00:55:17,586 INFO [CRASH_COMPLEXION_p002]                 Book.java:2584 | Book{CRASH_COMPLEXION_p002} storing
+2026-03-28 00:55:17,785 WARN [CRASH_COMPLEXION_p002]                 Book.java:2528 | Error storing Book{CRASH_COMPLEXION_p002} to tmp\crash_notab\page_002\omr\CRASH_COMPLEXION_p002.omr ex:java.nio.file.NoSuchFileException: C:\Users\ken\RockSmithTabConvertToMidi\tmp\crash_notab\page_002\omr\CRASH_COMPLEXION_p002.omr
+java.nio.file.NoSuchFileException: C:\Users\ken\RockSmithTabConvertToMidi\tmp\crash_notab\page_002\omr\CRASH_COMPLEXION_p002.omr
+	at jdk.zipfs/jdk.nio.zipfs.ZipFileSystem.<init>(ZipFileSystem.java:207)
+	at jdk.zipfs/jdk.nio.zipfs.ZipFileSystemProvider.getZipFileSystem(ZipFileSystemProvider.java:122)
+	at jdk.zipfs/jdk.nio.zipfs.ZipFileSystemProvider.newFileSystem(ZipFileSystemProvider.java:103)
+	at java.base/java.nio.file.FileSystems.newFileSystem(FileSystems.java:322)
+	at org.audiveris.omr.util.ZipFileSystem.open(ZipFileSystem.java:111)
+	at org.audiveris.omr.sheet.Book.store(Book.java:2472)
+	at org.audiveris.omr.sheet.Book.store(Book.java:2430)
+	at org.audiveris.omr.sheet.Book.swapAllSheets(Book.java:2585)
+	at org.audiveris.omr.sheet.Book.reachBookStep(Book.java:2049)
+	at org.audiveris.omr.CLI$ProcessingTask.processBook(CLI.java:885)
+	at org.audiveris.omr.CLI$CliTask.call(CLI.java:513)
+	at org.audiveris.omr.Main.runBatchTasks(Main.java:361)
+	at org.audiveris.omr.Main.main(Main.java:263)
+	at Audiveris.main(Audiveris.java:50)
+2026-03-28 00:55:17,789 INFO [CRASH_COMPLEXION_p002]            SheetStub.java:1649 | Stub#1 storing
+2026-03-28 00:55:17,791 WARN [CRASH_COMPLEXION_p002]            SheetStub.java:1672 | Error swapping sheet
+java.nio.file.NoSuchFileException: C:\Users\ken\RockSmithTabConvertToMidi\tmp\crash_notab\page_002\omr\CRASH_COMPLEXION_p002.omr
+	at jdk.zipfs/jdk.nio.zipfs.ZipFileSystem.<init>(ZipFileSystem.java:207)
+	at jdk.zipfs/jdk.nio.zipfs.ZipFileSystemProvider.getZipFileSystem(ZipFileSystemProvider.java:122)
+	at jdk.zipfs/jdk.nio.zipfs.ZipFileSystemProvider.newFileSystem(ZipFileSystemProvider.java:103)
+	at java.base/java.nio.file.FileSystems.newFileSystem(FileSystems.java:322)
+	at org.audiveris.omr.util.ZipFileSystem.open(ZipFileSystem.java:111)
+	at org.audiveris.omr.sheet.SheetStub.storeSheet(SheetStub.java:1625)
+	at org.audiveris.omr.sheet.SheetStub.swapSheet(SheetStub.java:1650)
+	at org.audiveris.omr.sheet.Book.swapAllSheets(Book.java:2596)
+	at org.audiveris.omr.sheet.Book.reachBookStep(Book.java:2049)
+	at org.audiveris.omr.CLI$ProcessingTask.processBook(CLI.java:885)
+	at org.audiveris.omr.CLI$CliTask.call(CLI.java:513)
+	at org.audiveris.omr.Main.runBatchTasks(Main.java:361)
+	at org.audiveris.omr.Main.main(Main.java:263)
+	at Audiveris.main(Audiveris.java:50)
+2026-03-28 00:55:17,795 INFO [CRASH_COMPLEXION_p002]                 Book.java:2050 | End of Stub#1
+2026-03-28 00:55:17,795 INFO [CRASH_COMPLEXION_p002]                 Book.java:2057 | End of Book{CRASH_COMPLEXION_p002}
+2026-03-28 00:55:19,258 INFO [CRASH_COMPLEXION_p002]      PartwiseBuilder.java:2706 | Exporting sheet(s): [#1]
+2026-03-28 00:55:19,318 WARN [CRASH_COMPLEXION_p002]      PartwiseBuilder.java:2625 | Error visiting HeadInter#4132{(0.517/0.742) staff:13 NOTEHEAD_BLACK_SMALL pitch:-5.0} in {Page#1.1}
+java.lang.IllegalStateException: PartBarline with no proper StaffBarline in {Staff id=13 left:265 right:2290}
+	at org.audiveris.omr.sheet.PartBarline.getRightX(PartBarline.java:209)
+	at org.audiveris.omr.sheet.rhythm.Measure.getAbscissa(Measure.java:690)
+	at org.audiveris.omr.score.PartwiseBuilder.processNote(PartwiseBuilder.java:2379)
+	at org.audiveris.omr.score.PartwiseBuilder.processChord(PartwiseBuilder.java:1394)
+	at org.audiveris.omr.score.PartwiseBuilder.processMeasure(PartwiseBuilder.java:2129)
+	at org.audiveris.omr.score.PartwiseBuilder.processPart(PartwiseBuilder.java:2677)
+	at org.audiveris.omr.score.PartwiseBuilder.processSystem(PartwiseBuilder.java:3222)
+	at org.audiveris.omr.score.PartwiseBuilder.processLogicalPart(PartwiseBuilder.java:1874)
+	at org.audiveris.omr.score.PartwiseBuilder.processStub(PartwiseBuilder.java:3173)
+	at org.audiveris.omr.score.PartwiseBuilder.processPartList(PartwiseBuilder.java:2709)
+	at org.audiveris.omr.score.PartwiseBuilder.processScore(PartwiseBuilder.java:2984)
+	at org.audiveris.omr.score.PartwiseBuilder.build(PartwiseBuilder.java:3542)
+	at org.audiveris.omr.score.ScoreExporter.export(ScoreExporter.java:122)
+	at org.audiveris.omr.score.ScoreExporter.export(ScoreExporter.java:163)
+	at org.audiveris.omr.sheet.Book.export(Book.java:630)
+	at org.audiveris.omr.CLI$ProcessingTask.processBook(CLI.java:927)
+	at org.audiveris.omr.CLI$CliTask.call(CLI.java:513)
+	at org.audiveris.omr.Main.runBatchTasks(Main.java:361)
+	at org.audiveris.omr.Main.main(Main.java:263)
+	at Audiveris.main(Audiveris.java:50)
+2026-03-28 00:55:19,332 WARN [CRASH_COMPLEXION_p002]      PartwiseBuilder.java:2625 | Error visiting HeadInter#4120{(0.475/0.679) staff:13 NOTEHEAD_BLACK_SMALL pitch:-5.0} in {Page#1.1}
+java.lang.IllegalStateException: PartBarline with no proper StaffBarline in {Staff id=13 left:265 right:2290}
+	at org.audiveris.omr.sheet.PartBarline.getRightX(PartBarline.java:209)
+	at org.audiveris.omr.sheet.rhythm.Measure.getAbscissa(Measure.java:690)
+	at org.audiveris.omr.score.PartwiseBuilder.processNote(PartwiseBuilder.java:2379)
+	at org.audiveris.omr.score.PartwiseBuilder.processChord(PartwiseBuilder.java:1394)
+	at org.audiveris.omr.score.PartwiseBuilder.processMeasure(PartwiseBuilder.java:2129)
+	at org.audiveris.omr.score.PartwiseBuilder.processPart(PartwiseBuilder.java:2677)
+	at org.audiveris.omr.score.PartwiseBuilder.processSystem(PartwiseBuilder.java:3222)
+	at org.audiveris.omr.score.PartwiseBuilder.processLogicalPart(PartwiseBuilder.java:1874)
+	at org.audiveris.omr.score.PartwiseBuilder.processStub(PartwiseBuilder.java:3173)
+	at org.audiveris.omr.score.PartwiseBuilder.processPartList(PartwiseBuilder.java:2709)
+	at org.audiveris.omr.score.PartwiseBuilder.processScore(PartwiseBuilder.java:2984)
+	at org.audiveris.omr.score.PartwiseBuilder.build(PartwiseBuilder.java:3542)
+	at org.audiveris.omr.score.ScoreExporter.export(ScoreExporter.java:122)
+	at org.audiveris.omr.score.ScoreExporter.export(ScoreExporter.java:163)
+	at org.audiveris.omr.sheet.Book.export(Book.java:630)
+	at org.audiveris.omr.CLI$ProcessingTask.processBook(CLI.java:927)
+	at org.audiveris.omr.CLI$CliTask.call(CLI.java:513)
+	at org.audiveris.omr.Main.runBatchTasks(Main.java:361)
+	at org.audiveris.omr.Main.main(Main.java:263)
+	at Audiveris.main(Audiveris.java:50)
+2026-03-28 00:55:19,844 INFO [CRASH_COMPLEXION_p002]        ScoreExporter.java:164  | Score CRASH_COMPLEXION_p002 exported to tmp\crash_notab\page_002\omr\CRASH_COMPLEXION_p002.mxl
+2026-03-28 00:55:20,021 WARN [CRASH_COMPLEXION_p002]                 Book.java:2528 | Error storing Book{CRASH_COMPLEXION_p002} to tmp\crash_notab\page_002\omr\CRASH_COMPLEXION_p002.omr ex:java.nio.file.NoSuchFileException: C:\Users\ken\RockSmithTabConvertToMidi\tmp\crash_notab\page_002\omr\CRASH_COMPLEXION_p002.omr
+java.nio.file.NoSuchFileException: C:\Users\ken\RockSmithTabConvertToMidi\tmp\crash_notab\page_002\omr\CRASH_COMPLEXION_p002.omr
+	at jdk.zipfs/jdk.nio.zipfs.ZipFileSystem.<init>(ZipFileSystem.java:207)
+	at jdk.zipfs/jdk.nio.zipfs.ZipFileSystemProvider.getZipFileSystem(ZipFileSystemProvider.java:122)
+	at jdk.zipfs/jdk.nio.zipfs.ZipFileSystemProvider.newFileSystem(ZipFileSystemProvider.java:103)
+	at java.base/java.nio.file.FileSystems.newFileSystem(FileSystems.java:322)
+	at org.audiveris.omr.util.ZipFileSystem.open(ZipFileSystem.java:111)
+	at org.audiveris.omr.sheet.Book.store(Book.java:2472)
+	at org.audiveris.omr.CLI$ProcessingTask.processBook(CLI.java:965)
+	at org.audiveris.omr.CLI$CliTask.call(CLI.java:513)
+	at org.audiveris.omr.Main.runBatchTasks(Main.java:361)
+	at org.audiveris.omr.Main.main(Main.java:263)
+	at Audiveris.main(Audiveris.java:50)
+2026-03-28 00:55:20,023 INFO [CRASH_COMPLEXION_p002]                Score.java:181  | Closing {Score 1}

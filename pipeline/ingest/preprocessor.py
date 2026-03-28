@@ -124,37 +124,46 @@ def _deskew(
     *,
     deskew_max_angle: float,
 ) -> tuple[np.ndarray, float]:
-    """HoughLinesP でスタッフラインの傾きを検出し、補正する。
+    """Canny エッジ検出後に HoughLinesP でスタッフラインの傾きを検出し、補正する。
 
     ±10° を超える傾きは補正しない（警告のみ追加）。
+    近水平と判定する閾値を ±3° に絞ることで、タイ・スラーなど斜め線による
+    誤推定を防ぐ。
 
     Returns:
         (補正済み画像, 検出した傾き角度[度]) のタプル
     """
+    # エッジ画像に変換してから Hough 変換: グレースケール直接より安定した角度推定
+    edges = cv2.Canny(img, 50, 150, apertureSize=3)
+
+    # 幅の 1/5 以上の長い線のみ対象（短い斜め記号を除外）
+    min_line_len = max(img.shape[1] // 5, 50)
     lines = cv2.HoughLinesP(
-        img,
+        edges,
         rho=1,
         theta=math.pi / 180,
-        threshold=100,
-        minLineLength=img.shape[1] // 4,
-        maxLineGap=20,
+        threshold=80,
+        minLineLength=min_line_len,
+        maxLineGap=15,
     )
 
     if lines is None:
         return img, 0.0
 
-    # 検出ライン全体から近水平線（|angle| < 30°）のみ抽出してスキュー計算。
-    # -45° 付近の斜線（タイ・スラー・コード記号等）がバイアスするのを防ぐ。
-    all_angles: list[float] = []
+    # ±3° 以内の近水平線だけで中央値を取る
+    # 楽譜スキャンの実際の傾きはほぼ ±2° 以内であり、
+    # それ以上の角度はタイ・スラー・小節線端部などの誤検出とみなす。
+    horizontal_angles: list[float] = []
     for line in lines:
         x1, y1, x2, y2 = line[0]
         angle_deg = math.degrees(math.atan2(float(y2 - y1), float(x2 - x1)))
-        all_angles.append(angle_deg)
+        if abs(angle_deg) <= 3.0:
+            horizontal_angles.append(angle_deg)
 
-    horizontal_angles = [a for a in all_angles if abs(a) < 30.0]
     if not horizontal_angles:
-        # 水平線が検出されなかった場合、全ラインの中央値をフォールバックとして使用
-        horizontal_angles = all_angles
+        # 近水平線が見つからない = ページが大きく傾いているか検出不能
+        warnings.append("No near-horizontal lines detected; skipping deskew.")
+        return img, 0.0
 
     skew_angle = float(np.median(horizontal_angles))
 
@@ -168,7 +177,8 @@ def _deskew(
     # 補正実行
     h, w = img.shape[:2]
     center = (w / 2.0, h / 2.0)
-    rot_mat = cv2.getRotationMatrix2D(center, skew_angle, 1.0)
+    # 検出した傾きと逆向きに回転して水平へ戻す。
+    rot_mat = cv2.getRotationMatrix2D(center, -skew_angle, 1.0)
     corrected: np.ndarray = cv2.warpAffine(
         img,
         rot_mat,

@@ -87,6 +87,61 @@ class TestPartIdentifier:
         assert result.parts_map == {"P9": "other"}
         assert result.warnings == ["Strings"]
 
+    def test_identify_with_default_role_guitar_overrides_fallback(self) -> None:
+        """default_role='guitar' を渡すと未識別パートが guitar になる。"""
+        from pipeline.transform.part_identifier import PartIdentifier
+
+        tree = _parse_xml(
+            """
+<score-partwise version="4.0">
+  <part-list>
+    <score-part id="P1">
+      <part-name>Voice</part-name>
+      <score-instrument id="P1-I1"><instrument-name>Voice Oohs</instrument-name></score-instrument>
+    </score-part>
+    <score-part id="P2">
+      <part-name>Voice</part-name>
+      <score-instrument id="P2-I1"><instrument-name>Voice Oohs</instrument-name></score-instrument>
+    </score-part>
+  </part-list>
+  <part id="P1"><measure number="1" /></part>
+  <part id="P2"><measure number="1" /></part>
+</score-partwise>
+""".strip()
+        )
+
+        result = PartIdentifier.identify(tree, default_role="guitar")
+
+        assert result.parts_map == {"P1": "guitar", "P2": "guitar"}
+
+    def test_identify_default_role_does_not_override_explicit_drums(self) -> None:
+        """default_role='guitar' でも明示的ドラムは drums として識別される。"""
+        from pipeline.transform.part_identifier import PartIdentifier
+
+        tree = _parse_xml(
+            """
+<score-partwise version="4.0">
+  <part-list>
+    <score-part id="P1">
+      <part-name>Drums</part-name>
+      <score-instrument id="P1-I1"><instrument-name>Drum Kit</instrument-name></score-instrument>
+    </score-part>
+    <score-part id="P2">
+      <part-name>Voice</part-name>
+      <score-instrument id="P2-I1"><instrument-name>Voice Oohs</instrument-name></score-instrument>
+    </score-part>
+  </part-list>
+  <part id="P1"><measure number="1"><attributes><clef><sign>percussion</sign></clef></attributes></measure></part>
+  <part id="P2"><measure number="1" /></part>
+</score-partwise>
+""".strip()
+        )
+
+        result = PartIdentifier.identify(tree, default_role="guitar")
+
+        assert result.parts_map["P1"] == "drums"
+        assert result.parts_map["P2"] == "guitar"
+
     def test_annotate_writes_transform_role_attribute(self) -> None:
         from pipeline.transform.part_identifier import PartIdentifier, PartIdentifierResult, PartInfo
 

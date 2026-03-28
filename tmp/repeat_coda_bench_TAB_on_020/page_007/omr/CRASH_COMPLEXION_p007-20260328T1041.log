@@ -1,0 +1,7 @@
+2026-03-28 10:41:15,982 INFO [CRASH_COMPLEXION_p007]                 Book.java:560  | 1 sheet in C:\Users\ken\RockSmithTabConvertToMidi\tmp\repeat_coda_bench_TAB_on_020\page_007\preprocess\CRASH_COMPLEXION_p007.png
+2026-03-28 10:41:16,444 INFO []                 Book.java:2565 | Stored /book.xml
+2026-03-28 10:41:16,445 INFO []                 Book.java:2525 | Book stored as C:\Users\ken\RockSmithTabConvertToMidi\tmp\repeat_coda_bench_TAB_on_020\page_007\omr\CRASH_COMPLEXION_p007.omr
+2026-03-28 10:41:16,459 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2026-03-28 10:41:16,464 INFO [CRASH_COMPLEXION_p007]       StepMonitoring.java:98   | LOAD
+2026-03-28 10:41:16,743 INFO [CRASH_COMPLEXION_p007]            SheetStub.java:1278 | Loaded image #1 2312x3043 from C:\Users\ken\RockSmithTabConvertToMidi\tmp\repeat_coda_bench_TAB_on_020\page_007\preprocess\CRASH_COMPLEXION_p007.png
+2026-03-28 10:41:16,747 INFO [CRASH_COMPLEXION_p007]       StepMonitoring.java:98   | BINARY

@@ -269,16 +269,12 @@ class OmrEngine:
 - 終了コード非0を `OmrExecutionError`（stderr 含む）へ変換する
 - stdout/stderr は `structlog` の DEBUG ログに記録する
 - 経過時間を計測し `metrics["elapsed_seconds"]` に記録する
+- Audiveris の内部 Java プロパティを既定でハードコードしない。追加 CLI オプションは `OmrConfigData.extra_options` による明示的オプトインのみ許可する
 
 **Interface**
 
 ```python
 class AudiverisRunner:
-    DEFAULT_OPTIONS: ClassVar[dict[str, str]] = {
-        "org.audiveris.omr.sheet.grid.LineClusterAdapter.useTablature": "true",
-        "org.audiveris.omr.sig.inter.AbstractInter.minGrade": "0.35",
-    }
-
     def run(
         self,
         image_path: Path,
@@ -287,6 +283,8 @@ class AudiverisRunner:
     ) -> dict[str, float | int | str | bool]: ...
     # 戻り値: metrics dict（elapsed_seconds 等）。出力の探索は MusicXmlFinder の責務
 ```
+
+`extra_options` のデフォルトは空とし、Audiveris の挙動変更が必要な場合のみ `config/audiveris.properties` から明示的に注入する。これにより「CLI 経由のみ使用し、エンジン内部に触れない」という steering 制約を維持する。
 
 **Dependencies**
 - Inbound: `transcribe()` — 実行委譲 (P0)

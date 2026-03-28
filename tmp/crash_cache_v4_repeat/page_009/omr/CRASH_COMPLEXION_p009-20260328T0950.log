@@ -1,0 +1,42 @@
+2026-03-28 09:50:36,965 INFO [CRASH_COMPLEXION_p009]                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2026-03-28 09:50:36,968 INFO [CRASH_COMPLEXION_p009]       StepMonitoring.java:98   | SYMBOLS
+2026-03-28 09:50:39,901 INFO [CRASH_COMPLEXION_p009]            SheetStub.java:1000 | Loaded /sheet#1/sheet#1.xml
+2026-03-28 09:50:40,121 INFO [CRASH_COMPLEXION_p009]      TemplateFactory.java:940  | Rebuilding WHOLE_NOTE_SMALL template at resolution 112
+2026-03-28 09:50:44,310 INFO [CRASH_COMPLEXION_p009]       StepMonitoring.java:98   | LINKS
+2026-03-28 09:50:44,355 INFO [CRASH_COMPLEXION_p009]             KeyInter.java:1322 | Key built KeyInter#11626{(0.675) staff:2 KEY_FLAT_1 pitch:0.5 fifths:-1}
+2026-03-28 09:50:44,599 INFO [CRASH_COMPLEXION_p009]             KeyInter.java:1189 | No effective key before AlterInter#11360{(0.274) staff:16 NATURAL pitch:5.0}
+2026-03-28 09:50:44,648 INFO [CRASH_COMPLEXION_p009]       StepMonitoring.java:98   | RHYTHMS
+2026-03-28 09:50:44,858 INFO [CRASH_COMPLEXION_p009]       StepMonitoring.java:98   | PAGE
+2026-03-28 09:50:44,867 WARN [CRASH_COMPLEXION_p009]         MeasureFixer.java:343  | System#1 No target duration for measures local IDs [1, 2, 3, 4, 5], please check time signatures
+2026-03-28 09:50:44,868 WARN [CRASH_COMPLEXION_p009]         MeasureFixer.java:343  | System#2 No target duration for measures local IDs [6, 7, 8], please check time signatures
+2026-03-28 09:50:44,873 INFO [CRASH_COMPLEXION_p009]                 Book.java:2584 | Book{CRASH_COMPLEXION_p009} storing
+2026-03-28 09:50:44,985 INFO [CRASH_COMPLEXION_p009]                 Book.java:2565 | Stored /book.xml
+2026-03-28 09:50:46,398 INFO [CRASH_COMPLEXION_p009]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-28 09:50:46,403 INFO [CRASH_COMPLEXION_p009]                 Book.java:2525 | Book stored as C:\Users\ken\RockSmithTabConvertToMidi\tmp\crash_cache_v4_repeat\page_009\omr\CRASH_COMPLEXION_p009.omr
+2026-03-28 09:50:46,446 INFO [CRASH_COMPLEXION_p009]            SheetStub.java:1654 | Sheet disposed
+2026-03-28 09:50:46,503 INFO [CRASH_COMPLEXION_p009]                 Book.java:2050 | End of Stub#1
+2026-03-28 09:50:46,504 INFO [CRASH_COMPLEXION_p009]                 Book.java:2057 | End of Book{CRASH_COMPLEXION_p009}
+2026-03-28 09:50:47,814 INFO [CRASH_COMPLEXION_p009]            SheetStub.java:1000 | Loaded /sheet#1/sheet#1.xml
+2026-03-28 09:50:49,042 INFO [CRASH_COMPLEXION_p009]      PartwiseBuilder.java:2706 | Exporting sheet(s): [#1]
+2026-03-28 09:50:49,065 WARN [CRASH_COMPLEXION_p009]      PartwiseBuilder.java:1718 | Error visiting FermataInter#11109{(0.689/0.915) staff:3 FERMATA} in {Page#1.1}
+java.lang.NullPointerException: Cannot invoke "org.audiveris.omr.sig.inter.AbstractNoteInter.getStaff()" because "this.current.note" is null
+	at org.audiveris.omr.score.PartwiseBuilder.processFermata(PartwiseBuilder.java:1704)
+	at org.audiveris.omr.score.PartwiseBuilder.processBarline(PartwiseBuilder.java:1293)
+	at org.audiveris.omr.score.PartwiseBuilder.processMeasure(PartwiseBuilder.java:2163)
+	at org.audiveris.omr.score.PartwiseBuilder.processPart(PartwiseBuilder.java:2677)
+	at org.audiveris.omr.score.PartwiseBuilder.processSystem(PartwiseBuilder.java:3222)
+	at org.audiveris.omr.score.PartwiseBuilder.processLogicalPart(PartwiseBuilder.java:1874)
+	at org.audiveris.omr.score.PartwiseBuilder.processStub(PartwiseBuilder.java:3173)
+	at org.audiveris.omr.score.PartwiseBuilder.processPartList(PartwiseBuilder.java:2709)
+	at org.audiveris.omr.score.PartwiseBuilder.processScore(PartwiseBuilder.java:2984)
+	at org.audiveris.omr.score.PartwiseBuilder.build(PartwiseBuilder.java:3542)
+	at org.audiveris.omr.score.ScoreExporter.export(ScoreExporter.java:122)
+	at org.audiveris.omr.score.ScoreExporter.export(ScoreExporter.java:163)
+	at org.audiveris.omr.sheet.Book.export(Book.java:630)
+	at org.audiveris.omr.CLI$ProcessingTask.processBook(CLI.java:927)
+	at org.audiveris.omr.CLI$CliTask.call(CLI.java:513)
+	at org.audiveris.omr.Main.runBatchTasks(Main.java:361)
+	at org.audiveris.omr.Main.main(Main.java:263)
+	at Audiveris.main(Audiveris.java:50)
+2026-03-28 09:50:49,222 INFO [CRASH_COMPLEXION_p009]        ScoreExporter.java:164  | Score CRASH_COMPLEXION_p009 exported to C:\Users\ken\RockSmithTabConvertToMidi\tmp\crash_cache_v4_repeat\page_009\omr\CRASH_COMPLEXION_p009.mxl
+2026-03-28 09:50:49,347 INFO [CRASH_COMPLEXION_p009]                Score.java:181  | Closing {Score 1}

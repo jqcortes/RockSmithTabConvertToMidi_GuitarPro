@@ -1,0 +1,25 @@
+2026-03-28 10:35:05,801 INFO [CRASH_COMPLEXION_p010]                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2026-03-28 10:35:05,803 INFO [CRASH_COMPLEXION_p010]       StepMonitoring.java:98   | SYMBOLS
+2026-03-28 10:35:08,821 INFO [CRASH_COMPLEXION_p010]            SheetStub.java:1000 | Loaded /sheet#1/sheet#1.xml
+2026-03-28 10:35:13,195 INFO [CRASH_COMPLEXION_p010]       StepMonitoring.java:98   | LINKS
+2026-03-28 10:35:13,347 INFO [CRASH_COMPLEXION_p010]             KeyInter.java:1189 | No effective key before AlterInter#9236{(0.444) staff:16 NATURAL pitch:3.0}
+2026-03-28 10:35:13,405 INFO [CRASH_COMPLEXION_p010]             KeyInter.java:1322 | Key built KeyInter#9623{(0.161) staff:20 KEY_FLAT_1 pitch:0.1 fifths:-1}
+2026-03-28 10:35:13,473 INFO [CRASH_COMPLEXION_p010]       StepMonitoring.java:98   | RHYTHMS
+2026-03-28 10:35:13,739 INFO [CRASH_COMPLEXION_p010]       StepMonitoring.java:98   | PAGE
+2026-03-28 10:35:13,743 INFO [CRASH_COMPLEXION_p010]       SheetReduction.java:154  | Gutter. Different glyphs 1/2 StemInter#5897{(0.729/0.982) STEM} vs StemInter#7003{(0.477/0.848) staff:9 STEM}
+2026-03-28 10:35:13,745 INFO [CRASH_COMPLEXION_p010]       SheetReduction.java:154  | Gutter. Different glyphs 1/2 BeamInter#1624{(0.630/0.951) BEAM} vs StemInter#7003{(0.477/0.848) staff:9 STEM}
+2026-03-28 10:35:13,745 INFO [CRASH_COMPLEXION_p010]       SheetReduction.java:154  | Gutter. Different glyphs 1/2 BeamInter#1620{(0.662/0.957) BEAM} vs StemInter#7003{(0.477/0.848) staff:9 STEM}
+2026-03-28 10:35:13,755 WARN [CRASH_COMPLEXION_p010]         MeasureFixer.java:343  | System#1 No target duration for measures local IDs [1, 2, 3], please check time signatures
+2026-03-28 10:35:13,756 WARN [CRASH_COMPLEXION_p010]         MeasureFixer.java:343  | System#2 No target duration for measures local IDs [4, 5], please check time signatures
+2026-03-28 10:35:13,757 WARN [CRASH_COMPLEXION_p010]         MeasureFixer.java:343  | System#3 No target duration for measures local IDs [6], please check time signatures
+2026-03-28 10:35:13,761 INFO [CRASH_COMPLEXION_p010]                 Book.java:2584 | Book{CRASH_COMPLEXION_p010} storing
+2026-03-28 10:35:13,878 INFO [CRASH_COMPLEXION_p010]                 Book.java:2565 | Stored /book.xml
+2026-03-28 10:35:15,222 INFO [CRASH_COMPLEXION_p010]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-28 10:35:15,223 INFO [CRASH_COMPLEXION_p010]                 Book.java:2525 | Book stored as C:\Users\ken\RockSmithTabConvertToMidi\tmp\repeat_coda_bench_TAB_on_035\page_010\omr\CRASH_COMPLEXION_p010.omr
+2026-03-28 10:35:15,231 INFO [CRASH_COMPLEXION_p010]            SheetStub.java:1654 | Sheet disposed
+2026-03-28 10:35:15,270 INFO [CRASH_COMPLEXION_p010]                 Book.java:2050 | End of Stub#1
+2026-03-28 10:35:15,271 INFO [CRASH_COMPLEXION_p010]                 Book.java:2057 | End of Book{CRASH_COMPLEXION_p010}
+2026-03-28 10:35:16,682 INFO [CRASH_COMPLEXION_p010]            SheetStub.java:1000 | Loaded /sheet#1/sheet#1.xml
+2026-03-28 10:35:18,089 INFO [CRASH_COMPLEXION_p010]      PartwiseBuilder.java:2706 | Exporting sheet(s): [#1]
+2026-03-28 10:35:18,281 INFO [CRASH_COMPLEXION_p010]        ScoreExporter.java:164  | Score CRASH_COMPLEXION_p010 exported to C:\Users\ken\RockSmithTabConvertToMidi\tmp\repeat_coda_bench_TAB_on_035\page_010\omr\CRASH_COMPLEXION_p010.mxl
+2026-03-28 10:35:18,375 INFO [CRASH_COMPLEXION_p010]                Score.java:181  | Closing {Score 1}

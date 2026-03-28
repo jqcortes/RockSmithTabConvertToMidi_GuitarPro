@@ -72,4 +72,5 @@ class TestQualityMetricsBranches:
 """.strip()
         )
 
-        assert quality_metrics._omr_confidence(tree) == 0.85
+        # No notes in score → density=0.50; has tempo mark → +0.03; total=0.53
+        assert quality_metrics._omr_confidence(tree) == 0.53

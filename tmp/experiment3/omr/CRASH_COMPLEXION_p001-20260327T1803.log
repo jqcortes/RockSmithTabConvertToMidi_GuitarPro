@@ -1,0 +1,36 @@
+2026-03-27 18:03:23,964 INFO [CRASH_COMPLEXION_p001]                 Book.java:560  | 1 sheet in C:\Users\ken\RockSmithTabConvertToMidi\tmp\experiment3\pre\CRASH_COMPLEXION_p001.png
+2026-03-27 18:03:24,177 INFO []                 Book.java:2565 | Stored /book.xml
+2026-03-27 18:03:24,178 INFO []                 Book.java:2525 | Book stored as tmp\experiment3\omr\CRASH_COMPLEXION_p001.omr
+2026-03-27 18:03:24,185 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2026-03-27 18:03:24,187 INFO [CRASH_COMPLEXION_p001]       StepMonitoring.java:98   | LOAD
+2026-03-27 18:03:24,365 INFO [CRASH_COMPLEXION_p001]            SheetStub.java:1278 | Loaded image #1 2480x3410 from C:\Users\ken\RockSmithTabConvertToMidi\tmp\experiment3\pre\CRASH_COMPLEXION_p001.png
+2026-03-27 18:03:24,370 INFO [CRASH_COMPLEXION_p001]       StepMonitoring.java:98   | BINARY
+2026-03-27 18:03:25,941 INFO [CRASH_COMPLEXION_p001]       StepMonitoring.java:98   | SCALE
+2026-03-27 18:03:25,989 INFO [CRASH_COMPLEXION_p001]         ScaleBuilder.java:241  | Beam  guessed height: 10 -- 0.50 of 20 interline
+2026-03-27 18:03:25,991 INFO [CRASH_COMPLEXION_p001]         ScaleBuilder.java:264  | Beam measured height:  8 -- 0.14 of [6..20] range at 352% of needed quorum
+2026-03-27 18:03:25,992 INFO [CRASH_COMPLEXION_p001]         ScaleBuilder.java:392  | Normalized black jitter: 14.29 %
+2026-03-27 18:03:25,993 INFO [CRASH_COMPLEXION_p001]            ScaleStep.java:65   | Scale{ small_interline(14,15,16) interline(18,21,22) line(2,3,5) beam(8)}
+2026-03-27 18:03:25,994 INFO [CRASH_COMPLEXION_p001]       StepMonitoring.java:98   | GRID
+2026-03-27 18:03:30,306 INFO [CRASH_COMPLEXION_p001]       LinesRetriever.java:1500 | Global slope: -0.37138
+2026-03-27 18:03:30,676 INFO [CRASH_COMPLEXION_p001]    ClustersRetriever.java:326  | Retrieved raw line clusters: 0 of sizes [6] with interline(18,21,22)
+2026-03-27 18:03:30,680 INFO [CRASH_COMPLEXION_p001]       LinesRetriever.java:1516 | Searching clusters with smallInterline: 15
+2026-03-27 18:03:30,976 INFO [CRASH_COMPLEXION_p001]    ClustersRetriever.java:326  | Retrieved raw line clusters: 3 of sizes [5] with interline(14,15,16)
+2026-03-27 18:03:43,848 WARN [CRASH_COMPLEXION_p001]            PeakGraph.java:305  | No system found
+2026-03-27 18:03:43,849 INFO [CRASH_COMPLEXION_p001]                 Book.java:543  | Created scores: []
+2026-03-27 18:03:43,850 INFO [CRASH_COMPLEXION_p001]            SheetStub.java:1194 | Sheet CRASH_COMPLEXION_p001 flagged as invalid.
+2026-03-27 18:03:43,851 WARN [CRASH_COMPLEXION_p001]                 Book.java:2044 | Error processing stub
+2026-03-27 18:03:43,851 INFO [CRASH_COMPLEXION_p001]                 Book.java:2584 | Book{CRASH_COMPLEXION_p001} storing
+2026-03-27 18:03:43,988 INFO [CRASH_COMPLEXION_p001]                 Book.java:2565 | Stored /book.xml
+2026-03-27 18:03:44,209 INFO [CRASH_COMPLEXION_p001]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2026-03-27 18:03:44,602 INFO [CRASH_COMPLEXION_p001]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-27 18:03:44,603 INFO [CRASH_COMPLEXION_p001]                 Book.java:2525 | Book stored as tmp\experiment3\omr\CRASH_COMPLEXION_p001.omr
+2026-03-27 18:03:44,610 INFO [CRASH_COMPLEXION_p001]            SheetStub.java:1654 | Sheet disposed
+2026-03-27 18:03:44,641 INFO [CRASH_COMPLEXION_p001]                 Book.java:2050 | End of Stub#1
+2026-03-27 18:03:44,643 INFO [CRASH_COMPLEXION_p001]                 Book.java:2057 | End of Book{CRASH_COMPLEXION_p001}
+2026-03-27 18:03:44,646 WARN [CRASH_COMPLEXION_p001]                  CLI.java:956  | Exception occurred java.lang.Exception: Error in reaching step PAGE
+java.lang.Exception: Error in reaching step PAGE
+	at org.audiveris.omr.CLI$ProcessingTask.processBook(CLI.java:893)
+	at org.audiveris.omr.CLI$CliTask.call(CLI.java:513)
+	at org.audiveris.omr.Main.runBatchTasks(Main.java:361)
+	at org.audiveris.omr.Main.main(Main.java:263)
+	at Audiveris.main(Audiveris.java:50)

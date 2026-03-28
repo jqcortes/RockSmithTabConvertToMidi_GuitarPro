@@ -1,0 +1,22 @@
+2026-03-28 00:19:30,011 INFO [CRASH_COMPLEXION_p001]                 Book.java:560  | 1 sheet in C:\Users\ken\RockSmithTabConvertToMidi\tmp\crash_guitar_cache\page_001\preprocess\CRASH_COMPLEXION_p001.png
+2026-03-28 00:19:30,507 INFO []                 Book.java:2565 | Stored /book.xml
+2026-03-28 00:19:30,508 INFO []                 Book.java:2525 | Book stored as tmp\crash_guitar_cache\page_001\omr\CRASH_COMPLEXION_p001.omr
+2026-03-28 00:19:30,538 INFO []                 Book.java:1929 | Book reaching CHORDS on sheets:[#1]
+2026-03-28 00:19:30,542 INFO [CRASH_COMPLEXION_p001]       StepMonitoring.java:98   | LOAD
+2026-03-28 00:19:30,877 INFO [CRASH_COMPLEXION_p001]            SheetStub.java:1278 | Loaded image #1 2356x3349 from C:\Users\ken\RockSmithTabConvertToMidi\tmp\crash_guitar_cache\page_001\preprocess\CRASH_COMPLEXION_p001.png
+2026-03-28 00:19:30,904 INFO [CRASH_COMPLEXION_p001]                 Book.java:2565 | Stored /book.xml
+2026-03-28 00:19:31,352 INFO [CRASH_COMPLEXION_p001]           DataHolder.java:348  | Stored /sheet#1/GRAY.png
+2026-03-28 00:19:31,904 INFO [CRASH_COMPLEXION_p001]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-28 00:19:31,912 INFO [CRASH_COMPLEXION_p001]       StepMonitoring.java:98   | BINARY
+2026-03-28 00:19:33,035 INFO [CRASH_COMPLEXION_p001]                 Book.java:2565 | Stored /book.xml
+2026-03-28 00:19:33,036 INFO [CRASH_COMPLEXION_p001]           DataHolder.java:256  | Removed /sheet#1/GRAY.png
+2026-03-28 00:19:33,369 INFO [CRASH_COMPLEXION_p001]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2026-03-28 00:19:33,372 INFO [CRASH_COMPLEXION_p001]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-28 00:19:33,379 INFO [CRASH_COMPLEXION_p001]       StepMonitoring.java:98   | SCALE
+2026-03-28 00:19:33,903 INFO [CRASH_COMPLEXION_p001]         ScaleBuilder.java:241  | Beam  guessed height:  8 -- 0.50 of 16 interline
+2026-03-28 00:19:33,905 INFO [CRASH_COMPLEXION_p001]         ScaleBuilder.java:264  | Beam measured height:  8 -- 0.27 of [5..16] range at 318% of needed quorum
+2026-03-28 00:19:33,906 INFO [CRASH_COMPLEXION_p001]         ScaleBuilder.java:392  | Normalized black jitter: 23.53 %
+2026-03-28 00:19:33,907 INFO [CRASH_COMPLEXION_p001]            ScaleStep.java:65   | Scale{ small_interline(12,13,14) interline(16,17,19) line(1,3,5) beam(8)}
+2026-03-28 00:19:33,916 INFO [CRASH_COMPLEXION_p001]                 Book.java:2565 | Stored /book.xml
+2026-03-28 00:19:33,920 INFO [CRASH_COMPLEXION_p001]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-28 00:19:33,930 INFO [CRASH_COMPLEXION_p001]       StepMonitoring.java:98   | GRID

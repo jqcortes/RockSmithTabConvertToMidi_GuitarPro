@@ -137,9 +137,9 @@
   - `__init__.py` で `transform()` を唯一の公開 API として re-export する
   - `pipeline/transform` を `import` するだけで `transform()` が使えることを確認する
   - _Requirements: 6.3_
-- [x] 6.4 予期しない例外のラッピングと失敗時 StepResult を実装する
+- [x] 6.4 予期しない例外のラッピングと例外伝播を実装する
   - 変換パイプライン内で `TransformError` 以外の例外が発生した場合、`TransformError` でラップして `structlog` にスタックトレースと共に記録して再送出する
-  - 必要に応じて例外を握りつぶす場合は `StepResult(success=False, ...)` を返す（設計書の判断基準に従う）
+  - 失敗は `StepResult(success=False, ...)` ではなく `TransformError` 系例外で表現する
   - _Requirements: 5.3, 6.5_
 - [x] 6.5 `transform()` のユニットテストを作成する
   - キャッシュヒット時（既存ファイルあり）に変換がスキップされ `cached=True` で返ることを確認する

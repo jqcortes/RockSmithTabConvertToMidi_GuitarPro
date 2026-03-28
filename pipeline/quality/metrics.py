@@ -58,38 +58,79 @@ def _omr_confidence(tree: etree._ElementTree) -> float:
     if values:
         return round(sum(values) / len(values), 3)
 
-    signal_count = len(tree.xpath("//*[local-name()='sound'][@tempo]")) + len(
-        tree.xpath("//*[local-name()='direction-type']/*[local-name()='metronome']")
+    # Audiveris does not embed per-note confidence in MusicXML output.
+    # Estimate OMR confidence from structural signals in the score:
+    #   1. Note density: notes per measure (higher = richer recognition)
+    #   2. Tempo/metronome marks present (score structure well-parsed)
+    #   3. Key/time signatures present (headers read correctly)
+    parts = tree.xpath("//*[local-name()='part']")
+    total_measures = sum(len(p.xpath("./*[local-name()='measure']")) for p in parts)
+    total_notes = sum(
+        len(m.xpath("./*[local-name()='note']"))
+        for p in parts
+        for m in p.xpath("./*[local-name()='measure']")
     )
-    if signal_count == 0:
-        return 0.75
-    return round(min(1.0, 0.75 + (signal_count * 0.05)), 3)
+    notes_per_measure = total_notes / total_measures if total_measures > 0 else 0
+
+    # Base confidence from note density: 0 n/m → 0.50, 5+ n/m → 0.90
+    density_score = min(0.90, 0.50 + notes_per_measure * 0.08)
+
+    # Bonus signals
+    has_tempo = bool(
+        tree.xpath("//*[local-name()='sound'][@tempo]")
+        or tree.xpath("//*[local-name()='direction-type']/*[local-name()='metronome']")
+    )
+    has_time_sig = bool(tree.xpath("//*[local-name()='time']/*[local-name()='beats']"))
+    has_key_sig = bool(tree.xpath("//*[local-name()='key']/*[local-name()='fifths']"))
+
+    bonus = (0.03 if has_tempo else 0.0) + (0.02 if has_time_sig else 0.0) + (0.02 if has_key_sig else 0.0)
+
+    return round(min(1.0, density_score + bonus), 3)
 
 
 def _measure_completeness(tree: etree._ElementTree) -> tuple[float, list[dict[str, str]], int]:
     warnings: list[dict[str, str]] = []
     total = 0
-    valid = 0
+    valid_sum = 0.0
 
     for part in tree.xpath("//*[local-name()='part']"):
+        # Skip parts that have no real (non-rest) notes — they are silent on this page.
+        all_part_notes = part.xpath(".//*[local-name()='note']")
+        has_real_note = any(
+            not n.xpath("./*[local-name()='rest']") for n in all_part_notes
+        )
+        if not has_real_note:
+            continue
+
         part_name = _part_name(tree, _string_value(part.xpath("@id")))
         current_time = (4, 4)
         current_divisions = 1
         for measure in part.xpath("./*[local-name()='measure']"):
-            total += 1
             current_divisions = _measure_divisions(measure, current_divisions)
             current_time = _measure_time_signature(measure, current_time)
 
             expected = current_time[0] * (4.0 / current_time[1])
             actual = 0.0
             for note in measure.xpath("./*[local-name()='note']"):
+                # Skip chord notes: they share timing with the previous note
+                # and must not be added to the measure duration total.
+                if note.xpath("./*[local-name()='chord']"):
+                    continue
                 duration_text = _string_value(note.xpath("./*[local-name()='duration']/text()"))
                 if duration_text.isdigit():
                     actual += int(duration_text) / current_divisions
 
+            # Skip measures with no notes at all (silent measure within active part)
+            if actual == 0.0 and not measure.xpath("./*[local-name()='note']"):
+                continue
+
+            total += 1
             if abs(actual - expected) <= _MEASURE_TOLERANCE:
-                valid += 1
+                valid_sum += 1.0
             else:
+                # Proportional credit: penalise over/under-filled measures gradually.
+                credit = min(actual, expected) / expected if expected > 0 else 0.0
+                valid_sum += credit
                 warnings.append(
                     {
                         "type": "MEASURE_INCOMPLETE",
@@ -100,7 +141,7 @@ def _measure_completeness(tree: etree._ElementTree) -> tuple[float, list[dict[st
 
     if total == 0:
         return 0.0, warnings, 0
-    return round(valid / total, 3), warnings, total
+    return round(valid_sum / total, 3), warnings, total
 
 
 def _pitch_range_validity(tree: etree._ElementTree) -> tuple[float, list[dict[str, str]], int]:

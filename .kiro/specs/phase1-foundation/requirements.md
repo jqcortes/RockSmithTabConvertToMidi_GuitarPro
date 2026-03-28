@@ -19,7 +19,7 @@ PDF/PNG のバンドスコア画像を Audiveris が処理可能な高品質 PNG
 
 #### Acceptance Criteria
 
-1. The Ingest Module shall define `StepResult(success: bool, output_path: Path, metrics: dict, warnings: list[str])` as a dataclass in `pipeline/common.py`.
+1. The Ingest Module shall define `StepResult(success: bool, output_path: Path | list[Path], metrics: dict[str, MetricValue], warnings: list[str])` as a dataclass in `pipeline/common.py`, where `MetricValue = float | int | str | bool | list[str] | dict[str, str]` is the shared metrics contract for all pipeline domains.
 2. The Ingest Module shall define `PipelineError` as a base exception class in `pipeline/common.py`.
 3. When a domain step fails, the Ingest Module shall raise an exception that inherits from `PipelineError`.
 4. The Ingest Module shall annotate all public functions and class signatures with type hints compatible with `mypy --strict`.

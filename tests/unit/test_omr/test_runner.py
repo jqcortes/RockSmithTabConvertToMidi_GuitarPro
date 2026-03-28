@@ -195,7 +195,8 @@ class TestAudiverisRunnerCommandBuilding:
 
         cmd = captured[0]
         cmd_str = " ".join(cmd)
-        assert "useTablature=true" in cmd_str
+        # DEFAULT_OPTIONS は ProcessingSwitches の正式 API キーを使用する
+        assert "sixStringTablatures=true" in cmd_str
         assert "minGrade=0.35" in cmd_str
 
     def test_extra_options_from_config_included(self, tmp_path: Path) -> None:
@@ -265,7 +266,72 @@ class TestAudiverisRunnerCommandBuilding:
         assert cmd[0] == "java"
         assert cmd[1] == "-cp"
         assert cmd[2].endswith("app\\*") or cmd[2].endswith("app/*")
-        assert cmd[3] == "Audiveris"
+        # JVM フラグが挿入されるため位置ではなく内容で検証する
+        assert "Audiveris" in cmd
+
+    def test_chords_save_workflow_builds_step_command(self, tmp_path: Path) -> None:
+        """workflow='chords-save' で -step CHORDS -save が使われること"""
+        from pipeline.omr.runner import AudiverisRunner
+
+        config = _make_config(tmp_path)
+        image = tmp_path / "score.png"
+        image.touch()
+        output_dir = tmp_path / "out"
+        output_dir.mkdir()
+        runner = AudiverisRunner()
+        captured: list[list[str]] = []
+
+        def fake_popen(cmd: list[str], **kwargs: object) -> MagicMock:
+            captured.append(list(cmd))
+            mock_proc = MagicMock()
+            mock_proc.communicate.return_value = ("", "")
+            mock_proc.returncode = 0
+            mock_proc.__enter__ = lambda s: s
+            mock_proc.__exit__ = MagicMock(return_value=False)
+            return mock_proc
+
+        with patch("subprocess.Popen", side_effect=fake_popen):
+            runner.run(image, output_dir, config, workflow="chords-save")
+
+        cmd = captured[0]
+        assert "-step" in cmd
+        step_idx = cmd.index("-step")
+        assert cmd[step_idx + 1] == "CHORDS"
+        assert "-save" in cmd
+
+    def test_run_merges_subprocess_env(self, tmp_path: Path) -> None:
+        """config.subprocess_env が Popen env に反映されること"""
+        from pipeline.omr.runner import AudiverisRunner
+
+        config = OmrConfigData(
+            jar_path=(tmp_path / "audiveris.jar"),
+            timeout_seconds=300,
+            extra_options={},
+            subprocess_env={"TESSDATA_PREFIX": str(tmp_path / "tessdata")},
+        )
+        config.jar_path.touch()
+        image = tmp_path / "score.png"
+        image.touch()
+        output_dir = tmp_path / "out"
+        output_dir.mkdir()
+        runner = AudiverisRunner()
+        captured_kwargs: list[dict[str, object]] = []
+
+        def fake_popen(cmd: list[str], **kwargs: object) -> MagicMock:
+            captured_kwargs.append(dict(kwargs))
+            mock_proc = MagicMock()
+            mock_proc.communicate.return_value = ("", "")
+            mock_proc.returncode = 0
+            mock_proc.__enter__ = lambda s: s
+            mock_proc.__exit__ = MagicMock(return_value=False)
+            return mock_proc
+
+        with patch("subprocess.Popen", side_effect=fake_popen):
+            runner.run(image, output_dir, config)
+
+        env = captured_kwargs[0].get("env")
+        assert isinstance(env, dict)
+        assert env.get("TESSDATA_PREFIX") == str(tmp_path / "tessdata")
 
 
 class TestAudiverisRunnerSuccess:

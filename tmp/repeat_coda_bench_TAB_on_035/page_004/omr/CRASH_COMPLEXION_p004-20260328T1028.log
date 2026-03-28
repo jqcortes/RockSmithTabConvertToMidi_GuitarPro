@@ -1,0 +1,19 @@
+2026-03-28 10:28:20,129 INFO [CRASH_COMPLEXION_p004]                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2026-03-28 10:28:20,132 INFO [CRASH_COMPLEXION_p004]       StepMonitoring.java:98   | SYMBOLS
+2026-03-28 10:28:23,571 INFO [CRASH_COMPLEXION_p004]            SheetStub.java:1000 | Loaded /sheet#1/sheet#1.xml
+2026-03-28 10:28:30,432 INFO [CRASH_COMPLEXION_p004]       StepMonitoring.java:98   | LINKS
+2026-03-28 10:28:30,780 INFO [CRASH_COMPLEXION_p004]       StepMonitoring.java:98   | RHYTHMS
+2026-03-28 10:28:30,965 INFO [CRASH_COMPLEXION_p004]       StepMonitoring.java:98   | PAGE
+2026-03-28 10:28:30,975 WARN [CRASH_COMPLEXION_p004]         MeasureFixer.java:343  | System#1 No target duration for measures local IDs [1, 2, 3], please check time signatures
+2026-03-28 10:28:30,976 WARN [CRASH_COMPLEXION_p004]         MeasureFixer.java:343  | System#2 No target duration for measures local IDs [4, 5, 6, 7], please check time signatures
+2026-03-28 10:28:30,986 INFO [CRASH_COMPLEXION_p004]                 Book.java:2584 | Book{CRASH_COMPLEXION_p004} storing
+2026-03-28 10:28:31,120 INFO [CRASH_COMPLEXION_p004]                 Book.java:2565 | Stored /book.xml
+2026-03-28 10:28:32,491 INFO [CRASH_COMPLEXION_p004]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-28 10:28:32,492 INFO [CRASH_COMPLEXION_p004]                 Book.java:2525 | Book stored as C:\Users\ken\RockSmithTabConvertToMidi\tmp\repeat_coda_bench_TAB_on_035\page_004\omr\CRASH_COMPLEXION_p004.omr
+2026-03-28 10:28:32,500 INFO [CRASH_COMPLEXION_p004]            SheetStub.java:1654 | Sheet disposed
+2026-03-28 10:28:32,543 INFO [CRASH_COMPLEXION_p004]                 Book.java:2050 | End of Stub#1
+2026-03-28 10:28:32,545 INFO [CRASH_COMPLEXION_p004]                 Book.java:2057 | End of Book{CRASH_COMPLEXION_p004}
+2026-03-28 10:28:34,338 INFO [CRASH_COMPLEXION_p004]            SheetStub.java:1000 | Loaded /sheet#1/sheet#1.xml
+2026-03-28 10:28:35,739 INFO [CRASH_COMPLEXION_p004]      PartwiseBuilder.java:2706 | Exporting sheet(s): [#1]
+2026-03-28 10:28:36,064 INFO [CRASH_COMPLEXION_p004]        ScoreExporter.java:164  | Score CRASH_COMPLEXION_p004 exported to C:\Users\ken\RockSmithTabConvertToMidi\tmp\repeat_coda_bench_TAB_on_035\page_004\omr\CRASH_COMPLEXION_p004.mxl
+2026-03-28 10:28:36,172 INFO [CRASH_COMPLEXION_p004]                Score.java:181  | Closing {Score 1}

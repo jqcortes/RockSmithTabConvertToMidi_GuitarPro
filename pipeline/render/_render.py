@@ -8,6 +8,7 @@ from time import perf_counter
 from pipeline.common import MetricValue, StepResult, get_logger
 from pipeline.render.errors import RenderError, RenderExecutionError
 from pipeline.render.midi_renderer import MidiRenderer
+from pipeline.render.repeat_expander import RepeatExpansionContext
 
 
 def render(
@@ -16,6 +17,7 @@ def render(
     *,
     default_bpm: int = 120,
     pitch_bend_range: int = 2,
+    repeat_context: RepeatExpansionContext | None = None,
 ) -> StepResult:
     """Render transformed MusicXML to a cached MIDI Type 1 file."""
     logger = get_logger(__name__)
@@ -42,6 +44,7 @@ def render(
             output_path,
             default_bpm=default_bpm,
             pitch_bend_range=pitch_bend_range,
+            repeat_context=repeat_context,
         )
         elapsed_seconds = perf_counter() - started_at
         metrics: dict[str, MetricValue] = {

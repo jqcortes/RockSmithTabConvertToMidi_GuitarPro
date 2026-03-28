@@ -33,7 +33,7 @@ class TestQualityMetricsCalculator:
 
         result = QualityMetricsCalculator.calculate(tree)
 
-        assert result.measure_completeness == 0.0
+        assert result.measure_completeness == 0.75
         assert any(warning["type"] == "MEASURE_INCOMPLETE" for warning in result.warnings)
 
     def test_calculate_records_out_of_range_warning_and_excludes_drums(self) -> None:

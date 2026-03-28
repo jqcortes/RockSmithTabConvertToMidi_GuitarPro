@@ -24,14 +24,15 @@
 - **Sources Consulted**:
   - `docs/audiveris-cli-reference.md`（ローカル）
   - Audiveris 5.x の MusicXML 出力仕様（`-export` フラグ）
-  - `pipeline/omr/runner.py` の `DEFAULT_OPTIONS`（`minGrade=0.35`）
+  - Audiveris CLI の追加 `-option` 指定方式と既存 OMR 設計
 - **Findings**:
   - Audiveris の `-export` は MXL 標準 (W3C MusicXML 4.0) に準拠した XML を生成する
   - 標準 MusicXML にはノート単位の OMR 信頼度フィールドが存在しない
-  - `minGrade=0.35` は **Audiveris 内部の SIG (Symbol Interpretation Graph) フィルタ**であり、グレードが低いノートはそもそも MusicXML に出力されない（出力済みノートはすべてグレード ≥ 0.35 を満たす）
+  - Audiveris の `-option` で内部グレード閾値を変更できる場合があるが、これはエンジン内部チューニングにあたり既定挙動には含めない
   - Audiveris は `.omr` ブックファイル（独自バイナリ形式）に各シンボルのグレードを保存するが、これは CLI `-export` では MusicXML に伝播しない
 - **Implications**:
   - 現フェーズでは `confidence_filter.py` は「信頼度属性が存在する場合のみフィルタを適用し、なければ 1.0 とみなしてスキップ」する実装とする
+  - OMR 側の Audiveris 追加オプションは明示的オプトイン設定として扱い、Transform の前提条件には含めない
   - 将来的に品質 (Quality) ドメインが独自スコアを MusicXML に付与するカスタム属性を定義した際に、同フィルタが機能するよう拡張ポイントを設ける
 
 ---

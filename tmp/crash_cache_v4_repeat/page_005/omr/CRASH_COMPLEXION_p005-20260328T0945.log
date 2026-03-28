@@ -1,0 +1,82 @@
+2026-03-28 09:45:18,678 INFO [CRASH_COMPLEXION_p005]                 Book.java:560  | 1 sheet in C:\Users\ken\RockSmithTabConvertToMidi\tmp\crash_cache_v4_repeat\page_005\preprocess\CRASH_COMPLEXION_p005.png
+2026-03-28 09:45:18,872 INFO []                 Book.java:2565 | Stored /book.xml
+2026-03-28 09:45:18,873 INFO []                 Book.java:2525 | Book stored as tmp\crash_cache_v4_repeat\page_005\omr\CRASH_COMPLEXION_p005.omr
+2026-03-28 09:45:18,883 INFO []                 Book.java:1929 | Book reaching CHORDS on sheets:[#1]
+2026-03-28 09:45:18,886 INFO [CRASH_COMPLEXION_p005]       StepMonitoring.java:98   | LOAD
+2026-03-28 09:45:19,020 INFO [CRASH_COMPLEXION_p005]            SheetStub.java:1278 | Loaded image #1 2300x3063 from C:\Users\ken\RockSmithTabConvertToMidi\tmp\crash_cache_v4_repeat\page_005\preprocess\CRASH_COMPLEXION_p005.png
+2026-03-28 09:45:19,032 INFO [CRASH_COMPLEXION_p005]                 Book.java:2565 | Stored /book.xml
+2026-03-28 09:45:19,215 INFO [CRASH_COMPLEXION_p005]           DataHolder.java:348  | Stored /sheet#1/GRAY.png
+2026-03-28 09:45:19,542 INFO [CRASH_COMPLEXION_p005]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-28 09:45:19,547 INFO [CRASH_COMPLEXION_p005]       StepMonitoring.java:98   | BINARY
+2026-03-28 09:45:20,361 INFO [CRASH_COMPLEXION_p005]                 Book.java:2565 | Stored /book.xml
+2026-03-28 09:45:20,363 INFO [CRASH_COMPLEXION_p005]           DataHolder.java:256  | Removed /sheet#1/GRAY.png
+2026-03-28 09:45:20,489 INFO [CRASH_COMPLEXION_p005]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2026-03-28 09:45:20,492 INFO [CRASH_COMPLEXION_p005]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-28 09:45:20,497 INFO [CRASH_COMPLEXION_p005]       StepMonitoring.java:98   | SCALE
+2026-03-28 09:45:20,544 INFO [CRASH_COMPLEXION_p005]         ScaleBuilder.java:241  | Beam  guessed height:  8 -- 0.50 of 17 interline
+2026-03-28 09:45:20,546 INFO [CRASH_COMPLEXION_p005]         ScaleBuilder.java:264  | Beam measured height:  8 -- 0.25 of [5..17] range at 396% of needed quorum
+2026-03-28 09:45:20,547 INFO [CRASH_COMPLEXION_p005]         ScaleBuilder.java:392  | Normalized black jitter: 11.11 %
+2026-03-28 09:45:20,547 INFO [CRASH_COMPLEXION_p005]            ScaleStep.java:65   | Scale{ small_interline(13,14,14) interline(16,18,19) line(2,3,4) beam(8)}
+2026-03-28 09:45:20,554 INFO [CRASH_COMPLEXION_p005]                 Book.java:2565 | Stored /book.xml
+2026-03-28 09:45:20,557 INFO [CRASH_COMPLEXION_p005]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-28 09:45:20,564 INFO [CRASH_COMPLEXION_p005]       StepMonitoring.java:98   | GRID
+2026-03-28 09:45:24,367 INFO [CRASH_COMPLEXION_p005]       LinesRetriever.java:1500 | Global slope: -0.00570
+2026-03-28 09:45:24,454 INFO [CRASH_COMPLEXION_p005]    ClustersRetriever.java:326  | Retrieved raw line clusters: 4 of sizes [6] with interline(16,18,19)
+2026-03-28 09:45:24,458 INFO [CRASH_COMPLEXION_p005]       LinesRetriever.java:1516 | Searching clusters with smallInterline: 14
+2026-03-28 09:45:24,747 INFO [CRASH_COMPLEXION_p005]    ClustersRetriever.java:326  | Retrieved raw line clusters: 12 of sizes [5] with interline(13,14,14)
+2026-03-28 09:45:25,959 INFO [CRASH_COMPLEXION_p005]            PeakGraph.java:310  | Systems: #1[1, 2, 3, 4, 5, 6, 7, 8] #2[9, 10, 11, 12, 13, 14, 15, 16]
+2026-03-28 09:45:26,120 INFO [CRASH_COMPLEXION_p005]        BarsRetriever.java:1305 | System#1
+2026-03-28 09:45:26,120 INFO [CRASH_COMPLEXION_p005]        BarsRetriever.java:1308 |    PartGroup{bracket number:1 barline:false staves:1-8}
+2026-03-28 09:45:26,122 INFO [CRASH_COMPLEXION_p005]        BarsRetriever.java:1305 | System#2
+2026-03-28 09:45:26,122 INFO [CRASH_COMPLEXION_p005]        BarsRetriever.java:1308 |    PartGroup{bracket number:1 barline:false staves:9-16}
+2026-03-28 09:45:27,758 INFO [CRASH_COMPLEXION_p005]        SystemManager.java:779  | 8 parts along 2 systems, 2 tablatures
+2026-03-28 09:45:27,761 INFO [CRASH_COMPLEXION_p005]                 Book.java:543  | Created scores: [{Score 1}]
+2026-03-28 09:45:27,778 INFO [CRASH_COMPLEXION_p005]                 Book.java:2565 | Stored /book.xml
+2026-03-28 09:45:28,444 INFO [CRASH_COMPLEXION_p005]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-28 09:45:28,453 INFO [CRASH_COMPLEXION_p005]       StepMonitoring.java:98   | HEADERS
+2026-03-28 09:45:30,697 INFO [CRASH_COMPLEXION_p005]                 Book.java:2565 | Stored /book.xml
+2026-03-28 09:45:31,012 INFO [CRASH_COMPLEXION_p005]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-28 09:45:31,022 INFO [CRASH_COMPLEXION_p005]       StepMonitoring.java:98   | STEM_SEEDS
+2026-03-28 09:45:31,170 INFO [CRASH_COMPLEXION_p005]        StemSeedsStep.java:86   | stem(3 max:4)
+2026-03-28 09:45:31,332 INFO [CRASH_COMPLEXION_p005]                 Book.java:2565 | Stored /book.xml
+2026-03-28 09:45:31,652 INFO [CRASH_COMPLEXION_p005]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-28 09:45:31,660 INFO [CRASH_COMPLEXION_p005]       StepMonitoring.java:98   | BEAMS
+2026-03-28 09:45:36,169 INFO [CRASH_COMPLEXION_p005]                 Book.java:2565 | Stored /book.xml
+2026-03-28 09:45:36,291 INFO [CRASH_COMPLEXION_p005]           DataHolder.java:348  | Stored /sheet#1/HEAD_SPOTS.png
+2026-03-28 09:45:37,136 INFO [CRASH_COMPLEXION_p005]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-28 09:45:37,142 INFO [CRASH_COMPLEXION_p005]       StepMonitoring.java:98   | LEDGERS
+2026-03-28 09:45:38,376 INFO [CRASH_COMPLEXION_p005]                 Book.java:2565 | Stored /book.xml
+2026-03-28 09:45:39,202 INFO [CRASH_COMPLEXION_p005]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-28 09:45:39,208 INFO [CRASH_COMPLEXION_p005]       StepMonitoring.java:98   | HEADS
+2026-03-28 09:45:40,263 INFO [CRASH_COMPLEXION_p005]      TemplateFactory.java:940  | Rebuilding BREVE_SMALL template at resolution 112
+2026-03-28 09:45:40,272 INFO [CRASH_COMPLEXION_p005]      TemplateFactory.java:940  | Rebuilding WHOLE_NOTE_SMALL template at resolution 112
+2026-03-28 09:45:49,485 INFO [CRASH_COMPLEXION_p005]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_VOID[R:-0.1] NOTEHEAD_VOID_SMALL[R:-0.5] NOTEHEAD_BLACK[L:0.5,R:-0.1] NOTEHEAD_BLACK_SMALL[L:-0.4,R:0.5]}
+2026-03-28 09:45:49,490 INFO [CRASH_COMPLEXION_p005]                 Book.java:2565 | Stored /book.xml
+2026-03-28 09:45:49,491 INFO [CRASH_COMPLEXION_p005]           DataHolder.java:256  | Removed /sheet#1/HEAD_SPOTS.png
+2026-03-28 09:45:50,871 INFO [CRASH_COMPLEXION_p005]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-28 09:45:50,878 INFO [CRASH_COMPLEXION_p005]       StepMonitoring.java:98   | STEMS
+2026-03-28 09:45:59,932 INFO [CRASH_COMPLEXION_p005]                 Book.java:2565 | Stored /book.xml
+2026-03-28 09:46:01,965 INFO [CRASH_COMPLEXION_p005]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-28 09:46:01,971 INFO [CRASH_COMPLEXION_p005]       StepMonitoring.java:98   | REDUCTION
+2026-03-28 09:46:02,862 INFO [CRASH_COMPLEXION_p005]        ReductionStep.java:105  | Stems free length median value: 43 pixels, 2.4 interlines
+2026-03-28 09:46:02,885 INFO [CRASH_COMPLEXION_p005]                 Book.java:2565 | Stored /book.xml
+2026-03-28 09:46:03,536 INFO [CRASH_COMPLEXION_p005]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-28 09:46:03,544 INFO [CRASH_COMPLEXION_p005]       StepMonitoring.java:98   | CUE_BEAMS
+2026-03-28 09:46:03,578 INFO [CRASH_COMPLEXION_p005]                 Book.java:2565 | Stored /book.xml
+2026-03-28 09:46:04,001 INFO [CRASH_COMPLEXION_p005]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-28 09:46:04,006 INFO [CRASH_COMPLEXION_p005]       StepMonitoring.java:98   | TEXTS
+2026-03-28 09:46:04,233 WARN [CRASH_COMPLEXION_p005]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-03-28 09:46:04,234 INFO [CRASH_COMPLEXION_p005]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-03-28 09:46:04,255 INFO [CRASH_COMPLEXION_p005]                 Book.java:2565 | Stored /book.xml
+2026-03-28 09:46:04,650 INFO [CRASH_COMPLEXION_p005]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-28 09:46:04,656 INFO [CRASH_COMPLEXION_p005]       StepMonitoring.java:98   | MEASURES
+2026-03-28 09:46:04,667 INFO [CRASH_COMPLEXION_p005]                 Page.java:307  | 9 raw measures: [5 in system#1, 4 in system#2]
+2026-03-28 09:46:04,673 INFO [CRASH_COMPLEXION_p005]                 Book.java:2565 | Stored /book.xml
+2026-03-28 09:46:05,168 INFO [CRASH_COMPLEXION_p005]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-28 09:46:05,175 INFO [CRASH_COMPLEXION_p005]       StepMonitoring.java:98   | CHORDS
+2026-03-28 09:46:05,214 INFO [CRASH_COMPLEXION_p005]                 Book.java:2565 | Stored /book.xml
+2026-03-28 09:46:05,699 INFO [CRASH_COMPLEXION_p005]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-28 09:46:05,704 INFO [CRASH_COMPLEXION_p005]            SheetStub.java:1654 | Sheet disposed
+2026-03-28 09:46:05,749 INFO [CRASH_COMPLEXION_p005]                 Book.java:2050 | End of Stub#1
+2026-03-28 09:46:05,750 INFO [CRASH_COMPLEXION_p005]                 Book.java:2057 | End of Book{CRASH_COMPLEXION_p005}
+2026-03-28 09:46:05,792 INFO [CRASH_COMPLEXION_p005]                Score.java:181  | Closing {Score 1}

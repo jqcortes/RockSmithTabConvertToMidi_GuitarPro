@@ -17,10 +17,13 @@ def test_audiveris_properties_contains_required_defaults() -> None:
     parser.read(config_path, encoding="utf-8")
 
     defaults = parser.defaults()
-    assert defaults["audiveris.jar"].endswith("Audiveris.jar")
+    # 値は引用符付き文字列の場合があるため strip して大文字小文字を無視して確認
+    jar_value = defaults["audiveris.jar"].strip().strip('"').strip("'")
+    assert jar_value.lower().endswith("audiveris.jar")
     assert defaults["audiveris.timeout"] == "300"
+    # 旧 LineClusterAdapter キーは削除済み; ProcessingSwitches の正式キーで検証する
     assert defaults[
-        "audiveris.option.org.audiveris.omr.sheet.grid.LineClusterAdapter.useTablature"
+        "audiveris.option.org.audiveris.omr.sheet.ProcessingSwitches.sixStringTablatures"
     ] == "true"
     assert defaults[
         "audiveris.option.org.audiveris.omr.sig.inter.AbstractInter.minGrade"

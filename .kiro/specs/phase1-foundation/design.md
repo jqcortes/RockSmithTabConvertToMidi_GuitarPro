@@ -134,11 +134,13 @@ sequenceDiagram
 要件: 1.1–1.5
 
 ```python
+MetricValue = float | int | str | bool | list[str] | dict[str, str]
+
 @dataclass
 class StepResult:
     success: bool
     output_path: Path | list[Path]  # 単一ファイルまたはページリスト
-    metrics: dict[str, float | int | str]
+    metrics: dict[str, MetricValue]
     warnings: list[str]
 
 class PipelineError(Exception):
@@ -229,18 +231,20 @@ class IngestError(PipelineError):
 ```python
 # pipeline/common.py — 唯一の共有データ型
 
+MetricValue = float | int | str | bool | list[str] | dict[str, str]
+
 @dataclass
 class StepResult:
     success: bool
     output_path: Path | list[Path]
-    metrics: dict[str, float | int | str]
+    metrics: dict[str, MetricValue]
     warnings: list[str]
 
     @classmethod
     def ok(
         cls,
         output_path: Path | list[Path],
-        metrics: dict[str, float | int | str] | None = None,
+        metrics: dict[str, MetricValue] | None = None,
         warnings: list[str] | None = None,
     ) -> "StepResult":
         return cls(
@@ -250,6 +254,8 @@ class StepResult:
             warnings=warnings or [],
         )
 ```
+
+`MetricValue` は全ドメイン共通の契約であり、bool フラグ、警告サマリ、ロール辞書など後続ドメインで必要になるメトリクス表現を許可する。
 
 ---
 

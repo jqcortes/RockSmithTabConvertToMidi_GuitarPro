@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import configparser
 import os
+import re
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -45,6 +46,8 @@ class OmrConfigData:
     jar_path: Path
     timeout_seconds: int
     extra_options: dict[str, str]
+    subprocess_env: dict[str, str] | None = None
+    ocr_language: str = "eng"
 
 
 class OmrConfig:
@@ -109,15 +112,69 @@ class OmrConfig:
                     option_key = key[len(_OPTION_PREFIX):]
                     extra_options[option_key] = value
 
+        ocr_language = str(
+            extra_options.get(
+                "org.audiveris.omr.text.tesseract.TesseractOCR.language",
+                "eng",
+            )
+        ).strip() or "eng"
+        subprocess_env = _resolve_ocr_subprocess_env(jar_path, ocr_language)
+
         _log.info(
             "omr_config_resolved",
             jar_path=str(jar_path),
             timeout_seconds=timeout_seconds,
             extra_option_count=len(extra_options),
+            ocr_language=ocr_language,
+            tessdata_prefix=(subprocess_env or {}).get("TESSDATA_PREFIX"),
         )
 
         return OmrConfigData(
             jar_path=jar_path,
             timeout_seconds=timeout_seconds,
             extra_options=extra_options,
+            subprocess_env=subprocess_env,
+            ocr_language=ocr_language,
         )
+
+
+def _resolve_ocr_subprocess_env(jar_path: Path, ocr_language: str) -> dict[str, str] | None:
+    """利用可能な tessdata を探索して subprocess 用 env を返す。"""
+    candidate_dirs: list[Path] = []
+
+    # 例: C:/Program Files/Audiveris/app/audiveris.jar
+    # -> C:/Program Files/Audiveris/tessdata
+    # -> C:/Program Files/Audiveris/runtime/tessdata
+    app_dir = jar_path.parent
+    install_root = app_dir.parent if app_dir.name.lower() == "app" else app_dir
+
+    candidate_dirs.extend(
+        [
+            install_root / "tessdata",
+            install_root / "runtime" / "tessdata",
+            Path("C:/Program Files/Audiveris/tessdata"),
+            Path("C:/Program Files/Audiveris/runtime/tessdata"),
+        ]
+    )
+
+    # 重複除去しつつ順序保持
+    unique_dirs: list[Path] = []
+    seen: set[str] = set()
+    for d in candidate_dirs:
+        key = str(d).lower()
+        if key not in seen:
+            seen.add(key)
+            unique_dirs.append(d)
+
+    languages = [t for t in re.split(r"[+,]", ocr_language) if t]
+    if not languages:
+        languages = ["eng"]
+
+    for tessdata_dir in unique_dirs:
+        if not tessdata_dir.exists() or not tessdata_dir.is_dir():
+            continue
+
+        if all((tessdata_dir / f"{lang}.traineddata").exists() for lang in languages):
+            return {"TESSDATA_PREFIX": str(tessdata_dir)}
+
+    return None

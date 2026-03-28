@@ -1,0 +1,60 @@
+2026-03-27 17:24:46,327 INFO [sample_score]                 Book.java:560  | 1 sheet in C:\Users\ken\RockSmithTabConvertToMidi\tmp\test_cache\page_001\preprocess\sample_score.png
+2026-03-27 17:24:46,763 INFO []                 Book.java:2565 | Stored /book.xml
+2026-03-27 17:24:46,764 INFO []                 Book.java:2525 | Book stored as tmp\test_cache\page_001\omr\sample_score.omr
+2026-03-27 17:24:46,793 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2026-03-27 17:24:46,800 INFO [sample_score]       StepMonitoring.java:98   | LOAD
+2026-03-27 17:24:47,001 INFO [sample_score]            SheetStub.java:1278 | Loaded image #1 2281x928 from C:\Users\ken\RockSmithTabConvertToMidi\tmp\test_cache\page_001\preprocess\sample_score.png
+2026-03-27 17:24:47,011 INFO [sample_score]       StepMonitoring.java:98   | BINARY
+2026-03-27 17:24:47,658 INFO [sample_score]       StepMonitoring.java:98   | SCALE
+2026-03-27 17:24:47,693 INFO [sample_score]         ScaleBuilder.java:241  | Beam  guessed height: 14 -- 0.50 of 28 interline
+2026-03-27 17:24:47,694 INFO [sample_score]         ScaleBuilder.java:264  | Beam measured height: 21 -- 0.65 of [8..28] range at 31% of needed quorum
+2026-03-27 17:24:47,695 WARN [sample_score]         ScaleBuilder.java:293  | No reliable beam height found, guessed value: 14
+2026-03-27 17:24:47,696 INFO [sample_score]         ScaleBuilder.java:392  | Normalized black jitter: 3.33 %
+2026-03-27 17:24:47,697 INFO [sample_score]            ScaleStep.java:65   | Scale{ small_interline(25,25,25) interline(30,30,30) line(2,2,3) beam(14 extra)}
+2026-03-27 17:24:47,699 INFO [sample_score]       StepMonitoring.java:98   | GRID
+2026-03-27 17:24:47,911 INFO [sample_score]       LinesRetriever.java:1500 | Global slope: 0.00000
+2026-03-27 17:24:47,944 INFO [sample_score]    ClustersRetriever.java:326  | Retrieved raw line clusters: 0 of sizes [6] with interline(30,30,30)
+2026-03-27 17:24:47,946 INFO [sample_score]       LinesRetriever.java:1516 | Searching clusters with smallInterline: 25
+2026-03-27 17:24:47,958 INFO [sample_score]    ClustersRetriever.java:326  | Retrieved raw line clusters: 2 of sizes [5] with interline(25,25,25)
+2026-03-27 17:24:48,035 INFO [sample_score]            PeakGraph.java:310  | Systems: #1[1] #2[2]
+2026-03-27 17:24:48,233 INFO [sample_score]        SystemManager.java:779  | 1 part along 2 systems
+2026-03-27 17:24:48,235 INFO [sample_score]                 Book.java:543  | Created scores: [{Score 1}]
+2026-03-27 17:24:48,236 INFO [sample_score]       StepMonitoring.java:98   | HEADERS
+2026-03-27 17:24:49,317 WARN [sample_score]          ClefBuilder.java:658  | Staff#1 no recognized header clef.
+2026-03-27 17:24:49,363 WARN [sample_score]          ClefBuilder.java:658  | Staff#2 no recognized header clef.
+2026-03-27 17:24:49,373 INFO [sample_score]       StepMonitoring.java:98   | STEM_SEEDS
+2026-03-27 17:24:49,470 INFO [sample_score]        StemSeedsStep.java:86   | stem(21 max:21)
+2026-03-27 17:24:49,497 INFO [sample_score]       StepMonitoring.java:98   | BEAMS
+2026-03-27 17:24:52,537 INFO [sample_score]       StepMonitoring.java:98   | LEDGERS
+2026-03-27 17:24:52,579 INFO [sample_score]       StepMonitoring.java:98   | HEADS
+2026-03-27 17:24:58,830 INFO [sample_score]        HeadSeedTally.java:235  | Scale information: HeadSeeds{}
+2026-03-27 17:24:58,831 INFO [sample_score]       StepMonitoring.java:98   | STEMS
+2026-03-27 17:24:58,857 INFO [sample_score]       StepMonitoring.java:98   | REDUCTION
+2026-03-27 17:24:58,934 INFO [sample_score]       StepMonitoring.java:98   | CUE_BEAMS
+2026-03-27 17:24:58,936 INFO [sample_score]       StepMonitoring.java:98   | TEXTS
+2026-03-27 17:24:59,068 WARN [sample_score]         TesseractOCR.java:335  | The collection of supported languages is empty
+2026-03-27 17:24:59,070 INFO [sample_score]              OcrUtil.java:106  | Missing support for 'eng' language(s)
+2026-03-27 17:24:59,077 INFO [sample_score]       StepMonitoring.java:98   | MEASURES
+2026-03-27 17:24:59,097 INFO [sample_score]                 Page.java:307  | 2 raw measures: [1 in system#1, 1 in system#2]
+2026-03-27 17:24:59,098 INFO [sample_score]       StepMonitoring.java:98   | CHORDS
+2026-03-27 17:24:59,101 INFO [sample_score]       StepMonitoring.java:98   | CURVES
+2026-03-27 17:24:59,662 INFO [sample_score]         SlursBuilder.java:240  | Slurs: 0
+2026-03-27 17:24:59,767 INFO [sample_score]      SegmentsBuilder.java:155  | Segments: 12
+2026-03-27 17:24:59,829 INFO [sample_score]       StepMonitoring.java:98   | SYMBOLS
+2026-03-27 17:25:00,313 INFO [sample_score]       StepMonitoring.java:98   | LINKS
+2026-03-27 17:25:00,333 INFO [sample_score]       StepMonitoring.java:98   | RHYTHMS
+2026-03-27 17:25:00,359 INFO [sample_score]       StepMonitoring.java:98   | PAGE
+2026-03-27 17:25:00,372 WARN [sample_score]         MeasureFixer.java:343  | System#1 No target duration for measures local IDs [1], please check time signatures
+2026-03-27 17:25:00,373 WARN [sample_score]         MeasureFixer.java:343  | System#2 No target duration for measures local IDs [2], please check time signatures
+2026-03-27 17:25:00,375 INFO [sample_score]                 Book.java:2584 | Book{sample_score} storing
+2026-03-27 17:25:00,426 INFO [sample_score]                 Book.java:2565 | Stored /book.xml
+2026-03-27 17:25:00,511 INFO [sample_score]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2026-03-27 17:25:01,296 INFO [sample_score]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-27 17:25:01,297 INFO [sample_score]                 Book.java:2525 | Book stored as tmp\test_cache\page_001\omr\sample_score.omr
+2026-03-27 17:25:01,309 INFO [sample_score]            SheetStub.java:1654 | Sheet disposed
+2026-03-27 17:25:01,373 INFO [sample_score]                 Book.java:2050 | End of Stub#1
+2026-03-27 17:25:01,376 INFO [sample_score]                 Book.java:2057 | End of Book{sample_score}
+2026-03-27 17:25:01,674 INFO [sample_score]            SheetStub.java:1000 | Loaded /sheet#1/sheet#1.xml
+2026-03-27 17:25:03,365 INFO [sample_score]      PartwiseBuilder.java:2706 | Exporting sheet(s): [#1]
+2026-03-27 17:25:03,426 INFO [sample_score]        ScoreExporter.java:164  | Score sample_score exported to tmp\test_cache\page_001\omr\sample_score.mxl
+2026-03-27 17:25:03,530 INFO [sample_score]                Score.java:181  | Closing {Score 1}

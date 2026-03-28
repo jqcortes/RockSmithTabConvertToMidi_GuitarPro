@@ -1,0 +1,24 @@
+2026-03-27 18:28:47,259 INFO [CRASH_COMPLEXION_p001]                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2026-03-27 18:28:47,261 INFO [CRASH_COMPLEXION_p001]       StepMonitoring.java:98   | SYMBOLS
+2026-03-27 18:29:07,956 INFO [CRASH_COMPLEXION_p001]            SheetStub.java:1000 | Loaded /sheet#1/sheet#1.xml
+2026-03-27 18:29:08,771 INFO [CRASH_COMPLEXION_p001]      TemplateFactory.java:940  | Rebuilding WHOLE_NOTE_SMALL template at resolution 104
+2026-03-27 18:29:20,981 INFO [CRASH_COMPLEXION_p001]       StepMonitoring.java:98   | LINKS
+2026-03-27 18:29:21,009 INFO [CRASH_COMPLEXION_p001]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#8477{(0.200) staff:1 QUINDICESIMA ALTA} at java.awt.Point[x=501,y=1249]
+2026-03-27 18:29:21,015 INFO [CRASH_COMPLEXION_p001]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#8708{(0.125) staff:1 OTTAVA ALTA} at java.awt.Point[x=876,y=673]
+2026-03-27 18:29:21,017 INFO [CRASH_COMPLEXION_p001]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#8745{(0.152) staff:1 QUINDICESIMA ALTA} at java.awt.Point[x=960,y=1319]
+2026-03-27 18:29:21,018 INFO [CRASH_COMPLEXION_p001]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#8922{(0.236) staff:1 OTTAVA ALTA} at java.awt.Point[x=1277,y=684]
+2026-03-27 18:29:21,020 INFO [CRASH_COMPLEXION_p001]        SymbolsLinker.java:258  | No chord linked to OctaveShiftInter#9059{(0.178) staff:1 OTTAVA ALTA} at java.awt.Point[x=1445,y=689]
+2026-03-27 18:29:21,363 INFO [CRASH_COMPLEXION_p001]       StepMonitoring.java:98   | RHYTHMS
+2026-03-27 18:29:21,579 INFO [CRASH_COMPLEXION_p001]       StepMonitoring.java:98   | PAGE
+2026-03-27 18:29:21,598 WARN [CRASH_COMPLEXION_p001]         MeasureFixer.java:343  | System#1 No target duration for measures local IDs [1, 2, 3, 4], please check time signatures
+2026-03-27 18:29:21,600 INFO [CRASH_COMPLEXION_p001]                 Book.java:2584 | Book{CRASH_COMPLEXION_p001} storing
+2026-03-27 18:29:21,850 INFO [CRASH_COMPLEXION_p001]                 Book.java:2565 | Stored /book.xml
+2026-03-27 18:29:25,998 INFO [CRASH_COMPLEXION_p001]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-27 18:29:25,999 INFO [CRASH_COMPLEXION_p001]                 Book.java:2525 | Book stored as C:\Users\ken\RockSmithTabConvertToMidi\tmp\crash_cache_after_fix\page_001\omr\CRASH_COMPLEXION_p001.omr
+2026-03-27 18:29:26,012 INFO [CRASH_COMPLEXION_p001]            SheetStub.java:1654 | Sheet disposed
+2026-03-27 18:29:26,076 INFO [CRASH_COMPLEXION_p001]                 Book.java:2050 | End of Stub#1
+2026-03-27 18:29:26,077 INFO [CRASH_COMPLEXION_p001]                 Book.java:2057 | End of Book{CRASH_COMPLEXION_p001}
+2026-03-27 18:29:50,130 INFO [CRASH_COMPLEXION_p001]            SheetStub.java:1000 | Loaded /sheet#1/sheet#1.xml
+2026-03-27 18:29:51,758 INFO [CRASH_COMPLEXION_p001]      PartwiseBuilder.java:2706 | Exporting sheet(s): [#1]
+2026-03-27 18:29:51,901 INFO [CRASH_COMPLEXION_p001]        ScoreExporter.java:164  | Score CRASH_COMPLEXION_p001 exported to C:\Users\ken\RockSmithTabConvertToMidi\tmp\crash_cache_after_fix\page_001\omr\CRASH_COMPLEXION_p001.mxl
+2026-03-27 18:29:52,047 INFO [CRASH_COMPLEXION_p001]                Score.java:181  | Closing {Score 1}

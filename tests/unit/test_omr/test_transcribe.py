@@ -10,7 +10,7 @@ import pytest
 
 from pipeline.common import StepResult
 from pipeline.omr.config import OmrConfigData
-from pipeline.omr.errors import OmrOutputError
+from pipeline.omr.errors import OmrExecutionError, OmrOutputError
 
 
 def _make_config(tmp_path: Path, timeout: int = 300) -> OmrConfigData:
@@ -333,6 +333,75 @@ class TestTranscribeMetrics:
                 result = transcribe(image, output_dir)
 
         assert isinstance(result.metrics["musicxml_path"], str)
+
+
+class TestTranscribeFallback:
+    """一次 OMR 失敗時の CURVES スキップ再試行を検証する。"""
+
+    def test_primary_failure_retries_with_curves_skip(self, tmp_path: Path) -> None:
+        from pipeline.omr._transcribe import transcribe
+
+        image = tmp_path / "score.png"
+        image.touch()
+        output_dir = tmp_path / "out"
+        output_dir.mkdir()
+
+        config = _make_config(tmp_path)
+        mock_runner = MagicMock()
+        mock_runner.run.side_effect = [
+            OmrExecutionError("primary failed"),
+            {"elapsed_seconds": 1.5},  # chords-save
+            {"elapsed_seconds": 2.5},  # transcribe-export from .omr
+        ]
+
+        omr_file = output_dir / "score.omr"
+        omr_file.write_bytes(b"PK\x03\x04")
+        found_mxl = output_dir / "score.mxl"
+        _create_mxl(found_mxl)
+
+        with patch("pipeline.omr._transcribe.OmrConfig.load", return_value=config):
+            with patch("pipeline.omr._transcribe.OmrEngine.validate_environment"):
+                with patch(
+                    "pipeline.omr._transcribe.MusicXmlFinder.find",
+                    side_effect=[OmrOutputError("not found"), found_mxl],
+                ):
+                    with patch(
+                        "pipeline.omr._transcribe._find_first_file",
+                        return_value=omr_file,
+                    ):
+                        with patch(
+                            "pipeline.omr._transcribe._append_steps_in_omr",
+                            return_value=True,
+                        ):
+                            result = transcribe(image, output_dir, runner=mock_runner)
+
+        assert mock_runner.run.call_count == 3
+        assert result.metrics["fallback_curves_skip"] is True
+        assert result.metrics["elapsed_seconds"] == 4.0
+
+    def test_fallback_failure_re_raises_execution_error(self, tmp_path: Path) -> None:
+        from pipeline.omr._transcribe import transcribe
+
+        image = tmp_path / "score.png"
+        image.touch()
+        output_dir = tmp_path / "out"
+        output_dir.mkdir()
+
+        config = _make_config(tmp_path)
+        mock_runner = MagicMock()
+        mock_runner.run.side_effect = [
+            OmrExecutionError("primary failed"),
+            OmrExecutionError("fallback failed"),
+        ]
+
+        with patch("pipeline.omr._transcribe.OmrConfig.load", return_value=config):
+            with patch("pipeline.omr._transcribe.OmrEngine.validate_environment"):
+                with patch(
+                    "pipeline.omr._transcribe.MusicXmlFinder.find",
+                    side_effect=[OmrOutputError("not found")],
+                ):
+                    with pytest.raises(OmrExecutionError):
+                        transcribe(image, output_dir, runner=mock_runner)
 
 
 # ---------------------------------------------------------------------------

@@ -1,0 +1,290 @@
+{
+  "input_file": "CRASH_COMPLEXION_p008_transformed.xml",
+  "output_midi": "CRASH_COMPLEXION_p008_transformed.mid",
+  "timestamp": "2026-03-27T15:45:06.371194Z",
+  "overall_score": 0.594,
+  "judgment": "FAIL",
+  "metrics": {
+    "omr_confidence": 0.75,
+    "measure_completeness": 0.0,
+    "pitch_range_validity": 0.96,
+    "part_detection_rate": 1.0
+  },
+  "warnings": [
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 1",
+      "detail": "Expected 4.0 beats, found 8.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 2",
+      "detail": "Expected 4.0 beats, found 14.5"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 3",
+      "detail": "Expected 4.0 beats, found 4.5"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 4",
+      "detail": "Expected 4.0 beats, found 2.2"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 5",
+      "detail": "Expected 4.0 beats, found 3.8"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 6",
+      "detail": "Expected 4.0 beats, found 3.2"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 1",
+      "detail": "Expected 4.0 beats, found 8.2"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 2",
+      "detail": "Expected 4.0 beats, found 7.2"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 3",
+      "detail": "Expected 4.0 beats, found 7.2"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 4",
+      "detail": "Expected 4.0 beats, found 2.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 5",
+      "detail": "Expected 4.0 beats, found 3.8"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 6",
+      "detail": "Expected 4.0 beats, found 2.8"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 1",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 2",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 3",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 4",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 5",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 6",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 1",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 2",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 3",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 4",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 5",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 6",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 1",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 2",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 3",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 4",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 5",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 6",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 1",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 2",
+      "detail": "Expected 4.0 beats, found 7.2"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 3",
+      "detail": "Expected 4.0 beats, found 4.5"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 4",
+      "detail": "Expected 4.0 beats, found 2.2"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 5",
+      "detail": "Expected 4.0 beats, found 3.8"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 6",
+      "detail": "Expected 4.0 beats, found 3.2"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 1",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 2",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 3",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 4",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 5",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 6",
+      "detail": "Expected 4.0 beats, found 0.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 1",
+      "detail": "Expected 4.0 beats, found 9.8"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 2",
+      "detail": "Expected 4.0 beats, found 11.0"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 3",
+      "detail": "Expected 4.0 beats, found 4.5"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 4",
+      "detail": "Expected 4.0 beats, found 2.8"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 5",
+      "detail": "Expected 4.0 beats, found 3.5"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 6",
+      "detail": "Expected 4.0 beats, found 6.2"
+    },
+    {
+      "type": "PITCH_OUT_OF_RANGE",
+      "location": "Part: Voice, Measure: 1",
+      "detail": "MIDI note 93 is outside expected range for guitar"
+    },
+    {
+      "type": "PITCH_OUT_OF_RANGE",
+      "location": "Part: Voice, Measure: 1",
+      "detail": "MIDI note 91 is outside expected range for guitar"
+    },
+    {
+      "type": "PITCH_OUT_OF_RANGE",
+      "location": "Part: Voice, Measure: 1",
+      "detail": "MIDI note 91 is outside expected range for guitar"
+    },
+    {
+      "type": "PITCH_OUT_OF_RANGE",
+      "location": "Part: Voice, Measure: 2",
+      "detail": "MIDI note 92 is outside expected range for guitar"
+    },
+    {
+      "type": "PITCH_OUT_OF_RANGE",
+      "location": "Part: Voice, Measure: 2",
+      "detail": "MIDI note 95 is outside expected range for guitar"
+    },
+    {
+      "type": "PITCH_OUT_OF_RANGE",
+      "location": "Part: Voice, Measure: 2",
+      "detail": "MIDI note 92 is outside expected range for guitar"
+    }
+  ],
+  "stats": {
+    "total_measures": 48,
+    "total_notes": 150,
+    "processing_time_seconds": 0.21
+  }
+}

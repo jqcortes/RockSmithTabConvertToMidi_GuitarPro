@@ -95,7 +95,7 @@
 2. When Transform ドメインが呼ばれたとき, the Transform Service shall `output_dir` に既存の補正済みファイルが存在する場合はキャッシュヒットとみなし、CLI 処理をスキップして `StepResult.metrics["cached"] = True` で返す。
 3. The Transform Service shall公開エントリポイント関数 `transform(musicxml_path: Path, output_dir: Path) -> StepResult` を `pipeline/transform/__init__.py` から re-export する。
 4. The Transform Service shall 型ヒントを全公開関数・クラスに付与し、`mypy --strict` 相当で静的型検査が通る実装とする。
-5. When Transform が失敗したとき, the Transform Service shall `StepResult(success=False, output_path=None, metrics={}, warnings=[...])` を返す（例外を呑む場合のみ。基本は例外送出を優先）。
+5. When Transform が失敗したとき, the Transform Service shall `TransformError` またはそのサブクラスを送出し、失敗を `StepResult(success=False, ...)` では表現しない。
 6. The Transform Service shall Audiveris 出力の品質ゲート（例: TAB スタッフ欠落、part 情報欠落、小節整合性エラー、pitch/TAB 矛盾）を評価し、救済処理が必要な場合のみ Guitar Fixer / Part Identifier / Confidence Filter を実行する。
 7. The Transform Service shall 品質ゲートを満たす場合、Audiveris 出力をほぼそのまま通しつつ、必要最小限の検証とメタデータ整形だけを行う。
 

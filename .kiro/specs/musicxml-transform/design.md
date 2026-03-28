@@ -62,7 +62,7 @@
 | 6.2 | キャッシュファースト（既存ファイル検出 → スキップ） | `_transform.py` | `_find_cached(output_dir, stem)` | 変換フロー（分岐） |
 | 6.3 | `transform()` を `__init__.py` から re-export | `__init__.py` | `from pipeline.transform._transform import transform` | — |
 | 6.4 | mypy --strict 通過 | 全モジュール | 型ヒント必須 | — |
-| 6.5 | 失敗時 StepResult(success=False) | `_transform.py` | 呼び出し元制御パターン | — |
+| 6.5 | 失敗時は TransformError 系例外を送出 | `_transform.py` | 例外伝播パターン | — |
 
 ---
 
@@ -133,7 +133,7 @@ graph TD
 - Domain boundary: `pipeline/transform/` のみ。OMR・Render・Quality ドメインとの直接 import は禁止
 - Existing patterns preserved: `StepResult.ok()` ファクトリ・`get_logger(__name__)` ・`PipelineError` 継承例外
 - New components rationale: `PartIdentifier` は Audiveris 出力の補助正規化、`ConfidenceFilter` は将来拡張の受け皿として新設
-- Steering compliance: 鉄則 1（タブ譜優先）・鉄則 2（信頼度に正直）・鉄則 4（ステップキャッシュ）・鉄則 5（ファイルパス疎結合）すべてを遵守
+- Steering compliance: 鉄則 1（タブ譜優先）・鉄則 2（信頼度に正直）・鉄則 4（ステップキャッシュ）・鉄則 5（ファイルパス疎結合）に加え、失敗は `PipelineError` 継承例外で伝播する共通契約を遵守する
 
 ### Technology Stack
 
@@ -216,7 +216,7 @@ sequenceDiagram
 | `GuitarFixer` | transform/guitar_fixer | TAB pitch 上書き | 2.1, 2.2, 2.3, 2.4, 2.5, 2.6 | `lxml.etree` (P0), YAML config (P2) | `apply()`, `FixerResult` |
 | `PartIdentifier` | transform/part_identifier | Audiveris 出力済み part 情報の正規化 | 3.1, 3.2, 3.3, 3.4, 3.5 | `lxml.etree` (P0) | `identify()`, `annotate()`, `PartInfo` |
 | `ConfidenceFilter` | transform/confidence_filter | 信頼度フィルタ拡張ポイント | 4.1, 4.2, 4.3, 4.4 | `lxml.etree` (P0) | `filter()`, `FilterResult` |
-| `transform()` | transform/_transform | エントリポイント・キャッシュ制御 | 5.3, 5.4, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7 | 全変換器 (P0), `StepResult` (P0) | `transform(musicxml_path, output_dir) → StepResult` |
+| `transform()` | transform/_transform | エントリポイント・キャッシュ制御 | 5.3, 5.4, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7 | 全変換器 (P0), `StepResult` (P0) | `transform(musicxml_path, output_dir) → StepResult` / `TransformError` |
 
 ---
 

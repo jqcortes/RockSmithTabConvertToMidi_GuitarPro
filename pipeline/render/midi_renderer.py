@@ -10,6 +10,7 @@ from mido import Message, MetaMessage, MidiFile, MidiTrack
 
 from pipeline.render.channel_mapper import ChannelAssignment, ChannelMapper, PartRole, RenderPartInfo
 from pipeline.render.errors import RenderValidationError
+from pipeline.render.repeat_expander import RepeatExpander, RepeatExpansionContext
 from pipeline.render.technique_renderer import TechniqueRenderer
 from pipeline.render.tempo_resolver import TempoResolver
 
@@ -35,6 +36,7 @@ class MidiRenderer:
         *,
         default_bpm: int = 120,
         pitch_bend_range: int = 2,
+        repeat_context: RepeatExpansionContext | None = None,
     ) -> MidiRenderResult:
         """Read MusicXML, create MIDI Type 1 tracks, and write the result."""
         tree = MidiRenderer._load_tree(musicxml_path)
@@ -42,6 +44,8 @@ class MidiRenderer:
 
         tempo_result = TempoResolver.build_meta_track(tree, default_bpm=default_bpm)
         midi_file.tracks.append(tempo_result.track)
+        render_warnings = list(tempo_result.warnings)
+        local_repeat_context = repeat_context if repeat_context is not None else RepeatExpansionContext.empty()
 
         part_infos = MidiRenderer._extract_part_infos(tree)
         assignments = ChannelMapper.assign(part_infos)
@@ -68,8 +72,23 @@ class MidiRenderer:
                     )
                 )
 
+            # Collect events as (abs_tick, priority, seq, message).
+            # priority: 0=pre-technique, 1=note_on, 2=note_off, 3=post-technique.
+            # seq breaks ties within the same (tick, priority) to preserve insertion order.
+            events: list[tuple[int, int, int, Message]] = []
+            seq = 0
+            abs_tick = 0        # absolute tick cursor; advances for non-chord notes
+            group_start_tick = 0  # abs tick of the most-recent non-chord note (chord anchor)
             divisions = 1
-            for measure in part.xpath("./*[local-name()='measure']"):
+            expansion = RepeatExpander.expand_part_measures_with_context(
+                part,
+                part_id=part_id,
+                context=local_repeat_context,
+            )
+            for warning in expansion.warnings:
+                render_warnings.append(f"part={part_id}: {warning}")
+
+            for measure in expansion.measures:
                 divisions = MidiRenderer._measure_divisions(measure, divisions)
                 for note in measure.xpath("./*[local-name()='note']"):
                     if note.xpath("./*[local-name()='rest']"):
@@ -79,6 +98,7 @@ class MidiRenderer:
                     if midi_note is None:
                         continue
 
+                    is_chord = bool(note.xpath("./*[local-name()='chord']"))
                     duration_value = MidiRenderer._duration_value(note)
                     duration_ticks = max(1, int((duration_value / divisions) * midi_file.ticks_per_beat))
                     scratch_track = MidiTrack()
@@ -93,28 +113,49 @@ class MidiRenderer:
                     )
                     techniques_rendered += technique_result.technique_count
 
-                    for message in technique_result.pre_messages:
-                        track.append(message)
-                    track.append(
+                    if is_chord:
+                        note_start = group_start_tick
+                    else:
+                        note_start = abs_tick
+                        group_start_tick = abs_tick
+                        abs_tick += duration_ticks
+
+                    for msg in technique_result.pre_messages:
+                        events.append((note_start, 0, seq, msg))
+                        seq += 1
+                    events.append((
+                        note_start, 1, seq,
                         Message(
                             "note_on",
                             channel=assignment.midi_channel - 1,
                             note=midi_note,
                             velocity=technique_result.velocity,
                             time=0,
-                        )
-                    )
-                    track.append(
+                        ),
+                    ))
+                    seq += 1
+                    events.append((
+                        note_start + duration_ticks, 2, seq,
                         Message(
                             "note_off",
                             channel=assignment.midi_channel - 1,
                             note=midi_note,
                             velocity=0,
-                            time=technique_result.duration_ticks,
-                        )
-                    )
-                    for message in technique_result.post_messages:
-                        track.append(message)
+                            time=0,
+                        ),
+                    ))
+                    seq += 1
+                    for msg in technique_result.post_messages:
+                        events.append((note_start + duration_ticks, 3, seq, msg))
+                        seq += 1
+
+            # Sort by (abs_tick, priority, seq) and emit as MIDI delta times.
+            events.sort(key=lambda e: (e[0], e[1], e[2]))
+            prev_tick = 0
+            for abs_t, _, _, msg in events:
+                msg.time = abs_t - prev_tick
+                track.append(msg)
+                prev_tick = abs_t
 
             midi_file.tracks.append(track)
 
@@ -125,7 +166,7 @@ class MidiRenderer:
             channel_map=ChannelMapper.to_metrics_map(assignments),
             tempo_events=tempo_result.tempo_events,
             techniques_rendered=techniques_rendered,
-            warnings=tempo_result.warnings,
+            warnings=render_warnings,
         )
 
     @staticmethod

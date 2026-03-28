@@ -1,0 +1,21 @@
+2026-03-28 01:20:14,589 INFO [CRASH_COMPLEXION_p005]                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2026-03-28 01:20:14,592 INFO [CRASH_COMPLEXION_p005]       StepMonitoring.java:98   | SYMBOLS
+2026-03-28 01:20:18,806 INFO [CRASH_COMPLEXION_p005]            SheetStub.java:1000 | Loaded /sheet#1/sheet#1.xml
+2026-03-28 01:20:25,953 INFO [CRASH_COMPLEXION_p005]       StepMonitoring.java:98   | LINKS
+2026-03-28 01:20:26,002 INFO [CRASH_COMPLEXION_p005]             KeyInter.java:1322 | Key built KeyInter#13801{(0.154) staff:4 KEY_FLAT_1 pitch:0.2 fifths:-1}
+2026-03-28 01:20:26,003 INFO [CRASH_COMPLEXION_p005]             KeyInter.java:1322 | Key built KeyInter#13803{(0.503) staff:4 KEY_FLAT_1 pitch:0.1 fifths:-1}
+2026-03-28 01:20:26,334 INFO [CRASH_COMPLEXION_p005]       StepMonitoring.java:98   | RHYTHMS
+2026-03-28 01:20:26,578 INFO [CRASH_COMPLEXION_p005]       StepMonitoring.java:98   | PAGE
+2026-03-28 01:20:26,590 WARN [CRASH_COMPLEXION_p005]         MeasureFixer.java:343  | System#1 No target duration for measures local IDs [1, 2, 3, 4, 5], please check time signatures
+2026-03-28 01:20:26,592 WARN [CRASH_COMPLEXION_p005]         MeasureFixer.java:343  | System#2 No target duration for measures local IDs [6, 7, 8, 9], please check time signatures
+2026-03-28 01:20:26,596 INFO [CRASH_COMPLEXION_p005]                 Book.java:2584 | Book{CRASH_COMPLEXION_p005} storing
+2026-03-28 01:20:26,711 INFO [CRASH_COMPLEXION_p005]                 Book.java:2565 | Stored /book.xml
+2026-03-28 01:20:29,365 INFO [CRASH_COMPLEXION_p005]                Sheet.java:1583 | Stored /sheet#1/sheet#1.xml
+2026-03-28 01:20:29,366 INFO [CRASH_COMPLEXION_p005]                 Book.java:2525 | Book stored as C:\Users\ken\RockSmithTabConvertToMidi\tmp\omr_test_cache\TAB_on_0.35\page_005\omr\CRASH_COMPLEXION_p005.omr
+2026-03-28 01:20:29,379 INFO [CRASH_COMPLEXION_p005]            SheetStub.java:1654 | Sheet disposed
+2026-03-28 01:20:29,427 INFO [CRASH_COMPLEXION_p005]                 Book.java:2050 | End of Stub#1
+2026-03-28 01:20:29,428 INFO [CRASH_COMPLEXION_p005]                 Book.java:2057 | End of Book{CRASH_COMPLEXION_p005}
+2026-03-28 01:20:31,344 INFO [CRASH_COMPLEXION_p005]            SheetStub.java:1000 | Loaded /sheet#1/sheet#1.xml
+2026-03-28 01:20:33,006 INFO [CRASH_COMPLEXION_p005]      PartwiseBuilder.java:2706 | Exporting sheet(s): [#1]
+2026-03-28 01:20:33,404 INFO [CRASH_COMPLEXION_p005]        ScoreExporter.java:164  | Score CRASH_COMPLEXION_p005 exported to C:\Users\ken\RockSmithTabConvertToMidi\tmp\omr_test_cache\TAB_on_0.35\page_005\omr\CRASH_COMPLEXION_p005.mxl
+2026-03-28 01:20:33,498 INFO [CRASH_COMPLEXION_p005]                Score.java:181  | Closing {Score 1}

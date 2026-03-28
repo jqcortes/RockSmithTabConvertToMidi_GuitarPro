@@ -66,11 +66,13 @@ class TestRenderEntrypoint:
             *,
             default_bpm: int = 120,
             pitch_bend_range: int = 2,
+            repeat_context: object | None = None,
         ) -> object:
             captured["musicxml_path"] = musicxml_path
             captured["output_path"] = output_path
             captured["default_bpm"] = default_bpm
             captured["pitch_bend_range"] = pitch_bend_range
+            captured["repeat_context"] = repeat_context
 
             class _Result:
                 def __init__(self) -> None:

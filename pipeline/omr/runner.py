@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 import subprocess
 import time
 from pathlib import Path
@@ -38,6 +39,8 @@ class AudiverisRunner:
         image_path: Path,
         output_dir: Path,
         config: OmrConfigData,
+        *,
+        workflow: str = "transcribe-export",
     ) -> dict[str, float | int | str | bool]:
         """Audiveris CLI を実行して metrics dict を返す。
 
@@ -54,7 +57,10 @@ class AudiverisRunner:
             OmrExecutionError: Audiveris が 0 以外の終了コードを返した場合。
         """
         logger = get_logger(__name__)
-        cmd = self._build_command(image_path, output_dir, config)
+        cmd = self._build_command(image_path, output_dir, config, workflow=workflow)
+        popen_env = os.environ.copy()
+        if config.subprocess_env:
+            popen_env.update(config.subprocess_env)
 
         logger.debug("audiveris_start", cmd=cmd)
         start = time.monotonic()
@@ -64,6 +70,7 @@ class AudiverisRunner:
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True,
+            env=popen_env,
         ) as proc:
             try:
                 stdout, stderr = proc.communicate(timeout=config.timeout_seconds)
@@ -96,9 +103,19 @@ class AudiverisRunner:
         image_path: Path,
         output_dir: Path,
         config: OmrConfigData,
+        *,
+        workflow: str,
     ) -> list[str]:
         """実行コマンドをリスト形式で構築する。"""
         cmd: list[str]
+        workflow_args: list[str]
+
+        if workflow == "transcribe-export":
+            workflow_args = ["-transcribe", "-export"]
+        elif workflow == "chords-save":
+            workflow_args = ["-step", "CHORDS", "-save"]
+        else:
+            raise ValueError(f"Unsupported OMR workflow: {workflow}")
 
         # MSI 配布版は app/audiveris.jar + 依存JAR群の classpath 起動が必要。
         if (
@@ -117,8 +134,7 @@ class AudiverisRunner:
                 "-Xms512m",
                 "Audiveris",
                 "-batch",
-                "-transcribe",
-                "-export",
+                *workflow_args,
             ]
         else:
             cmd = [
@@ -126,8 +142,7 @@ class AudiverisRunner:
                 "-jar",
                 str(config.jar_path),
                 "-batch",
-                "-transcribe",
-                "-export",
+                *workflow_args,
             ]
 
         # デフォルトオプション + 設定ファイル追加オプションを付加

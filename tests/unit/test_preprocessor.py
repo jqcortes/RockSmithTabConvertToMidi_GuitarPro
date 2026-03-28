@@ -303,10 +303,11 @@ class TestPreprocessorDeskew:
     def test_preprocess_uses_custom_deskew_threshold(self, gray_png: Path, output_dir: Path) -> None:
         from pipeline.ingest.preprocessor import preprocess
 
-        mock_lines = np.array([[[0, 0, 100, 9]]], dtype=np.int32)
+        # ±3° 以内（2°）の近水平線を返させ、deskew_max_angle=1.0 で Large skew 警告が出ることを確認
+        mock_lines = np.array([[[0, 100, 200, 107]]], dtype=np.int32)  # ~2.0°
 
         with patch("pipeline.ingest.preprocessor.cv2.HoughLinesP", return_value=mock_lines):
-            result = preprocess(gray_png, output_dir=output_dir, deskew_max_angle=3.0)
+            result = preprocess(gray_png, output_dir=output_dir, deskew_max_angle=1.0)
 
         assert any("Large skew angle detected" in warning for warning in result.warnings)
 
@@ -329,9 +330,10 @@ class TestPreprocessorDeskew:
     def test_large_skew_adds_warning(
         self, gray_png: Path, output_dir: Path
     ) -> None:
-        """HoughLinesP が 20° の傾きを返した場合 warnings に skew メッセージが追加されること"""
+        """HoughLinesP が ±3° 以内に線なしを返した場合 no-horizontal-lines 警告が追加されること"""
         from pipeline.ingest.preprocessor import preprocess
 
+        # 20° の線は ±3° フィルタで除外されるため近水平線ゼロ → スキップ警告
         def mock_hough(
             image: object,
             rho: object,
@@ -339,7 +341,7 @@ class TestPreprocessorDeskew:
             threshold: object,
             **kwargs: object,
         ) -> object:
-            angle_rad = math.radians(20.0)  # 20° > 10°
+            angle_rad = math.radians(20.0)  # 20° > 3°, フィルタアウトされる
             x1, y1 = 10, 100
             x2 = x1 + int(180 * math.cos(angle_rad))
             y2 = y1 + int(180 * math.sin(angle_rad))
@@ -351,7 +353,7 @@ class TestPreprocessorDeskew:
         ):
             result = preprocess(gray_png, output_dir=output_dir)
 
-        skew_warnings = [w for w in result.warnings if "skew" in w.lower()]
+        skew_warnings = [w for w in result.warnings if "horizontal" in w.lower() or "skew" in w.lower()]
         assert len(skew_warnings) >= 1
 
     def test_skew_angle_abs_less_than_90(

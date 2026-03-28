@@ -1,0 +1,7 @@
+2026-03-27 17:58:36,377 INFO [CRASH_COMPLEXION_p001]                 Book.java:560  | 1 sheet in C:\Users\ken\RockSmithTabConvertToMidi\tmp\experiment\preprocess\CRASH_COMPLEXION_p001.png
+2026-03-27 17:58:36,627 INFO []                 Book.java:2565 | Stored /book.xml
+2026-03-27 17:58:36,627 INFO []                 Book.java:2525 | Book stored as tmp\experiment\omr\CRASH_COMPLEXION_p001.omr
+2026-03-27 17:58:36,640 INFO []                 Book.java:1929 | Book reaching PAGE on sheets:[#1]
+2026-03-27 17:58:36,644 INFO [CRASH_COMPLEXION_p001]       StepMonitoring.java:98   | LOAD
+2026-03-27 17:58:36,846 INFO [CRASH_COMPLEXION_p001]            SheetStub.java:1278 | Loaded image #1 2480x3375 from C:\Users\ken\RockSmithTabConvertToMidi\tmp\experiment\preprocess\CRASH_COMPLEXION_p001.png
+2026-03-27 17:58:36,857 INFO [CRASH_COMPLEXION_p001]       StepMonitoring.java:98   | BINARY

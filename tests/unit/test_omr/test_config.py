@@ -199,6 +199,56 @@ class TestOmrConfigExtraOptions:
         assert result.extra_options == {}
 
 
+class TestOmrConfigOcrEnvironment:
+    """OCR 言語設定と TESSDATA_PREFIX 解決のテスト。"""
+
+    def test_resolves_tessdata_prefix_when_traineddata_exists(self, tmp_path: Path) -> None:
+        from pipeline.omr.config import OmrConfig
+
+        app_dir = tmp_path / "app"
+        app_dir.mkdir()
+        jar = app_dir / "audiveris.jar"
+        jar.touch()
+
+        tessdata = tmp_path / "tessdata"
+        tessdata.mkdir()
+        (tessdata / "eng.traineddata").touch()
+
+        props = tmp_path / "audiveris.properties"
+        props.write_text(
+            "\n".join(
+                [
+                    "[DEFAULT]",
+                    f"audiveris.jar = {jar}",
+                    "audiveris.option.org.audiveris.omr.text.tesseract.TesseractOCR.language = eng",
+                ]
+            ),
+            encoding="utf-8",
+        )
+
+        env = {k: v for k, v in __import__("os").environ.items() if k not in ("AUDIVERIS_JAR", "AUDIVERIS_TIMEOUT")}
+        with patch.dict("os.environ", env, clear=True):
+            result = OmrConfig.load(properties_path=props)
+
+        assert result.ocr_language == "eng"
+        assert result.subprocess_env is not None
+        assert result.subprocess_env.get("TESSDATA_PREFIX") == str(tessdata)
+
+    def test_subprocess_env_none_when_traineddata_missing(self, tmp_path: Path) -> None:
+        from pipeline.omr.config import OmrConfig
+
+        jar = tmp_path / "audiveris.jar"
+        jar.touch()
+        props = tmp_path / "audiveris.properties"
+        props.write_text(f"[DEFAULT]\naudiveris.jar = {jar}\n", encoding="utf-8")
+
+        env = {k: v for k, v in __import__("os").environ.items() if k not in ("AUDIVERIS_JAR", "AUDIVERIS_TIMEOUT")}
+        with patch.dict("os.environ", env, clear=True):
+            result = OmrConfig.load(properties_path=props)
+
+        assert result.subprocess_env is None
+
+
 class TestOmrConfigDataImmutability:
     """OmrConfigData は frozen dataclass（不変）であること"""
 

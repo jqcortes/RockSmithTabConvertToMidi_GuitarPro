@@ -1,0 +1,30 @@
+{
+  "input_file": "CRASH_COMPLEXION_p001_transformed.xml",
+  "output_midi": "CRASH_COMPLEXION_p001_transformed.mid",
+  "timestamp": "2026-03-28T01:20:37.691038Z",
+  "overall_score": 0.74,
+  "judgment": "REVIEW",
+  "metrics": {
+    "omr_confidence": 0.585,
+    "measure_completeness": 0.688,
+    "pitch_range_validity": 1.0,
+    "part_detection_rate": 1.0
+  },
+  "warnings": [
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 1",
+      "detail": "Expected 4.0 beats, found 2.5"
+    },
+    {
+      "type": "MEASURE_INCOMPLETE",
+      "location": "Part: Voice, Measure: 2",
+      "detail": "Expected 4.0 beats, found 3.0"
+    }
+  ],
+  "stats": {
+    "total_measures": 2,
+    "total_notes": 12,
+    "processing_time_seconds": 0.033
+  }
+}

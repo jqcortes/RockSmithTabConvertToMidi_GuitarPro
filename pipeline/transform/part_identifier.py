@@ -37,8 +37,18 @@ class PartIdentifier:
     """Infer MusicXML logical part roles and annotate XML."""
 
     @staticmethod
-    def identify(tree: etree._ElementTree) -> PartIdentifierResult:
-        """Inspect part-list and part content to infer roles."""
+    def identify(
+        tree: etree._ElementTree,
+        *,
+        default_role: PartRole = "other",
+    ) -> PartIdentifierResult:
+        """Inspect part-list and part content to infer roles.
+
+        Args:
+            tree: lxml ElementTree of the MusicXML document.
+            default_role: Fallback role when no identifier clue is found.
+                          Defaults to ``"other"``.
+        """
         part_meta = PartIdentifier._part_metadata(tree)
         resolved_parts: list[PartInfo] = []
         parts_map: dict[str, PartRole] = {}
@@ -50,7 +60,7 @@ class PartIdentifier:
             part_name = str(meta.get("part_name", "")).strip() or part_id
             instrument_name = str(meta.get("instrument_name", "")).strip()
             tab_staff_id = PartIdentifier._detect_tab_staff(part)
-            role = PartIdentifier._infer_role(part_name, instrument_name, part, tab_staff_id)
+            role = PartIdentifier._infer_role(part_name, instrument_name, part, tab_staff_id, default_role=default_role)
             if role == "other":
                 warnings.append(part_name)
             info = PartInfo(
@@ -118,6 +128,8 @@ class PartIdentifier:
         instrument_name: str,
         part: Any,
         tab_staff_id: str | None,
+        *,
+        default_role: PartRole = "other",
     ) -> PartRole:
         """Infer part role from metadata and clef/tab evidence."""
         combined = f"{part_name} {instrument_name}".lower()
@@ -133,7 +145,7 @@ class PartIdentifier:
             return "bass"
         if "drum" in combined or "perc" in combined or "percussion" in clef_signs:
             return "drums"
-        return "other"
+        return default_role
 
     @staticmethod
     def _string_value(value: Any) -> str:
