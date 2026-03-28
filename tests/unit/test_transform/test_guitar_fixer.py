@@ -148,6 +148,61 @@ class TestGuitarFixerApply:
         assert bend == "1"
         assert step == "D"
 
+    def test_apply_uses_ocr_tokens_when_tab_note_is_missing_technical_data(self) -> None:
+        from pipeline.transform.guitar_fixer import GuitarFixer
+        from pipeline.transform.tab_ocr import TabOcrToken
+
+        tree = _parse_xml(
+            """
+<score-partwise version="4.0">
+  <part-list>
+    <score-part id="P1"><part-name>Lead Guitar</part-name></score-part>
+  </part-list>
+  <part id="P1">
+    <measure number="1">
+      <attributes>
+        <staves>2</staves>
+        <staff-details number="2"><staff-lines>6</staff-lines></staff-details>
+        <clef number="2"><sign>TAB</sign><line>5</line></clef>
+      </attributes>
+      <note>
+        <pitch><step>C</step><octave>4</octave></pitch>
+        <duration>2</duration>
+        <voice>1</voice>
+        <type>half</type>
+        <staff>1</staff>
+      </note>
+      <note>
+        <duration>2</duration>
+        <voice>1</voice>
+        <type>half</type>
+        <staff>2</staff>
+      </note>
+    </measure>
+  </part>
+</score-partwise>
+""".strip()
+        )
+
+        result = GuitarFixer.apply(
+            tree,
+            ocr_tokens=[
+                TabOcrToken(staff_group=0, string=1, fret=3, x=120, y=40, confidence=95.0)
+            ],
+        )
+
+        step = result.tree.xpath("string(//*[local-name()='note'][*[local-name()='staff']='1']/*[local-name()='pitch']/*[local-name()='step'])")
+        octave = result.tree.xpath("string(//*[local-name()='note'][*[local-name()='staff']='1']/*[local-name()='pitch']/*[local-name()='octave'])")
+        tab_string = result.tree.xpath("string(//*[local-name()='note'][*[local-name()='staff']='2']//*[local-name()='string'])")
+        tab_fret = result.tree.xpath("string(//*[local-name()='note'][*[local-name()='staff']='2']//*[local-name()='fret'])")
+
+        assert result.applied == 1
+        assert result.ocr_applied == 1
+        assert step == "G"
+        assert octave == "4"
+        assert tab_string == "1"
+        assert tab_fret == "3"
+
 
 class TestGuitarFixerHelpers:
     def test_fret_to_pitch_uses_standard_and_custom_tuning(self) -> None:
@@ -172,3 +227,34 @@ tunings:
         assert GuitarFixer.load_tuning("drop_d", config_path) == [38, 45, 50, 55, 59, 64]
         assert GuitarFixer.load_tuning("missing", config_path) == STANDARD_TUNING
         assert GuitarFixer.load_tuning("drop_d", tmp_path / "missing.yaml") == STANDARD_TUNING
+
+    def test_build_ocr_override_map_skips_when_note_count_differs(self) -> None:
+        from pipeline.transform.guitar_fixer import GuitarFixer
+        from pipeline.transform.tab_ocr import TabOcrToken
+
+        tree = _parse_xml(
+            """
+<score-partwise version="4.0">
+  <part-list>
+    <score-part id="P1"><part-name>Lead Guitar</part-name></score-part>
+  </part-list>
+  <part id="P1">
+    <measure number="1">
+      <attributes>
+        <staves>2</staves>
+        <staff-details number="2"><staff-lines>6</staff-lines></staff-details>
+      </attributes>
+      <note><duration>1</duration><voice>1</voice><staff>2</staff></note>
+      <note><duration>1</duration><voice>1</voice><staff>2</staff></note>
+    </measure>
+  </part>
+</score-partwise>
+""".strip()
+        )
+
+        override_map = GuitarFixer._build_ocr_override_map(
+            tree,
+            [TabOcrToken(staff_group=0, string=1, fret=3, x=10, y=10, confidence=90.0)],
+        )
+
+        assert override_map == {}

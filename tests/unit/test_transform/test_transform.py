@@ -64,10 +64,13 @@ class TestTransformCacheMiss:
         tmp_path: Path,
     ) -> None:
         from pipeline.transform._transform import transform
+        from pipeline.transform.tab_ocr import TabOcrResult, TabOcrToken
 
         musicxml_path = _write_input_xml(tmp_path / "score.xml")
         output_dir = tmp_path / "out"
         output_dir.mkdir()
+        image_path = tmp_path / "page.png"
+        image_path.write_bytes(b"png")
         tree = _parse_tree(
             """
 <score-partwise version="4.0">
@@ -126,29 +129,51 @@ class TestTransformCacheMiss:
                 return_value=(True, ["tab_staff_missing"]),
             ) as gate_mock:
                 with patch(
-                    "pipeline.transform._transform.GuitarFixer.apply",
-                    return_value=fixer_result,
-                ) as fixer_mock:
+                    "pipeline.transform._transform.TabOcrScanner.extract_tokens",
+                    return_value=TabOcrResult(
+                        tokens=[
+                            TabOcrToken(
+                                staff_group=0,
+                                string=1,
+                                fret=3,
+                                x=100,
+                                y=30,
+                                confidence=95.0,
+                            )
+                        ],
+                        warnings=[],
+                        tesseract_path=tmp_path / "tesseract.exe",
+                    ),
+                ) as ocr_mock:
                     with patch(
-                        "pipeline.transform._transform.PartIdentifier.identify",
-                        return_value=part_result,
-                    ) as identify_mock:
+                        "pipeline.transform._transform.GuitarFixer.apply",
+                        return_value=fixer_result,
+                    ) as fixer_mock:
                         with patch(
-                            "pipeline.transform._transform.PartIdentifier.annotate",
-                            return_value=tree,
-                        ) as annotate_mock:
+                            "pipeline.transform._transform.PartIdentifier.identify",
+                            return_value=part_result,
+                        ) as identify_mock:
                             with patch(
-                                "pipeline.transform._transform.ConfidenceFilter.filter",
-                                return_value=filter_result,
-                            ) as filter_mock:
-                                result = transform(musicxml_path, output_dir)
+                                "pipeline.transform._transform.PartIdentifier.annotate",
+                                return_value=tree,
+                            ) as annotate_mock:
+                                with patch(
+                                    "pipeline.transform._transform.ConfidenceFilter.filter",
+                                    return_value=filter_result,
+                                ) as filter_mock:
+                                    result = transform(
+                                        musicxml_path,
+                                        output_dir,
+                                        preprocessed_image_path=image_path,
+                                    )
 
         output_path = output_dir / "score_transformed.xml"
         assert output_path.exists()
         assert "score-partwise" in output_path.read_text(encoding="utf-8")
         validate_mock.assert_called_once_with(musicxml_path)
         gate_mock.assert_called_once_with(validation_result)
-        fixer_mock.assert_called_once()
+        ocr_mock.assert_called_once_with(image_path, tesseract_path=None)
+        fixer_mock.assert_called_once_with(tree, tuning=None, ocr_tokens=ocr_mock.return_value.tokens)
         identify_mock.assert_called_once()
         annotate_mock.assert_called_once()
         filter_mock.assert_called_once()
@@ -164,6 +189,9 @@ class TestTransformCacheMiss:
         assert result.metrics["staff_count"] == 2
         assert result.metrics["fixer_applied"] == 2
         assert result.metrics["fixer_skipped"] == 1
+        assert result.metrics["tab_ocr_tokens"] == 1
+        assert result.metrics["tab_ocr_applied"] == 0
+        assert result.metrics["tab_ocr_skipped"] == 0
         assert result.metrics["filtered_notes"] == 1
         assert result.metrics["filter_rate"] == 0.25
         assert result.metrics["identified_parts"] == 1
@@ -242,9 +270,86 @@ class TestTransformCacheMiss:
         assert result.metrics["fallback_reasons"] == []
         assert result.metrics["fixer_applied"] == 0
         assert result.metrics["fixer_skipped"] == 0
+        assert result.metrics["tab_ocr_tokens"] == 0
+        assert result.metrics["tab_ocr_applied"] == 0
+        assert result.metrics["tab_ocr_skipped"] == 0
         assert result.metrics["filtered_notes"] == 0
         assert result.metrics["filter_rate"] == 0.0
         assert result.metrics["parts"] == {"P1": "guitar"}
+
+    def test_transform_includes_tab_ocr_warning_when_tesseract_is_unavailable(
+        self,
+        tmp_path: Path,
+    ) -> None:
+        from pipeline.transform._transform import transform
+        from pipeline.transform.tab_ocr import TabOcrResult
+
+        musicxml_path = _write_input_xml(tmp_path / "score.xml")
+        output_dir = tmp_path / "out"
+        output_dir.mkdir()
+        image_path = tmp_path / "page.png"
+        image_path.write_bytes(b"png")
+        tree = _parse_tree(
+            """
+<score-partwise version="4.0">
+  <part-list>
+    <score-part id="P1"><part-name>Lead Guitar</part-name></score-part>
+  </part-list>
+  <part id="P1"><measure number="1" /></part>
+</score-partwise>
+""".strip()
+        )
+        validation_result = ValidationResult(
+            tree=tree,
+            part_count=1,
+            measure_count=1,
+            staff_count=1,
+        )
+        part_result = PartIdentifierResult(
+            parts=[PartInfo(part_id="P1", part_name="Lead Guitar", role="guitar", tab_staff_id=None)],
+            parts_map={"P1": "guitar"},
+            warnings=[],
+        )
+
+        with patch(
+            "pipeline.transform._transform.MusicXmlValidator.validate",
+            return_value=validation_result,
+        ):
+            with patch(
+                "pipeline.transform._transform._evaluate_quality_gate",
+                return_value=(True, ["pitch_tab_conflict"]),
+            ):
+                with patch(
+                    "pipeline.transform._transform.TabOcrScanner.extract_tokens",
+                    return_value=TabOcrResult(
+                        tokens=[],
+                        warnings=["TAB OCR skipped: tesseract executable not found"],
+                        tesseract_path=None,
+                    ),
+                ):
+                    with patch(
+                        "pipeline.transform._transform.GuitarFixer.apply",
+                        return_value=FixerResult(tree=tree, applied=0, skipped=0),
+                    ):
+                        with patch(
+                            "pipeline.transform._transform.PartIdentifier.identify",
+                            return_value=part_result,
+                        ):
+                            with patch(
+                                "pipeline.transform._transform.PartIdentifier.annotate",
+                                return_value=tree,
+                            ):
+                                with patch(
+                                    "pipeline.transform._transform.ConfidenceFilter.filter",
+                                    return_value=FilterResult(tree=tree, removed=[], total=0),
+                                ):
+                                    result = transform(
+                                        musicxml_path,
+                                        output_dir,
+                                        preprocessed_image_path=image_path,
+                                    )
+
+        assert "TAB OCR skipped: tesseract executable not found" in result.warnings
 
     def test_transform_propagates_transform_errors(self, tmp_path: Path) -> None:
         from pipeline.transform._transform import transform

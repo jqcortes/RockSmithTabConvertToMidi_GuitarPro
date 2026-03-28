@@ -11,8 +11,9 @@ from lxml import etree
 from pipeline.common import MetricValue, StepResult, get_logger
 from pipeline.transform.confidence_filter import ConfidenceFilter, RemovedNote
 from pipeline.transform.errors import TransformError
-from pipeline.transform.guitar_fixer import GuitarFixer, STANDARD_TUNING
-from pipeline.transform.part_identifier import PartIdentifier
+from pipeline.transform.guitar_fixer import STANDARD_TUNING, GuitarFixer
+from pipeline.transform.part_identifier import PartIdentifier, PartRole
+from pipeline.transform.tab_ocr import TabOcrScanner
 from pipeline.transform.validator import MusicXmlValidator, ValidationResult
 
 GateResult: TypeAlias = tuple[bool, list[str]]
@@ -23,12 +24,17 @@ def transform(
     output_dir: Path,
     *,
     tuning: list[int] | None = None,
+    default_role: PartRole = "other",
+    preprocessed_image_path: Path | None = None,
+    tesseract_path: Path | None = None,
 ) -> StepResult:
     """Transform validated MusicXML into corrected cached output.
 
     Args:
         musicxml_path: OMR ドメインが出力した MusicXML / MXL パス。
         output_dir: 補正済み MusicXML の書き出し先ディレクトリ。
+        default_role: 楽器名が判別不能なパートに割り当てる役割。
+                      ``"guitar"`` を指定すると未識別パート全てをギターとして処理する。
 
     Returns:
         success=True の StepResult。キャッシュヒット時は変換をスキップする。
@@ -65,16 +71,32 @@ def transform(
         working_tree = validation_result.tree
         fixer_applied = 0
         fixer_skipped = 0
+        ocr_applied = 0
+        ocr_skipped = 0
+        tab_ocr_tokens = 0
         filtered_notes = 0
         filter_rate = 0.0
+        extra_warnings: list[str] = []
 
         if fallback_required:
-            fixer_result = GuitarFixer.apply(working_tree, tuning=tuning)
+            ocr_tokens = []
+            if preprocessed_image_path is not None:
+                ocr_result = TabOcrScanner.extract_tokens(
+                    preprocessed_image_path,
+                    tesseract_path=tesseract_path,
+                )
+                ocr_tokens = ocr_result.tokens
+                tab_ocr_tokens = len(ocr_result.tokens)
+                extra_warnings.extend(ocr_result.warnings)
+
+            fixer_result = GuitarFixer.apply(working_tree, tuning=tuning, ocr_tokens=ocr_tokens)
             working_tree = fixer_result.tree
             fixer_applied = fixer_result.applied
             fixer_skipped = fixer_result.skipped
+            ocr_applied = fixer_result.ocr_applied
+            ocr_skipped = fixer_result.ocr_skipped
 
-        part_result = PartIdentifier.identify(working_tree)
+        part_result = PartIdentifier.identify(working_tree, default_role=default_role)
         annotated_tree = PartIdentifier.annotate(working_tree, part_result)
 
         removed_notes: list[RemovedNote] = []
@@ -97,6 +119,7 @@ def transform(
         warnings = [
             *part_result.warnings,
             *[_removed_note_warning(note) for note in removed_notes],
+            *extra_warnings,
         ]
         metrics: dict[str, MetricValue] = {
             "cached": False,
@@ -109,6 +132,9 @@ def transform(
             "staff_count": validation_result.staff_count,
             "fixer_applied": fixer_applied,
             "fixer_skipped": fixer_skipped,
+            "tab_ocr_tokens": tab_ocr_tokens,
+            "tab_ocr_applied": ocr_applied,
+            "tab_ocr_skipped": ocr_skipped,
             "filtered_notes": filtered_notes,
             "filter_rate": filter_rate,
             "identified_parts": len(part_result.parts),
@@ -122,6 +148,8 @@ def transform(
             fallback_required=fallback_required,
             fallback_reasons=fallback_reasons,
             fixer_applied=fixer_applied,
+            tab_ocr_tokens=tab_ocr_tokens,
+            tab_ocr_applied=ocr_applied,
             filtered_notes=filtered_notes,
         )
         return StepResult.ok(

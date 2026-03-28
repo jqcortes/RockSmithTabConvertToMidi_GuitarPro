@@ -220,6 +220,141 @@ def test_main_convert_supports_multi_page_inputs(monkeypatch, tmp_path: Path) ->
     assert len(report["pages"]) == 2
 
 
+def test_main_convert_pages_option_filters_multi_page_inputs(monkeypatch, tmp_path: Path) -> None:
+    from pipeline import __main__ as cli
+
+    input_path = tmp_path / "score.pdf"
+    input_path.write_bytes(b"%PDF")
+    output_path = tmp_path / "song.mid"
+
+    source_pages = [
+        tmp_path / "score_p001.png",
+        tmp_path / "score_p002.png",
+        tmp_path / "score_p003.png",
+    ]
+    preprocessed_pages = [
+        tmp_path / "pre_001.png",
+        tmp_path / "pre_002.png",
+        tmp_path / "pre_003.png",
+    ]
+    musicxml_pages = [
+        tmp_path / "page_001.xml",
+        tmp_path / "page_002.xml",
+        tmp_path / "page_003.xml",
+    ]
+    transformed_pages = [
+        tmp_path / "page_001_transformed.xml",
+        tmp_path / "page_002_transformed.xml",
+        tmp_path / "page_003_transformed.xml",
+    ]
+    rendered_pages = [
+        tmp_path / "page_001.mid",
+        tmp_path / "page_002.mid",
+        tmp_path / "page_003.mid",
+    ]
+
+    for page in source_pages + preprocessed_pages:
+        page.write_bytes(b"png")
+    for page in musicxml_pages + transformed_pages:
+        page.write_text("<score-partwise version=\"4.0\"><part-list/></score-partwise>", encoding="utf-8")
+
+    _write_test_midi(rendered_pages[0], 60)
+    _write_test_midi(rendered_pages[1], 64)
+    _write_test_midi(rendered_pages[2], 67)
+
+    processed_images: list[Path] = []
+    transcribed_images: list[Path] = []
+
+    monkeypatch.setattr(cli, "load", lambda *_args, **_kwargs: StepResult.ok(source_pages))
+
+    def fake_preprocess(image_path: Path, *_args: object, **_kwargs: object) -> StepResult:
+        processed_images.append(image_path)
+        return StepResult.ok(preprocessed_pages[source_pages.index(image_path)])
+
+    monkeypatch.setattr(cli, "preprocess", fake_preprocess)
+    monkeypatch.setattr(cli, "validate", lambda image_path, *_args, **_kwargs: StepResult.ok(image_path))
+
+    def fake_transcribe(image_path: Path, *_args: object, **_kwargs: object) -> StepResult:
+        transcribed_images.append(image_path)
+        return StepResult.ok(musicxml_pages[preprocessed_pages.index(image_path)])
+
+    monkeypatch.setattr(cli, "transcribe", fake_transcribe)
+    monkeypatch.setattr(
+        cli,
+        "transform",
+        lambda musicxml_path, *_args, **_kwargs: StepResult.ok(
+            transformed_pages[musicxml_pages.index(musicxml_path)]
+        ),
+    )
+    monkeypatch.setattr(
+        cli,
+        "render",
+        lambda transformed_path, *_args, **_kwargs: StepResult.ok(
+            rendered_pages[transformed_pages.index(transformed_path)]
+        ),
+    )
+    monkeypatch.setattr(
+        cli,
+        "score",
+        lambda *_args, **_kwargs: StepResult.ok(
+            tmp_path / "quality_report.json",
+            metrics={
+                "judgment": "PASS",
+                "overall_score": 0.9,
+                "omr_confidence": 0.9,
+                "measure_completeness": 0.9,
+                "pitch_range_validity": 0.9,
+                "part_detection_rate": 1.0,
+                "total_measures": 4,
+                "total_notes": 16,
+            },
+        ),
+    )
+
+    exit_code = cli.main(
+        [
+            "convert",
+            "--input",
+            str(input_path),
+            "--output",
+            str(output_path),
+            "--pages",
+            "2-3",
+        ]
+    )
+
+    assert exit_code == 0
+    assert processed_images == [source_pages[1], source_pages[2]]
+    assert transcribed_images == [preprocessed_pages[1], preprocessed_pages[2]]
+
+
+def test_main_convert_pages_option_rejects_out_of_range(monkeypatch, tmp_path: Path) -> None:
+    from pipeline import __main__ as cli
+
+    input_path = tmp_path / "score.pdf"
+    input_path.write_bytes(b"%PDF")
+    output_path = tmp_path / "song.mid"
+    source_pages = [tmp_path / "score_p001.png", tmp_path / "score_p002.png"]
+    for page in source_pages:
+        page.write_bytes(b"png")
+
+    monkeypatch.setattr(cli, "load", lambda *_args, **_kwargs: StepResult.ok(source_pages))
+
+    exit_code = cli.main(
+        [
+            "convert",
+            "--input",
+            str(input_path),
+            "--output",
+            str(output_path),
+            "--pages",
+            "9-11",
+        ]
+    )
+
+    assert exit_code == 3
+
+
 def test_main_convert_dry_run_stops_before_render_and_score(monkeypatch, tmp_path: Path) -> None:
     from pipeline import __main__ as cli
     from pipeline.cli_config import CliPipelineConfig, QualityThresholds
@@ -383,8 +518,9 @@ def test_main_convert_passes_properties_path_and_tuning_to_downstream_steps(monk
     monkeypatch.setattr(cli, "transcribe", fake_transcribe)
     monkeypatch.setattr(cli, "_load_tuning", lambda *_args, **_kwargs: custom_tuning)
 
-    def fake_transform(musicxml_path: Path, output_dir: Path, *, tuning: list[int] | None = None) -> StepResult:
+    def fake_transform(musicxml_path: Path, output_dir: Path, *, tuning: list[int] | None = None, **_kwargs: object) -> StepResult:
         calls["tuning"] = tuning
+        calls["preprocessed_image_path"] = _kwargs.get("preprocessed_image_path")
         return StepResult.ok(tmp_path / "score_transformed.xml")
 
     monkeypatch.setattr(cli, "transform", fake_transform)
@@ -424,9 +560,58 @@ def test_main_convert_passes_properties_path_and_tuning_to_downstream_steps(monk
     assert calls["target_dpi"] == 240
     assert calls["properties_path"] == custom_properties
     assert calls["tuning"] == custom_tuning
+    assert calls["preprocessed_image_path"] == tmp_path / "pre.png"
     assert calls["minimum_dpi"] == 180.0
     assert calls["recommended_dpi"] == 240.0
     assert calls["deskew_max_angle"] == 3.0
     assert calls["clahe_clip_limit"] == 1.5
     assert calls["default_bpm"] == 140
     assert calls["pitch_bend_range"] == 4
+
+
+def test_main_convert_default_role_guitar_passed_to_transform(monkeypatch, tmp_path: Path) -> None:
+    """--default-role guitar が transform() に default_role="guitar" として渡ることを確認する。"""
+    from pipeline import __main__ as cli
+
+    input_path = tmp_path / "score.png"
+    input_path.write_bytes(b"png")
+    output_path = tmp_path / "song.mid"
+    rendered = tmp_path / "rendered.mid"
+    rendered.write_bytes(b"MThd")
+
+    transform_calls: list[dict[str, object]] = []
+
+    def fake_transform(musicxml_path: object, output_dir: object, **kwargs: object) -> StepResult:
+        transform_calls.append({"kwargs": kwargs})
+        return StepResult.ok(tmp_path / "transformed.xml")
+
+    monkeypatch.setattr(cli, "load", lambda *_a, **_k: StepResult.ok([input_path]))
+    monkeypatch.setattr(cli, "preprocess", lambda *_a, **_k: StepResult.ok(tmp_path / "pre.png"))
+    monkeypatch.setattr(cli, "validate", lambda image_path, *_a, **_k: StepResult.ok(image_path))
+    monkeypatch.setattr(cli, "transcribe", lambda *_a, **_k: StepResult.ok(tmp_path / "score.xml"))
+    monkeypatch.setattr(cli, "transform", fake_transform)
+    monkeypatch.setattr(cli, "render", lambda *_a, **_k: StepResult.ok(rendered))
+    monkeypatch.setattr(
+        cli,
+        "score",
+        lambda *_a, **_k: StepResult.ok(
+            tmp_path / "quality_report.json",
+            metrics={"judgment": "PASS", "overall_score": 0.9},
+        ),
+    )
+
+    exit_code = cli.main(
+        [
+            "convert",
+            "--input",
+            str(input_path),
+            "--output",
+            str(output_path),
+            "--default-role",
+            "guitar",
+        ]
+    )
+
+    assert exit_code == 0
+    assert len(transform_calls) == 1
+    assert transform_calls[0]["kwargs"].get("default_role") == "guitar"

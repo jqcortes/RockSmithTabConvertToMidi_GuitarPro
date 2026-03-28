@@ -18,11 +18,13 @@ class TestTransformErrorHierarchy:
             TransformError,
             TransformGuitarFixerError,
             TransformPartError,
+            TransformTabOcrError,
             TransformValidationError,
         )
 
         assert issubclass(TransformValidationError, TransformError)
         assert issubclass(TransformGuitarFixerError, TransformError)
+        assert issubclass(TransformTabOcrError, TransformError)
         assert issubclass(TransformPartError, TransformError)
 
 
@@ -35,6 +37,7 @@ class TestTransformErrorBehavior:
             ("TransformError", "transform failed"),
             ("TransformValidationError", "invalid musicxml"),
             ("TransformGuitarFixerError", "guitar fixer failed"),
+            ("TransformTabOcrError", "tab ocr failed"),
             ("TransformPartError", "part identification failed"),
         ],
     )
@@ -56,6 +59,7 @@ class TestTransformErrorBehavior:
             ("TransformError", "transform failed"),
             ("TransformValidationError", "invalid musicxml"),
             ("TransformGuitarFixerError", "guitar fixer failed"),
+            ("TransformTabOcrError", "tab ocr failed"),
             ("TransformPartError", "part identification failed"),
         ],
     )

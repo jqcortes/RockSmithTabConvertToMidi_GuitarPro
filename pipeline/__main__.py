@@ -5,14 +5,20 @@ from __future__ import annotations
 import argparse
 import json
 import shutil
+from collections.abc import Sequence
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
-from typing import Sequence
 
 from mido import MetaMessage, MidiFile, MidiTrack
 
-from pipeline.cli_config import CliPipelineConfig, MidiSettings, PreprocessSettings, QualityThresholds, load_pipeline_config
+from pipeline.cli_config import (
+    CliPipelineConfig,
+    MidiSettings,
+    PreprocessSettings,
+    QualityThresholds,
+    load_pipeline_config,
+)
 from pipeline.common import IngestError, PipelineError, get_logger
 from pipeline.ingest.image_loader import load
 from pipeline.ingest.preprocessor import preprocess
@@ -21,6 +27,7 @@ from pipeline.omr import transcribe
 from pipeline.omr.errors import OmrError
 from pipeline.quality import score
 from pipeline.render import render
+from pipeline.render.repeat_expander import RepeatExpansionContext
 from pipeline.transform import transform
 from pipeline.transform.guitar_fixer import GuitarFixer
 
@@ -47,11 +54,13 @@ def main(argv: Sequence[str] | None = None) -> int:
                 args.input,
                 args.output,
                 args.cache_dir,
+                args.pages,
                 args.config,
                 args.tuning,
                 args.quality_threshold,
                 args.report,
                 args.dry_run,
+                args.default_role,
             )
         if args.command == "quality":
             return _run_quality(args.musicxml, args.midi, args.output_dir)
@@ -79,8 +88,21 @@ def _build_parser() -> argparse.ArgumentParser:
     convert_parser.add_argument("--tuning", type=str, default="standard")
     convert_parser.add_argument("--quality-threshold", type=float, default=None)
     convert_parser.add_argument("--cache-dir", type=Path, default=Path(".cache"))
+    convert_parser.add_argument(
+        "--pages",
+        type=str,
+        default=None,
+        help="処理対象ページ (例: 2,5,9-11)。未指定時は全ページ。",
+    )
     convert_parser.add_argument("--report", type=Path, default=None)
     convert_parser.add_argument("--dry-run", action="store_true")
+    convert_parser.add_argument(
+        "--default-role",
+        type=str,
+        default="other",
+        choices=["guitar", "bass", "drums", "other"],
+        help="楽器名が判別不能なパートのデフォルト役割 (guitar/bass/drums/other)。",
+    )
 
     quality_parser = subparsers.add_parser("quality")
     quality_parser.add_argument("--musicxml", type=Path, required=True)
@@ -93,11 +115,13 @@ def _run_convert(
     input_path: Path,
     output_path: Path,
     cache_dir: Path,
+    pages: str | None,
     config_path: Path,
     tuning_name: str,
     quality_threshold: float | None,
     report_path: Path | None,
     dry_run: bool,
+    default_role: str = "other",
 ) -> int:
     cli_config = load_pipeline_config(config_path)
     tuning = _load_tuning(tuning_name)
@@ -110,12 +134,16 @@ def _run_convert(
         target_dpi=cli_config.preprocessing.target_dpi,
     )
     source_images = _path_list(ingest_result.output_path)
+    selected_pages = _parse_page_selection(pages)
+    page_candidates = _select_source_pages(source_images, selected_pages)
 
-    if len(source_images) == 1:
+    if len(page_candidates) == 1:
+        page_number, source_image = page_candidates[0]
         return _run_single_page_convert(
-            source_images[0],
+            source_image,
             output_path,
             cache_dir,
+            page_number,
             cli_config.properties_path,
             tuning,
             cli_config.preprocessing,
@@ -123,39 +151,47 @@ def _run_convert(
             thresholds,
             actual_report_path,
             dry_run,
+            default_role,
         )
 
     prepared_pages = []
-    for index, source_image in enumerate(source_images, start=1):
+    for page_number, source_image in page_candidates:
         try:
             prepared_pages.append(
                 _prepare_page(
                     source_image,
-                    page_number=index,
+                    page_number=page_number,
                     cache_dir=cache_dir,
                     properties_path=cli_config.properties_path,
                     tuning=tuning,
                     preprocessing=cli_config.preprocessing,
+                    default_role=default_role,
                 )
             )
         except PipelineError as exc:
             _LOG.warning(
                 "cli_page_skipped",
-                page=index,
+                page=page_number,
                 source=str(source_image),
                 reason=str(exc),
             )
 
     if not prepared_pages:
-        _LOG.error("cli_all_pages_failed", total=len(source_images))
+        _LOG.error("cli_all_pages_failed", total=len(page_candidates))
         return 3
 
     if dry_run:
         _LOG.info("cli_convert_dry_run_complete", page_count=len(prepared_pages))
         return 0
 
+    repeat_context = RepeatExpansionContext.empty()
     converted_pages = [
-        _render_and_score_page(prepared_page, cache_dir=cache_dir, midi_settings=cli_config.midi)
+        _render_and_score_page(
+            prepared_page,
+            cache_dir=cache_dir,
+            midi_settings=cli_config.midi,
+            repeat_context=repeat_context,
+        )
         for prepared_page in prepared_pages
     ]
     _concatenate_midis([page.midi_path for page in converted_pages], output_path)
@@ -173,6 +209,7 @@ def _run_single_page_convert(
     source_image: Path,
     output_path: Path,
     cache_dir: Path,
+    page_number: int,
     properties_path: Path,
     tuning: list[int],
     preprocessing: PreprocessSettings,
@@ -180,14 +217,16 @@ def _run_single_page_convert(
     thresholds: QualityThresholds,
     report_path: Path,
     dry_run: bool,
+    default_role: str = "other",
 ) -> int:
     prepared_page = _prepare_page(
         source_image,
-        page_number=1,
+        page_number=page_number,
         cache_dir=cache_dir,
         properties_path=properties_path,
         tuning=tuning,
         preprocessing=preprocessing,
+        default_role=default_role,
     )
 
     if dry_run:
@@ -232,6 +271,7 @@ def _prepare_page(
     properties_path: Path,
     tuning: list[int],
     preprocessing: PreprocessSettings,
+    default_role: str = "other",
 ) -> _PreparedPage:
     page_dir = cache_dir / f"page_{page_number:03d}"
 
@@ -251,7 +291,13 @@ def _prepare_page(
     omr_result = transcribe(preprocessed_image, page_dir / "omr", properties_path=properties_path)
     musicxml_path = _as_path(omr_result.output_path)
 
-    transform_result = transform(musicxml_path, page_dir / "transform", tuning=tuning)
+    transform_result = transform(
+        musicxml_path,
+        page_dir / "transform",
+        tuning=tuning,
+        default_role=default_role,
+        preprocessed_image_path=preprocessed_image,
+    )  # type: ignore[arg-type]
     transformed_path = _as_path(transform_result.output_path)
 
     return _PreparedPage(
@@ -266,6 +312,7 @@ def _render_and_score_page(
     *,
     cache_dir: Path,
     midi_settings: MidiSettings,
+    repeat_context: RepeatExpansionContext | None = None,
 ) -> _ConvertedPage:
     page_dir = cache_dir / f"page_{prepared_page.page_number:03d}"
 
@@ -274,6 +321,7 @@ def _render_and_score_page(
         page_dir / "render",
         default_bpm=midi_settings.default_tempo,
         pitch_bend_range=midi_settings.pitch_bend_range,
+        repeat_context=repeat_context,
     )
     rendered_path = _as_path(render_result.output_path)
 
@@ -307,6 +355,51 @@ def _path_list(output_path: object) -> list[Path]:
     if isinstance(output_path, Path):
         return [output_path]
     raise IngestError("Unexpected ingest output path type")
+
+
+def _parse_page_selection(pages: str | None) -> set[int] | None:
+    if pages is None or pages.strip() == "":
+        return None
+
+    selected: set[int] = set()
+    for token in pages.split(","):
+        value = token.strip()
+        if value == "":
+            continue
+        if "-" in value:
+            start_str, end_str = value.split("-", 1)
+            if not start_str.isdigit() or not end_str.isdigit():
+                raise IngestError(f"Invalid --pages range: {value}")
+            start = int(start_str)
+            end = int(end_str)
+            if start <= 0 or end <= 0 or end < start:
+                raise IngestError(f"Invalid --pages range: {value}")
+            selected.update(range(start, end + 1))
+            continue
+        if not value.isdigit() or int(value) <= 0:
+            raise IngestError(f"Invalid --pages value: {value}")
+        selected.add(int(value))
+
+    if len(selected) == 0:
+        raise IngestError("--pages did not contain any valid page number")
+    return selected
+
+
+def _select_source_pages(source_images: list[Path], selected_pages: set[int] | None) -> list[tuple[int, Path]]:
+    page_entries = list(enumerate(source_images, start=1))
+    if selected_pages is None:
+        return page_entries
+
+    selected_entries = [
+        (page_no, image_path)
+        for page_no, image_path in page_entries
+        if page_no in selected_pages
+    ]
+    if len(selected_entries) == 0:
+        max_page = len(source_images)
+        requested = sorted(selected_pages)
+        raise IngestError(f"Requested --pages {requested} are out of range (1..{max_page})")
+    return selected_entries
 
 
 def _as_path(output_path: object) -> Path:
@@ -387,7 +480,7 @@ def _write_multi_page_quality_report(
     payload = {
         "input_file": input_path.name,
         "output_midi": output_path.name,
-        "timestamp": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "timestamp": datetime.now(UTC).isoformat().replace("+00:00", "Z"),
         "page_count": page_count,
         "overall_score": round(min(overall_scores, default=0.0), 3),
         "judgment": _worst_judgment(judgments),

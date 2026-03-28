@@ -2,14 +2,16 @@
 
 from __future__ import annotations
 
+from collections.abc import Sequence
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-from lxml import etree
 import yaml
+from lxml import etree
 
 from pipeline.common import get_logger
+from pipeline.transform.tab_ocr import TabOcrToken
 
 STANDARD_TUNING: list[int] = [40, 45, 50, 55, 59, 64]
 
@@ -38,6 +40,8 @@ class FixerResult:
     tree: etree._ElementTree
     applied: int
     skipped: int
+    ocr_applied: int = 0
+    ocr_skipped: int = 0
 
 
 class GuitarFixer:
@@ -47,6 +51,7 @@ class GuitarFixer:
     def apply(
         tree: etree._ElementTree,
         tuning: list[int] | None = None,
+        ocr_tokens: Sequence[TabOcrToken] | None = None,
     ) -> FixerResult:
         """Apply TAB fret/string data to matching standard notes."""
         actual_tuning = list(tuning) if tuning is not None else list(STANDARD_TUNING)
@@ -57,6 +62,9 @@ class GuitarFixer:
 
         applied = 0
         skipped = 0
+        ocr_applied = 0
+        ocr_skipped = 0
+        ocr_override_map = GuitarFixer._build_ocr_override_map(tree, ocr_tokens or [])
 
         for part in tree.xpath("//*[local-name()='part']"):
             part_id = GuitarFixer._string_value(part.xpath("@id"))
@@ -87,8 +95,19 @@ class GuitarFixer:
                             "./*[local-name()='notations']/*[local-name()='technical']/*[local-name()='string']/text()"
                         )
                     )
+
+                    override = ocr_override_map.get(note_key)
+                    used_ocr_override = False
+                    if (not fret_text.isdigit() or not string_text.isdigit()) and override is not None:
+                        string_text = str(override[0])
+                        fret_text = str(override[1])
+                        GuitarFixer._set_tab_technical(tab_note, string_text=string_text, fret_text=fret_text)
+                        used_ocr_override = True
+
                     if not fret_text.isdigit() or not string_text.isdigit():
                         skipped += 1
+                        if override is not None:
+                            ocr_skipped += 1
                         continue
 
                     midi_pitch = GuitarFixer.fret_to_pitch(
@@ -98,9 +117,23 @@ class GuitarFixer:
                     )
                     GuitarFixer._replace_pitch(standard_note, midi_pitch)
                     applied += 1
+                    if used_ocr_override:
+                        ocr_applied += 1
 
-        _LOGGER.info("guitar_fixer_applied", applied=applied, skipped=skipped)
-        return FixerResult(tree=tree, applied=applied, skipped=skipped)
+        _LOGGER.info(
+            "guitar_fixer_applied",
+            applied=applied,
+            skipped=skipped,
+            ocr_applied=ocr_applied,
+            ocr_skipped=ocr_skipped,
+        )
+        return FixerResult(
+            tree=tree,
+            applied=applied,
+            skipped=skipped,
+            ocr_applied=ocr_applied,
+            ocr_skipped=ocr_skipped,
+        )
 
     @staticmethod
     def fret_to_pitch(string: int, fret: int, tuning: list[int]) -> int:
@@ -197,10 +230,7 @@ class GuitarFixer:
         """Replace MusicXML pitch children for the provided note."""
         step, alter, octave = GuitarFixer._midi_to_pitch_components(midi_pitch)
         pitch_nodes = note.xpath("./*[local-name()='pitch']")
-        if pitch_nodes:
-            pitch = pitch_nodes[0]
-        else:
-            pitch = etree.SubElement(note, "pitch")
+        pitch = pitch_nodes[0] if pitch_nodes else etree.SubElement(note, "pitch")
 
         GuitarFixer._set_child_text(pitch, "step", step)
         if alter == 0:
@@ -227,6 +257,72 @@ class GuitarFixer:
             return
         child = etree.SubElement(parent, name)
         child.text = value
+
+    @staticmethod
+    def _set_tab_technical(note: Any, *, string_text: str, fret_text: str) -> None:
+        """Ensure TAB note has technical/string/fret nodes for downstream use."""
+        notations_nodes = note.xpath("./*[local-name()='notations']")
+        notations = notations_nodes[0] if notations_nodes else etree.SubElement(note, "notations")
+
+        technical_nodes = notations.xpath("./*[local-name()='technical']")
+        if technical_nodes:
+            technical = technical_nodes[0]
+        else:
+            technical = etree.SubElement(notations, "technical")
+
+        GuitarFixer._set_child_text(technical, "string", string_text)
+        GuitarFixer._set_child_text(technical, "fret", fret_text)
+
+    @staticmethod
+    def _build_ocr_override_map(
+        tree: etree._ElementTree,
+        ocr_tokens: Sequence[TabOcrToken],
+    ) -> dict[tuple[str, str, str, int], tuple[int, int]]:
+        """Map OCR fret tokens onto TAB notes in document order.
+
+        The MVP strategy is intentionally conservative: OCR tokens are only used
+        when the token count exactly matches the number of TAB notes on the page.
+        """
+        if len(ocr_tokens) == 0:
+            return {}
+
+        tab_notes = GuitarFixer._collect_all_tab_notes(tree)
+        if len(tab_notes) != len(ocr_tokens):
+            _LOGGER.warning(
+                "guitar_fixer_ocr_count_mismatch",
+                tab_notes=len(tab_notes),
+                ocr_tokens=len(ocr_tokens),
+            )
+            return {}
+
+        override_map: dict[tuple[str, str, str, int], tuple[int, int]] = {}
+        for (note_key, _note), token in zip(tab_notes, ocr_tokens, strict=True):
+            override_map[note_key] = (token.string, token.fret)
+        return override_map
+
+    @staticmethod
+    def _collect_all_tab_notes(
+        tree: etree._ElementTree,
+    ) -> list[tuple[tuple[str, str, str, int], Any]]:
+        """Return all TAB notes in document order using the same note-key scheme."""
+        tab_notes: list[tuple[tuple[str, str, str, int], Any]] = []
+        tab_staffs_by_part = GuitarFixer._detect_tab_staffs(tree)
+        for part in tree.xpath("//*[local-name()='part']"):
+            part_id = GuitarFixer._string_value(part.xpath("@id"))
+            tab_staffs = tab_staffs_by_part.get(part_id, set())
+            if not tab_staffs:
+                continue
+
+            for measure in part.xpath("./*[local-name()='measure']"):
+                measure_number = GuitarFixer._string_value(measure.xpath("@number"))
+                _standard_notes, measure_tab_notes = GuitarFixer._collect_measure_notes(
+                    measure,
+                    part_id,
+                    measure_number,
+                    tab_staffs,
+                )
+                tab_notes.extend(measure_tab_notes.items())
+        return tab_notes
 
     @staticmethod
     def _string_value(value: Any) -> str:
