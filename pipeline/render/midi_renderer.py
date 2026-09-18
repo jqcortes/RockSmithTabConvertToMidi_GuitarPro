@@ -80,6 +80,10 @@ class MidiRenderer:
             abs_tick = 0        # absolute tick cursor; advances for non-chord notes
             group_start_tick = 0  # abs tick of the most-recent non-chord note (chord anchor)
             divisions = 1
+            # Track open slur numbers to detect hammer-on/pull-off from <slur> arcs.
+            # For guitar parts, Audiveris outputs <slur> instead of <hammer-on>/<pull-off>.
+            open_slurs: set[str] = set()
+            is_guitar_part = assignment.role == "guitar"
             expansion = RepeatExpander.expand_part_measures_with_context(
                 part,
                 part_id=part_id,
@@ -101,6 +105,25 @@ class MidiRenderer:
                     is_chord = bool(note.xpath("./*[local-name()='chord']"))
                     duration_value = MidiRenderer._duration_value(note)
                     duration_ticks = max(1, int((duration_value / divisions) * midi_file.ticks_per_beat))
+
+                    # Detect slur stops before calling TechniqueRenderer so the
+                    # velocity base can be adjusted for guitar hammer-on/pull-off.
+                    slur_stop = False
+                    for slur in note.xpath(".//*[local-name()='slur']"):
+                        slur_type = slur.get("type", "")
+                        slur_number = slur.get("number", "1")
+                        if slur_type == "start":
+                            open_slurs.add(slur_number)
+                        elif slur_type == "stop" and slur_number in open_slurs:
+                            open_slurs.discard(slur_number)
+                            slur_stop = True
+
+                    # Velocity base: guitar notes that end a slur group are
+                    # treated as hammer-on/pull-off (70% velocity by convention).
+                    note_velocity = 64
+                    if is_guitar_part and slur_stop:
+                        note_velocity = int(64 * 0.7)
+
                     scratch_track = MidiTrack()
                     technique_result = TechniqueRenderer.render_note_techniques(
                         note,
@@ -108,7 +131,7 @@ class MidiRenderer:
                         midi_channel=assignment.midi_channel,
                         base_note=midi_note,
                         duration_ticks=duration_ticks,
-                        velocity=64,
+                        velocity=note_velocity,
                         pitch_bend_range=pitch_bend_range,
                     )
                     techniques_rendered += technique_result.technique_count

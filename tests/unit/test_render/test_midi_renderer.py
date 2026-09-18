@@ -125,3 +125,51 @@ class TestMidiRenderer:
 
         # Sequence should be: C, D, C, D, E (repeat section played twice)
         assert [msg.note for msg in note_ons] == [60, 62, 60, 62, 64]
+
+    def test_render_score_slur_stop_reduces_velocity_for_guitar(self, tmp_path: Path) -> None:
+        """Guitar notes that end a slur (hammer-on/pull-off) get 70% velocity."""
+        from pipeline.render.midi_renderer import MidiRenderer
+
+        xml_content = b"""<?xml version="1.0" encoding="UTF-8"?>
+<score-partwise version="4.0">
+  <part-list>
+    <score-part id="P1"><part-name>Guitar</part-name></score-part>
+  </part-list>
+  <part id="P1">
+    <measure number="1">
+      <attributes><divisions>1</divisions></attributes>
+      <note>
+        <pitch><step>C</step><octave>4</octave></pitch>
+        <duration>1</duration>
+        <notations><slur type="start" number="1"/></notations>
+      </note>
+      <note>
+        <pitch><step>D</step><octave>4</octave></pitch>
+        <duration>1</duration>
+        <notations><slur type="stop" number="1"/></notations>
+      </note>
+      <note>
+        <pitch><step>E</step><octave>4</octave></pitch>
+        <duration>1</duration>
+      </note>
+    </measure>
+  </part>
+</score-partwise>"""
+        xml_path = tmp_path / "slur_test.xml"
+        xml_path.write_bytes(xml_content)
+        output_path = tmp_path / "slur_test.mid"
+
+        MidiRenderer.render_score(xml_path, output_path)
+
+        midi = MidiFile(output_path)
+        part_track = midi.tracks[1]
+        note_ons = [msg for msg in part_track if msg.type == "note_on" and msg.velocity > 0]
+
+        assert len(note_ons) == 3
+        c_velocity = note_ons[0].velocity  # slur start → normal
+        d_velocity = note_ons[1].velocity  # slur stop → hammer-on (70%)
+        e_velocity = note_ons[2].velocity  # no slur → normal
+
+        assert c_velocity == 64, "Slur-start note should have normal velocity"
+        assert d_velocity == int(64 * 0.7), "Slur-stop note should have 70% velocity (hammer-on)"
+        assert e_velocity == 64, "Non-slur note should have normal velocity"
