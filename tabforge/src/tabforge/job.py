@@ -19,6 +19,7 @@ STAGE_ORDER = [
     "s0_ingest",
     "s1_separate",
     "s2_rhythm",
+    "s3_chords",
     "s4_transcribe",
     "s4b_fuse",
     "s5_disentangle",
