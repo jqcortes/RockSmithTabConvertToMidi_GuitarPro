@@ -4,19 +4,36 @@
 (`.gp5`) を自動生成するローカル CLI パイプライン。
 
 詳細は `01_TabForge_詳細設計書.md` / `02_TabForge_実装指示書.md`（プロジェクト外の
-指示書。このディレクトリの実装はその P0〜P1 に対応する）を参照。
+指示書。このディレクトリの実装はその P0〜P4 に対応する）を参照。
 
 ## 現在の実装状態
 
-このディレクトリは指示書の **P0（環境構築・IR・CLI骨格）+ P1（ベース単独タブの
-end-to-end 骨格）** を実装したものです。
+このディレクトリは指示書の **P0〜P4** を実装したものです。
 
-- 実装済み: IR スキーマ / ジョブ・キャッシュ管理 / CLI / S0 Ingest / S1 Separate
-  (Demucs アダプタ) / S2 Rhythm / S4 Transcribe アダプタ（MuScriptor / Basic
-  Pitch, 遅延 import） / S4b Fuse / S5 Disentangle（Phase A: ベースのみ）/
-  S6 Quantize / S7 フレット割当（Viterbi） / S9 Export（GP5）
-- 未実装（P3以降）: コード認識 (LVCR) / リード・バッキング分離の HMM 平滑化 /
-  複数ギタートラック / 技法推定 / レビュー UI
+- 実装済み:
+  - P0: IR スキーマ / ジョブ・キャッシュ管理 / CLI
+  - P1: S0 Ingest / S1 Separate (Demucs アダプタ) / S2 Rhythm / S4 Transcribe
+    アダプタ（MuScriptor / Basic Pitch, 遅延 import） / S4b Fuse / S5
+    Disentangle Phase A（ベース確定） / S6 Quantize / S7 フレット割当
+    （Viterbi） / S9 Export（GP5）
+  - P2: チューニング/カポ推定・5弦ベース判定 / ステレオ pan 算出 / ギター
+    採譜ラン (ms_gtr, bp_gtr) / `--guitar-tracks 1` 単一トラック出力
+  - P3: コード認識（`ManualJsonRecognizer` 既定・`MadmomRecognizer` フォール
+    バック・`LvcrDockerRecognizer` はコンテナ未構築のプレースホルダ）/
+    label→pitch_classes 展開 / S5 特徴量 F1-F10 / ルールベース分類 + 2状態
+    HMM 平滑化（Phase B-E） / `--guitar-tracks 2` で Lead Guitar・Rhythm
+    Guitar・Bass の複数トラック出力 / リズムトラックのボイシング選択・
+    ストローク生成
+  - P4: 技法推定（bend/vibrato/hammer-on/slide/dead note、既定 OFF の
+    palm_mute/harmonic/let_ring は音声解析なしのため未対応） / MusicXML・
+    ASCII タブ出力
+- 未実装:
+  - `--guitar-tracks 3` の K-means による複数リード分割 (T3-5)
+  - GuitarSet を用いた定量評価 (T2-5, データセット未取得)
+  - palm_mute・harmonic・let_ring の音響解析ベース判定（スペクトル重心等）
+  - LVCR の実コンテナ構築（`docker/Dockerfile.chords` はプレースホルダ）
+  - MIDI / check_mix（fluidsynth 合成）出力
+  - レビュー UI (P5) / 精度チューニング (P6)
 
 ## 重要な制約
 

@@ -1,7 +1,8 @@
-"""S4 Note Transcription（設計書 §7.1、実装指示書 T1-4）。
+"""S4 Note Transcription（設計書 §7.1、実装指示書 T1-4 / T2-2）。
 
-P1 スコープ: ベースの採譜ラン (ms_mix, ms_bass, bp_bass) のみを実行する。
-ギター採譜ラン (ms_gtr, bp_gtr) の追加は P2 (T2-2) で行う。
+ベース (ms_mix, ms_bass, bp_bass) + ギター (ms_gtr, bp_gtr) の5ランを実行する。
+`ms_gtr` は Demucs のアーティファクトで誤検出が増えうるため、S4b 融合側の
+`run_weights` を控えめにし、`bp_gtr` 単独ノートは破棄する規則を守る（§7.2 Step3）。
 
 MuScriptor / Basic Pitch のいずれかが未インストールの場合はそのランだけを
 degraded でスキップし、警告を記録して継続する（R1/R4: 段ごとに失敗を封じ込める）。
@@ -41,6 +42,8 @@ class Stage:
         mix_mono = job.audio_dir / "mix_mono.wav"
         bass_stem = job.stems_dir / "bass.wav"
         bass_source = bass_stem if bass_stem.exists() else job.stems_dir / "mix.wav"
+        guitar_stem = job.stems_dir / "guitar.wav"
+        guitar_source = guitar_stem if guitar_stem.exists() else job.stems_dir / "mix.wav"
 
         runs: list[TranscriptionRun] = []
         notes: list[Note] = []
@@ -79,6 +82,43 @@ class Stage:
             )
         except MuScriptorUnavailable as exc:
             job.logger.warning(self.name, f"ms_bass degraded: {exc}")
+
+        # ms_gtr: ギターステム単独（埋もれたギターの回収。設計書 §7.1）
+        try:
+            engine = MuScriptorEngine(
+                model=mus_cfg.model, beam_size=mus_cfg.beam_size,
+                batch_size=mus_cfg.batch_size, device="cpu",
+            )
+            run_notes = engine.transcribe(guitar_source, mus_cfg.instruments_guitar, run_id="ms_gtr")
+            notes.extend(run_notes)
+            runs.append(
+                TranscriptionRun(
+                    run_id="ms_gtr", engine="muscriptor", model=mus_cfg.model,
+                    input=str(guitar_source), instruments=mus_cfg.instruments_guitar,
+                )
+            )
+        except MuScriptorUnavailable as exc:
+            job.logger.warning(self.name, f"ms_gtr degraded: {exc}")
+
+        # bp_gtr: Basic Pitch によるベンド曲線とオンセット精緻化
+        try:
+            bp_engine = BasicPitchEngine(
+                onset_threshold=bp_cfg.onset_threshold,
+                frame_threshold=bp_cfg.frame_threshold,
+                minimum_note_length=bp_cfg.minimum_note_length,
+                multiple_pitch_bends=bp_cfg.multiple_pitch_bends,
+            )
+            instrument_name = mus_cfg.instruments_guitar[0] if mus_cfg.instruments_guitar else "distorted_electric_guitar"
+            run_notes = bp_engine.transcribe(guitar_source, instrument=instrument_name, run_id="bp_gtr")
+            notes.extend(run_notes)
+            runs.append(
+                TranscriptionRun(
+                    run_id="bp_gtr", engine="basic_pitch", input=str(guitar_source),
+                    instruments=[instrument_name],
+                )
+            )
+        except BasicPitchUnavailable as exc:
+            job.logger.warning(self.name, f"bp_gtr degraded: {exc}")
 
         # bp_bass: Basic Pitch によるベース補完
         try:
