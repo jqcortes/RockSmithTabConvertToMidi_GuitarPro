@@ -1,0 +1,26 @@
+# MuScriptor の正式楽器名リスト（暫定値）。
+#
+# 実測が必要: scripts/probe_muscriptor.py を実行し、
+#   `muscriptor list-instruments`（または相当の API 呼び出し）の実出力で
+#   以下を置き換えること。この実行環境には torch/muscriptor がインストール
+#   されておらず、HuggingFace 上のゲート付きモデル（CC BY-NC 4.0 重み）への
+#   同意も未実施のため、ここでは 02_TabForge_実装指示書.md の想定値を
+#   プレースホルダとして記載している。
+#
+# T0-2 の DoD:
+#   - ギター/ベース系の正式楽器名がここに実測値で列挙されていること
+#   - 5秒チャンク境界のオンセット誤差実測値(ms)がコメントで記録されていること
+#   - 未実施の間は verified: false のままにし、instruments_adapter は
+#     起動時にこのファイルを検証してから MuScriptor へ渡す
+
+verified: false
+probe_run_at: null
+chunk_boundary_onset_error_ms: null   # T0-2 実測後にここへ記録
+
+guitar:
+  - distorted_electric_guitar   # 要実測確認
+  - clean_electric_guitar       # 要実測確認
+  - acoustic_guitar             # 要実測確認
+
+bass:
+  - electric_bass               # 要実測確認

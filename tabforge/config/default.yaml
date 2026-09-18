@@ -1,0 +1,70 @@
+# TabForge デフォルト設定（01_TabForge_詳細設計書.md §11 準拠）
+job:
+  quality: standard            # fast | standard | high
+  keep_intermediate: true
+
+ingest:
+  target_lufs: -14.0
+
+separate:
+  model: htdemucs_6s           # htdemucs_6s | htdemucs | none
+  shifts: 1
+  overlap: 0.25
+  device: cuda
+
+rhythm:
+  quantize_grid: 16            # 8 | 16 | 32
+  allow_triplets: true
+  manual: {bpm: null, offset: null, time_signature: null}
+
+chords:
+  recognizer: manual           # lvcr_docker | madmom | manual (P3 で lvcr_docker に切替)
+  input: mix                   # mix | accompaniment
+  min_segment_beats: 1.0
+
+transcribe:
+  muscriptor:
+    model: medium              # small | medium | large
+    beam_size: 1               # quality=high のとき 4
+    batch_size: null
+    instruments_guitar: [distorted_electric_guitar, clean_electric_guitar, acoustic_guitar]
+    instruments_bass: [electric_bass]
+  basic_pitch:
+    onset_threshold: 0.5
+    frame_threshold: 0.3
+    minimum_note_length: 58
+    multiple_pitch_bends: true
+    bass: {minimum_frequency: 30, maximum_frequency: 440, melodia_trick: true}
+  fusion:
+    iou_threshold: 0.5
+    run_weights: {ms_mix: 1.0, ms_gtr: 0.8, ms_bass: 0.8, bp_gtr: 0.5, bp_bass: 0.5}
+
+disentangle:
+  mode: rules                  # rules | model (P6 で model 実装)
+  guitar_tracks: 2
+  weights: [1.2, 0.8, 0.9, 1.0, 1.1, 0.4, 0.7, 0.6, 1.0]
+  hmm_stay_prob: 0.92
+
+arrange:
+  guitar:
+    tuning: auto               # auto | [64,59,55,50,45,40]
+    capo: auto
+    max_fret: 22
+    span_max: 4
+    weights: {fret: 0.6, open: 0.8, string: 0.3, span: 1.5, move: 1.0,
+              str_cont: 0.2, legato: 0.5}
+    beam_width: 64
+    candidates_per_group: 24
+    preferred_fret: 7
+  bass:
+    tuning: auto               # 5弦検出時 [43,38,33,28,23]
+    max_fret: 24
+
+technique:
+  enabled: {bend: true, vibrato: true, slide: true, hammer: true,
+            palm_mute: true, dead: true, let_ring: false, harmonic: false}
+  bend_min_semitone: 0.7
+
+export:
+  formats: [gp5, musicxml, midi, ascii, check_mix]
+  gp_version: "5.10"
