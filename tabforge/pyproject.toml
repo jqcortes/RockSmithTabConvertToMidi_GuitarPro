@@ -1,0 +1,51 @@
+[project]
+name = "tabforge"
+version = "0.1.0"
+description = "原曲音源 → ギター/ベース GuitarPro タブ譜 自動生成システム"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "PyGuitarPro>=0.11",       # LGPL-3.0-only
+  "librosa",
+  "soundfile",
+  "pyloudnorm",
+  "numpy",
+  "scipy",
+  "pydantic>=2",
+  "pyyaml",
+  "typer",
+  "rich",
+  "music21",                 # MusicXML
+]
+
+# 重量級 ML 依存（torch/demucs/muscriptor/basic-pitch）は本パッケージの
+# アダプタ層 (engines/) で遅延 import する。未インストールでも IR / CLI /
+# フレット割当 / エクスポート等のコアロジックは動作・テスト可能にするため、
+# ここでは optional-dependencies に隔離する。
+[project.optional-dependencies]
+ml = [
+  "torch",
+  "torchaudio",
+  "demucs",
+  "basic-pitch",
+  "muscriptor",            # コード MIT / 重み CC BY-NC 4.0（非商用）。HuggingFace 同意必須
+]
+eval = ["mir_eval", "scikit-learn"]
+dev = ["pytest", "pytest-cov", "ruff", "mypy"]
+
+[project.scripts]
+tabforge = "tabforge.cli:app"
+
+[tool.ruff]
+line-length = 100
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+markers = ["slow: requires heavy ML deps / real audio, not run by default"]

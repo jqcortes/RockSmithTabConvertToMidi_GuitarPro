@@ -1,0 +1,17 @@
+# TabForge コア実行環境（P0-P2 で使用）。
+# Demucs / MuScriptor / Basic Pitch / PyGuitarPro を1つのイメージにまとめる。
+# LVCR（コード認識, P3以降）はここには含めない — Dockerfile.chords で隔離する（設計書 D6）。
+FROM python:3.11-slim
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ffmpeg git build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+COPY pyproject.toml /app/
+COPY src /app/src
+COPY config /app/config
+
+RUN pip install --no-cache-dir -e ".[ml,eval]"
+
+ENTRYPOINT ["tabforge"]

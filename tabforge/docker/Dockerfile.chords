@@ -1,0 +1,15 @@
+# LVCR (ISMIR2019 Large-Vocabulary Chord Recognition) 隔離環境（設計書 D6）。
+# 旧 PyTorch + 独自 `mir` ライブラリに依存するため、本体 (Dockerfile.core) とは
+# 別コンテナで実行し、job_dir をマウントしたファイル経由でのみ疎結合させる。
+#
+# P3 (S3 Chord Recognition) 実装時に requirements を確定させること。
+# インターフェース:
+#   docker run -v <job_dir>:/job tabforge-chords predict /job/audio/mix.wav /job/ir/chords.json
+FROM python:3.8-slim
+
+WORKDIR /app
+# TODO(P3): ISMIR2019-Large-Vocabulary-Chord-Recognition のセットアップをここに追加する。
+# 現時点ではプレースホルダ。本体からは engines/chord_recognizer.py の
+# LvcrDockerRecognizer が `docker run` 経由で呼び出す想定。
+
+ENTRYPOINT ["python", "-c", "raise SystemExit('LVCR container not yet implemented (P3)')"]
