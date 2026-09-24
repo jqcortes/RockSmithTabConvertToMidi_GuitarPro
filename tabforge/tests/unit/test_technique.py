@@ -7,6 +7,7 @@ from tabforge.stages.s8_technique import (
     infer_bend,
     infer_dead_note,
     infer_let_ring,
+    infer_palm_mute,
     infer_vibrato,
     is_legato_candidate,
 )
@@ -114,3 +115,31 @@ def test_let_ring_disabled_by_default():
     note = _note(onset=0.0, offset=1.0)
     nxt = _note(id_="b", onset=0.8, offset=1.5)
     assert infer_let_ring(note, nxt, TechniqueConfig()) is False  # 既定 OFF
+
+
+def test_palm_mute_true_when_short_and_dark():
+    note = _note(onset=0.0, offset=0.1)  # 短い(拍長0.5秒なら0.2拍)
+    result = infer_palm_mute(note, dt_beats_duration=0.2, centroid=500.0,
+                              track_median_centroid=1000.0, cfg=TechniqueConfig())
+    assert result is True
+
+
+def test_palm_mute_false_when_not_short():
+    note = _note(onset=0.0, offset=1.0)
+    result = infer_palm_mute(note, dt_beats_duration=0.9, centroid=500.0,
+                              track_median_centroid=1000.0, cfg=TechniqueConfig())
+    assert result is False
+
+
+def test_palm_mute_false_when_centroid_not_dark_enough():
+    note = _note(onset=0.0, offset=0.1)
+    result = infer_palm_mute(note, dt_beats_duration=0.2, centroid=900.0,
+                              track_median_centroid=1000.0, cfg=TechniqueConfig())
+    assert result is False
+
+
+def test_palm_mute_false_when_centroid_missing():
+    note = _note(onset=0.0, offset=0.1)
+    result = infer_palm_mute(note, dt_beats_duration=0.2, centroid=None,
+                              track_median_centroid=1000.0, cfg=TechniqueConfig())
+    assert result is False

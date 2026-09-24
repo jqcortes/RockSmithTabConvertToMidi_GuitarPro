@@ -10,7 +10,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from music21 import articulations, chord, meter, stream
+from music21 import articulations, chord, meter, stream, tempo
 from music21 import duration as m21duration
 from music21 import note as m21note
 
@@ -62,6 +62,8 @@ def _track_to_part(track: TabTrack) -> stream.Part:
         if measure_ir.bar == 1:
             numerator, denominator = measure_ir.time_signature
             m21_measure.timeSignature = meter.TimeSignature(f"{numerator}/{denominator}")
+            if measure_ir.tempo > 0:
+                m21_measure.insert(0, tempo.MetronomeMark(number=measure_ir.tempo))
         if not measure_ir.beats:
             numerator, denominator = measure_ir.time_signature
             rest = m21note.Rest()
@@ -74,9 +76,15 @@ def _track_to_part(track: TabTrack) -> stream.Part:
     return part
 
 
-def write_musicxml(tab: TabIR, out: Path) -> None:
+def build_score(tab: TabIR) -> stream.Score:
+    """`export/midi_writer.py` 等、他のエクスポータからも再利用する共通ビルダー。"""
     score = stream.Score()
     for track in tab.tracks:
         score.append(_track_to_part(track))
+    return score
+
+
+def write_musicxml(tab: TabIR, out: Path) -> None:
+    score = build_score(tab)
     out.parent.mkdir(parents=True, exist_ok=True)
     score.write("musicxml", fp=str(out))

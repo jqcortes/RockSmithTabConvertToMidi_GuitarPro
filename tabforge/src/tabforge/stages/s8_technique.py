@@ -13,12 +13,13 @@ tab.json は tick 表現のみで秒レベルの onset/offset を保持しない
 同一弦維持を強制し、確定後に実際の fret 差で確認する二段階判定）。
 
 **方針**: 確信度が低い技法は付けない（誤検出は人手修正コストを増やす）。
-palm_mute・harmonic はスペクトル解析（音響特徴）が必要で、この段階では
-音声を直接扱わないため既定 OFF のプレースホルダとする。
+palm_mute はステムのスペクトル重心（`compute_note_centroids`）を使って判定する。
+harmonic は基音/倍音の判別が必要でこの実装では未対応のため既定 OFF のまま。
 """
 from __future__ import annotations
 
 from itertools import pairwise
+from pathlib import Path
 
 from tabforge.config import TechniqueConfig
 from tabforge.ir.models import BendEffect, Note, NoteEffects
@@ -34,6 +35,8 @@ VIBRATO_MAX_AMPLITUDE = 0.6
 VIBRATO_MIN_HZ = 4.0
 VIBRATO_MAX_HZ = 8.0
 LEGATO_CANDIDATE_MAX_PITCH_DIFF = 5  # フレット差<=3 の粗い近似（弦未確定の事前判定）
+PALM_MUTE_MAX_DT_BEATS = 0.25
+PALM_MUTE_CENTROID_RATIO = 0.7
 
 
 def infer_bend(note: Note, cfg: TechniqueConfig) -> BendEffect | None:
@@ -110,19 +113,80 @@ def infer_let_ring(note: Note, next_note: Note | None, cfg: TechniqueConfig) -> 
     return note.offset > next_note.onset
 
 
+def compute_spectral_centroid(audio_segment, sample_rate: int) -> float:
+    """区間のスペクトル重心（Hz）。librosa は呼び出し時にのみ import する。
+
+    palm mute 判定の対象は短いノート（<0.25拍、多くは数十ms）のため2点の
+    対策が要る: (1) 既定の ``n_fft=2048``（44.1kHzで約46ms）のままだと窓が
+    ノート長を超えてゼロパディングが支配的になるため区間長に応じて縮小する。
+    (2) 区間の切り出しをそのまま渡すと始端/終端の急峻な不連続（クリック）が
+    広帯域ノイズとして重心を実際より高く見せる。Hann 窓でテーパーしてから
+    解析することで、この打ち切りアーティファクトを抑える。
+    """
+    import numpy as np
+
+    if audio_segment.size < 2:
+        return 0.0
+    import librosa
+
+    tapered = audio_segment * np.hanning(audio_segment.size)
+    n_fft = 1 << int(np.floor(np.log2(tapered.size)))
+    n_fft = max(32, min(2048, n_fft))
+    hop_length = max(1, n_fft // 4)
+    centroid = librosa.feature.spectral_centroid(
+        y=tapered, sr=sample_rate, n_fft=n_fft, hop_length=hop_length
+    )
+    return float(np.mean(centroid))
+
+
+def compute_note_centroids(notes: list[Note], stem_wav: Path) -> dict[str, float]:
+    """ノート区間ごとのスペクトル重心を計算する（palm_mute 判定用）。
+
+    stem_wav が存在しない場合は空の dict を返し、呼び出し側で palm_mute 判定を
+    スキップできるようにする（degraded: 誤検出よりも未検出を優先する方針）。
+    """
+    if not stem_wav.exists():
+        return {}
+    import soundfile as sf
+
+    data, sr = sf.read(str(stem_wav), dtype="float32", always_2d=True)
+    mono = data.mean(axis=1)
+
+    centroids: dict[str, float] = {}
+    for note in notes:
+        start = max(0, int(note.onset * sr))
+        end = min(len(mono), int(note.offset * sr))
+        centroids[note.id] = compute_spectral_centroid(mono[start:end], sr) if end > start else 0.0
+    return centroids
+
+
+def infer_palm_mute(
+    note: Note, dt_beats_duration: float, centroid: float | None, track_median_centroid: float, cfg: TechniqueConfig
+) -> bool:
+    """音長 < 0.25拍 かつ スペクトル重心が同トラック中央値の0.7倍未満 → palm_mute=True。"""
+    if not cfg.enabled.get("palm_mute", True) or centroid is None or track_median_centroid <= 0:
+        return False
+    if dt_beats_duration >= PALM_MUTE_MAX_DT_BEATS:
+        return False
+    return centroid < PALM_MUTE_CENTROID_RATIO * track_median_centroid
+
+
 def build_note_effects(
     note: Note,
     next_note: Note | None,
     hammer: bool,
     slide: str | None,
     cfg: TechniqueConfig,
+    dt_beats_duration: float = 0.0,
+    centroid: float | None = None,
+    track_median_centroid: float = 0.0,
 ) -> NoteEffects:
     return NoteEffects(
         bend=infer_bend(note, cfg),
         vibrato=infer_vibrato(note, cfg),
         hammer=hammer,
         slide=slide,
-        palm_mute=False,  # 要音声解析。P4 のこの実装では未対応（誤検出防止のため既定 False）
+        palm_mute=infer_palm_mute(note, dt_beats_duration, centroid, track_median_centroid, cfg),
         dead=infer_dead_note(note, cfg),
         let_ring=infer_let_ring(note, next_note, cfg),
         harmonic=False,  # 既定 OFF（誤検出多、設計書 §9.5）

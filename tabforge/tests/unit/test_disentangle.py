@@ -1,5 +1,5 @@
 from tabforge.config import DisentangleConfig
-from tabforge.ir.models import Beat, ChordsIR, GridIR, Note, NotesIR, TimeSignature
+from tabforge.ir.models import Beat, ChordsIR, GridIR, Note, NoteFeatures, NotesIR, TimeSignature
 from tabforge.stages.s5_disentangle import (
     classify_lead_rhythm,
     classify_phase_a,
@@ -114,3 +114,40 @@ def test_classify_lead_rhythm_splits_solo_from_chords():
 
     lead_parts = [by_id[f"lead{i}"] for i in range(32)]
     assert lead_parts.count("lead") > len(lead_parts) * 0.7
+
+
+def test_split_lead_tracks_separates_by_register_and_pan():
+    from tabforge.stages.s5_disentangle import name_lead_tracks, split_lead_tracks
+
+    # 高音域・右寄りのグループ と 低音域・左寄りのグループ
+    high_notes = [Note(id=f"hi{i}", onset=i * 0.5, offset=i * 0.5 + 0.2, pitch=76,
+                        instrument="guitar", pan=0.7) for i in range(4)]
+    low_notes = [Note(id=f"lo{i}", onset=i * 0.5 + 8.0, offset=i * 0.5 + 8.2, pitch=52,
+                       instrument="guitar", pan=-0.7) for i in range(4)]
+    all_notes = high_notes + low_notes
+
+    features = {}
+    for n in high_notes:
+        features[n.id] = NoteFeatures(register=1.0, ioi=0.5, pan=0.7)
+    for n in low_notes:
+        features[n.id] = NoteFeatures(register=0.0, ioi=0.5, pan=-0.7)
+
+    assignment = split_lead_tracks(all_notes, features, k=2)
+    high_labels = {assignment[n.id] for n in high_notes}
+    low_labels = {assignment[n.id] for n in low_notes}
+    assert high_labels != low_labels
+    assert len(high_labels) == 1 and len(low_labels) == 1
+
+    by_label: dict[int, list[Note]] = {}
+    for n in all_notes:
+        by_label.setdefault(assignment[n.id], []).append(n)
+    names = name_lead_tracks(by_label, features)
+    assert set(names.values()) == {"Gtr L", "Gtr R"}
+
+
+def test_split_lead_tracks_noop_for_k_1():
+    from tabforge.stages.s5_disentangle import split_lead_tracks
+
+    notes = [Note(id="a", onset=0, offset=0.5, pitch=64, instrument="guitar")]
+    assignment = split_lead_tracks(notes, {}, k=1)
+    assert assignment == {"a": 0}

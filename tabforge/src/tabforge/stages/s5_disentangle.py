@@ -312,6 +312,84 @@ def classify_lead_rhythm(
     return assignments
 
 
+# ---------------------------------------------------------------------------
+# §8.4: 複数ギタートラック（--guitar-tracks 3 以上）
+# ---------------------------------------------------------------------------
+
+PAN_SEPARATION_THRESHOLD = 0.3  # これ以上離れていれば "定位で命名" する
+
+
+def _kmeans(points: list[tuple[float, ...]], k: int, iterations: int = 50, seed: int = 0) -> list[int]:
+    """外部依存を増やさないための最小実装（numpy 不要、決定論的な初期化）。"""
+    n = len(points)
+    if k <= 1 or n <= k:
+        return [i % max(k, 1) for i in range(n)]
+
+    # 決定論的な初期化: 値でソートして等間隔に選ぶ（乱数依存を避けテストを安定させる）。
+    order = sorted(range(n), key=lambda i: points[i])
+    centroids = [points[order[int(i * (n - 1) / (k - 1))]] for i in range(k)]
+
+    assignments = [0] * n
+    for _ in range(iterations):
+        new_assignments = []
+        for p in points:
+            dists = [sum((a - b) ** 2 for a, b in zip(p, c, strict=True)) for c in centroids]
+            new_assignments.append(dists.index(min(dists)))
+        if new_assignments == assignments:
+            break
+        assignments = new_assignments
+        for ci in range(k):
+            members = [p for p, a in zip(points, assignments, strict=True) if a == ci]
+            if members:
+                centroids[ci] = tuple(sum(vals) / len(members) for vals in zip(*members, strict=True))
+    return assignments
+
+
+def split_lead_tracks(notes: list[Note], features: dict[str, NoteFeatures], k: int) -> dict[str, int]:
+    """lead 判定された区間群を (register平均, ioi中位数, pan) で K-means(k) 分割する（T3-5）。
+
+    区間の単位はオンセットクラスタ（±40ms）とする。
+    """
+    if k <= 1 or not notes:
+        return dict.fromkeys((n.id for n in notes), 0)
+
+    sorted_notes = sorted(notes, key=lambda n: n.onset)
+    clusters = _cluster_by_onset(sorted_notes)
+
+    points: list[tuple[float, float, float]] = []
+    for cluster in clusters:
+        regs = [features[n.id].register or 0.0 for n in cluster if n.id in features]
+        iois = sorted(features[n.id].ioi or 0.0 for n in cluster if n.id in features)
+        pans = [features[n.id].pan or 0.0 for n in cluster if n.id in features]
+        reg_avg = sum(regs) / len(regs) if regs else 0.0
+        ioi_median = iois[len(iois) // 2] if iois else 0.0
+        pan_avg = sum(pans) / len(pans) if pans else 0.0
+        points.append((reg_avg, ioi_median, pan_avg))
+
+    labels = _kmeans(points, k)
+    assignment: dict[str, int] = {}
+    for cluster, label in zip(clusters, labels, strict=True):
+        for note in cluster:
+            assignment[note.id] = label
+    return assignment
+
+
+def name_lead_tracks(
+    notes_by_label: dict[int, list[Note]], features: dict[str, NoteFeatures]
+) -> dict[int, str]:
+    """pan が有意に分かれるなら "Gtr L" / "Gtr R"、そうでなければ "Lead 1" / "Lead 2" 等。"""
+    labels = sorted(notes_by_label)
+    if len(labels) == 2:
+        avg_pans = {}
+        for label in labels:
+            pans = [features[n.id].pan or 0.0 for n in notes_by_label[label] if n.id in features]
+            avg_pans[label] = sum(pans) / len(pans) if pans else 0.0
+        lo, hi = min(labels, key=lambda lbl: avg_pans[lbl]), max(labels, key=lambda lbl: avg_pans[lbl])
+        if avg_pans[hi] - avg_pans[lo] >= PAN_SEPARATION_THRESHOLD:
+            return {lo: "Gtr L", hi: "Gtr R"}
+    return {label: f"Lead {i + 1}" for i, label in enumerate(labels)}
+
+
 @dataclass
 class Stage:
     name: str = "s5_disentangle"
