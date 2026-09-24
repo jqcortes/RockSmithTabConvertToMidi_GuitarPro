@@ -30,14 +30,21 @@
     出力 / report.html（ノート数・パート内訳・警告・信頼度の低い小節一覧）
   - T3-5: `--guitar-tracks 3` 以上での複数リードトラック分割（(register,
     ioi, pan) の K-means。numpy のみで実装した簡易版）
+  - T2-5: `eval/guitarset_fretting.py`（正解ノートを入力してフレット割当
+    単体の string/fret accuracy を測る評価ロジック。GuitarSet の .jams
+    パーサはデータセット未取得のため骨組みのみ）/ `eval/note_metrics.py`
+    （mir_eval ラッパ、onset F1・onset+pitch F1）
+  - T5-2: `tabforge batch <dir>` で複数音源を無人処理（1曲の失敗で他曲を
+    止めない。GPU メモリ競合回避のためシーケンシャル実行固定）
 - 未実装:
-  - GuitarSet を用いた定量評価 (T2-5, データセット未取得)
+  - GuitarSet 実データでの定量評価（.jams パーサ本体、データセット未取得）
   - harmonic・let_ring の高精度な判定（let_ring は既定 OFF のプレースホルダ
     のみ実装済み）
   - LVCR の実コンテナ構築（`docker/Dockerfile.chords` はプレースホルダ）
   - check_mix.wav の fluidsynth + SoundFont による本格合成（現状は減衰
     サイン波の加算合成で代替）
   - report.html のピアノロール／タブ位置ヒートマップ（テキスト情報のみ）
+  - `tabforge batch --workers` の真の並列実行（現状は意図的にシーケンシャル）
   - レビュー UI (P5) / 精度チューニング (P6)
 
 ## 重要な制約

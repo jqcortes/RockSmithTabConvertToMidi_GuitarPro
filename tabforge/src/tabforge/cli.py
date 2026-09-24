@@ -125,6 +125,62 @@ def inspect(job_dir: Path = typer.Argument(..., exists=True, file_okay=False)) -
 
 
 @app.command()
+def batch(
+    audio_dir: Path = typer.Argument(..., exists=True, file_okay=False, help="音源ファイルが入ったディレクトリ"),
+    out_dir: Path = typer.Option(Path("out"), "--out-dir", help="ジョブ出力先の親ディレクトリ"),
+    config: Path | None = typer.Option(None, "--config", help="設定ファイル (yaml)"),
+    quality: str = typer.Option("standard", help="fast|standard|high"),
+    workers: int = typer.Option(1, "--workers", help="現状シーケンシャル実行のみ対応"),
+    pattern: str = typer.Option("*.wav,*.mp3,*.flac,*.m4a", "--pattern", help="対象拡張子(カンマ区切り glob)"),
+) -> None:
+    """複数音源を無人でバッチ処理する（実装指示書 T5-2）。
+
+    1曲の失敗が他曲を止めない。Demucs と MuScriptor を同時ロードしないため
+    （GPU メモリ競合回避、設計書 §12.1）、`--workers` は現状 1（シーケンシャル）
+    のみサポートする。
+    """
+    if workers > 1:
+        console.print(
+            "[yellow]warning[/yellow]: --workers>1 は未対応。Demucs/MuScriptor の"
+            " GPU メモリ競合を避けるためシーケンシャル実行する。"
+        )
+
+    globs = [p.strip() for p in pattern.split(",") if p.strip()]
+    audio_files = sorted({f for g in globs for f in audio_dir.glob(g)})
+    if not audio_files:
+        console.print(f"[red]対象ファイルが見つからない[/red]: {audio_dir} ({pattern})")
+        raise typer.Exit(code=1)
+
+    cfg = TabForgeConfig.load(path=config, overrides={"job": {"quality": quality}})
+    stages = _build_stages(cfg)
+
+    results: list[tuple[Path, bool, str | None]] = []
+    for audio in audio_files:
+        job_dir = _resolve_job_dir(audio, out_dir)
+        job = Job(job_dir=job_dir, source_audio=audio)
+        try:
+            job.run_pipeline(stages, cfg)
+        except Exception as exc:  # noqa: BLE001 - 1曲の失敗で全体を止めない(T5-2 DoD)
+            results.append((audio, False, str(exc)))
+            console.print(f"[red]failed[/red] {audio.name}: {exc}")
+        else:
+            results.append((audio, True, None))
+            console.print(f"[green]done[/green] {audio.name} -> {job_dir}")
+
+    succeeded = sum(1 for _audio, ok, _err in results if ok)
+    console.print(f"\nbatch complete: {succeeded}/{len(results)} succeeded")
+
+    failures = [r for r in results if not r[1]]
+    if failures:
+        table = Table(title="Failures")
+        table.add_column("file")
+        table.add_column("error")
+        for audio, _ok, err in failures:
+            table.add_row(audio.name, err or "")
+        console.print(table)
+
+
+@app.command()
 def export(
     job_dir: Path = typer.Argument(..., exists=True, file_okay=False),
     format: str = typer.Option("gp5", help="カンマ区切り: gp5,musicxml"),
