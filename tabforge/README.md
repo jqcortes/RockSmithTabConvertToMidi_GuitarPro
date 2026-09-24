@@ -24,15 +24,20 @@
     HMM 平滑化（Phase B-E） / `--guitar-tracks 2` で Lead Guitar・Rhythm
     Guitar・Bass の複数トラック出力 / リズムトラックのボイシング選択・
     ストローク生成
-  - P4: 技法推定（bend/vibrato/hammer-on/slide/dead note、既定 OFF の
-    palm_mute/harmonic/let_ring は音声解析なしのため未対応） / MusicXML・
-    ASCII タブ出力
+  - P4: 技法推定（bend/vibrato/hammer-on/slide/dead note/palm_mute（ステム
+    音声のスペクトル重心を使用）、既定 OFF の harmonic/let_ring は未対応）/
+    MusicXML・ASCII・MIDI・check_mix（簡易サイン波合成、fluidsynth 不使用）
+    出力 / report.html（ノート数・パート内訳・警告・信頼度の低い小節一覧）
+  - T3-5: `--guitar-tracks 3` 以上での複数リードトラック分割（(register,
+    ioi, pan) の K-means。numpy のみで実装した簡易版）
 - 未実装:
-  - `--guitar-tracks 3` の K-means による複数リード分割 (T3-5)
   - GuitarSet を用いた定量評価 (T2-5, データセット未取得)
-  - palm_mute・harmonic・let_ring の音響解析ベース判定（スペクトル重心等）
+  - harmonic・let_ring の高精度な判定（let_ring は既定 OFF のプレースホルダ
+    のみ実装済み）
   - LVCR の実コンテナ構築（`docker/Dockerfile.chords` はプレースホルダ）
-  - MIDI / check_mix（fluidsynth 合成）出力
+  - check_mix.wav の fluidsynth + SoundFont による本格合成（現状は減衰
+    サイン波の加算合成で代替）
+  - report.html のピアノロール／タブ位置ヒートマップ（テキスト情報のみ）
   - レビュー UI (P5) / 精度チューニング (P6)
 
 ## 重要な制約

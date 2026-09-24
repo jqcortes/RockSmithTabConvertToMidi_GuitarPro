@@ -12,6 +12,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from pathlib import Path
 
 from tabforge.arrange.fretting import FretConfig, OnsetGroup, assign_frets
 from tabforge.arrange.voicing import Shape, StrumBeat, generate_strumming, select_voicing
@@ -31,9 +32,11 @@ from tabforge.ir.models import (
     TabTrack,
 )
 from tabforge.job import Job
+from tabforge.stages.s5_disentangle import name_lead_tracks, split_lead_tracks
 from tabforge.stages.s6_quantize import PPQ
 from tabforge.stages.s8_technique import (
     build_note_effects,
+    compute_note_centroids,
     confirm_hammer_or_slide,
     is_legato_candidate,
 )
@@ -79,13 +82,21 @@ def build_track(
     notes: list[Note], grid: GridIR, tuning: tuple[int, ...], max_fret: int,
     name: str, part: str, total_bars: int | None = None,
     technique_cfg: TechniqueConfig | None = None,
+    centroids: dict[str, float] | None = None,
 ) -> tuple[TabTrack, int, int]:
     """フレット割当の汎用実装（T1-8: ベースと同じコードでギターにも使える）。
 
     `technique_cfg` を渡すと S8 技法推定（T4-1/T4-2）を統合する。HO/PO・
     スライド候補は Viterbi 実行前に `OnsetGroup.legato_links` として渡し
     同一弦維持を強制、確定後の実フレット差で最終判定する二段階方式。
+    `centroids`（`s8_technique.compute_note_centroids` の結果）を渡すと
+    palm_mute 判定にトラック中央値との比較を使う。
     """
+    track_median_centroid = 0.0
+    if centroids:
+        values = sorted(v for v in centroids.values() if v > 0)
+        if values:
+            track_median_centroid = values[len(values) // 2]
     note_groups = _group_notes_by_onset(notes)
     fret_cfg = FretConfig(tuning=tuning, max_fret=max_fret, span_max=4)
 
@@ -130,7 +141,13 @@ def build_track(
                 fret_diff = assign[0][1] - prev_assign[0][1]
                 hammer, slide = confirm_hammer_or_slide(dt, fret_diff, same_string, technique_cfg)
             next_note = in_range[idx + 1][0][0] if idx + 1 < len(in_range) else None
-            effects = build_note_effects(rep_note, next_note, hammer, slide, technique_cfg)
+            dt_beats_duration = (rep_note.offset - rep_note.onset) / beat_len
+            note_centroid = (centroids or {}).get(rep_note.id)
+            effects = build_note_effects(
+                rep_note, next_note, hammer, slide, technique_cfg,
+                dt_beats_duration=dt_beats_duration,
+                centroid=note_centroid, track_median_centroid=track_median_centroid,
+            )
             tab_notes.append(TabNote(string=assign[0][0] + 1, fret=assign[0][1], effects=effects))
         else:
             tab_notes = [TabNote(string=si + 1, fret=fret) for si, fret in assign]
@@ -154,42 +171,48 @@ def build_track(
 
 
 def build_bass_track(
-    notes: list[Note], grid: GridIR, cfg: TabForgeConfig, total_bars: int | None = None
+    notes: list[Note], grid: GridIR, cfg: TabForgeConfig, total_bars: int | None = None,
+    stem_wav: Path | None = None,
 ) -> tuple[TabTrack, int, int]:
     pitches = [n.pitch for n in notes]
     tuning_base = BASS_5STRING if detect_5string_bass(pitches) else BASS_STANDARD
     estimate = estimate_tuning(pitches, tuning_base, kind="bass") if pitches else None
     tuning = estimate.tuning if estimate else tuning_base
+    centroids = compute_note_centroids(notes, stem_wav) if stem_wav is not None else None
     return build_track(
         notes, grid, tuning, cfg.arrange.bass.max_fret, "Bass", "bass", total_bars,
-        technique_cfg=cfg.technique,
+        technique_cfg=cfg.technique, centroids=centroids,
     )
 
 
 def build_guitar_track(
-    notes: list[Note], grid: GridIR, cfg: TabForgeConfig, total_bars: int | None = None
+    notes: list[Note], grid: GridIR, cfg: TabForgeConfig, total_bars: int | None = None,
+    stem_wav: Path | None = None,
 ) -> tuple[TabTrack, int, int]:
     """`--guitar-tracks 1`: lead/rhythm を分離せず全ギターノートを1トラックに出す（T2-4）。"""
     pitches = [n.pitch for n in notes]
     estimate = estimate_tuning(pitches, GUITAR_STANDARD, kind="guitar") if pitches else None
     tuning = estimate.tuning if estimate else GUITAR_STANDARD
+    centroids = compute_note_centroids(notes, stem_wav) if stem_wav is not None else None
     # part は schema 上 lead/rhythm/bass/unassigned のいずれかのみ許容されるため、
     # 単一トラック(未分離)の便宜上 "lead" とする。
     return build_track(
         notes, grid, tuning, cfg.arrange.guitar.max_fret, "Guitar", "lead", total_bars,
-        technique_cfg=cfg.technique,
+        technique_cfg=cfg.technique, centroids=centroids,
     )
 
 
 def build_lead_track(
-    notes: list[Note], grid: GridIR, cfg: TabForgeConfig, total_bars: int | None = None
+    notes: list[Note], grid: GridIR, cfg: TabForgeConfig, total_bars: int | None = None,
+    stem_wav: Path | None = None,
 ) -> tuple[TabTrack, int, int]:
     pitches = [n.pitch for n in notes]
     estimate = estimate_tuning(pitches, GUITAR_STANDARD, kind="guitar") if pitches else None
     tuning = estimate.tuning if estimate else GUITAR_STANDARD
+    centroids = compute_note_centroids(notes, stem_wav) if stem_wav is not None else None
     return build_track(
         notes, grid, tuning, cfg.arrange.guitar.max_fret, "Lead Guitar", "lead", total_bars,
-        technique_cfg=cfg.technique,
+        technique_cfg=cfg.technique, centroids=centroids,
     )
 
 
@@ -251,8 +274,11 @@ class Stage:
         total_jumps = 0
         total_bars = _total_bars(grid)
 
+        bass_stem = job.stems_dir / "bass.wav"
+        guitar_stem = job.stems_dir / "guitar.wav"
+
         bass_notes = _notes_for_part(notes_ir, parts, {"bass"})
-        bass_track, dropped, jumps = build_bass_track(bass_notes, grid, cfg, total_bars)
+        bass_track, dropped, jumps = build_bass_track(bass_notes, grid, cfg, total_bars, stem_wav=bass_stem)
         tracks.append(bass_track)
         total_dropped += dropped
         total_jumps += jumps
@@ -260,21 +286,42 @@ class Stage:
         if cfg.disentangle.guitar_tracks == 1:
             guitar_notes = _notes_for_part(notes_ir, parts, {"lead", "rhythm", "unassigned"})
             if guitar_notes:
-                guitar_track, g_dropped, g_jumps = build_guitar_track(guitar_notes, grid, cfg, total_bars)
+                guitar_track, g_dropped, g_jumps = build_guitar_track(
+                    guitar_notes, grid, cfg, total_bars, stem_wav=guitar_stem,
+                )
                 tracks.append(guitar_track)
                 total_dropped += g_dropped
                 total_jumps += g_jumps
         elif cfg.disentangle.guitar_tracks >= 2:
-            if cfg.disentangle.guitar_tracks >= 3:
-                job.logger.warning(
-                    self.name,
-                    "guitar_tracks>=3 の複数リード分割(K-means, T3-5)は未実装。"
-                    " Lead Guitar 1本 + Rhythm Guitar として出力する。",
-                )
-
             lead_notes = _notes_for_part(notes_ir, parts, {"lead"})
-            if lead_notes:
-                lead_track, l_dropped, l_jumps = build_lead_track(lead_notes, grid, cfg, total_bars)
+            if lead_notes and cfg.disentangle.guitar_tracks >= 3:
+                lead_features = {
+                    a.note_id: a.features for a in parts.assignments
+                    if a.part == "lead" and a.features is not None
+                }
+                k = cfg.disentangle.guitar_tracks - 1
+                assignment_map = split_lead_tracks(lead_notes, lead_features, k=k)
+                notes_by_label: dict[int, list[Note]] = {}
+                for note in lead_notes:
+                    notes_by_label.setdefault(assignment_map[note.id], []).append(note)
+                track_names = name_lead_tracks(notes_by_label, lead_features)
+                lead_centroids = compute_note_centroids(lead_notes, guitar_stem)
+                for label, sub_notes in sorted(notes_by_label.items()):
+                    pitches = [n.pitch for n in sub_notes]
+                    estimate = estimate_tuning(pitches, GUITAR_STANDARD, kind="guitar") if pitches else None
+                    tuning = estimate.tuning if estimate else GUITAR_STANDARD
+                    sub_track, s_dropped, s_jumps = build_track(
+                        sub_notes, grid, tuning, cfg.arrange.guitar.max_fret,
+                        track_names[label], "lead", total_bars, technique_cfg=cfg.technique,
+                        centroids=lead_centroids,
+                    )
+                    tracks.append(sub_track)
+                    total_dropped += s_dropped
+                    total_jumps += s_jumps
+            elif lead_notes:
+                lead_track, l_dropped, l_jumps = build_lead_track(
+                    lead_notes, grid, cfg, total_bars, stem_wav=guitar_stem,
+                )
                 tracks.append(lead_track)
                 total_dropped += l_dropped
                 total_jumps += l_jumps
